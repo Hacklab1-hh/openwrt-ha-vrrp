@@ -4,7 +4,7 @@
 `openwrt-ha-vrrp/Makefile`
 
 ## Kurzbeschreibung
-Build/Copy/Package Hilfs-Targets aus dem Ur-Archiv. Für v0.5.2 empfehlen wir stattdessen die OpenWrt-Toolchain zu nutzen.
+Build/Copy/Package Hilfs-Targets aus dem Ur-Archiv. Für v0.5.3 empfehlen wir stattdessen die OpenWrt-Toolchain zu nutzen.
 
 ## Mögliche Targets (heuristisch erkannt)
 - `PKG_LICENSE`

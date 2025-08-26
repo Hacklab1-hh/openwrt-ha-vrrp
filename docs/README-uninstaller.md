@@ -15,12 +15,12 @@ rm -f /usr/sbin/ha-vrrp-apply
 rm -rf /usr/libexec/ha-vrrp
 ```
 
-## Angepasste Nutzung (v0.5.2)
+## Angepasste Nutzung (v0.5.3)
 - Stelle sicher, dass die Paketverzeichnisse unter `package/ha-vrrp` und `package/luci-app-ha-vrrp` im OpenWrt-Buildroot liegen.
 - Für Installation verwende bevorzugt die IPKs aus dem Build:
   ```sh
-  opkg install /tmp/ha-vrrp_0.5.2-1_*.ipk
-  opkg install /tmp/luci-app-ha-vrrp_0.5.2-1_*.ipk
+  opkg install /tmp/ha-vrrp_0.5.3-1_*.ipk
+  opkg install /tmp/luci-app-ha-vrrp_0.5.3-1_*.ipk
   /etc/init.d/ha-vrrp enable
   /etc/init.d/ha-vrrp start
   ```
