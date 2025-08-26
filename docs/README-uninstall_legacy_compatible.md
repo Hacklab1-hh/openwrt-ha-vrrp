@@ -1,5 +1,5 @@
 
-# Legacy-kompatibler Uninstaller (v0.5.4)
+# Legacy-kompatibler Uninstaller (v0.5.5)
 
 **Ziel:** Verhalten des ursprünglichen `uninstall.sh` nachempfinden.
 - Stoppt Dienste und entfernt die vom Installer kopierten Dateien.

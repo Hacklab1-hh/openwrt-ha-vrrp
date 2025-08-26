@@ -1,5 +1,5 @@
 
-# Legacy-kompatibler Installer (v0.5.4)
+# Legacy-kompatibler Installer (v0.5.5)
 
 **Ziel:** Verhalten des ursprünglichen `install.sh` ohne Flags nachbilden (OpenWrt 19.07).
 - Bricht ab, wenn `opkg` fehlt (wie Original).
