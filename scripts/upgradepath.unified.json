@@ -20,7 +20,10 @@
       "uci_renames": [],
       "uci_unset": []
     },
-    "notes": "{ \"version\": \"0.2.0\",       \"parent\": \"0.1.0\",     \"notes\": \"Übernahme der Ur-Version, Grundgerüst bereinigt/erweitert\" },"
+    "notes": "{ \"version\": \"0.2.0\",       \"parent\": \"0.1.0\",     \"notes\": \"Übernahme der Ur-Version, Grundgerüst bereinigt/erweitert\" },",
+    "patch_name": "",
+    "changelog": "",
+    "fixline": "{ \"version\": \"0.2.0\",       \"parent\": \"0.1.0\",     \"notes\": \"Übernahme der Ur-Version, Grundgerüst bereinigt/erweitert\" },"
   },
   {
     "version": "0.2.0",
@@ -43,7 +46,10 @@
       "uci_renames": [],
       "uci_unset": []
     },
-    "notes": "(\"0.2.0\",\"0.3.0\",\"—\",[\".tar.gz\",\".zip\"],\"installer-v0.3.0.sh\"),"
+    "notes": "(\"0.2.0\",\"0.3.0\",\"—\",[\".tar.gz\",\".zip\"],\"installer-v0.3.0.sh\"),",
+    "patch_name": "",
+    "changelog": "",
+    "fixline": "(\"0.2.0\",\"0.3.0\",\"—\",[\".tar.gz\",\".zip\"],\"installer-v0.3.0.sh\"),"
   },
   {
     "version": "0.3.0",
@@ -66,7 +72,10 @@
       "uci_renames": [],
       "uci_unset": []
     },
-    "notes": "(\"0.3.0\",\"0.3.0_a\",\"Hotfix\",[\".tar.gz\",\".zip\"],\"migrate_0.3.0_to_0.3.0_a.sh → installer\"),"
+    "notes": "(\"0.3.0\",\"0.3.0_a\",\"Hotfix\",[\".tar.gz\",\".zip\"],\"migrate_0.3.0_to_0.3.0_a.sh → installer\"),",
+    "patch_name": "",
+    "changelog": "",
+    "fixline": "(\"0.3.0\",\"0.3.0_a\",\"Hotfix\",[\".tar.gz\",\".zip\"],\"migrate_0.3.0_to_0.3.0_a.sh → installer\"),"
   },
   {
     "version": "0.4.0",
@@ -89,7 +98,10 @@
       "uci_renames": [],
       "uci_unset": []
     },
-    "notes": "(\"0.4.0\",\"0.4.0_a\",\"Hotfix\",[\".tar.gz\",\".zip\"],\"migrate_0.4.0_to_0.4.0_a.sh → installer\"),"
+    "notes": "(\"0.4.0\",\"0.4.0_a\",\"Hotfix\",[\".tar.gz\",\".zip\"],\"migrate_0.4.0_to_0.4.0_a.sh → installer\"),",
+    "patch_name": "",
+    "changelog": "",
+    "fixline": "(\"0.4.0\",\"0.4.0_a\",\"Hotfix\",[\".tar.gz\",\".zip\"],\"migrate_0.4.0_to_0.4.0_a.sh → installer\"),"
   },
   {
     "version": "0.5.0",
@@ -112,7 +124,10 @@
       "uci_renames": [],
       "uci_unset": []
     },
-    "notes": "(\"0.5.0\",\"0.5.1\",\"Patch\",[\".tar.gz\",\".zip\"],\"migrate_0.5.0_to_0.5.1.sh\"),"
+    "notes": "(\"0.5.0\",\"0.5.1\",\"Patch\",[\".tar.gz\",\".zip\"],\"migrate_0.5.0_to_0.5.1.sh\"),",
+    "patch_name": "",
+    "changelog": "",
+    "fixline": "(\"0.5.0\",\"0.5.1\",\"Patch\",[\".tar.gz\",\".zip\"],\"migrate_0.5.0_to_0.5.1.sh\"),"
   },
   {
     "version": "0.5.1",
@@ -135,7 +150,10 @@
       "uci_renames": [],
       "uci_unset": []
     },
-    "notes": "(\"0.5.1\",\"0.5.2\",\"Legacy / Scripts\",[\".tar.gz\",\".zip\"],\"installer-v0.5.2.sh\"),"
+    "notes": "(\"0.5.1\",\"0.5.2\",\"Legacy / Scripts\",[\".tar.gz\",\".zip\"],\"installer-v0.5.2.sh\"),",
+    "patch_name": "",
+    "changelog": "",
+    "fixline": "(\"0.5.1\",\"0.5.2\",\"Legacy / Scripts\",[\".tar.gz\",\".zip\"],\"installer-v0.5.2.sh\"),"
   },
   {
     "version": "0.5.10",
@@ -158,7 +176,10 @@
       "uci_renames": [],
       "uci_unset": []
     },
-    "notes": "(\"0.5.10\",\"0.5.11\",\"—\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.11.sh\"),"
+    "notes": "(\"0.5.10\",\"0.5.11\",\"—\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.11.sh\"),",
+    "patch_name": "",
+    "changelog": "- Key-Management UI initiiert; erste Sync-Mechanik (scp).",
+    "fixline": "(\"0.5.10\",\"0.5.11\",\"—\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.11.sh\"),"
   },
   {
     "version": "0.5.11",
@@ -181,7 +202,10 @@
       "uci_renames": [],
       "uci_unset": []
     },
-    "notes": "(\"0.5.11\",\"0.5.12\",\"—\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.12.sh\"),"
+    "notes": "(\"0.5.11\",\"0.5.12\",\"—\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.12.sh\"),",
+    "patch_name": "",
+    "changelog": "- IPKs erstmals; Controller-Fehler beim LuCI-Laden beobachtet.",
+    "fixline": "(\"0.5.11\",\"0.5.12\",\"—\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.12.sh\"),"
   },
   {
     "version": "0.5.12",
@@ -204,7 +228,10 @@
       "uci_renames": [],
       "uci_unset": []
     },
-    "notes": "(\"0.5.12\",\"0.5.13\",\"—\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.13.sh\"),"
+    "notes": "(\"0.5.12\",\"0.5.13\",\"—\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.13.sh\"),",
+    "patch_name": "",
+    "changelog": "- Installer/Uninstaller ergänzt; bekannter Uninstaller-Bug.",
+    "fixline": "(\"0.5.12\",\"0.5.13\",\"—\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.13.sh\"),"
   },
   {
     "version": "0.5.13",
@@ -227,7 +254,10 @@
       "uci_renames": [],
       "uci_unset": []
     },
-    "notes": "(\"0.5.13\",\"0.5.14\",\"—\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.14.sh\"),"
+    "notes": "(\"0.5.13\",\"0.5.14\",\"—\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.14.sh\"),",
+    "patch_name": "",
+    "changelog": "- Fixes im Installer; UI teils leer; Cache nötig.",
+    "fixline": "(\"0.5.13\",\"0.5.14\",\"—\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.14.sh\"),"
   },
   {
     "version": "0.5.14",
@@ -250,7 +280,10 @@
       "uci_renames": [],
       "uci_unset": []
     },
-    "notes": "(\"0.5.14\",\"0.5.15_b\",\"—\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.15_b.sh\"),"
+    "notes": "(\"0.5.14\",\"0.5.15_b\",\"—\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.15_b.sh\"),",
+    "patch_name": "",
+    "changelog": "- Menü sichtbar; UI zeigte JSON statt CBI; Uninstaller unvollständig.",
+    "fixline": "(\"0.5.14\",\"0.5.15_b\",\"—\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.15_b.sh\"),"
   },
   {
     "version": "0.5.15",
@@ -273,7 +306,10 @@
       "uci_renames": [],
       "uci_unset": []
     },
-    "notes": "{ \"version\": \"0.5.16\",      \"parent\": \"0.5.15\",    \"notes\": \"CBI-only auf 19.07, Controller entschlackt, Templates nutzen self.map.uci\" },"
+    "notes": "{ \"version\": \"0.5.16\",      \"parent\": \"0.5.15\",    \"notes\": \"CBI-only auf 19.07, Controller entschlackt, Templates nutzen self.map.uci\" },",
+    "patch_name": "",
+    "changelog": "- Migrationspfad skizziert; LuCI stabilisiert.",
+    "fixline": "{ \"version\": \"0.5.16\",      \"parent\": \"0.5.15\",    \"notes\": \"CBI-only auf 19.07, Controller entschlackt, Templates nutzen self.map.uci\" },"
   },
   {
     "version": "0.5.16",
@@ -296,7 +332,10 @@
       "uci_renames": [],
       "uci_unset": []
     },
-    "notes": "(\"0.5.16-009\",\"0.5.16-009_reviewfix3\",\"Docs + Path integriert\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.16-009_reviewfix3.sh\")"
+    "notes": "(\"0.5.16-009\",\"0.5.16-009_reviewfix3\",\"Docs + Path integriert\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.16-009_reviewfix3.sh\")",
+    "patch_name": "",
+    "changelog": "- Controller/CBI/Views bereinigt; Overview-500 behoben; Settings erweitert.",
+    "fixline": "(\"0.5.16-009\",\"0.5.16-009_reviewfix3\",\"Docs + Path integriert\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.16-009_reviewfix3.sh\")"
   },
   {
     "version": "0.5.16-001",
@@ -319,7 +358,10 @@
       "uci_renames": [],
       "uci_unset": []
     },
-    "notes": "{ \"version\": \"0.5.16-002\",  \"parent\": \"0.5.16-001\",\"notes\": \"Sync-/Key-Ansicht verbessert; Upload-Felder\" },"
+    "notes": "{ \"version\": \"0.5.16-002\",  \"parent\": \"0.5.16-001\",\"notes\": \"Sync-/Key-Ansicht verbessert; Upload-Felder\" },",
+    "patch_name": "001",
+    "changelog": "",
+    "fixline": "{ \"version\": \"0.5.16-002\",  \"parent\": \"0.5.16-001\",\"notes\": \"Sync-/Key-Ansicht verbessert; Upload-Felder\" },"
   },
   {
     "version": "0.5.16-002",
@@ -342,7 +384,10 @@
       "uci_renames": [],
       "uci_unset": []
     },
-    "notes": "(\"0.5.16-002\",\"0.5.16-004\",\"Patch\",[\".tar\",\".tar.gz\"],\"migrate_002_to_004.sh → installer\"),"
+    "notes": "(\"0.5.16-002\",\"0.5.16-004\",\"Patch\",[\".tar\",\".tar.gz\"],\"migrate_002_to_004.sh → installer\"),",
+    "patch_name": "002",
+    "changelog": "",
+    "fixline": "(\"0.5.16-002\",\"0.5.16-004\",\"Patch\",[\".tar\",\".tar.gz\"],\"migrate_002_to_004.sh → installer\"),"
   },
   {
     "version": "0.5.16-003",
@@ -365,7 +410,10 @@
       "uci_renames": [],
       "uci_unset": []
     },
-    "notes": "{ \"version\": \"0.5.16-004\",  \"parent\": \"0.5.16-003\",\"notes\": \"Stabile CBI/Controller-Files + Doku (CONCEPTS/ARCHITECTURE); Overview-500 & L.ui-Fehler behoben\" }"
+    "notes": "{ \"version\": \"0.5.16-004\",  \"parent\": \"0.5.16-003\",\"notes\": \"Stabile CBI/Controller-Files + Doku (CONCEPTS/ARCHITECTURE); Overview-500 & L.ui-Fehler behoben\" }",
+    "patch_name": "003",
+    "changelog": "",
+    "fixline": "{ \"version\": \"0.5.16-004\",  \"parent\": \"0.5.16-003\",\"notes\": \"Stabile CBI/Controller-Files + Doku (CONCEPTS/ARCHITECTURE); Overview-500 & L.ui-Fehler behoben\" }"
   },
   {
     "version": "0.5.16-004",
@@ -388,7 +436,10 @@
       "uci_renames": [],
       "uci_unset": []
     },
-    "notes": "(\"0.5.16-004\",\"0.5.16-005\",\"—\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.16-005.sh\"),"
+    "notes": "(\"0.5.16-004\",\"0.5.16-005\",\"—\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.16-005.sh\"),",
+    "patch_name": "004",
+    "changelog": "",
+    "fixline": "(\"0.5.16-004\",\"0.5.16-005\",\"—\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.16-005.sh\"),"
   },
   {
     "version": "0.5.16-005",
@@ -411,7 +462,10 @@
       "uci_renames": [],
       "uci_unset": []
     },
-    "notes": "(\"0.5.16-005\",\"0.5.16-006\",\"+fixed\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.16-006_fixed.sh\"),"
+    "notes": "(\"0.5.16-005\",\"0.5.16-006\",\"+fixed\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.16-006_fixed.sh\"),",
+    "patch_name": "005",
+    "changelog": "",
+    "fixline": "(\"0.5.16-005\",\"0.5.16-006\",\"+fixed\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.16-006_fixed.sh\"),"
   },
   {
     "version": "0.5.16-006",
@@ -434,7 +488,10 @@
       "uci_renames": [],
       "uci_unset": []
     },
-    "notes": "(\"0.5.16-006\",\"0.5.16-007\",\"Stable UI\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.16-007.sh\"),"
+    "notes": "(\"0.5.16-006\",\"0.5.16-007\",\"Stable UI\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.16-007.sh\"),",
+    "patch_name": "006",
+    "changelog": "- LuCI: UI aus 0.5.16-002 zurückgeholt (Views & CBI) für volle Funktion.\n- Controller: ergänzt um fehlende Endpoints, Apply ruft Migration auf.\n- Migration: `migrate_0.5.16_002_to_006.sh` für interface→iface, vip→vip_cidr, setzt unicast_src_ip.\n- Installer: Migration automatisch eingebunden.",
+    "fixline": "(\"0.5.16-006\",\"0.5.16-007\",\"Stable UI\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.16-007.sh\"),"
   },
   {
     "version": "0.5.16-007",
@@ -457,7 +514,10 @@
       "uci_renames": [],
       "uci_unset": []
     },
-    "notes": "(\"0.5.16-007\",\"0.5.16-007_infofix2_installerfix1_uninstallerfix1_managerfix1_installergrid1\",\"Fix-Linien vollständig\",[\".tar\",\".tar.gz\"],\"installer-v0.5.16-007.sh + Manager(Grid)\"),"
+    "notes": "(\"0.5.16-007\",\"0.5.16-007_infofix2_installerfix1_uninstallerfix1_managerfix1_installergrid1\",\"Fix-Linien vollständig\",[\".tar\",\".tar.gz\"],\"installer-v0.5.16-007.sh + Manager(Grid)\"),",
+    "patch_name": "007",
+    "changelog": "- LuCI Settings: neue Option 'ssh_backend' (auto/dropbear/openssh).\n- Neues Hilfsskript: /usr/lib/ha-vrrp/lib/ssh_backend.sh (wählt SSH/SCP-Binaries).\n- Neue backend-aware Beispiele: /usr/libexec/ha-vrrp/keysync.sh und syncpush.sh.\n- Controller: Endpoints 'keysync' und 'syncpush' rufen die neuen Skripte auf.\n- Migration: scripts/migrate_0.5.16_002_to_007.sh setzt Defaults und mappt legacy Keys.",
+    "fixline": "(\"0.5.16-007\",\"0.5.16-007_infofix2_installerfix1_uninstallerfix1_managerfix1_installergrid1\",\"Fix-Linien vollständig\",[\".tar\",\".tar.gz\"],\"installer-v0.5.16-0…"
   },
   {
     "version": "0.5.16-008",
@@ -480,7 +540,10 @@
       "uci_renames": [],
       "uci_unset": []
     },
-    "notes": "(\"0.5.16-008\",\"0.5.16-008_patched_fixed_infofix\",\"Controller/UI-Fixes\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.16-008_patched_fixed_infofix.sh\"),"
+    "notes": "(\"0.5.16-008\",\"0.5.16-008_patched_fixed_infofix\",\"Controller/UI-Fixes\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.16-008_patched_fixed_infofix.sh\"),",
+    "patch_name": "008",
+    "changelog": "",
+    "fixline": "(\"0.5.16-008\",\"0.5.16-008_patched_fixed_infofix\",\"Controller/UI-Fixes\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.16-008_patched_fixed_infofix.sh\"),"
   },
   {
     "version": "0.5.16-009",
@@ -503,7 +566,10 @@
       "uci_renames": [],
       "uci_unset": []
     },
-    "notes": "(\"0.5.16-009\",\"0.5.16-009_reviewfix3\",\"Docs + Path integriert\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.16-009_reviewfix3.sh\")"
+    "notes": "(\"0.5.16-009\",\"0.5.16-009_reviewfix3\",\"Docs + Path integriert\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.16-009_reviewfix3.sh\")",
+    "patch_name": "009",
+    "changelog": "",
+    "fixline": "(\"0.5.16-009\",\"0.5.16-009_reviewfix3\",\"Docs + Path integriert\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.16-009_reviewfix3.sh\")"
   },
   {
     "version": "0.5.2",
@@ -526,7 +592,10 @@
       "uci_renames": [],
       "uci_unset": []
     },
-    "notes": "(\"0.5.2\",\"0.5.3 … 0.5.8\",\"Minor Releases\",[\".tar.gz\",\".zip\"],\"jeweiliger Installer\"),"
+    "notes": "(\"0.5.2\",\"0.5.3 … 0.5.8\",\"Minor Releases\",[\".tar.gz\",\".zip\"],\"jeweiliger Installer\"),",
+    "patch_name": "",
+    "changelog": "",
+    "fixline": "(\"0.5.2\",\"0.5.3 … 0.5.8\",\"Minor Releases\",[\".tar.gz\",\".zip\"],\"jeweiliger Installer\"),"
   },
   {
     "version": "0.5.3",
@@ -549,7 +618,10 @@
       "uci_renames": [],
       "uci_unset": []
     },
-    "notes": "(\"0.5.2\",\"0.5.3 … 0.5.8\",\"Minor Releases\",[\".tar.gz\",\".zip\"],\"jeweiliger Installer\"),"
+    "notes": "(\"0.5.2\",\"0.5.3 … 0.5.8\",\"Minor Releases\",[\".tar.gz\",\".zip\"],\"jeweiliger Installer\"),",
+    "patch_name": "",
+    "changelog": "",
+    "fixline": "(\"0.5.2\",\"0.5.3 … 0.5.8\",\"Minor Releases\",[\".tar.gz\",\".zip\"],\"jeweiliger Installer\"),"
   },
   {
     "version": "0.5.4",
@@ -572,7 +644,10 @@
       "uci_renames": [],
       "uci_unset": []
     },
-    "notes": "{ \"version\": \"0.5.5\",       \"parent\": \"0.5.4\",     \"notes\": \"Ergänzungen/Refactorings\" },"
+    "notes": "{ \"version\": \"0.5.5\",       \"parent\": \"0.5.4\",     \"notes\": \"Ergänzungen/Refactorings\" },",
+    "patch_name": "",
+    "changelog": "",
+    "fixline": "{ \"version\": \"0.5.5\",       \"parent\": \"0.5.4\",     \"notes\": \"Ergänzungen/Refactorings\" },"
   },
   {
     "version": "0.5.5",
@@ -595,7 +670,10 @@
       "uci_renames": [],
       "uci_unset": []
     },
-    "notes": "{ \"version\": \"0.5.6\",       \"parent\": \"0.5.5\",     \"notes\": \"Interfaces-/DHCP-Liste, VRRP-Segmente anlegbar\" },"
+    "notes": "{ \"version\": \"0.5.6\",       \"parent\": \"0.5.5\",     \"notes\": \"Interfaces-/DHCP-Liste, VRRP-Segmente anlegbar\" },",
+    "patch_name": "",
+    "changelog": "",
+    "fixline": "{ \"version\": \"0.5.6\",       \"parent\": \"0.5.5\",     \"notes\": \"Interfaces-/DHCP-Liste, VRRP-Segmente anlegbar\" },"
   },
   {
     "version": "0.5.6",
@@ -618,7 +696,10 @@
       "uci_renames": [],
       "uci_unset": []
     },
-    "notes": "{ \"version\": \"0.5.9\",       \"parent\": \"0.5.6\",     \"notes\": \"Doku-/Changelog-/Featurelist-Chain je Version eingeführt\" },"
+    "notes": "{ \"version\": \"0.5.9\",       \"parent\": \"0.5.6\",     \"notes\": \"Doku-/Changelog-/Featurelist-Chain je Version eingeführt\" },",
+    "patch_name": "",
+    "changelog": "",
+    "fixline": "{ \"version\": \"0.5.9\",       \"parent\": \"0.5.6\",     \"notes\": \"Doku-/Changelog-/Featurelist-Chain je Version eingeführt\" },"
   },
   {
     "version": "0.5.8",
@@ -641,7 +722,10 @@
       "uci_renames": [],
       "uci_unset": []
     },
-    "notes": "(\"0.5.8\",\"0.5.9\",\"—\",[\".tar.gz\",\".zip\"],\"installer-v0.5.9.sh\"),"
+    "notes": "(\"0.5.8\",\"0.5.9\",\"—\",[\".tar.gz\",\".zip\"],\"installer-v0.5.9.sh\"),",
+    "patch_name": "",
+    "changelog": "",
+    "fixline": "(\"0.5.8\",\"0.5.9\",\"—\",[\".tar.gz\",\".zip\"],\"installer-v0.5.9.sh\"),"
   },
   {
     "version": "0.5.9",
@@ -664,6 +748,9 @@
       "uci_renames": [],
       "uci_unset": []
     },
-    "notes": "(\"0.5.9\",\"0.5.10\",\"—\",[\".tar.gz\",\".zip\"],\"installer-v0.5.10.sh\"),"
+    "notes": "(\"0.5.9\",\"0.5.10\",\"—\",[\".tar.gz\",\".zip\"],\"installer-v0.5.10.sh\"),",
+    "patch_name": "",
+    "changelog": "- Erweiterte Doku-/Changelog-Struktur eingeführt.",
+    "fixline": "(\"0.5.9\",\"0.5.10\",\"—\",[\".tar.gz\",\".zip\"],\"installer-v0.5.10.sh\"),"
   }
 ]
