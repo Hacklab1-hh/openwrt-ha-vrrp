@@ -15,9 +15,7 @@ INSTANCES="$(uci -q show ha_vrrp | awk -F. '/^ha_vrrp\.[^=]+=/ {print $2}' | cut
 if [ -z "$INSTANCES" ]; then
   MON="$(get_dev core || true)"
 else
-  for s in $INSTANCES; do
-    d="$(get_dev "$s" || true)"; [ -n "$d" ] && MON="$MON $d"
-  done
+  for s in $INSTANCES; do d="$(get_dev "$s" || true)"; [ -n "$d" ] && MON="$MON $d"; done
 fi
 for d in $MON; do
   [ "$INTERFACE" = "$d" ] || continue

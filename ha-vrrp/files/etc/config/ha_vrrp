@@ -1,3 +1,36 @@
 config core 'core'
 	option enabled '1'
+	option cluster_name 'lab-ha'
+	option auth_pass 'changeme-please'
+
+	# Peer (HEARTBEAT)
+	option peer_host '192.168.254.2'
+	option peer_user 'root'
+	option peer_port '22'
+
+	# Sync (manual + optional autosync)
+	list sync_path '/etc/config/ha_vrrp'
+	list sync_path '/etc/config/network'
+	list sync_path '/etc/config/firewall'
+	option auto_sync '0'        # 1 = enable autosync daemon
+	option auto_sync_interval '7'
+
+	# Discovery
+	option discover_cidr '192.168.254.0/24'  # override auto-detect
+	option discover_min '1'
+	option discover_max '10'
+	# .254 wird immer zusätzlich geprüft
+
+	# Health v4
 	list health_wan_if 'wan'
+	option health_interval '2'
+	option health_fall '2'
+	option health_rise '2'
+	option health_weight '-30'
+
+	# Health v6
+	# list health_wan6_if 'wan6'
+	option health6_interval '3'
+	option health6_fall '2'
+	option health6_rise '2'
+	option health6_weight '-20'

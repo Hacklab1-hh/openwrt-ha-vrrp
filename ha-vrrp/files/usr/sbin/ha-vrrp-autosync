@@ -1,0 +1,20 @@
+#!/bin/sh
+# simple hashsum watcher for sync paths; if changed, push to peer
+set -eu
+INTERVAL="$(uci -q get ha_vrrp.core.auto_sync_interval || echo 7)"
+last=""
+sum_paths() {
+  paths="$(uci -q show ha_vrrp | awk -F= '/^ha_vrrp.core.sync_path=/ {gsub(/'\''/,"",$2); print $2}')"
+  for p in $paths; do
+    [ -f "$p" ] || continue
+    md5sum "$p"
+  done | md5sum | awk '{print $1}'
+}
+while :; do
+  cur="$(sum_paths)"
+  if [ "$cur" != "$last" ]; then
+    last="$cur"
+    /usr/sbin/ha-vrrp-sync push || true
+  fi
+  sleep "$INTERVAL"
+done
