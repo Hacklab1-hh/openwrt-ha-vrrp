@@ -20,4 +20,16 @@ o:value("auto", "auto"); o:value("dnsmasq_legacy", "dnsmasq_legacy"); o:value("d
 o = s:option(ListValue, "net_backend", translate("Netzwerk Backend"))
 o:value("auto", "auto"); o:value("swconfig", "swconfig"); o:value("dsa", "dsa")
 
+
+
+-- Added in 0.5.16-007: SSH Backend selection
+do
+  local o = s:option(ListValue, "ssh_backend", translate("SSH Backend"))
+  o.default = "auto"
+  o:value("auto",     translate("Auto (detect)"))
+  o:value("dropbear", translate("Dropbear (dbclient/scp)"))
+  o:value("openssh",  translate("OpenSSH (ssh/scp)"))
+  o.rmempty = false
+end
+
 return m

@@ -5,3 +5,11 @@
 - Controller: ergänzt um fehlende Endpoints, Apply ruft Migration auf.
 - Migration: `migrate_0.5.16_002_to_006.sh` für interface→iface, vip→vip_cidr, setzt unicast_src_ip.
 - Installer: Migration automatisch eingebunden.
+
+## 0.5.16-007 (2025-08-24)
+- LuCI Settings: neue Option 'ssh_backend' (auto/dropbear/openssh).
+- Neues Hilfsskript: /usr/lib/ha-vrrp/lib/ssh_backend.sh (wählt SSH/SCP-Binaries).
+- Neue backend-aware Beispiele: /usr/libexec/ha-vrrp/keysync.sh und syncpush.sh.
+- Controller: Endpoints 'keysync' und 'syncpush' rufen die neuen Skripte auf.
+- Migration: scripts/migrate_0.5.16_002_to_007.sh setzt Defaults und mappt legacy Keys.
+
