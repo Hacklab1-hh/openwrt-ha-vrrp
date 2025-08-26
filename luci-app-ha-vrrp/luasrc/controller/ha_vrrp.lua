@@ -23,6 +23,8 @@ function index()
   entry({"admin","services","ha_vrrp","discover_adv"}, call("discover_adv"), nil).leaf = true
   entry({"admin","services","ha_vrrp","autodiscover"}, call("autodiscover"), nil).leaf = true
   entry({"admin","services","ha_vrrp","setpeer"}, call("setpeer"), nil).leaf = true
+  entry({"admin","services","ha_vrrp","genkey"}, call("genkey"), nil).leaf = true
+  entry({"admin","services","ha_vrrp","importkey"}, call("importkey"), nil).leaf = true
 end
 
 function apply()
@@ -351,4 +353,59 @@ function setpeer()
   uci:commit(\"ha_vrrp\")
   http.prepare_content(\"application/json\")
   http.write_json({ ok = true, peer = peer, inst = inst })
+end
+
+
+
+function genkey()
+  local http = require "luci.http"
+  local home = "/root"
+  local sshdir = home .. "/.ssh"
+  os.execute("mkdir -p "..sshdir.." && chmod 700 "..sshdir)
+
+  local pub, prv = sshdir.."/id_ed25519.pub", sshdir.."/id_ed25519"
+  local had_key = (os.execute("[ -s "..pub.." ] >/dev/null 2>&1") == 0)
+
+  if not had_key then
+    local ok = os.execute("command -v ssh-keygen >/dev/null 2>&1")
+    if ok == 0 then
+      os.execute("ssh-keygen -t ed25519 -N '' -f "..prv.." >/dev/null 2>&1")
+    else
+      prv = sshdir.."/id_rsa"
+      pub = sshdir.."/id_rsa.pub"
+      os.execute("dropbearkey -t rsa -f "..prv.." >/dev/null 2>&1")
+      os.execute("dropbearkey -y -f "..prv.." | awk '/^ssh-/{print $0}' > "..pub)
+    end
+  end
+
+  local f = io.open(pub, "r")
+  local pubkey = f and f:read("*a") or ""
+  if f then f:close() end
+
+  http.prepare_content("application/json")
+  http.write_json({ ok = (pubkey ~= ""), created = (not had_key), pubkey = pubkey })
+end
+
+function importkey()
+  local http = require "luci.http"
+  local pub = http.formvalue("pub") or ""
+  if pub == "" then http.status(400, "pub required"); http.write("pub required"); return end
+  local sshdir = "/root/.ssh"
+  os.execute("mkdir -p "..sshdir.." && chmod 700 "..sshdir)
+  if not pub:match("\n$") then pub = pub .. "\n" end
+  local ak = sshdir.."/authorized_keys"
+  os.execute("touch "..ak.." && chmod 600 "..ak)
+  local exists = false
+  local f = io.open(ak, "r")
+  if f then
+    local all = f:read("*a") or ""
+    f:close()
+    if all:find(pub, 1, true) then exists = true end
+  end
+  if not exists then
+    local w = io.open(ak, "a")
+    if w then w:write(pub); w:close() end
+  end
+  http.prepare_content("application/json")
+  http.write_json({ ok = true, added = (not exists) })
 end
