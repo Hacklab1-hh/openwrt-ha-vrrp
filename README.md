@@ -1,4 +1,4 @@
-# openwrt-ha-vrrp v0.5.1
+# openwrt-ha-vrrp v0.5.2
 
 Built from base **0.2.0** and extended through 0.3.0–0.5.0:
 - Peer discovery (configurable), Peer sync (SSH keys + push)
