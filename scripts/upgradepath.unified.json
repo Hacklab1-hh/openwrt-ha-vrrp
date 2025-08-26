@@ -72,10 +72,10 @@
       "uci_renames": [],
       "uci_unset": []
     },
-    "notes": "(\"0.3.0\",\"0.3.0_a\",\"Hotfix\",[\".tar.gz\",\".zip\"],\"scripts/migrations/migrate_0.3.0_to_0.3.0_a.sh → installer\"),",
+    "notes": "(\"0.3.0\",\"0.3.0_a\",\"Hotfix\",[\".tar.gz\",\".zip\"],\"scripts/migrate/migrate_0.3.0_to_0.3.0_a.sh → installer\"),",
     "patch_name": "",
     "changelog": "",
-    "fixline": "(\"0.3.0\",\"0.3.0_a\",\"Hotfix\",[\".tar.gz\",\".zip\"],\"scripts/migrations/migrate_0.3.0_to_0.3.0_a.sh → installer\"),"
+    "fixline": "(\"0.3.0\",\"0.3.0_a\",\"Hotfix\",[\".tar.gz\",\".zip\"],\"scripts/migrate/migrate_0.3.0_to_0.3.0_a.sh → installer\"),"
   },
   {
     "version": "0.4.0",
@@ -98,10 +98,10 @@
       "uci_renames": [],
       "uci_unset": []
     },
-    "notes": "(\"0.4.0\",\"0.4.0_a\",\"Hotfix\",[\".tar.gz\",\".zip\"],\"scripts/migrations/migrate_0.4.0_to_0.4.0_a.sh → installer\"),",
+    "notes": "(\"0.4.0\",\"0.4.0_a\",\"Hotfix\",[\".tar.gz\",\".zip\"],\"scripts/migrate/migrate_0.4.0_to_0.4.0_a.sh → installer\"),",
     "patch_name": "",
     "changelog": "",
-    "fixline": "(\"0.4.0\",\"0.4.0_a\",\"Hotfix\",[\".tar.gz\",\".zip\"],\"scripts/migrations/migrate_0.4.0_to_0.4.0_a.sh → installer\"),"
+    "fixline": "(\"0.4.0\",\"0.4.0_a\",\"Hotfix\",[\".tar.gz\",\".zip\"],\"scripts/migrate/migrate_0.4.0_to_0.4.0_a.sh → installer\"),"
   },
   {
     "version": "0.5.0",
@@ -124,10 +124,10 @@
       "uci_renames": [],
       "uci_unset": []
     },
-    "notes": "(\"0.5.0\",\"0.5.1\",\"Patch\",[\".tar.gz\",\".zip\"],\"scripts/migrations/migrate_0.5.0_to_0.5.1.sh\"),",
+    "notes": "(\"0.5.0\",\"0.5.1\",\"Patch\",[\".tar.gz\",\".zip\"],\"scripts/migrate/migrate_0.5.0_to_0.5.1.sh\"),",
     "patch_name": "",
     "changelog": "",
-    "fixline": "(\"0.5.0\",\"0.5.1\",\"Patch\",[\".tar.gz\",\".zip\"],\"scripts/migrations/migrate_0.5.0_to_0.5.1.sh\"),"
+    "fixline": "(\"0.5.0\",\"0.5.1\",\"Patch\",[\".tar.gz\",\".zip\"],\"scripts/migrate/migrate_0.5.0_to_0.5.1.sh\"),"
   },
   {
     "version": "0.5.1",
@@ -384,10 +384,10 @@
       "uci_renames": [],
       "uci_unset": []
     },
-    "notes": "(\"0.5.16-002\",\"0.5.16-004\",\"Patch\",[\".tar\",\".tar.gz\"],\"scripts/migrations/migrate_002_to_004.sh → installer\"),",
+    "notes": "(\"0.5.16-002\",\"0.5.16-004\",\"Patch\",[\".tar\",\".tar.gz\"],\"scripts/migrate/migrate_002_to_004.sh → installer\"),",
     "patch_name": "002",
     "changelog": "",
-    "fixline": "(\"0.5.16-002\",\"0.5.16-004\",\"Patch\",[\".tar\",\".tar.gz\"],\"scripts/migrations/migrate_002_to_004.sh → installer\"),"
+    "fixline": "(\"0.5.16-002\",\"0.5.16-004\",\"Patch\",[\".tar\",\".tar.gz\"],\"scripts/migrate/migrate_002_to_004.sh → installer\"),"
   },
   {
     "version": "0.5.16-003",
@@ -490,7 +490,7 @@
     },
     "notes": "(\"0.5.16-006\",\"0.5.16-007\",\"Stable UI\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.16-007.sh\"),",
     "patch_name": "006",
-    "changelog": "- LuCI: UI aus 0.5.16-002 zurückgeholt (Views & CBI) für volle Funktion.\n- Controller: ergänzt um fehlende Endpoints, Apply ruft Migration auf.\n- Migration: `scripts/migrations/migrate_0.5.16_002_to_006.sh` für interface→iface, vip→vip_cidr, setzt unicast_src_ip.\n- Installer: Migration automatisch eingebunden.",
+    "changelog": "- LuCI: UI aus 0.5.16-002 zurückgeholt (Views & CBI) für volle Funktion.\n- Controller: ergänzt um fehlende Endpoints, Apply ruft Migration auf.\n- Migration: `scripts/migrate/migrate_0.5.16_002_to_006.sh` für interface→iface, vip→vip_cidr, setzt unicast_src_ip.\n- Installer: Migration automatisch eingebunden.",
     "fixline": "(\"0.5.16-006\",\"0.5.16-007\",\"Stable UI\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.16-007.sh\"),"
   },
   {
@@ -516,7 +516,7 @@
     },
     "notes": "(\"0.5.16-007\",\"0.5.16-007_infofix2_installerfix1_uninstallerfix1_managerfix1_installergrid1\",\"Fix-Linien vollständig\",[\".tar\",\".tar.gz\"],\"installer-v0.5.16-007.sh + Manager(Grid)\"),",
     "patch_name": "007",
-    "changelog": "- LuCI Settings: neue Option 'ssh_backend' (auto/dropbear/openssh).\n- Neues Hilfsskript: /usr/lib/ha-vrrp/lib/ssh_backend.sh (wählt SSH/SCP-Binaries).\n- Neue backend-aware Beispiele: /usr/libexec/ha-vrrp/keysync.sh und syncpush.sh.\n- Controller: Endpoints 'keysync' und 'syncpush' rufen die neuen Skripte auf.\n- Migration: scripts/migrations/migrate_0.5.16_002_to_007.sh setzt Defaults und mappt legacy Keys.",
+    "changelog": "- LuCI Settings: neue Option 'ssh_backend' (auto/dropbear/openssh).\n- Neues Hilfsskript: /usr/lib/ha-vrrp/lib/ssh_backend.sh (wählt SSH/SCP-Binaries).\n- Neue backend-aware Beispiele: /usr/libexec/ha-vrrp/keysync.sh und syncpush.sh.\n- Controller: Endpoints 'keysync' und 'syncpush' rufen die neuen Skripte auf.\n- Migration: scripts/migrate/migrate_0.5.16_002_to_007.sh setzt Defaults und mappt legacy Keys.",
     "fixline": "(\"0.5.16-007\",\"0.5.16-007_infofix2_installerfix1_uninstallerfix1_managerfix1_installergrid1\",\"Fix-Linien vollständig\",[\".tar\",\".tar.gz\"],\"installer-v0.5.16-0…"
   },
   {

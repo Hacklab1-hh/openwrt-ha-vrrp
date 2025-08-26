@@ -66,8 +66,8 @@ echo "[*] Config-Backup: $BACKUP"
 CUR=""; [ -f /usr/lib/ha-vrrp/VERSION ] && CUR="$(cat /usr/lib/ha-vrrp/VERSION 2>/dev/null || true)"
 case "$CUR" in
   0.5.16-002)
-    [ -x "$scripts/migrations/migrate_0.5.16_002_to_007.sh" ] && \
-      "$scripts/migrations/migrate_0.5.16_002_to_007.sh" || true
+    [ -x "$scripts/migrate/migrate_0.5.16_002_to_007.sh" ] && \
+      "$scripts/migrate/migrate_0.5.16_002_to_007.sh" || true
   ;;
 esac
 [ -d "$PKGROOT/luci-app-ha-vrrp" ] && cp -a "$PKGROOT/luci-app-ha-vrrp/." /
@@ -103,22 +103,22 @@ case "$CUR" in
   "")
     ;;
   0.5.16-002)
-    run_mig "$scripts/migrations/migrate_0.5.16_002_to_007.sh"
-    run_mig "$scripts/migrations/migrate_0.5.16_007_to_008.sh"
+    run_mig "$scripts/migrate/migrate_0.5.16_002_to_007.sh"
+    run_mig "$scripts/migrate/migrate_0.5.16_007_to_008.sh"
     ;;
   0.5.16-003|0.5.16-004|0.5.16-005|0.5.16-006)
-    run_mig "$scripts/migrations/migrate_0.5.16_002_to_007.sh"
-    run_mig "$scripts/migrations/migrate_0.5.16_007_to_008.sh"
+    run_mig "$scripts/migrate/migrate_0.5.16_002_to_007.sh"
+    run_mig "$scripts/migrate/migrate_0.5.16_007_to_008.sh"
     ;;
   0.5.16-007)
-    run_mig "$scripts/migrations/migrate_0.5.16_007_to_008.sh"
+    run_mig "$scripts/migrate/migrate_0.5.16_007_to_008.sh"
     ;;
   0.5.16-008)
     echo "[*] System ist bereits auf 0.5.16-008; Re-Install." ;;
   *)
     echo "[!] Unbekannter Startstand: $CUR  → konservative Migration 002→007→008."
-    run_mig "$scripts/migrations/migrate_0.5.16_002_to_007.sh" || true
-    run_mig "$scripts/migrations/migrate_0.5.16_007_to_008.sh" || true
+    run_mig "$scripts/migrate/migrate_0.5.16_002_to_007.sh" || true
+    run_mig "$scripts/migrate/migrate_0.5.16_007_to_008.sh" || true
     ;;
 esac
 [ -d "$PKGROOT/luci-app-ha-vrrp" ] && cp -a "$PKGROOT/luci-app-ha-vrrp/." /
@@ -154,29 +154,29 @@ case "$CUR" in
   "")
     ;;
   0.5.16-002)
-    run_mig "$scripts/migrations/migrate_0.5.16_002_to_007.sh"
-    run_mig "$scripts/migrations/migrate_0.5.16_007_to_008.sh"
-    run_mig "$scripts/migrations/migrate_0.5.16_008_to_009.sh"
+    run_mig "$scripts/migrate/migrate_0.5.16_002_to_007.sh"
+    run_mig "$scripts/migrate/migrate_0.5.16_007_to_008.sh"
+    run_mig "$scripts/migrate/migrate_0.5.16_008_to_009.sh"
     ;;
   0.5.16-003|0.5.16-004|0.5.16-005|0.5.16-006)
-    run_mig "$scripts/migrations/migrate_0.5.16_002_to_007.sh"
-    run_mig "$scripts/migrations/migrate_0.5.16_007_to_008.sh"
-    run_mig "$scripts/migrations/migrate_0.5.16_008_to_009.sh"
+    run_mig "$scripts/migrate/migrate_0.5.16_002_to_007.sh"
+    run_mig "$scripts/migrate/migrate_0.5.16_007_to_008.sh"
+    run_mig "$scripts/migrate/migrate_0.5.16_008_to_009.sh"
     ;;
   0.5.16-007)
-    run_mig "$scripts/migrations/migrate_0.5.16_007_to_008.sh"
-    run_mig "$scripts/migrations/migrate_0.5.16_008_to_009.sh"
+    run_mig "$scripts/migrate/migrate_0.5.16_007_to_008.sh"
+    run_mig "$scripts/migrate/migrate_0.5.16_008_to_009.sh"
     ;;
   0.5.16-008)
-    run_mig "$scripts/migrations/migrate_0.5.16_008_to_009.sh"
+    run_mig "$scripts/migrate/migrate_0.5.16_008_to_009.sh"
     ;;
   0.5.16-009)
     echo "[*] System ist bereits auf 0.5.16-009; Re-Install." ;;
   *)
     echo "[!] Unbekannter Startstand: $CUR  → konservative Migration 002→007→008→009."
-    run_mig "$scripts/migrations/migrate_0.5.16_002_to_007.sh" || true
-    run_mig "$scripts/migrations/migrate_0.5.16_007_to_008.sh" || true
-    run_mig "$scripts/migrations/migrate_0.5.16_008_to_009.sh" || true
+    run_mig "$scripts/migrate/migrate_0.5.16_002_to_007.sh" || true
+    run_mig "$scripts/migrate/migrate_0.5.16_007_to_008.sh" || true
+    run_mig "$scripts/migrate/migrate_0.5.16_008_to_009.sh" || true
     ;;
 esac
 [ -d "$PKGROOT/luci-app-ha-vrrp" ] && cp -a "$PKGROOT/luci-app-ha-vrrp/." /
@@ -240,8 +240,8 @@ def augment(in_zip):
 
     mig_dir = os.path.join(top,"usr","lib","ha-vrrp","scripts")
     os.makedirs(mig_dir, exist_ok=True)
-    p1 = os.path.join(mig_dir,"scripts/migrations/migrate_0.5.16_007_to_008.sh")
-    p2 = os.path.join(mig_dir,"scripts/migrations/migrate_0.5.16_008_to_009.sh")
+    p1 = os.path.join(mig_dir,"scripts/migrate/migrate_0.5.16_007_to_008.sh")
+    p2 = os.path.join(mig_dir,"scripts/migrate/migrate_0.5.16_008_to_009.sh")
     if not os.path.exists(p1): open(p1,"w").write(mig_007_008)
     if not os.path.exists(p2): open(p2,"w").write(mig_008_009)
     ensure_exec(p1); ensure_exec(p2)

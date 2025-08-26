@@ -54,15 +54,15 @@ version_ge() { # $1 >= $2 ?
         run_pre_migrations() {
           # Dispatch migrations required for TARGET
           if version_ge "$TARGET" "0.5.16-007"; then
-            [ -x "$scripts/migrations/migrate_0.5.16_002_to_007.sh" ] && {
+            [ -x "$scripts/migrate/migrate_0.5.16_002_to_007.sh" ] && {
               info "Pre-migrate: 0.5.16_002_to_007"
-              "$scripts/migrations/migrate_0.5.16_002_to_007.sh" || true
+              "$scripts/migrate/migrate_0.5.16_002_to_007.sh" || true
             }
           fi
           if version_ge "$TARGET" "0.5.16-008"; then
-            [ -x "$scripts/migrations/migrate_0.5.16_007_to_008.sh" ] && {
+            [ -x "$scripts/migrate/migrate_0.5.16_007_to_008.sh" ] && {
               info "Pre-migrate: 0.5.16_007_to_008"
-              "$scripts/migrations/migrate_0.5.16_007_to_008.sh" || true
+              "$scripts/migrate/migrate_0.5.16_007_to_008.sh" || true
             }
           fi
         }
