@@ -417,3 +417,8 @@ Build in OpenWrt SDK:
 # Build/Install abhängig von Version 0.5.9
 # (Keine konkreten Skripte im Archiv erkannt)
 ```
+
+
+## v0.5.10
+- **Update-Pfad** (maschinenlesbar): `docs/update-path.json`, `docs/update-path.yaml`, `docs/UPDATE_PATH.csv`, `docs/UPDATE_EDGES.csv`.
+- Helper: `scripts/upgrade-path.sh FROM TO` listet die Zwischenversionen.

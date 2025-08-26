@@ -1,6 +1,6 @@
 include $(TOPDIR)/rules.mk
 PKG_NAME:=luci-app-ha-vrrp
-PKG_VERSION:=0.5.9
+PKG_VERSION:=0.5.10
 PKG_RELEASE:=1
 PKG_LICENSE:=MIT
 LUCI_TITLE:=LuCI app for HA VRRP (Keepalived)
