@@ -18,6 +18,8 @@ function index()
   entry({"admin","services","ha_vrrp","keysync"}, call("keysync"), nil).leaf = true
   entry({"admin","services","ha_vrrp","sync"}, call("syncpush"), nil).leaf = true
   entry({"admin","services","ha_vrrp","statusjson"}, call("statusjson"), nil).leaf = true
+  entry({"admin","services","ha_vrrp","listifaces"}, call("listifaces"), nil).leaf = true
+  entry({"admin","services","ha_vrrp","createinst"}, call("createinst"), nil).leaf = true
 end
 
 function apply()
@@ -137,4 +139,109 @@ function statusjson()
     node = host, peer = peer_host,
     local_instances = instances, peer_instances = peer_instances
   })
+end
+
+
+
+
+function listifaces()
+  local http = require "luci.http"
+  local uci = require "luci.model.uci".cursor()
+
+  local ifs = {}
+  -- Collect logical interfaces from /etc/config/network
+  uci:foreach("network", "interface", function(s)
+    local name = s[".name"]
+    -- Skip loopback and wan if desired? We'll include all except 'loopback'
+    if name ~= "loopback" then
+      local proto = s.proto or ""
+      local ipaddr = s.ipaddr or ""
+      local netmask = s.netmask or ""
+      local device = s.ifname or s.device or ""
+      -- DHCP server status from /etc/config/dhcp (section 'dhcp' with option interface = name, and ignore != 1)
+      local dhcp_enabled = false
+      uci:foreach("dhcp", "dhcp", function(d)
+        if d.interface == name then
+          if (d.ignore ~= "1") then dhcp_enabled = true end
+        end
+      end)
+      ifs[#ifs+1] = {
+        name = name, proto = proto, ipaddr = ipaddr, netmask = netmask, device = device, dhcp = dhcp_enabled
+      }
+    end
+  end)
+
+  http.prepare_content("application/json")
+  http.write_json({ interfaces = ifs })
+end
+
+local function hash_to_vrid(s)
+  -- Simple deterministic hash 1..254
+  local sum = 0
+  for i = 1, #s do sum = (sum + s:byte(i)) % 255 end
+  if sum == 0 then sum = 1 end
+  return sum
+end
+
+function createinst()
+  local http = require "luci.http"
+  local uci = require "luci.model.uci".cursor()
+  local iface = http.formvalue("iface") or ""
+  local vip = http.formvalue("vip") or ""
+  local vrid = http.formvalue("vrid") or ""
+  local prio = http.formvalue("priority") or ""
+  local state = http.formvalue("state") or ""
+
+  if iface == "" or vip == "" then
+    http.status(400, "iface and vip required")
+    http.write("iface and vip required")
+    return
+  end
+
+  -- derive unicast_src_ip from network.iface.ipaddr
+  local src_ip = uci:get("network", iface, "ipaddr") or ""
+  -- If ipaddr absent (e.g., DHCP client), try to read runtime ip (best-effort)
+  if src_ip == "" then
+    local f = io.popen("ubus call network.interface."..iface.." status 2>/dev/null | jsonfilter -e '@.ipv4_address[0].address'")
+    if f then src_ip = (f:read("*a") or ""):gsub("%s+$",""); f:close() end
+  end
+
+  if src_ip == "" then
+    http.status(400, "cannot determine unicast_src_ip for iface "..iface)
+    http.write("cannot determine unicast_src_ip for iface "..iface)
+    return
+  end
+
+  if vrid == "" then vrid = tostring(hash_to_vrid(iface)) end
+  if prio == "" then prio = "150" end
+  if state == "" then state = "BACKUP" end
+
+  -- Create new instance section id
+  local sec = "inst_" .. iface
+  -- Ensure uniqueness
+  local idx = 0
+  while uci:get("ha_vrrp", sec) do
+    idx = idx + 1
+    sec = "inst_" .. iface .. "_" .. idx
+  end
+
+  uci:set("ha_vrrp", sec, "instance")
+  uci:set("ha_vrrp", sec, "name", iface:upper())
+  uci:set("ha_vrrp", sec, "iface", iface)
+  uci:set("ha_vrrp", sec, "vrid", vrid)
+  uci:set("ha_vrrp", sec, "priority", prio)
+  uci:set("ha_vrrp", sec, "state", state)
+  uci:set("ha_vrrp", sec, "preempt", "1")
+  uci:set("ha_vrrp", sec, "vip_cidr", vip)
+  uci:set("ha_vrrp", sec, "unicast_src_ip", src_ip)
+  -- Note: unicast_peer left empty; user can fill via LuCI Core tab or add peers later
+
+  uci:commit("ha_vrrp")
+
+  -- Apply keepalived config
+  os.execute("/usr/sbin/ha-vrrp-apply >/tmp/ha_vrrp_create.out 2>&1")
+  os.execute("/etc/init.d/keepalived restart >/dev/null 2>&1")
+
+  http.prepare_content("application/json")
+  http.write_json({ ok = true, section = sec, vrid = vrid, src = src_ip })
 end

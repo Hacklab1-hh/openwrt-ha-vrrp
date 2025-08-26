@@ -14,3 +14,7 @@ cp -a luci-app-ha-vrrp <buildroot>/package/
 make package/ha-vrrp/compile V=s
 make package/luci-app-ha-vrrp/compile V=s
 ```
+
+
+## v0.5.6
+- LuCI: zeigt Network/Interfaces inkl. DHCP-Status (dnsmasq) und erlaubt das Anlegen neuer VRRP-Instanzen auf ausgewählten Interfaces.

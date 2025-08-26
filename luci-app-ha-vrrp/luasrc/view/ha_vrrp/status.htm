@@ -53,4 +53,44 @@ function load(){
 }
 load();
 </script>
+
+<hr>
+<h3>Network Interfaces</h3>
+<div id="ifaces">Loading interfaces…</div>
+
+<script>
+function loadIfaces(){
+  fetch(L.env.cgi_base + '/admin/services/ha_vrrp/listifaces')
+    .then(r=>r.json()).then(data=>{
+      let html='';
+      html += '<table class="table"><tr><th>Name</th><th>Device</th><th>Proto</th><th>IPv4</th><th>DHCP Server</th><th>Aktion</th></tr>';
+      for(const it of data.interfaces){
+        html += '<tr>';
+        html += '<td>'+it.name+'</td>';
+        html += '<td>'+(it.device||'')+'</td>';
+        html += '<td>'+(it.proto||'')+'</td>';
+        html += '<td>'+(it.ipaddr||'')+(it.netmask?(' / '+it.netmask):'')+'</td>';
+        html += '<td>'+(it.dhcp?'aktiv':'aus')+'</td>';
+        html += '<td><button class="cbi-button cbi-button-apply" onclick="createInst(\''+it.name+'\')">VRRP anlegen</button></td>';
+        html += '</tr>';
+      }
+      html += '</table>';
+      document.getElementById('ifaces').innerHTML = html;
+    }).catch(()=>{ document.getElementById('ifaces').innerText = 'Fehler beim Laden'; });
+}
+function createInst(ifn){
+  const vip = prompt('VIP (CIDR), z.B. 192.168.1.254/24 für '+ifn+':');
+  if(!vip) return;
+  const vrid = prompt('VRID (1..254) – leer lassen für Auto:');
+  const params = new URLSearchParams({iface: ifn, vip: vip});
+  if(vrid) params.append('vrid', vrid);
+  fetch(L.env.cgi_base + '/admin/services/ha_vrrp/createinst?'+params.toString(), {method:'POST'})
+    .then(r=>r.json()).then(j=>{
+      if(j && j.ok){ alert('Instanz '+j.section+' angelegt (VRID '+j.vrid+')'); load(); }
+      else { alert('Fehler beim Anlegen'); }
+    }).catch(()=>alert('Fehler'));
+}
+loadIfaces();
+</script>
+
 <%+footer%>
