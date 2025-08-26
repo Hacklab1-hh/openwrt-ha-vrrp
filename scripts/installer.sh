@@ -15,3 +15,8 @@ case "$cmd" in
   rollback) target="${1:-}"; if [ -n "$target" ]; then run_exact_version "$target" rollback; else cur="$(current_version)"; [ -n "$cur" ] || { echo "[!] Aktuelle Version unbekannt."; exit 5; }; run_exact_version "$cur" rollback; fi ;;
   *) echo "[!] Unbekannter Befehl: $cmd" >&2; echo "    Nutzung: installer.sh [auto|migrate <ver>|rollback [<ver>]]" >&2; exit 9 ;;
 esac
+
+# Auto-migrate upgrade/update paths to 14a layout
+if [ -x "$(dirname "$0")/migrate_0.5.16-007_reviewfix14_to_14a.sh" ]; then
+  "$(dirname "$0")/migrate_0.5.16-007_reviewfix14_to_14a.sh" || true
+fi
