@@ -1,6 +1,6 @@
 {
   "schema": "1.0",
-  "generated": "2025-08-26T14:40:05.554273Z",
+  "generated": "2025-08-26T15:50:29.914288Z",
   "strategy": {
     "default": "sequential",
     "allow_skip_with_intermediate": true
@@ -329,6 +329,46 @@
       "to": "0.5.16-007_reviewfix13",
       "type": "inplace",
       "idempotent": true
+    },
+    {
+      "from": "0.5.16-007_reviewfix13",
+      "to": "0.5.16-007_reviewfix14",
+      "type": "inplace",
+      "idempotent": true
+    },
+    {
+      "from": "0.5.16-007_reviewfix14",
+      "to": "0.5.16-007_reviewfix14a",
+      "type": "inplace",
+      "idempotent": true,
+      "script": "scripts/migrations/migrate_0.5.16-007_reviewfix14_to_14a.sh"
+    },
+    {
+      "from": "0.5.16-007_reviewfix14a",
+      "to": "0.5.16-007_reviewfix14b",
+      "type": "inplace",
+      "idempotent": true,
+      "script": "scripts/migrations/migrate_0.5.16-007_reviewfix14a_to_14b.sh"
+    },
+    {
+      "from": "0.5.16-007_reviewfix14b",
+      "to": "0.5.16-007_reviewfix14b1",
+      "type": "inplace",
+      "idempotent": true
+    },
+    {
+      "from": "0.5.16-007_reviewfix14b",
+      "to": "0.5.16-007_reviewfix14c",
+      "type": "inplace",
+      "idempotent": true,
+      "script": "scripts/migrations/migrate_0.5.16-007_reviewfix14b_to_14c.sh"
+    },
+    {
+      "from": "0.5.16-007_reviewfix14c",
+      "to": "0.5.16-007_reviewfix14b",
+      "type": "rollback",
+      "idempotent": true,
+      "script": "scripts/migrations/migrate_0.5.16-007_reviewfix14c_to_14b.sh"
     }
   ]
 }

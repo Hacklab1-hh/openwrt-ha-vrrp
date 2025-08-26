@@ -516,7 +516,7 @@
     },
     "notes": "(\"0.5.16-007\",\"0.5.16-007_infofix2_installerfix1_uninstallerfix1_managerfix1_installergrid1\",\"Fix-Linien vollständig\",[\".tar\",\".tar.gz\"],\"installer-v0.5.16-007.sh + Manager(Grid)\"),",
     "patch_name": "007",
-    "changelog": "- LuCI Settings: neue Option 'ssh_backend' (auto/dropbear/openssh).\n- Neues Hilfsskript: /usr/lib/ha-vrrp/lib/ssh_backend.sh (wählt SSH/SCP-Binaries).\n- Neue backend-aware Beispiele: /usr/libexec/ha-vrrp/keysync.sh und syncpush.sh.\n- Controller: Endpoints 'keysync' und 'syncpush' rufen die neuen Skripte auf.\n- Migration: scripts/migrate_0.5.16_002_to_007.sh setzt Defaults und mappt legacy Keys.",
+    "changelog": "- LuCI Settings: neue Option 'ssh_backend' (auto/dropbear/openssh).\n- Neues Hilfsskript: /usr/lib/ha-vrrp/lib/ssh_backend.sh (wählt SSH/SCP-Binaries).\n- Neue backend-aware Beispiele: /usr/libexec/ha-vrrp/keysync.sh und syncpush.sh.\n- Controller: Endpoints 'keysync' und 'syncpush' rufen die neuen Skripte auf.\n- Migration: scripts/migrations/migrate_0.5.16_002_to_007.sh setzt Defaults und mappt legacy Keys.",
     "fixline": "(\"0.5.16-007\",\"0.5.16-007_infofix2_installerfix1_uninstallerfix1_managerfix1_installergrid1\",\"Fix-Linien vollständig\",[\".tar\",\".tar.gz\"],\"installer-v0.5.16-0…"
   },
   {
