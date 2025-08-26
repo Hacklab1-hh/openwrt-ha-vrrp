@@ -1,0 +1,9018 @@
+--- a/CHANGELOG.md
++++ b/CHANGELOG.md
+@@ -1,93 +0,0 @@
+-## v0.1.0
+
+-
+
+--
+
+-
+
+----
+
+-
+
+-## v0.2.0
+
+-
+
+--
+
+-
+
+----
+
+-
+
+-## v0.3.0
+
+-
+
+--
+
+-
+
+----
+
+-
+
+-## v0.4.0
+
+-
+
+--
+
+-
+
+----
+
+-
+
+-## v0.3.0a
+
+-
+
+--
+
+-
+
+----
+
+-
+
+-## v0.4.0a
+
+-
+
+--
+
+-
+
+----
+
+-
+
+-## v0.5.0
+
+-
+
+-- Konsolidiert 0.3.0 + 0.4.0-Funktionalität; neue Scripts `check_wan6_gw.sh`, `ha-vrrp-autosync`
+
+-
+
+----
+
+-
+
+-## v0.5.1
+
+-
+
+-- Renderer robust gegen fehlende Instanzen; Status JSON verbessert
+
+-
+
+----
+
+-
+
+-## v0.5.2
+
+-
+
+-- Quickstart-Skripte `apply-LamoboR1-*.sh`
+
+-
+
+----
+
+-
+
+-## v0.5.3
+
+-
+
+-- Installer/Uninstaller auf 0.5.3 gehoben
+
+-
+
+----
+
+-
+
+-## v0.5.4
+
+-
+
+-- Paketversion 0.5.4, Doku ergänzt
+
+-
+
+----
+
+-
+
+-## v0.5.5
+
+-
+
+-- Paketversion 0.5.5
+
+-
+
+----
+
+-
+
+-## v0.5.6
+
+-
+
+-- Controller: `listifaces`, `createinst`
+
+-
+
+----
+
+-
+
+-## v0.5.7
+
+-
+
+-- Controller: `discover_adv`, `autodiscover`, `setpeer`; Status JSON enthält `instance_sections`
+
+-
+
+----
+
+-
+
+-## v0.5.8
+
+-
+
+-- `autodiscover` nutzt optional gewähltes Interface/Subnetz
+
+-
+
+----
+
+-
+
+-## v0.5.9
+
+-
+
+-- Automatisch generierte Doku aus Archiv-PARSING & Chat-Notizen
+
+--- a/CHANGELOG_0.1.0.md
++++ b/CHANGELOG_0.1.0.md
+@@ -1,3 +0,0 @@
+-# Changelog – v0.1.0
+
+-
+
+--
+
+--- a/CHANGELOG_0.2.0.md
++++ b/CHANGELOG_0.2.0.md
+@@ -1,3 +0,0 @@
+-# Changelog – v0.2.0
+
+-
+
+--
+
+--- a/CHANGELOG_0.3.0.md
++++ b/CHANGELOG_0.3.0.md
+@@ -1,3 +0,0 @@
+-# Changelog – v0.3.0
+
+-
+
+--
+
+--- a/CHANGELOG_0.3.0a.md
++++ b/CHANGELOG_0.3.0a.md
+@@ -1,3 +0,0 @@
+-# Changelog – v0.3.0a
+
+-
+
+--
+
+--- a/CHANGELOG_0.4.0.md
++++ b/CHANGELOG_0.4.0.md
+@@ -1,3 +0,0 @@
+-# Changelog – v0.4.0
+
+-
+
+--
+
+--- a/CHANGELOG_0.4.0a.md
++++ b/CHANGELOG_0.4.0a.md
+@@ -1,3 +0,0 @@
+-# Changelog – v0.4.0a
+
+-
+
+--
+
+--- a/CHANGELOG_0.5.0.md
++++ b/CHANGELOG_0.5.0.md
+@@ -1,3 +0,0 @@
+-# Changelog – v0.5.0
+
+-
+
+-- Konsolidiert 0.3.0 + 0.4.0-Funktionalität; neue Scripts `check_wan6_gw.sh`, `ha-vrrp-autosync`
+
+--- a/CHANGELOG_0.5.1.md
++++ b/CHANGELOG_0.5.1.md
+@@ -1,3 +0,0 @@
+-# Changelog – v0.5.1
+
+-
+
+-- Renderer robust gegen fehlende Instanzen; Status JSON verbessert
+
+--- a/CHANGELOG_0.5.2.md
++++ b/CHANGELOG_0.5.2.md
+@@ -1,3 +0,0 @@
+-# Changelog – v0.5.2
+
+-
+
+-- Quickstart-Skripte `apply-LamoboR1-*.sh`
+
+--- a/CHANGELOG_0.5.3.md
++++ b/CHANGELOG_0.5.3.md
+@@ -1,3 +0,0 @@
+-# Changelog – v0.5.3
+
+-
+
+-- Installer/Uninstaller auf 0.5.3 gehoben
+
+--- a/CHANGELOG_0.5.4.md
++++ b/CHANGELOG_0.5.4.md
+@@ -1,3 +0,0 @@
+-# Changelog – v0.5.4
+
+-
+
+-- Paketversion 0.5.4, Doku ergänzt
+
+--- a/CHANGELOG_0.5.5.md
++++ b/CHANGELOG_0.5.5.md
+@@ -1,3 +0,0 @@
+-# Changelog – v0.5.5
+
+-
+
+-- Paketversion 0.5.5
+
+--- a/CHANGELOG_0.5.6.md
++++ b/CHANGELOG_0.5.6.md
+@@ -1,3 +0,0 @@
+-# Changelog – v0.5.6
+
+-
+
+-- Controller: `listifaces`, `createinst`
+
+--- a/CHANGELOG_0.5.7.md
++++ b/CHANGELOG_0.5.7.md
+@@ -1,3 +0,0 @@
+-# Changelog – v0.5.7
+
+-
+
+-- Controller: `discover_adv`, `autodiscover`, `setpeer`; Status JSON enthält `instance_sections`
+
+--- a/CHANGELOG_0.5.8.md
++++ b/CHANGELOG_0.5.8.md
+@@ -1,3 +0,0 @@
+-# Changelog – v0.5.8
+
+-
+
+-- `autodiscover` nutzt optional gewähltes Interface/Subnetz
+
+--- a/CHANGELOG_0.5.9.md
++++ b/CHANGELOG_0.5.9.md
+@@ -1,3 +0,0 @@
+-# Changelog – v0.5.9
+
+-
+
+-- Automatisch generierte Doku aus Archiv-PARSING & Chat-Notizen
+
+--- a/FEATURES.md
++++ b/FEATURES.md
+@@ -1,114 +0,0 @@
+-## v0.1.0
+
+-
+
+--
+
+-
+
+----
+
+-
+
+-## v0.2.0
+
+-
+
+--
+
+-
+
+----
+
+-
+
+-## v0.3.0
+
+-
+
+-Peer-Discovery/Sync/Dual-Status
+
+-
+
+----
+
+-
+
+-## v0.4.0
+
+-
+
+-Peer-Discovery/Sync/Dual-Status + WAN Health Checks
+
+-
+
+----
+
+-
+
+-## v0.3.0a
+
+-
+
+-- UCI-driven Keepalived (VRRP, unicast)
+
+-- Multi-instance, optional VLAN per instance
+
+-- Peer discovery (HEARTBEAT scan)
+
+-- Peer sync (SSH keys + push /etc/config/*)
+
+-- Dual-node LuCI status
+
+-
+
+-Build in OpenWrt SDK:
+
+-  cp -a ha-vrrp <buildroot>/package/
+
+-  cp -a luci-app-ha-vrrp <buildroot>/package/
+
+-  make package/ha-vrrp/compile V=s
+
+-  make package/luci-app-ha-vrrp/compile V=s
+
+-
+
+----
+
+-
+
+-## v0.4.0a
+
+-
+
+--
+
+-
+
+----
+
+-
+
+-## v0.5.0
+
+-
+
+-- IPv6 Healthchecks (wan6) via track_script
+
+-- Multi-VIP (`vip_list`)
+
+-- Peer Discovery (CIDR/min/max)
+
+-- Auto-Sync Daemon (procd) + Sync-Button
+
+-- Cleaned LuCI Status/Renderer
+
+-
+
+----
+
+-
+
+-## v0.5.1
+
+-
+
+-- Rückwärtskompatibel zu 0.2.0 (core→instance Fallback)
+
+-- Stabilisierung Discovery/Sync
+
+-- Doku & Makefiles aktualisiert
+
+-
+
+----
+
+-
+
+-## v0.5.2
+
+-
+
+-- `examples/` mit UCI-Apply-Skripten (LamoboR1-1/2)
+
+-- Heartbeat VLAN 200 Beispiele
+
+-
+
+----
+
+-
+
+-## v0.5.3
+
+-
+
+-- `README_0.1.0` aus Ur-README übernommen
+
+-- Version-Bumps in Package-Makefiles
+
+-
+
+----
+
+-
+
+-## v0.5.4
+
+-
+
+-- Legacy-kompatible Installer/Uninstaller (Ur-Verhalten)
+
+-- Makefile-Targets `legacy-install`/`legacy-uninstall`
+
+-
+
+----
+
+-
+
+-## v0.5.5
+
+-
+
+-- Vollständige `etc/` & `usr/` Struktur im Paketlayout
+
+-- Mapping-Doku `README-file-mapping.md`
+
+-
+
+----
+
+-
+
+-## v0.5.6
+
+-
+
+-- LuCI: Liste `Network/Interfaces` inkl. DHCP-Status
+
+-- Button „VRRP anlegen“ je Interface
+
+-
+
+----
+
+-
+
+-## v0.5.7
+
+-
+
+-- Peer-Verwaltung in LuCI: Auto-Discover, Discover(Liste), Manuell + optional `unicast_peer` für Instanzen
+
+-
+
+----
+
+-
+
+-## v0.5.8
+
+-
+
+-- Discover: Interface-Auswahl in UI, **HEARTBEAT** vorgewählt
+
+-
+
+----
+
+-
+
+-## v0.5.9
+
+-
+
+-- Vollständige, versionierte Dokumentation pro Release (README_/CHANGELOG_/FEATURES_/INSTALL_) und Masterdateien
+
+--- a/FEATURES_0.1.0.md
++++ b/FEATURES_0.1.0.md
+@@ -1,3 +0,0 @@
+-# Features – v0.1.0
+
+-
+
+--
+
+--- a/FEATURES_0.2.0.md
++++ b/FEATURES_0.2.0.md
+@@ -1,3 +0,0 @@
+-# Features – v0.2.0
+
+-
+
+--
+
+--- a/FEATURES_0.3.0.md
++++ b/FEATURES_0.3.0.md
+@@ -1,3 +0,0 @@
+-# Features – v0.3.0
+
+-
+
+-Peer-Discovery/Sync/Dual-Status
+
+--- a/FEATURES_0.3.0a.md
++++ b/FEATURES_0.3.0a.md
+@@ -1,13 +0,0 @@
+-# Features – v0.3.0a
+
+-
+
+-- UCI-driven Keepalived (VRRP, unicast)
+
+-- Multi-instance, optional VLAN per instance
+
+-- Peer discovery (HEARTBEAT scan)
+
+-- Peer sync (SSH keys + push /etc/config/*)
+
+-- Dual-node LuCI status
+
+-
+
+-Build in OpenWrt SDK:
+
+-  cp -a ha-vrrp <buildroot>/package/
+
+-  cp -a luci-app-ha-vrrp <buildroot>/package/
+
+-  make package/ha-vrrp/compile V=s
+
+-  make package/luci-app-ha-vrrp/compile V=s
+
+--- a/FEATURES_0.4.0.md
++++ b/FEATURES_0.4.0.md
+@@ -1,3 +0,0 @@
+-# Features – v0.4.0
+
+-
+
+-Peer-Discovery/Sync/Dual-Status + WAN Health Checks
+
+--- a/FEATURES_0.4.0a.md
++++ b/FEATURES_0.4.0a.md
+@@ -1,3 +0,0 @@
+-# Features – v0.4.0a
+
+-
+
+--
+
+--- a/FEATURES_0.5.0.md
++++ b/FEATURES_0.5.0.md
+@@ -1,7 +0,0 @@
+-# Features – v0.5.0
+
+-
+
+-- IPv6 Healthchecks (wan6) via track_script
+
+-- Multi-VIP (`vip_list`)
+
+-- Peer Discovery (CIDR/min/max)
+
+-- Auto-Sync Daemon (procd) + Sync-Button
+
+-- Cleaned LuCI Status/Renderer
+
+--- a/FEATURES_0.5.1.md
++++ b/FEATURES_0.5.1.md
+@@ -1,5 +0,0 @@
+-# Features – v0.5.1
+
+-
+
+-- Rückwärtskompatibel zu 0.2.0 (core→instance Fallback)
+
+-- Stabilisierung Discovery/Sync
+
+-- Doku & Makefiles aktualisiert
+
+--- a/FEATURES_0.5.2.md
++++ b/FEATURES_0.5.2.md
+@@ -1,4 +0,0 @@
+-# Features – v0.5.2
+
+-
+
+-- `examples/` mit UCI-Apply-Skripten (LamoboR1-1/2)
+
+-- Heartbeat VLAN 200 Beispiele
+
+--- a/FEATURES_0.5.3.md
++++ b/FEATURES_0.5.3.md
+@@ -1,4 +0,0 @@
+-# Features – v0.5.3
+
+-
+
+-- `README_0.1.0` aus Ur-README übernommen
+
+-- Version-Bumps in Package-Makefiles
+
+--- a/FEATURES_0.5.4.md
++++ b/FEATURES_0.5.4.md
+@@ -1,4 +0,0 @@
+-# Features – v0.5.4
+
+-
+
+-- Legacy-kompatible Installer/Uninstaller (Ur-Verhalten)
+
+-- Makefile-Targets `legacy-install`/`legacy-uninstall`
+
+--- a/FEATURES_0.5.5.md
++++ b/FEATURES_0.5.5.md
+@@ -1,4 +0,0 @@
+-# Features – v0.5.5
+
+-
+
+-- Vollständige `etc/` & `usr/` Struktur im Paketlayout
+
+-- Mapping-Doku `README-file-mapping.md`
+
+--- a/FEATURES_0.5.6.md
++++ b/FEATURES_0.5.6.md
+@@ -1,4 +0,0 @@
+-# Features – v0.5.6
+
+-
+
+-- LuCI: Liste `Network/Interfaces` inkl. DHCP-Status
+
+-- Button „VRRP anlegen“ je Interface
+
+--- a/FEATURES_0.5.7.md
++++ b/FEATURES_0.5.7.md
+@@ -1,3 +0,0 @@
+-# Features – v0.5.7
+
+-
+
+-- Peer-Verwaltung in LuCI: Auto-Discover, Discover(Liste), Manuell + optional `unicast_peer` für Instanzen
+
+--- a/FEATURES_0.5.8.md
++++ b/FEATURES_0.5.8.md
+@@ -1,3 +0,0 @@
+-# Features – v0.5.8
+
+-
+
+-- Discover: Interface-Auswahl in UI, **HEARTBEAT** vorgewählt
+
+--- a/FEATURES_0.5.9.md
++++ b/FEATURES_0.5.9.md
+@@ -1,3 +0,0 @@
+-# Features – v0.5.9
+
+-
+
+-- Vollständige, versionierte Dokumentation pro Release (README_/CHANGELOG_/FEATURES_/INSTALL_) und Masterdateien
+
+--- a/INSTALL.md
++++ b/INSTALL.md
+@@ -1,254 +0,0 @@
+-## v0.1.0
+
+-
+
+-### Installer (Kerndefinition)
+
+-```
+
+-echo "[install] Checking dependencies (opkg, keepalived, ip-full, uci, uhttpd, luci)..."
+
+-if ! need opkg; then
+
+-echo "[install] ERROR: opkg not found. Are you on OpenWrt?"; exit 1
+
+-opkg update >/dev/null 2>&1 || true
+
+-for p in keepalived ip-full uci; do
+
+-opkg list-installed | grep -q "^$p " || opkg install "$p"
+
+-opkg list-installed | grep -q "^$p " || opkg install "$p" || true
+
+-mkdir -p /etc/config /etc/init.d /etc/uci-defaults /usr/libexec/ha-vrrp /usr/sbin /etc/hotplug.d/iface
+
+-cp "$SRC_DIR/etc/init.d/ha-vrrp" /etc/init.d/ha-vrrp
+
+-cp "$SRC_DIR/etc/uci-defaults/95_ha_vrrp_defaults" /etc/uci-defaults/95_ha_vrrp_defaults
+
+-chmod +x /etc/uci-defaults/95_ha_vrrp_defaults || true
+
+-if [ -x /etc/uci-defaults/95_ha_vrrp_defaults ]; then
+
+-/etc/uci-defaults/95_ha_vrrp_defaults || true
+
+-rm -f /etc/uci-defaults/95_ha_vrrp_defaults || true
+
+-```
+
+-
+
+-### Uninstaller (Kerndefinition)
+
+-```
+
+-echo "[uninstall] Note: keepalived package is still installed. Remove via 'opkg remove keepalived' if desired."
+
+-```
+
+-
+
+-### Makefile-Targets (erkannt)
+
+-- `PKG_LICENSE`
+
+-- `PKG_NAME`
+
+-- `PKG_RELEASE`
+
+-- `LUCI_DEPENDS`
+
+-- `LUCI_TITLE`
+
+-- `PKG_LICENSE`
+
+-
+
+----
+
+-
+
+-## v0.2.0
+
+-
+
+-### Installer (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Uninstaller (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Makefile-Targets (erkannt)
+
+-- `PKG_LICENSE`
+
+-- `PKG_MAINTAINER`
+
+-- `PKG_NAME`
+
+-- `PKG_RELEASE`
+
+-- `PKG_VERSION`
+
+-- `LUCI_DEPENDS`
+
+-- `LUCI_PKGARCH`
+
+-- `LUCI_TITLE`
+
+-- `PKG_LICENSE`
+
+-- `PKG_NAME`
+
+-- `PKG_RELEASE`
+
+-- `PKG_VERSION`
+
+-
+
+----
+
+-
+
+-## v0.3.0
+
+-
+
+-### Installer (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Uninstaller (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Makefile-Targets (erkannt)
+
+-- `PKG_NAME`
+
+-- `PKG_VERSION`
+
+-- `PKG_NAME`
+
+-- `PKG_VERSION`
+
+-
+
+----
+
+-
+
+-## v0.4.0
+
+-
+
+-### Installer (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Uninstaller (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Makefile-Targets (erkannt)
+
+-- `PKG_NAME`
+
+-- `PKG_VERSION`
+
+-- `PKG_NAME`
+
+-- `PKG_VERSION`
+
+-
+
+----
+
+-
+
+-## v0.3.0a
+
+-
+
+-### Installer (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Uninstaller (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Makefile-Targets (erkannt)
+
+-- `PKG_LICENSE`
+
+-- `PKG_NAME`
+
+-- `PKG_RELEASE`
+
+-- `PKG_VERSION`
+
+-- `LUCI_DEPENDS`
+
+-- `LUCI_PKGARCH`
+
+-- `LUCI_TITLE`
+
+-- `PKG_LICENSE`
+
+-- `PKG_NAME`
+
+-- `PKG_RELEASE`
+
+-- `PKG_VERSION`
+
+-
+
+----
+
+-
+
+-## v0.4.0a
+
+-
+
+-### Installer (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Uninstaller (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Makefile-Targets (erkannt)
+
+-- `PKG_LICENSE`
+
+-- `PKG_NAME`
+
+-- `PKG_RELEASE`
+
+-- `PKG_VERSION`
+
+-- `LUCI_DEPENDS`
+
+-- `LUCI_PKGARCH`
+
+-- `LUCI_TITLE`
+
+-- `PKG_LICENSE`
+
+-- `PKG_NAME`
+
+-- `PKG_RELEASE`
+
+-- `PKG_VERSION`
+
+-
+
+----
+
+-
+
+-## v0.5.0
+
+-
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.0
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+-
+
+----
+
+-
+
+-## v0.5.1
+
+-
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.1
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+-
+
+----
+
+-
+
+-## v0.5.2
+
+-
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.2
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+-
+
+----
+
+-
+
+-## v0.5.3
+
+-
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.3
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+-
+
+----
+
+-
+
+-## v0.5.4
+
+-
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.4
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+-
+
+----
+
+-
+
+-## v0.5.5
+
+-
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.5
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+-
+
+----
+
+-
+
+-## v0.5.6
+
+-
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.6
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+-
+
+----
+
+-
+
+-## v0.5.7
+
+-
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.7
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+-
+
+----
+
+-
+
+-## v0.5.8
+
+-
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.8
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+-
+
+----
+
+-
+
+-## v0.5.9
+
+-
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.9
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+--- a/INSTALLERS_0.5.13.md
++++ b/INSTALLERS_0.5.13.md
+@@ -1,42 +0,0 @@
+-# Installer/Uninstaller – v0.5.13
+
+-
+
+-Diese Version liefert robuste Skripte, die die Repository-Position **automatisch** erkennen und wahlweise **IPKs** installieren oder eine **Overlay-Kopie** vornehmen.
+
+-
+
+-## Nutzung
+
+-
+
+-### Installation
+
+-```sh
+
+-cd openwrt-ha-vrrp-0.5.13/scripts
+
+-sh ./install_v0.5.13.sh
+
+-```
+
+-
+
+-Was passiert:
+
+-- Sucht IPKs in `../ipk_0_5_13`, `ipk_0_5_13`, `/tmp` und im Repo Root.
+
+-- Falls gefunden → `opkg install` beider IPKs.
+
+-- Sonst Overlay-Kopie:
+
+-  - `ha-vrrp/files/*` → nach `/`
+
+-  - `luci-app-ha-vrrp/luasrc/*` → nach `/usr/lib/lua/luci/`
+
+-- Services werden (re)aktiviert, LuCI neu gestartet, optional `keepalived` neu gestartet, `ha-vrrp-apply` ausgeführt.
+
+-
+
+-### Uninstallation
+
+-```sh
+
+-cd openwrt-ha-vrrp-0.5.13/scripts
+
+-sh ./uninstall_v0.5.13.sh            # Konfiguration bleibt erhalten
+
+-sh ./uninstall_v0.5.13.sh --purge    # inkl. Entfernen von /etc/config/ha_vrrp
+
+-```
+
+-
+
+-## Typische Fehlerbehebung
+
+-
+
+-- **„Command failed: Not found“** während der Overlay-Kopie:  
+
+-  Ursache war häufig ein harter, nicht existierender Pfad. In v0.5.13 nutzt der Installer den Pfad des Skripts selbst (kein Hardcoding).
+
+-
+
+-- **LuCI lädt nicht / Dispatcher-Fehler**:  
+
+-  In v0.5.12 bereits gefixed (quote-safe Controller). Stelle sicher, dass `/usr/lib/lua/luci/controller/ha_vrrp.lua` aus v0.5.12+ stammt.
+
+-
+
+-## Hinweise
+
+-- Abhängigkeiten (werden per `Depends` durch IPKs gezogen): `keepalived`, `ip-full`, `uci`, `uhttpd`, `luci-base`, `luci-compat`.
+
+-- Nach jeder Installation empfiehlt sich:
+
+-```sh
+
+-rm -f /tmp/luci-indexcache /tmp/luci-modulecache/* 2>/dev/null || true
+
+-/etc/init.d/uhttpd restart
+
+-```
+
+--- a/INSTALL_0.1.0.md
++++ b/INSTALL_0.1.0.md
+@@ -1,32 +0,0 @@
+-# Installation – v0.1.0
+
+-
+
+-### Installer (Kerndefinition)
+
+-```
+
+-echo "[install] Checking dependencies (opkg, keepalived, ip-full, uci, uhttpd, luci)..."
+
+-if ! need opkg; then
+
+-echo "[install] ERROR: opkg not found. Are you on OpenWrt?"; exit 1
+
+-opkg update >/dev/null 2>&1 || true
+
+-for p in keepalived ip-full uci; do
+
+-opkg list-installed | grep -q "^$p " || opkg install "$p"
+
+-opkg list-installed | grep -q "^$p " || opkg install "$p" || true
+
+-mkdir -p /etc/config /etc/init.d /etc/uci-defaults /usr/libexec/ha-vrrp /usr/sbin /etc/hotplug.d/iface
+
+-cp "$SRC_DIR/etc/init.d/ha-vrrp" /etc/init.d/ha-vrrp
+
+-cp "$SRC_DIR/etc/uci-defaults/95_ha_vrrp_defaults" /etc/uci-defaults/95_ha_vrrp_defaults
+
+-chmod +x /etc/uci-defaults/95_ha_vrrp_defaults || true
+
+-if [ -x /etc/uci-defaults/95_ha_vrrp_defaults ]; then
+
+-/etc/uci-defaults/95_ha_vrrp_defaults || true
+
+-rm -f /etc/uci-defaults/95_ha_vrrp_defaults || true
+
+-```
+
+-
+
+-### Uninstaller (Kerndefinition)
+
+-```
+
+-echo "[uninstall] Note: keepalived package is still installed. Remove via 'opkg remove keepalived' if desired."
+
+-```
+
+-
+
+-### Makefile-Targets (erkannt)
+
+-- `PKG_LICENSE`
+
+-- `PKG_NAME`
+
+-- `PKG_RELEASE`
+
+-- `LUCI_DEPENDS`
+
+-- `LUCI_TITLE`
+
+-- `PKG_LICENSE`
+
+--- a/INSTALL_0.2.0.md
++++ b/INSTALL_0.2.0.md
+@@ -1,25 +0,0 @@
+-# Installation – v0.2.0
+
+-
+
+-### Installer (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Uninstaller (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Makefile-Targets (erkannt)
+
+-- `PKG_LICENSE`
+
+-- `PKG_MAINTAINER`
+
+-- `PKG_NAME`
+
+-- `PKG_RELEASE`
+
+-- `PKG_VERSION`
+
+-- `LUCI_DEPENDS`
+
+-- `LUCI_PKGARCH`
+
+-- `LUCI_TITLE`
+
+-- `PKG_LICENSE`
+
+-- `PKG_NAME`
+
+-- `PKG_RELEASE`
+
+-- `PKG_VERSION`
+
+--- a/INSTALL_0.3.0.md
++++ b/INSTALL_0.3.0.md
+@@ -1,17 +0,0 @@
+-# Installation – v0.3.0
+
+-
+
+-### Installer (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Uninstaller (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Makefile-Targets (erkannt)
+
+-- `PKG_NAME`
+
+-- `PKG_VERSION`
+
+-- `PKG_NAME`
+
+-- `PKG_VERSION`
+
+--- a/INSTALL_0.3.0a.md
++++ b/INSTALL_0.3.0a.md
+@@ -1,24 +0,0 @@
+-# Installation – v0.3.0a
+
+-
+
+-### Installer (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Uninstaller (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Makefile-Targets (erkannt)
+
+-- `PKG_LICENSE`
+
+-- `PKG_NAME`
+
+-- `PKG_RELEASE`
+
+-- `PKG_VERSION`
+
+-- `LUCI_DEPENDS`
+
+-- `LUCI_PKGARCH`
+
+-- `LUCI_TITLE`
+
+-- `PKG_LICENSE`
+
+-- `PKG_NAME`
+
+-- `PKG_RELEASE`
+
+-- `PKG_VERSION`
+
+--- a/INSTALL_0.4.0.md
++++ b/INSTALL_0.4.0.md
+@@ -1,17 +0,0 @@
+-# Installation – v0.4.0
+
+-
+
+-### Installer (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Uninstaller (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Makefile-Targets (erkannt)
+
+-- `PKG_NAME`
+
+-- `PKG_VERSION`
+
+-- `PKG_NAME`
+
+-- `PKG_VERSION`
+
+--- a/INSTALL_0.4.0a.md
++++ b/INSTALL_0.4.0a.md
+@@ -1,24 +0,0 @@
+-# Installation – v0.4.0a
+
+-
+
+-### Installer (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Uninstaller (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Makefile-Targets (erkannt)
+
+-- `PKG_LICENSE`
+
+-- `PKG_NAME`
+
+-- `PKG_RELEASE`
+
+-- `PKG_VERSION`
+
+-- `LUCI_DEPENDS`
+
+-- `LUCI_PKGARCH`
+
+-- `LUCI_TITLE`
+
+-- `PKG_LICENSE`
+
+-- `PKG_NAME`
+
+-- `PKG_RELEASE`
+
+-- `PKG_VERSION`
+
+--- a/INSTALL_0.5.0.md
++++ b/INSTALL_0.5.0.md
+@@ -1,7 +0,0 @@
+-# Installation – v0.5.0
+
+-
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.0
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+--- a/INSTALL_0.5.1.md
++++ b/INSTALL_0.5.1.md
+@@ -1,7 +0,0 @@
+-# Installation – v0.5.1
+
+-
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.1
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+--- a/INSTALL_0.5.2.md
++++ b/INSTALL_0.5.2.md
+@@ -1,7 +0,0 @@
+-# Installation – v0.5.2
+
+-
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.2
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+--- a/INSTALL_0.5.3.md
++++ b/INSTALL_0.5.3.md
+@@ -1,7 +0,0 @@
+-# Installation – v0.5.3
+
+-
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.3
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+--- a/INSTALL_0.5.4.md
++++ b/INSTALL_0.5.4.md
+@@ -1,7 +0,0 @@
+-# Installation – v0.5.4
+
+-
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.4
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+--- a/INSTALL_0.5.5.md
++++ b/INSTALL_0.5.5.md
+@@ -1,7 +0,0 @@
+-# Installation – v0.5.5
+
+-
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.5
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+--- a/INSTALL_0.5.6.md
++++ b/INSTALL_0.5.6.md
+@@ -1,7 +0,0 @@
+-# Installation – v0.5.6
+
+-
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.6
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+--- a/INSTALL_0.5.7.md
++++ b/INSTALL_0.5.7.md
+@@ -1,7 +0,0 @@
+-# Installation – v0.5.7
+
+-
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.7
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+--- a/INSTALL_0.5.8.md
++++ b/INSTALL_0.5.8.md
+@@ -1,7 +0,0 @@
+-# Installation – v0.5.8
+
+-
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.8
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+--- a/INSTALL_0.5.9.md
++++ b/INSTALL_0.5.9.md
+@@ -1,7 +0,0 @@
+-# Installation – v0.5.9
+
+-
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.9
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+--- a/Makefile
++++ b/Makefile
+@@ -1,33 +0,0 @@
+-# Top-level helper Makefile (optional) for openwrt-ha-vrrp v0.5.2
+
+-# Prefer the OpenWrt buildroot Makefiles inside ha-vrrp/ and luci-app-ha-vrrp/.
+
+-# This file offers convenience targets for bundling and sandbox testing.
+
+-
+
+-.PHONY: help ipks bundle clean
+
+-
+
+-help:
+
+-	@echo "Targets:"
+
+-	@echo "  ipks    - build .ipk packages using OpenWrt buildroot (requires BUILDROOT=/path)"
+
+-	@echo "  bundle  - create a tar.gz with the current tree"
+
+-	@echo "  clean   - remove temporary artifacts"
+
+-
+
+-ipks:
+
+-	@if [ -z "$$BUILDROOT" ]; then echo "Set BUILDROOT=/path/to/openwrt-sdk"; exit 1; fi
+
+-	cp -a ha-vrrp $(BUILDROOT)/package/
+
+-	cp -a luci-app-ha-vrrp $(BUILDROOT)/package/
+
+-	$(MAKE) -C $(BUILDROOT) package/ha-vrrp/compile V=s
+
+-	$(MAKE) -C $(BUILDROOT) package/luci-app-ha-vrrp/compile V=s
+
+-	@echo "Look under $$BUILDROOT/bin/packages/... for the IPKs"
+
+-
+
+-bundle:
+
+-	tar -C .. -czf ../openwrt-ha-vrrp-0.5.2.bundle.tar.gz $(notdir $(CURDIR))
+
+-
+
+-clean:
+
+-	rm -f ../openwrt-ha-vrrp-0.5.2.bundle.tar.gz
+
+-
+
+-
+
+-.PHONY: legacy-install legacy-uninstall
+
+-legacy-install:
+
+-	sh scripts/install_legacy_compatible.sh
+
+-
+
+-legacy-uninstall:
+
+-	sh scripts/uninstall_legacy_compatible.sh
+
+--- a/README.md
++++ b/README.md
+@@ -1,428 +0,0 @@
+-# openwrt-ha-vrrp – Release Notes – v0.1.0
+
+-
+
+-**Datum:** 2025-08-23
+
+-
+
+-## Features
+
+-- (keine Daten gefunden)
+
+-
+
+-## Changelog
+
+-- (keine Änderungen erfasst)
+
+-
+
+-## Installation / Uninstallation / Build
+
+-### Installer (Kerndefinition)
+
+-```
+
+-echo "[install] Checking dependencies (opkg, keepalived, ip-full, uci, uhttpd, luci)..."
+
+-if ! need opkg; then
+
+-echo "[install] ERROR: opkg not found. Are you on OpenWrt?"; exit 1
+
+-opkg update >/dev/null 2>&1 || true
+
+-for p in keepalived ip-full uci; do
+
+-opkg list-installed | grep -q "^$p " || opkg install "$p"
+
+-opkg list-installed | grep -q "^$p " || opkg install "$p" || true
+
+-mkdir -p /etc/config /etc/init.d /etc/uci-defaults /usr/libexec/ha-vrrp /usr/sbin /etc/hotplug.d/iface
+
+-cp "$SRC_DIR/etc/init.d/ha-vrrp" /etc/init.d/ha-vrrp
+
+-cp "$SRC_DIR/etc/uci-defaults/95_ha_vrrp_defaults" /etc/uci-defaults/95_ha_vrrp_defaults
+
+-chmod +x /etc/uci-defaults/95_ha_vrrp_defaults || true
+
+-if [ -x /etc/uci-defaults/95_ha_vrrp_defaults ]; then
+
+-/etc/uci-defaults/95_ha_vrrp_defaults || true
+
+-rm -f /etc/uci-defaults/95_ha_vrrp_defaults || true
+
+-```
+
+-
+
+-### Uninstaller (Kerndefinition)
+
+-```
+
+-echo "[uninstall] Note: keepalived package is still installed. Remove via 'opkg remove keepalived' if desired."
+
+-```
+
+-
+
+-### Makefile-Targets (erkannt)
+
+-- `PKG_LICENSE`
+
+-- `PKG_NAME`
+
+-- `PKG_RELEASE`
+
+-- `LUCI_DEPENDS`
+
+-- `LUCI_TITLE`
+
+-- `PKG_LICENSE`
+
+-
+
+----
+
+-
+
+-# openwrt-ha-vrrp – Release Notes – v0.2.0
+
+-
+
+-**Datum:** 2025-08-23
+
+-
+
+-## Features
+
+-- (keine Daten gefunden)
+
+-
+
+-## Changelog
+
+-- (keine Änderungen erfasst)
+
+-
+
+-## Installation / Uninstallation / Build
+
+-### Installer (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Uninstaller (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Makefile-Targets (erkannt)
+
+-- `PKG_LICENSE`
+
+-- `PKG_MAINTAINER`
+
+-- `PKG_NAME`
+
+-- `PKG_RELEASE`
+
+-- `PKG_VERSION`
+
+-- `LUCI_DEPENDS`
+
+-- `LUCI_PKGARCH`
+
+-- `LUCI_TITLE`
+
+-- `PKG_LICENSE`
+
+-- `PKG_NAME`
+
+-- `PKG_RELEASE`
+
+-- `PKG_VERSION`
+
+-
+
+----
+
+-
+
+-# openwrt-ha-vrrp – Release Notes – v0.3.0
+
+-
+
+-**Datum:** 2025-08-23
+
+-
+
+-## Features
+
+-Peer-Discovery/Sync/Dual-Status
+
+-
+
+-## Changelog
+
+-- (keine Änderungen erfasst)
+
+-
+
+-## Installation / Uninstallation / Build
+
+-### Installer (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Uninstaller (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Makefile-Targets (erkannt)
+
+-- `PKG_NAME`
+
+-- `PKG_VERSION`
+
+-- `PKG_NAME`
+
+-- `PKG_VERSION`
+
+-
+
+----
+
+-
+
+-# openwrt-ha-vrrp – Release Notes – v0.4.0
+
+-
+
+-**Datum:** 2025-08-23
+
+-
+
+-## Features
+
+-Peer-Discovery/Sync/Dual-Status + WAN Health Checks
+
+-
+
+-## Changelog
+
+-- (keine Änderungen erfasst)
+
+-
+
+-## Installation / Uninstallation / Build
+
+-### Installer (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Uninstaller (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Makefile-Targets (erkannt)
+
+-- `PKG_NAME`
+
+-- `PKG_VERSION`
+
+-- `PKG_NAME`
+
+-- `PKG_VERSION`
+
+-
+
+----
+
+-
+
+-# openwrt-ha-vrrp – Release Notes – v0.3.0a
+
+-
+
+-**Datum:** 2025-08-23
+
+-
+
+-## Features
+
+-- UCI-driven Keepalived (VRRP, unicast)
+
+-- Multi-instance, optional VLAN per instance
+
+-- Peer discovery (HEARTBEAT scan)
+
+-- Peer sync (SSH keys + push /etc/config/*)
+
+-- Dual-node LuCI status
+
+-
+
+-Build in OpenWrt SDK:
+
+-  cp -a ha-vrrp <buildroot>/package/
+
+-  cp -a luci-app-ha-vrrp <buildroot>/package/
+
+-  make package/ha-vrrp/compile V=s
+
+-  make package/luci-app-ha-vrrp/compile V=s
+
+-
+
+-## Changelog
+
+-- (keine Änderungen erfasst)
+
+-
+
+-## Installation / Uninstallation / Build
+
+-### Installer (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Uninstaller (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Makefile-Targets (erkannt)
+
+-- `PKG_LICENSE`
+
+-- `PKG_NAME`
+
+-- `PKG_RELEASE`
+
+-- `PKG_VERSION`
+
+-- `LUCI_DEPENDS`
+
+-- `LUCI_PKGARCH`
+
+-- `LUCI_TITLE`
+
+-- `PKG_LICENSE`
+
+-- `PKG_NAME`
+
+-- `PKG_RELEASE`
+
+-- `PKG_VERSION`
+
+-
+
+----
+
+-
+
+-# openwrt-ha-vrrp – Release Notes – v0.4.0a
+
+-
+
+-**Datum:** 2025-08-23
+
+-
+
+-## Features
+
+-- (keine Daten gefunden)
+
+-
+
+-## Changelog
+
+-- (keine Änderungen erfasst)
+
+-
+
+-## Installation / Uninstallation / Build
+
+-### Installer (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Uninstaller (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Makefile-Targets (erkannt)
+
+-- `PKG_LICENSE`
+
+-- `PKG_NAME`
+
+-- `PKG_RELEASE`
+
+-- `PKG_VERSION`
+
+-- `LUCI_DEPENDS`
+
+-- `LUCI_PKGARCH`
+
+-- `LUCI_TITLE`
+
+-- `PKG_LICENSE`
+
+-- `PKG_NAME`
+
+-- `PKG_RELEASE`
+
+-- `PKG_VERSION`
+
+-
+
+----
+
+-
+
+-# openwrt-ha-vrrp – Release Notes – v0.5.0
+
+-
+
+-**Datum:** 2025-08-23
+
+-
+
+-## Features
+
+-- IPv6 Healthchecks (wan6) via track_script
+
+-- Multi-VIP (`vip_list`)
+
+-- Peer Discovery (CIDR/min/max)
+
+-- Auto-Sync Daemon (procd) + Sync-Button
+
+-- Cleaned LuCI Status/Renderer
+
+-
+
+-## Changelog
+
+-- Konsolidiert 0.3.0 + 0.4.0-Funktionalität; neue Scripts `check_wan6_gw.sh`, `ha-vrrp-autosync`
+
+-
+
+-## Installation / Uninstallation / Build
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.0
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+-
+
+----
+
+-
+
+-# openwrt-ha-vrrp – Release Notes – v0.5.1
+
+-
+
+-**Datum:** 2025-08-23
+
+-
+
+-## Features
+
+-- Rückwärtskompatibel zu 0.2.0 (core→instance Fallback)
+
+-- Stabilisierung Discovery/Sync
+
+-- Doku & Makefiles aktualisiert
+
+-
+
+-## Changelog
+
+-- Renderer robust gegen fehlende Instanzen; Status JSON verbessert
+
+-
+
+-## Installation / Uninstallation / Build
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.1
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+-
+
+----
+
+-
+
+-# openwrt-ha-vrrp – Release Notes – v0.5.2
+
+-
+
+-**Datum:** 2025-08-23
+
+-
+
+-## Features
+
+-- `examples/` mit UCI-Apply-Skripten (LamoboR1-1/2)
+
+-- Heartbeat VLAN 200 Beispiele
+
+-
+
+-## Changelog
+
+-- Quickstart-Skripte `apply-LamoboR1-*.sh`
+
+-
+
+-## Installation / Uninstallation / Build
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.2
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+-
+
+----
+
+-
+
+-# openwrt-ha-vrrp – Release Notes – v0.5.3
+
+-
+
+-**Datum:** 2025-08-23
+
+-
+
+-## Features
+
+-- `README_0.1.0` aus Ur-README übernommen
+
+-- Version-Bumps in Package-Makefiles
+
+-
+
+-## Changelog
+
+-- Installer/Uninstaller auf 0.5.3 gehoben
+
+-
+
+-## Installation / Uninstallation / Build
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.3
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+-
+
+----
+
+-
+
+-# openwrt-ha-vrrp – Release Notes – v0.5.4
+
+-
+
+-**Datum:** 2025-08-23
+
+-
+
+-## Features
+
+-- Legacy-kompatible Installer/Uninstaller (Ur-Verhalten)
+
+-- Makefile-Targets `legacy-install`/`legacy-uninstall`
+
+-
+
+-## Changelog
+
+-- Paketversion 0.5.4, Doku ergänzt
+
+-
+
+-## Installation / Uninstallation / Build
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.4
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+-
+
+----
+
+-
+
+-# openwrt-ha-vrrp – Release Notes – v0.5.5
+
+-
+
+-**Datum:** 2025-08-23
+
+-
+
+-## Features
+
+-- Vollständige `etc/` & `usr/` Struktur im Paketlayout
+
+-- Mapping-Doku `README-file-mapping.md`
+
+-
+
+-## Changelog
+
+-- Paketversion 0.5.5
+
+-
+
+-## Installation / Uninstallation / Build
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.5
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+-
+
+----
+
+-
+
+-# openwrt-ha-vrrp – Release Notes – v0.5.6
+
+-
+
+-**Datum:** 2025-08-23
+
+-
+
+-## Features
+
+-- LuCI: Liste `Network/Interfaces` inkl. DHCP-Status
+
+-- Button „VRRP anlegen“ je Interface
+
+-
+
+-## Changelog
+
+-- Controller: `listifaces`, `createinst`
+
+-
+
+-## Installation / Uninstallation / Build
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.6
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+-
+
+----
+
+-
+
+-# openwrt-ha-vrrp – Release Notes – v0.5.7
+
+-
+
+-**Datum:** 2025-08-23
+
+-
+
+-## Features
+
+-- Peer-Verwaltung in LuCI: Auto-Discover, Discover(Liste), Manuell + optional `unicast_peer` für Instanzen
+
+-
+
+-## Changelog
+
+-- Controller: `discover_adv`, `autodiscover`, `setpeer`; Status JSON enthält `instance_sections`
+
+-
+
+-## Installation / Uninstallation / Build
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.7
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+-
+
+----
+
+-
+
+-# openwrt-ha-vrrp – Release Notes – v0.5.8
+
+-
+
+-**Datum:** 2025-08-23
+
+-
+
+-## Features
+
+-- Discover: Interface-Auswahl in UI, **HEARTBEAT** vorgewählt
+
+-
+
+-## Changelog
+
+-- `autodiscover` nutzt optional gewähltes Interface/Subnetz
+
+-
+
+-## Installation / Uninstallation / Build
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.8
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+-
+
+----
+
+-
+
+-# openwrt-ha-vrrp – Release Notes – v0.5.9
+
+-
+
+-**Datum:** 2025-08-23
+
+-
+
+-## Features
+
+-- Vollständige, versionierte Dokumentation pro Release (README_/CHANGELOG_/FEATURES_/INSTALL_) und Masterdateien
+
+-
+
+-## Changelog
+
+-- Automatisch generierte Doku aus Archiv-PARSING & Chat-Notizen
+
+-
+
+-## Installation / Uninstallation / Build
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.9
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+-
+
+-
+
+-## v0.5.10
+
+-- **Update-Pfad** (maschinenlesbar): `docs/update-path.json`, `docs/update-path.yaml`, `docs/UPDATE_PATH.csv`, `docs/UPDATE_EDGES.csv`.
+
+-- Helper: `scripts/upgrade-path.sh FROM TO` listet die Zwischenversionen.
+
+-
+
+-
+
+-## v0.5.12
+
+-- Fix: LuCI-Controller Quoting/Syntax korrigiert (kein ccache/dispatcher-Error mehr).
+
+--- a/README_0.1.0
++++ b/README_0.1.0
+@@ -1,54 +0,0 @@
+-# openwrt-ha-vrrp (OpenWrt 19.07)
+
+-
+
+-High-availability via **Keepalived + VRRP (unicast)** with **optional VLAN heartbeat** and a minimal LuCI UI.
+
+-This is a *drop-in* package: copy to your router and run `./install.sh` to install dependencies and deploy files.
+
+-
+
+-## Key features
+
+-- VRRP (unicast) with Keepalived
+
+-- Optional dedicated VLAN subinterface (`iface.vlan_id`) for VRRP + VIP
+
+-- UCI-driven config at `/etc/config/ha_vrrp`
+
+-- Renderer to `/etc/keepalived/keepalived.conf`
+
+-- LuCI app: *Services → HA VRRP*
+
+-- Notify hooks for MASTER/BACKUP transitions
+
+-
+
+-## Quick start (per node)
+
+-```sh
+
+-# Upload to router (example)
+
+-scp -r openwrt-ha-vrrp root@192.0.2.10:/tmp/
+
+-
+
+-# Install on the router
+
+-cd /tmp/openwrt-ha-vrrp
+
+-sh ./install.sh
+
+-
+
+-# Edit config
+
+-uci set ha_vrrp.core.vrid='42'
+
+-uci set ha_vrrp.core.vip_cidr='192.0.2.200/24'
+
+-uci set ha_vrrp.core.iface='wan'
+
+-uci set ha_vrrp.core.use_vlan='1'         # 1 to use VLAN heartbeat, 0 otherwise
+
+-uci set ha_vrrp.core.vlan_id='100'        # required if use_vlan=1
+
+-
+
+-# Node A specifics:
+
+-uci set ha_vrrp.core.unicast_src_ip='192.0.2.10'
+
+-uci -q del_list ha_vrrp.core.unicast_peer
+
+-uci add_list ha_vrrp.core.unicast_peer='192.0.2.11'
+
+-uci set ha_vrrp.core.priority='150'
+
+-uci set ha_vrrp.core.state='MASTER'
+
+-
+
+-# Node B specifics:
+
+-# uci set ha_vrrp.core.unicast_src_ip='192.0.2.11'
+
+-# uci -q del_list ha_vrrp.core.unicast_peer
+
+-# uci add_list ha_vrrp.core.unicast_peer='192.0.2.10'
+
+-# uci set ha_vrrp.core.priority='100'
+
+-# uci set ha_vrrp.core.state='BACKUP'
+
+-
+
+-uci commit ha_vrrp
+
+-/etc/init.d/ha-vrrp restart
+
+-```
+
+-
+
+-After that, visit **LuCI → Services → HA VRRP** for status/config.
+
+-
+
+-## Uninstall
+
+-```sh
+
+-cd /tmp/openwrt-ha-vrrp
+
+-sh ./uninstall.sh
+
+-```
+
+--- a/README_0.1.0.md
++++ b/README_0.1.0.md
+@@ -1,41 +0,0 @@
+-# openwrt-ha-vrrp – Release Notes – v0.1.0
+
+-
+
+-**Datum:** 2025-08-23
+
+-
+
+-## Features
+
+-- (keine Daten gefunden)
+
+-
+
+-## Changelog
+
+-- (keine Änderungen erfasst)
+
+-
+
+-## Installation / Uninstallation / Build
+
+-### Installer (Kerndefinition)
+
+-```
+
+-echo "[install] Checking dependencies (opkg, keepalived, ip-full, uci, uhttpd, luci)..."
+
+-if ! need opkg; then
+
+-echo "[install] ERROR: opkg not found. Are you on OpenWrt?"; exit 1
+
+-opkg update >/dev/null 2>&1 || true
+
+-for p in keepalived ip-full uci; do
+
+-opkg list-installed | grep -q "^$p " || opkg install "$p"
+
+-opkg list-installed | grep -q "^$p " || opkg install "$p" || true
+
+-mkdir -p /etc/config /etc/init.d /etc/uci-defaults /usr/libexec/ha-vrrp /usr/sbin /etc/hotplug.d/iface
+
+-cp "$SRC_DIR/etc/init.d/ha-vrrp" /etc/init.d/ha-vrrp
+
+-cp "$SRC_DIR/etc/uci-defaults/95_ha_vrrp_defaults" /etc/uci-defaults/95_ha_vrrp_defaults
+
+-chmod +x /etc/uci-defaults/95_ha_vrrp_defaults || true
+
+-if [ -x /etc/uci-defaults/95_ha_vrrp_defaults ]; then
+
+-/etc/uci-defaults/95_ha_vrrp_defaults || true
+
+-rm -f /etc/uci-defaults/95_ha_vrrp_defaults || true
+
+-```
+
+-
+
+-### Uninstaller (Kerndefinition)
+
+-```
+
+-echo "[uninstall] Note: keepalived package is still installed. Remove via 'opkg remove keepalived' if desired."
+
+-```
+
+-
+
+-### Makefile-Targets (erkannt)
+
+-- `PKG_LICENSE`
+
+-- `PKG_NAME`
+
+-- `PKG_RELEASE`
+
+-- `LUCI_DEPENDS`
+
+-- `LUCI_TITLE`
+
+-- `PKG_LICENSE`
+
+--- a/README_0.2.0.md
++++ b/README_0.2.0.md
+@@ -1,34 +0,0 @@
+-# openwrt-ha-vrrp – Release Notes – v0.2.0
+
+-
+
+-**Datum:** 2025-08-23
+
+-
+
+-## Features
+
+-- (keine Daten gefunden)
+
+-
+
+-## Changelog
+
+-- (keine Änderungen erfasst)
+
+-
+
+-## Installation / Uninstallation / Build
+
+-### Installer (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Uninstaller (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Makefile-Targets (erkannt)
+
+-- `PKG_LICENSE`
+
+-- `PKG_MAINTAINER`
+
+-- `PKG_NAME`
+
+-- `PKG_RELEASE`
+
+-- `PKG_VERSION`
+
+-- `LUCI_DEPENDS`
+
+-- `LUCI_PKGARCH`
+
+-- `LUCI_TITLE`
+
+-- `PKG_LICENSE`
+
+-- `PKG_NAME`
+
+-- `PKG_RELEASE`
+
+-- `PKG_VERSION`
+
+--- a/README_0.3.0.md
++++ b/README_0.3.0.md
+@@ -1,26 +0,0 @@
+-# openwrt-ha-vrrp – Release Notes – v0.3.0
+
+-
+
+-**Datum:** 2025-08-23
+
+-
+
+-## Features
+
+-Peer-Discovery/Sync/Dual-Status
+
+-
+
+-## Changelog
+
+-- (keine Änderungen erfasst)
+
+-
+
+-## Installation / Uninstallation / Build
+
+-### Installer (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Uninstaller (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Makefile-Targets (erkannt)
+
+-- `PKG_NAME`
+
+-- `PKG_VERSION`
+
+-- `PKG_NAME`
+
+-- `PKG_VERSION`
+
+--- a/README_0.3.0a.md
++++ b/README_0.3.0a.md
+@@ -1,43 +0,0 @@
+-# openwrt-ha-vrrp – Release Notes – v0.3.0a
+
+-
+
+-**Datum:** 2025-08-23
+
+-
+
+-## Features
+
+-- UCI-driven Keepalived (VRRP, unicast)
+
+-- Multi-instance, optional VLAN per instance
+
+-- Peer discovery (HEARTBEAT scan)
+
+-- Peer sync (SSH keys + push /etc/config/*)
+
+-- Dual-node LuCI status
+
+-
+
+-Build in OpenWrt SDK:
+
+-  cp -a ha-vrrp <buildroot>/package/
+
+-  cp -a luci-app-ha-vrrp <buildroot>/package/
+
+-  make package/ha-vrrp/compile V=s
+
+-  make package/luci-app-ha-vrrp/compile V=s
+
+-
+
+-## Changelog
+
+-- (keine Änderungen erfasst)
+
+-
+
+-## Installation / Uninstallation / Build
+
+-### Installer (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Uninstaller (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Makefile-Targets (erkannt)
+
+-- `PKG_LICENSE`
+
+-- `PKG_NAME`
+
+-- `PKG_RELEASE`
+
+-- `PKG_VERSION`
+
+-- `LUCI_DEPENDS`
+
+-- `LUCI_PKGARCH`
+
+-- `LUCI_TITLE`
+
+-- `PKG_LICENSE`
+
+-- `PKG_NAME`
+
+-- `PKG_RELEASE`
+
+-- `PKG_VERSION`
+
+--- a/README_0.4.0.md
++++ b/README_0.4.0.md
+@@ -1,26 +0,0 @@
+-# openwrt-ha-vrrp – Release Notes – v0.4.0
+
+-
+
+-**Datum:** 2025-08-23
+
+-
+
+-## Features
+
+-Peer-Discovery/Sync/Dual-Status + WAN Health Checks
+
+-
+
+-## Changelog
+
+-- (keine Änderungen erfasst)
+
+-
+
+-## Installation / Uninstallation / Build
+
+-### Installer (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Uninstaller (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Makefile-Targets (erkannt)
+
+-- `PKG_NAME`
+
+-- `PKG_VERSION`
+
+-- `PKG_NAME`
+
+-- `PKG_VERSION`
+
+--- a/README_0.4.0a.md
++++ b/README_0.4.0a.md
+@@ -1,33 +0,0 @@
+-# openwrt-ha-vrrp – Release Notes – v0.4.0a
+
+-
+
+-**Datum:** 2025-08-23
+
+-
+
+-## Features
+
+-- (keine Daten gefunden)
+
+-
+
+-## Changelog
+
+-- (keine Änderungen erfasst)
+
+-
+
+-## Installation / Uninstallation / Build
+
+-### Installer (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Uninstaller (Kerndefinition)
+
+-```
+
+-(keine)
+
+-```
+
+-
+
+-### Makefile-Targets (erkannt)
+
+-- `PKG_LICENSE`
+
+-- `PKG_NAME`
+
+-- `PKG_RELEASE`
+
+-- `PKG_VERSION`
+
+-- `LUCI_DEPENDS`
+
+-- `LUCI_PKGARCH`
+
+-- `LUCI_TITLE`
+
+-- `PKG_LICENSE`
+
+-- `PKG_NAME`
+
+-- `PKG_RELEASE`
+
+-- `PKG_VERSION`
+
+--- a/README_0.5.0.md
++++ b/README_0.5.0.md
+@@ -1,20 +0,0 @@
+-# openwrt-ha-vrrp – Release Notes – v0.5.0
+
+-
+
+-**Datum:** 2025-08-23
+
+-
+
+-## Features
+
+-- IPv6 Healthchecks (wan6) via track_script
+
+-- Multi-VIP (`vip_list`)
+
+-- Peer Discovery (CIDR/min/max)
+
+-- Auto-Sync Daemon (procd) + Sync-Button
+
+-- Cleaned LuCI Status/Renderer
+
+-
+
+-## Changelog
+
+-- Konsolidiert 0.3.0 + 0.4.0-Funktionalität; neue Scripts `check_wan6_gw.sh`, `ha-vrrp-autosync`
+
+-
+
+-## Installation / Uninstallation / Build
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.0
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+--- a/README_0.5.1.md
++++ b/README_0.5.1.md
+@@ -1,18 +0,0 @@
+-# openwrt-ha-vrrp – Release Notes – v0.5.1
+
+-
+
+-**Datum:** 2025-08-23
+
+-
+
+-## Features
+
+-- Rückwärtskompatibel zu 0.2.0 (core→instance Fallback)
+
+-- Stabilisierung Discovery/Sync
+
+-- Doku & Makefiles aktualisiert
+
+-
+
+-## Changelog
+
+-- Renderer robust gegen fehlende Instanzen; Status JSON verbessert
+
+-
+
+-## Installation / Uninstallation / Build
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.1
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+--- a/README_0.5.2.md
++++ b/README_0.5.2.md
+@@ -1,17 +0,0 @@
+-# openwrt-ha-vrrp – Release Notes – v0.5.2
+
+-
+
+-**Datum:** 2025-08-23
+
+-
+
+-## Features
+
+-- `examples/` mit UCI-Apply-Skripten (LamoboR1-1/2)
+
+-- Heartbeat VLAN 200 Beispiele
+
+-
+
+-## Changelog
+
+-- Quickstart-Skripte `apply-LamoboR1-*.sh`
+
+-
+
+-## Installation / Uninstallation / Build
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.2
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+--- a/README_0.5.3.md
++++ b/README_0.5.3.md
+@@ -1,17 +0,0 @@
+-# openwrt-ha-vrrp – Release Notes – v0.5.3
+
+-
+
+-**Datum:** 2025-08-23
+
+-
+
+-## Features
+
+-- `README_0.1.0` aus Ur-README übernommen
+
+-- Version-Bumps in Package-Makefiles
+
+-
+
+-## Changelog
+
+-- Installer/Uninstaller auf 0.5.3 gehoben
+
+-
+
+-## Installation / Uninstallation / Build
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.3
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+--- a/README_0.5.4.md
++++ b/README_0.5.4.md
+@@ -1,17 +0,0 @@
+-# openwrt-ha-vrrp – Release Notes – v0.5.4
+
+-
+
+-**Datum:** 2025-08-23
+
+-
+
+-## Features
+
+-- Legacy-kompatible Installer/Uninstaller (Ur-Verhalten)
+
+-- Makefile-Targets `legacy-install`/`legacy-uninstall`
+
+-
+
+-## Changelog
+
+-- Paketversion 0.5.4, Doku ergänzt
+
+-
+
+-## Installation / Uninstallation / Build
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.4
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+--- a/README_0.5.5.md
++++ b/README_0.5.5.md
+@@ -1,17 +0,0 @@
+-# openwrt-ha-vrrp – Release Notes – v0.5.5
+
+-
+
+-**Datum:** 2025-08-23
+
+-
+
+-## Features
+
+-- Vollständige `etc/` & `usr/` Struktur im Paketlayout
+
+-- Mapping-Doku `README-file-mapping.md`
+
+-
+
+-## Changelog
+
+-- Paketversion 0.5.5
+
+-
+
+-## Installation / Uninstallation / Build
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.5
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+--- a/README_0.5.6.md
++++ b/README_0.5.6.md
+@@ -1,17 +0,0 @@
+-# openwrt-ha-vrrp – Release Notes – v0.5.6
+
+-
+
+-**Datum:** 2025-08-23
+
+-
+
+-## Features
+
+-- LuCI: Liste `Network/Interfaces` inkl. DHCP-Status
+
+-- Button „VRRP anlegen“ je Interface
+
+-
+
+-## Changelog
+
+-- Controller: `listifaces`, `createinst`
+
+-
+
+-## Installation / Uninstallation / Build
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.6
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+--- a/README_0.5.7.md
++++ b/README_0.5.7.md
+@@ -1,16 +0,0 @@
+-# openwrt-ha-vrrp – Release Notes – v0.5.7
+
+-
+
+-**Datum:** 2025-08-23
+
+-
+
+-## Features
+
+-- Peer-Verwaltung in LuCI: Auto-Discover, Discover(Liste), Manuell + optional `unicast_peer` für Instanzen
+
+-
+
+-## Changelog
+
+-- Controller: `discover_adv`, `autodiscover`, `setpeer`; Status JSON enthält `instance_sections`
+
+-
+
+-## Installation / Uninstallation / Build
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.7
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+--- a/README_0.5.8.md
++++ b/README_0.5.8.md
+@@ -1,16 +0,0 @@
+-# openwrt-ha-vrrp – Release Notes – v0.5.8
+
+-
+
+-**Datum:** 2025-08-23
+
+-
+
+-## Features
+
+-- Discover: Interface-Auswahl in UI, **HEARTBEAT** vorgewählt
+
+-
+
+-## Changelog
+
+-- `autodiscover` nutzt optional gewähltes Interface/Subnetz
+
+-
+
+-## Installation / Uninstallation / Build
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.8
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+--- a/README_0.5.9.md
++++ b/README_0.5.9.md
+@@ -1,16 +0,0 @@
+-# openwrt-ha-vrrp – Release Notes – v0.5.9
+
+-
+
+-**Datum:** 2025-08-23
+
+-
+
+-## Features
+
+-- Vollständige, versionierte Dokumentation pro Release (README_/CHANGELOG_/FEATURES_/INSTALL_) und Masterdateien
+
+-
+
+-## Changelog
+
+-- Automatisch generierte Doku aus Archiv-PARSING & Chat-Notizen
+
+-
+
+-## Installation / Uninstallation / Build
+
+-### Installation (generisch)
+
+-```sh
+
+-# Build/Install abhängig von Version 0.5.9
+
+-# (Keine konkreten Skripte im Archiv erkannt)
+
+-```
+
+--- a/config/dependencies.conf
++++ b/config/dependencies.conf
+@@ -1,26 +0,0 @@
+-# dependencies.conf – zentrale Paket-Abhängigkeiten (v0.5.14)
+
+-# Syntax: INI-Sektionen mit einfachen Keys (runtime, build, optional)
+
+-# Werte sind whitespace-separierte Paketnamen.
+
+-# Die Sektion [default] gilt immer; OS-spezifische Sektionen überschreiben/ergänzen.
+
+-#
+
+-# Bekannte OS-Keys: openwrt-19.07, openwrt-21.02, openwrt-22.03, openwrt-23.05
+
+-# Erweitere bei Bedarf.
+
+-
+
+-[default]
+
+-runtime = keepalived ip-full uci uhttpd luci-base luci-compat
+
+-build   = make gcc
+
+-optional = dropbear openssh-keygen
+
+-
+
+-[openwrt-19.07]
+
+-# luci-compat ist auf 19.07 wichtig für moderne Views
+
+-runtime = keepalived ip-full uci uhttpd luci-base luci-compat
+
+-optional = dropbear openssh-keygen
+
+-
+
+-[openwrt-22.03]
+
+-# neuere luci benötigen ucode/lua bits – wir bleiben konservativ
+
+-runtime = keepalived ip-full uci uhttpd luci-base
+
+-optional = dropbear openssh-keygen
+
+-
+
+-[openwrt-23.05]
+
+-runtime = keepalived ip-full uci uhttpd luci-base
+
+-optional = dropbear openssh-keygen
+
+--- a/config/features.conf
++++ b/config/features.conf
+@@ -1,18 +0,0 @@
+-[default]
+
+-fw_backend=auto
+
+-ka_backend=auto
+
+-dhcp_backend=auto
+
+-net_backend=auto
+
+-os_key=auto
+
+-
+
+-[openwrt-19.07]
+
+-fw_backend=iptables
+
+-ka_backend=ka_2x
+
+-dhcp_backend=dnsmasq_legacy
+
+-net_backend=swconfig
+
+-
+
+-[openwrt-22.03]
+
+-fw_backend=nft
+
+-ka_backend=ka_2_2plus
+
+-dhcp_backend=dnsmasq_fw4
+
+-net_backend=dsa
+
+--- a/docs/CHANGELOG_0.5.14.md
++++ b/docs/CHANGELOG_0.5.14.md
+@@ -1,4 +0,0 @@
+-# Changelog – v0.5.14
+
+-- Neu: `config/dependencies.conf` mit [default], [openwrt-19.07], [openwrt-22.03], [openwrt-23.05].
+
+-- Installer `install_v0.5.14.sh` liest `runtime`-Pakete aus der Config und installiert sie via `opkg`.
+
+-- Quickstart/README/KNOWN_BUGS aktualisiert.
+
+--- a/docs/CHANGELOG_0.5.16.md
++++ b/docs/CHANGELOG_0.5.16.md
+@@ -1,4 +0,0 @@
+-# Changelog v0.5.16
+
+-- Fix: LuCI zeigt JSON statt UI → Controller/CBI/Views ergänzt
+
+-- Neu: Migration-Skript migratefrom0.5.15to0.5.16.sh (läuft vor Install)
+
+-- Bump: Makefiles auf 0.5.16
+
+--- a/docs/KNOWN_BUGS.md
++++ b/docs/KNOWN_BUGS.md
+@@ -1,4 +0,0 @@
+-# Known Bugs / Notes
+
+-- **v0.5.12**: LuCI-UI crash bei Start (fehlerhafte Quotes im Controller) → Fix in 0.5.12+, bitte updaten.
+
+-- **v0.5.13**: Overlay-Installer installiert keine Dependencies → Menüpunkt unter Services evtl. unsichtbar. Workaround: `opkg install keepalived luci-compat ...` oder Upgrade auf 0.5.14 (Installer zieht Abhängigkeiten automatisch).
+
+-
+
+--- a/docs/QUICKSTART.md
++++ b/docs/QUICKSTART.md
+@@ -1,17 +0,0 @@
+-Kurz: Wizard nutzen → Peer, Keys, Sync, VRRP anlegen, Apply & Sync.
+
+-
+
+-## v0.5.14 – Installation & Schnellaufrufe
+
+-```sh
+
+-# Installer (liest dependencies.conf & installiert fehlende Pakete):
+
+-cd openwrt-ha-vrrp-0.5.14/scripts
+
+-sh ./install_v0.5.14.sh
+
+-
+
+-# optional OS erzwingen (statt Autodetect via /etc/openwrt_release):
+
+-OS_KEY=openwrt-19.07 sh ./install_v0.5.14.sh
+
+-
+
+-# LuCI-Menüs fehlen? Cache leeren:
+
+-rm -f /tmp/luci-indexcache /tmp/luci-modulecache/* 2>/dev/null || true
+
+-/etc/init.d/uhttpd restart
+
+-```
+
+-**Hinweis:** Abhängigkeiten stehen in `config/dependencies.conf` (sektionen-spezifisch).
+
+-
+
+--- a/docs/README-file-mapping.md
++++ b/docs/README-file-mapping.md
+@@ -1,15 +0,0 @@
+-# File Mapping (package → runtime)
+
+-
+
+-files/etc/config/ha_vrrp  ->  /etc/config/ha_vrrp
+
+-files/etc/hotplug.d/iface/95-ha-vrrp-apply  ->  /etc/hotplug.d/iface/95-ha-vrrp-apply
+
+-files/etc/init.d/ha-vrrp  ->  /etc/init.d/ha-vrrp
+
+-files/etc/init.d/ha-vrrp-syncd  ->  /etc/init.d/ha-vrrp-syncd
+
+-files/usr/libexec/ha-vrrp/check_wan6_gw.sh  ->  /usr/libexec/ha-vrrp/check_wan6_gw.sh
+
+-files/usr/libexec/ha-vrrp/check_wan_gw.sh  ->  /usr/libexec/ha-vrrp/check_wan_gw.sh
+
+-files/usr/libexec/ha-vrrp/discover_peers.sh  ->  /usr/libexec/ha-vrrp/discover_peers.sh
+
+-files/usr/libexec/ha-vrrp/ensure_vlan.sh  ->  /usr/libexec/ha-vrrp/ensure_vlan.sh
+
+-files/usr/libexec/ha-vrrp/notify_backup.sh  ->  /usr/libexec/ha-vrrp/notify_backup.sh
+
+-files/usr/libexec/ha-vrrp/notify_master.sh  ->  /usr/libexec/ha-vrrp/notify_master.sh
+
+-files/usr/sbin/ha-vrrp-apply  ->  /usr/sbin/ha-vrrp-apply
+
+-files/usr/sbin/ha-vrrp-autosync  ->  /usr/sbin/ha-vrrp-autosync
+
+-files/usr/sbin/ha-vrrp-sync  ->  /usr/sbin/ha-vrrp-sync
+--- a/docs/README-install_legacy_compatible.md
++++ b/docs/README-install_legacy_compatible.md
+@@ -1,14 +0,0 @@
+-
+
+-# Legacy-kompatibler Installer (v0.5.5)
+
+-
+
+-**Ziel:** Verhalten des ursprünglichen `install.sh` ohne Flags nachbilden (OpenWrt 19.07).
+
+-- Bricht ab, wenn `opkg` fehlt (wie Original).
+
+-- Installiert Basis-Pakete: `keepalived ip-full uci uhttpd luci-compat luci-base` (falls nicht vorhanden).
+
+-- Kopiert Service-Dateien aus `ha-vrrp/files` nach `/`.
+
+-- Installiert LuCI-Controller/Views/Models in `/usr/lib/lua/luci/...`.
+
+-- Aktiviert/Startet `ha-vrrp`, refresht `rpcd`, `uhttpd`.
+
+-
+
+-## Aufruf
+
+-```sh
+
+-sh scripts/install_legacy_compatible.sh
+
+-```
+
+--- a/docs/README-installer.md
++++ b/docs/README-installer.md
+@@ -1,45 +0,0 @@
+-# README – Installer
+
+-
+
+-**Shebang:** `#!/bin/sh`
+
+-
+
+-## Zweck (heuristisch)
+
+-Automatisches Setup/Teardown bzw. Build/Install der HA-VRRP Komponenten.
+
+-
+
+-## Erkannte Kernbefehle
+
+-```
+
+-opkg update >/dev/null 2>&1 || true
+
+-opkg list-installed | grep -q "^$p " || opkg install "$p"
+
+-opkg list-installed | grep -q "^$p " || opkg install "$p" || true
+
+-cp "$SRC_DIR/etc/config/ha_vrrp" /etc/config/ha_vrrp
+
+-cp "$SRC_DIR/etc/init.d/ha-vrrp" /etc/init.d/ha-vrrp
+
+-cp "$SRC_DIR/etc/uci-defaults/95_ha_vrrp_defaults" /etc/uci-defaults/95_ha_vrrp_defaults
+
+-cp "$SRC_DIR/etc/hotplug.d/iface/95-ha-vrrp-apply" /etc/hotplug.d/iface/95-ha-vrrp-apply
+
+-cp "$SRC_DIR/usr/sbin/ha-vrrp-apply" /usr/sbin/ha-vrrp-apply
+
+-cp "$SRC_DIR/usr/libexec/ha-vrrp/ensure_vlan.sh" /usr/libexec/ha-vrrp/ensure_vlan.sh
+
+-cp "$SRC_DIR/usr/libexec/ha-vrrp/notify_master.sh" /usr/libexec/ha-vrrp/notify_master.sh
+
+-cp "$SRC_DIR/usr/libexec/ha-vrrp/notify_backup.sh" /usr/libexec/ha-vrrp/notify_backup.sh
+
+-/etc/init.d/keepalived enable || true
+
+-/etc/init.d/ha-vrrp enable || true
+
+-rm -f /etc/uci-defaults/95_ha_vrrp_defaults || true
+
+-/usr/libexec/ha-vrrp/ensure_vlan.sh || true
+
+-/usr/sbin/ha-vrrp-apply || true
+
+-/etc/init.d/keepalived restart || true
+
+-/etc/init.d/ha-vrrp start || true
+
+-/etc/init.d/rpcd restart || true
+
+-/etc/init.d/uhttpd restart || true
+
+-```
+
+-
+
+-## Angepasste Nutzung (v0.5.3)
+
+-- Stelle sicher, dass die Paketverzeichnisse unter `package/ha-vrrp` und `package/luci-app-ha-vrrp` im OpenWrt-Buildroot liegen.
+
+-- Für Installation verwende bevorzugt die IPKs aus dem Build:
+
+-  ```sh
+
+-  opkg install /tmp/ha-vrrp_0.5.3-1_*.ipk
+
+-  opkg install /tmp/luci-app-ha-vrrp_0.5.3-1_*.ipk
+
+-  /etc/init.d/ha-vrrp enable
+
+-  /etc/init.d/ha-vrrp start
+
+-  ```
+
+-- Für Uninstall:
+
+-  ```sh
+
+-  /etc/init.d/ha-vrrp stop
+
+-  opkg remove luci-app-ha-vrrp ha-vrrp
+
+-  ```
+
+--- a/docs/README-installer_v0.5.3.md
++++ b/docs/README-installer_v0.5.3.md
+@@ -1,15 +0,0 @@
+-# Installer (v0.5.3)
+
+-
+
+-## Aufruf
+
+-```sh
+
+-sh scripts/install_v0.5.3.sh
+
+-```
+
+-
+
+-## Verhalten
+
+-- Versucht zuerst IPK-Installation aus `/tmp/ha-vrrp_0.5.3-1_*.ipk` und `/tmp/luci-app-ha-vrrp_0.5.3-1_*.ipk`.
+
+-- Falls nicht vorhanden oder `opkg` fehlt, wird im **Overlay-Modus** direkt nach `/` kopiert.
+
+-- Startet/aktiviert `ha-vrrp` und refresht LuCI-Dienste (`rpcd`, `uhttpd`).
+
+-
+
+-## Abhängigkeiten
+
+-- OpenWrt Runtime (für opkg-Modus)
+
+-- `keepalived`, `ip-full`, `ubus`, `jsonfilter` werden als runtime-Depends durch IPK abgedeckt.
+
+--- a/docs/README-makefile-top.md
++++ b/docs/README-makefile-top.md
+@@ -1,10 +0,0 @@
+-# Top-Level Makefile
+
+-
+
+-## Aufruf-Beispiele
+
+-```sh
+
+-make help
+
+-make bundle
+
+-BUILDROOT=/path/to/openwrt-sdk make ipks
+
+-```
+
+-
+
+-**Hinweis:** Für produktives Bauen nutze die Makefiles unter `ha-vrrp/` und `luci-app-ha-vrrp/` im OpenWrt-Buildroot.
+
+--- a/docs/README-makefile.md
++++ b/docs/README-makefile.md
+@@ -1,20 +0,0 @@
+-# README – Makefile
+
+-
+
+-## Original-Pfad
+
+-`openwrt-ha-vrrp/Makefile`
+
+-
+
+-## Kurzbeschreibung
+
+-Build/Copy/Package Hilfs-Targets aus dem Ur-Archiv. Für v0.5.3 empfehlen wir stattdessen die OpenWrt-Toolchain zu nutzen.
+
+-
+
+-## Mögliche Targets (heuristisch erkannt)
+
+-- `PKG_LICENSE`
+
+-- `PKG_NAME`
+
+-- `PKG_RELEASE`
+
+-
+
+-## Empfohlene Nutzung (OpenWrt SDK)
+
+-```sh
+
+-cp -a ha-vrrp <buildroot>/package/
+
+-cp -a luci-app-ha-vrrp <buildroot>/package/
+
+-make package/ha-vrrp/compile V=s
+
+-make package/luci-app-ha-vrrp/compile V=s
+
+-```
+
+--- a/docs/README-uninstall_legacy_compatible.md
++++ b/docs/README-uninstall_legacy_compatible.md
+@@ -1,12 +0,0 @@
+-
+
+-# Legacy-kompatibler Uninstaller (v0.5.5)
+
+-
+
+-**Ziel:** Verhalten des ursprünglichen `uninstall.sh` nachempfinden.
+
+-- Stoppt Dienste und entfernt die vom Installer kopierten Dateien.
+
+-- Lässt `/etc/config/ha_vrrp` standardmäßig bestehen (wie Original).
+
+-- Entfernt LuCI-Dateien (falls per Overlay kopiert).
+
+-
+
+-## Aufruf
+
+-```sh
+
+-sh scripts/uninstall_legacy_compatible.sh
+
+-```
+
+--- a/docs/README-uninstaller.md
++++ b/docs/README-uninstaller.md
+@@ -1,31 +0,0 @@
+-# README – Uninstaller
+
+-
+
+-**Shebang:** `#!/bin/sh`
+
+-
+
+-## Zweck (heuristisch)
+
+-Automatisches Setup/Teardown bzw. Build/Install der HA-VRRP Komponenten.
+
+-
+
+-## Erkannte Kernbefehle
+
+-```
+
+-/etc/init.d/ha-vrrp stop >/dev/null 2>&1 || true
+
+-/etc/init.d/keepalived stop >/dev/null 2>&1 || true
+
+-rm -f /etc/init.d/ha-vrrp
+
+-rm -f /etc/hotplug.d/iface/95-ha-vrrp-apply
+
+-rm -f /usr/sbin/ha-vrrp-apply
+
+-rm -rf /usr/libexec/ha-vrrp
+
+-```
+
+-
+
+-## Angepasste Nutzung (v0.5.3)
+
+-- Stelle sicher, dass die Paketverzeichnisse unter `package/ha-vrrp` und `package/luci-app-ha-vrrp` im OpenWrt-Buildroot liegen.
+
+-- Für Installation verwende bevorzugt die IPKs aus dem Build:
+
+-  ```sh
+
+-  opkg install /tmp/ha-vrrp_0.5.3-1_*.ipk
+
+-  opkg install /tmp/luci-app-ha-vrrp_0.5.3-1_*.ipk
+
+-  /etc/init.d/ha-vrrp enable
+
+-  /etc/init.d/ha-vrrp start
+
+-  ```
+
+-- Für Uninstall:
+
+-  ```sh
+
+-  /etc/init.d/ha-vrrp stop
+
+-  opkg remove luci-app-ha-vrrp ha-vrrp
+
+-  ```
+
+--- a/docs/README-uninstaller_v0.5.3.md
++++ b/docs/README-uninstaller_v0.5.3.md
+@@ -1,10 +0,0 @@
+-# Uninstaller (v0.5.3)
+
+-
+
+-## Aufruf
+
+-```sh
+
+-sh scripts/uninstall_v0.5.3.sh
+
+-```
+
+-
+
+-## Verhalten
+
+-- Stoppt Dienste, entfernt IPKs (falls installiert) oder löscht Overlay-Dateien.
+
+-- Bereinigt LuCI-Dateien, falls sie per Overlay installiert wurden.
+
+--- a/docs/README_0.5.14.md
++++ b/docs/README_0.5.14.md
+@@ -1,10 +0,0 @@
+-# README – v0.5.14
+
+-
+
+-## Highlights
+
+-- **Zentrale Abhängigkeits-Konfiguration:** `config/dependencies.conf` mit OS-spezifischen Sektionen (z. B. `[openwrt-19.07]`).
+
+-- **Installer nutzt dependencies.conf:** fehlende Runtime-Pakete werden per `opkg` installiert (Overlay-Modus inklusive).
+
+-- **Doku-Verweise:** Quickstart & Known Bugs aktualisiert.
+
+-
+
+-## Hinweise
+
+-- Passe `config/dependencies.conf` bei Bedarf an. Der Installer liest `runtime` aus der passenden Sektion.
+
+-- OS-Autodetektion über `/etc/openwrt_release` (override per `OS_KEY=<section>`).
+
+--- a/docs/RELEASE_NOTES_0.5.16.md
++++ b/docs/RELEASE_NOTES_0.5.16.md
+@@ -1,2 +0,0 @@
+-# Release Notes 0.5.16
+
+-UI-Hardening: sichergestellt, dass /admin/services/ha_vrrp klickbare CBI-Views rendert.
+
+--- a/docs/UPDATE_EDGES.csv
++++ b/docs/UPDATE_EDGES.csv
+@@ -1,17 +0,0 @@
+-from,to
+
+-0.1.0,0.2.0
+
+-0.2.0,0.3.0
+
+-0.3.0,0.4.0
+
+-0.4.0,0.3.0a
+
+-0.3.0a,0.4.0a
+
+-0.4.0a,0.5.0
+
+-0.5.0,0.5.1
+
+-0.5.1,0.5.2
+
+-0.5.2,0.5.3
+
+-0.5.3,0.5.4
+
+-0.5.4,0.5.5
+
+-0.5.5,0.5.6
+
+-0.5.6,0.5.7
+
+-0.5.7,0.5.8
+
+-0.5.8,0.5.9
+
+-0.5.9,0.5.10
+
+--- a/docs/UPDATE_PATH.csv
++++ b/docs/UPDATE_PATH.csv
+@@ -1,18 +0,0 @@
+-order,version
+
+-0,0.1.0
+
+-1,0.2.0
+
+-2,0.3.0
+
+-3,0.4.0
+
+-4,0.3.0a
+
+-5,0.4.0a
+
+-6,0.5.0
+
+-7,0.5.1
+
+-8,0.5.2
+
+-9,0.5.3
+
+-10,0.5.4
+
+-11,0.5.5
+
+-12,0.5.6
+
+-13,0.5.7
+
+-14,0.5.8
+
+-15,0.5.9
+
+-16,0.5.10
+
+--- a/docs/WIZARD.md
++++ b/docs/WIZARD.md
+@@ -1 +0,0 @@
+-Wizard: Peer-Auswahl, SSH-Key erzeugen/importieren, Key-Sync, VRRP-Instanzen, Apply & Sync.
+
+--- a/docs/update-path.json
++++ b/docs/update-path.json
+@@ -1,87 +0,0 @@
+-{
+
+-  "sequence": [
+
+-    "0.1.0",
+
+-    "0.2.0",
+
+-    "0.3.0",
+
+-    "0.4.0",
+
+-    "0.3.0a",
+
+-    "0.4.0a",
+
+-    "0.5.0",
+
+-    "0.5.1",
+
+-    "0.5.2",
+
+-    "0.5.3",
+
+-    "0.5.4",
+
+-    "0.5.5",
+
+-    "0.5.6",
+
+-    "0.5.7",
+
+-    "0.5.8",
+
+-    "0.5.9",
+
+-    "0.5.10"
+
+-  ],
+
+-  "edges": [
+
+-    {
+
+-      "from": "0.1.0",
+
+-      "to": "0.2.0"
+
+-    },
+
+-    {
+
+-      "from": "0.2.0",
+
+-      "to": "0.3.0"
+
+-    },
+
+-    {
+
+-      "from": "0.3.0",
+
+-      "to": "0.4.0"
+
+-    },
+
+-    {
+
+-      "from": "0.4.0",
+
+-      "to": "0.3.0a"
+
+-    },
+
+-    {
+
+-      "from": "0.3.0a",
+
+-      "to": "0.4.0a"
+
+-    },
+
+-    {
+
+-      "from": "0.4.0a",
+
+-      "to": "0.5.0"
+
+-    },
+
+-    {
+
+-      "from": "0.5.0",
+
+-      "to": "0.5.1"
+
+-    },
+
+-    {
+
+-      "from": "0.5.1",
+
+-      "to": "0.5.2"
+
+-    },
+
+-    {
+
+-      "from": "0.5.2",
+
+-      "to": "0.5.3"
+
+-    },
+
+-    {
+
+-      "from": "0.5.3",
+
+-      "to": "0.5.4"
+
+-    },
+
+-    {
+
+-      "from": "0.5.4",
+
+-      "to": "0.5.5"
+
+-    },
+
+-    {
+
+-      "from": "0.5.5",
+
+-      "to": "0.5.6"
+
+-    },
+
+-    {
+
+-      "from": "0.5.6",
+
+-      "to": "0.5.7"
+
+-    },
+
+-    {
+
+-      "from": "0.5.7",
+
+-      "to": "0.5.8"
+
+-    },
+
+-    {
+
+-      "from": "0.5.8",
+
+-      "to": "0.5.9"
+
+-    },
+
+-    {
+
+-      "from": "0.5.9",
+
+-      "to": "0.5.10"
+
+-    }
+
+-  ]
+
+-}
+--- a/docs/update-path.yaml
++++ b/docs/update-path.yaml
+@@ -1,51 +0,0 @@
+-sequence:
+
+-  - 0.1.0
+
+-  - 0.2.0
+
+-  - 0.3.0
+
+-  - 0.4.0
+
+-  - 0.3.0a
+
+-  - 0.4.0a
+
+-  - 0.5.0
+
+-  - 0.5.1
+
+-  - 0.5.2
+
+-  - 0.5.3
+
+-  - 0.5.4
+
+-  - 0.5.5
+
+-  - 0.5.6
+
+-  - 0.5.7
+
+-  - 0.5.8
+
+-  - 0.5.9
+
+-  - 0.5.10
+
+-edges:
+
+-  - from: 0.1.0
+
+-    to: 0.2.0
+
+-  - from: 0.2.0
+
+-    to: 0.3.0
+
+-  - from: 0.3.0
+
+-    to: 0.4.0
+
+-  - from: 0.4.0
+
+-    to: 0.3.0a
+
+-  - from: 0.3.0a
+
+-    to: 0.4.0a
+
+-  - from: 0.4.0a
+
+-    to: 0.5.0
+
+-  - from: 0.5.0
+
+-    to: 0.5.1
+
+-  - from: 0.5.1
+
+-    to: 0.5.2
+
+-  - from: 0.5.2
+
+-    to: 0.5.3
+
+-  - from: 0.5.3
+
+-    to: 0.5.4
+
+-  - from: 0.5.4
+
+-    to: 0.5.5
+
+-  - from: 0.5.5
+
+-    to: 0.5.6
+
+-  - from: 0.5.6
+
+-    to: 0.5.7
+
+-  - from: 0.5.7
+
+-    to: 0.5.8
+
+-  - from: 0.5.8
+
+-    to: 0.5.9
+
+-  - from: 0.5.9
+
+-    to: 0.5.10
+
+--- a/examples/LamoboR1-1.uci
++++ b/examples/LamoboR1-1.uci
+@@ -1,74 +0,0 @@
+-#!/bin/sh
+
+-set -e
+
+-echo '[ha-vrrp examples] applying configuration...'
+
+-uci set ha_vrrp.core.enabled='1'
+
+-uci set ha_vrrp.core.cluster_name='lab-ha'
+
+-uci set ha_vrrp.core.auth_pass='changeme-please'
+
+-uci set ha_vrrp.core.peer_host='192.168.254.2'
+
+-uci set ha_vrrp.core.peer_user='root'
+
+-uci set ha_vrrp.core.peer_port='22'
+
+-uci -q del_list ha_vrrp.core.sync_path '/etc/config/ha_vrrp'
+
+-uci -q del_list ha_vrrp.core.sync_path '/etc/config/network'
+
+-uci -q del_list ha_vrrp.core.sync_path '/etc/config/firewall'
+
+-uci add_list ha_vrrp.core.sync_path='/etc/config/ha_vrrp'
+
+-uci add_list ha_vrrp.core.sync_path='/etc/config/network'
+
+-uci add_list ha_vrrp.core.sync_path='/etc/config/firewall'
+
+-uci set ha_vrrp.core.auto_sync='1'
+
+-uci set ha_vrrp.core.auto_sync_interval='7'
+
+-uci set ha_vrrp.core.discover_cidr='192.168.254.0/24'
+
+-uci set ha_vrrp.core.discover_min='1'
+
+-uci set ha_vrrp.core.discover_max='10'
+
+-uci -q del_list ha_vrrp.core.health_wan_if 'wan'
+
+-uci add_list ha_vrrp.core.health_wan_if='wan'
+
+-uci set ha_vrrp.core.health_interval='2'
+
+-uci set ha_vrrp.core.health_fall='2'
+
+-uci set ha_vrrp.core.health_rise='2'
+
+-uci set ha_vrrp.core.health_weight='-30'
+
+-uci set ha_vrrp.core.health6_interval='3'
+
+-uci set ha_vrrp.core.health6_fall='2'
+
+-uci set ha_vrrp.core.health6_rise='2'
+
+-uci set ha_vrrp.core.health6_weight='-20'
+
+-uci -q delete ha_vrrp.inst_hb
+
+-uci set ha_vrrp.inst_hb='instance'
+
+-uci set ha_vrrp.inst_hb.name='HEARTBEAT'
+
+-uci set ha_vrrp.inst_hb.vrid='43'
+
+-uci set ha_vrrp.inst_hb.priority='150'
+
+-uci set ha_vrrp.inst_hb.state='MASTER'
+
+-uci set ha_vrrp.inst_hb.preempt='1'
+
+-uci set ha_vrrp.inst_hb.iface='eth0'
+
+-uci set ha_vrrp.inst_hb.use_vlan='1'
+
+-uci set ha_vrrp.inst_hb.vlan_id='200'
+
+-uci set ha_vrrp.inst_hb.vip_cidr='192.168.254.254/24'
+
+-uci set ha_vrrp.inst_hb.unicast_src_ip='192.168.254.1'
+
+-uci -q del_list ha_vrrp.inst_hb.unicast_peer
+
+-uci add_list ha_vrrp.inst_hb.unicast_peer='192.168.254.2'
+
+-uci -q delete ha_vrrp.inst_admin
+
+-uci set ha_vrrp.inst_admin='instance'
+
+-uci set ha_vrrp.inst_admin.name='ADMINLAN'
+
+-uci set ha_vrrp.inst_admin.vrid='41'
+
+-uci set ha_vrrp.inst_admin.priority='150'
+
+-uci set ha_vrrp.inst_admin.state='MASTER'
+
+-uci set ha_vrrp.inst_admin.preempt='1'
+
+-uci set ha_vrrp.inst_admin.iface='ADMINLAN'
+
+-uci set ha_vrrp.inst_admin.vip_cidr='192.168.1.254/24'
+
+-uci set ha_vrrp.inst_admin.unicast_src_ip='192.168.1.1'
+
+-uci -q del_list ha_vrrp.inst_admin.unicast_peer
+
+-uci add_list ha_vrrp.inst_admin.unicast_peer='192.168.1.2'
+
+-uci -q delete ha_vrrp.inst_gast
+
+-uci set ha_vrrp.inst_gast='instance'
+
+-uci set ha_vrrp.inst_gast.name='GAST'
+
+-uci set ha_vrrp.inst_gast.vrid='42'
+
+-uci set ha_vrrp.inst_gast.priority='150'
+
+-uci set ha_vrrp.inst_gast.state='MASTER'
+
+-uci set ha_vrrp.inst_gast.preempt='1'
+
+-uci set ha_vrrp.inst_gast.iface='GAST'
+
+-uci set ha_vrrp.inst_gast.vip_cidr='192.168.4.254/24'
+
+-uci set ha_vrrp.inst_gast.unicast_src_ip='192.168.4.1'
+
+-uci -q del_list ha_vrrp.inst_gast.unicast_peer
+
+-uci add_list ha_vrrp.inst_gast.unicast_peer='192.168.4.2'
+
+-uci commit ha_vrrp
+
+-/usr/sbin/ha-vrrp-apply
+
+-/etc/init.d/keepalived restart || true
+
+-/etc/init.d/ha-vrrp enable
+
+-/etc/init.d/ha-vrrp restart
+
+-echo '[ha-vrrp examples] done.'
+
+--- a/examples/LamoboR1-2.uci
++++ b/examples/LamoboR1-2.uci
+@@ -1,74 +0,0 @@
+-#!/bin/sh
+
+-set -e
+
+-echo '[ha-vrrp examples] applying configuration...'
+
+-uci set ha_vrrp.core.enabled='1'
+
+-uci set ha_vrrp.core.cluster_name='lab-ha'
+
+-uci set ha_vrrp.core.auth_pass='changeme-please'
+
+-uci set ha_vrrp.core.peer_host='192.168.254.1'
+
+-uci set ha_vrrp.core.peer_user='root'
+
+-uci set ha_vrrp.core.peer_port='22'
+
+-uci -q del_list ha_vrrp.core.sync_path '/etc/config/ha_vrrp'
+
+-uci -q del_list ha_vrrp.core.sync_path '/etc/config/network'
+
+-uci -q del_list ha_vrrp.core.sync_path '/etc/config/firewall'
+
+-uci add_list ha_vrrp.core.sync_path='/etc/config/ha_vrrp'
+
+-uci add_list ha_vrrp.core.sync_path='/etc/config/network'
+
+-uci add_list ha_vrrp.core.sync_path='/etc/config/firewall'
+
+-uci set ha_vrrp.core.auto_sync='1'
+
+-uci set ha_vrrp.core.auto_sync_interval='7'
+
+-uci set ha_vrrp.core.discover_cidr='192.168.254.0/24'
+
+-uci set ha_vrrp.core.discover_min='1'
+
+-uci set ha_vrrp.core.discover_max='10'
+
+-uci -q del_list ha_vrrp.core.health_wan_if 'wan'
+
+-uci add_list ha_vrrp.core.health_wan_if='wan'
+
+-uci set ha_vrrp.core.health_interval='2'
+
+-uci set ha_vrrp.core.health_fall='2'
+
+-uci set ha_vrrp.core.health_rise='2'
+
+-uci set ha_vrrp.core.health_weight='-30'
+
+-uci set ha_vrrp.core.health6_interval='3'
+
+-uci set ha_vrrp.core.health6_fall='2'
+
+-uci set ha_vrrp.core.health6_rise='2'
+
+-uci set ha_vrrp.core.health6_weight='-20'
+
+-uci -q delete ha_vrrp.inst_hb
+
+-uci set ha_vrrp.inst_hb='instance'
+
+-uci set ha_vrrp.inst_hb.name='HEARTBEAT'
+
+-uci set ha_vrrp.inst_hb.vrid='43'
+
+-uci set ha_vrrp.inst_hb.priority='100'
+
+-uci set ha_vrrp.inst_hb.state='BACKUP'
+
+-uci set ha_vrrp.inst_hb.preempt='1'
+
+-uci set ha_vrrp.inst_hb.iface='eth0'
+
+-uci set ha_vrrp.inst_hb.use_vlan='1'
+
+-uci set ha_vrrp.inst_hb.vlan_id='200'
+
+-uci set ha_vrrp.inst_hb.vip_cidr='192.168.254.254/24'
+
+-uci set ha_vrrp.inst_hb.unicast_src_ip='192.168.254.2'
+
+-uci -q del_list ha_vrrp.inst_hb.unicast_peer
+
+-uci add_list ha_vrrp.inst_hb.unicast_peer='192.168.254.1'
+
+-uci -q delete ha_vrrp.inst_admin
+
+-uci set ha_vrrp.inst_admin='instance'
+
+-uci set ha_vrrp.inst_admin.name='ADMINLAN'
+
+-uci set ha_vrrp.inst_admin.vrid='41'
+
+-uci set ha_vrrp.inst_admin.priority='100'
+
+-uci set ha_vrrp.inst_admin.state='BACKUP'
+
+-uci set ha_vrrp.inst_admin.preempt='1'
+
+-uci set ha_vrrp.inst_admin.iface='ADMINLAN'
+
+-uci set ha_vrrp.inst_admin.vip_cidr='192.168.1.254/24'
+
+-uci set ha_vrrp.inst_admin.unicast_src_ip='192.168.1.2'
+
+-uci -q del_list ha_vrrp.inst_admin.unicast_peer
+
+-uci add_list ha_vrrp.inst_admin.unicast_peer='192.168.1.1'
+
+-uci -q delete ha_vrrp.inst_gast
+
+-uci set ha_vrrp.inst_gast='instance'
+
+-uci set ha_vrrp.inst_gast.name='GAST'
+
+-uci set ha_vrrp.inst_gast.vrid='42'
+
+-uci set ha_vrrp.inst_gast.priority='100'
+
+-uci set ha_vrrp.inst_gast.state='BACKUP'
+
+-uci set ha_vrrp.inst_gast.preempt='1'
+
+-uci set ha_vrrp.inst_gast.iface='GAST'
+
+-uci set ha_vrrp.inst_gast.vip_cidr='192.168.4.254/24'
+
+-uci set ha_vrrp.inst_gast.unicast_src_ip='192.168.4.2'
+
+-uci -q del_list ha_vrrp.inst_gast.unicast_peer
+
+-uci add_list ha_vrrp.inst_gast.unicast_peer='192.168.4.1'
+
+-uci commit ha_vrrp
+
+-/usr/sbin/ha-vrrp-apply
+
+-/etc/init.d/keepalived restart || true
+
+-/etc/init.d/ha-vrrp enable
+
+-/etc/init.d/ha-vrrp restart
+
+-echo '[ha-vrrp examples] done.'
+
+--- a/examples/README.md
++++ b/examples/README.md
+@@ -1,14 +0,0 @@
+-# Examples for Lamobo R1 (BPI) – dual-node HA
+
+-
+
+-Segments:
+
+-- ADMINLAN 192.168.1.0/24 – node1=192.168.1.1, node2=192.168.1.2, VIP=192.168.1.254
+
+-- GAST     192.168.4.0/24 – node1=192.168.4.1, node2=192.168.4.2, VIP=192.168.4.254
+
+-- HEARTBEAT (VLAN 200 on eth0) 192.168.254.0/24 – node1=192.168.254.1, node2=192.168.254.2, VIP=192.168.254.254
+
+-
+
+-Health:
+
+-- IPv4 WAN check on `wan` (DHCP gateway)
+
+-- (optional) IPv6 WAN check on `wan6`
+
+-
+
+-Use:
+
+-1) Copy the script to the node and run as root: `sh ./apply-LamoboR1-1.sh` or `sh ./apply-LamoboR1-2.sh`
+
+-2) Open LuCI → Services → HA VRRP and verify status.
+
+--- a/examples/apply-LamoboR1-1.sh
++++ b/examples/apply-LamoboR1-1.sh
+@@ -1,74 +0,0 @@
+-#!/bin/sh
+
+-set -e
+
+-echo '[ha-vrrp examples] applying configuration...'
+
+-uci set ha_vrrp.core.enabled='1'
+
+-uci set ha_vrrp.core.cluster_name='lab-ha'
+
+-uci set ha_vrrp.core.auth_pass='changeme-please'
+
+-uci set ha_vrrp.core.peer_host='192.168.254.2'
+
+-uci set ha_vrrp.core.peer_user='root'
+
+-uci set ha_vrrp.core.peer_port='22'
+
+-uci -q del_list ha_vrrp.core.sync_path '/etc/config/ha_vrrp'
+
+-uci -q del_list ha_vrrp.core.sync_path '/etc/config/network'
+
+-uci -q del_list ha_vrrp.core.sync_path '/etc/config/firewall'
+
+-uci add_list ha_vrrp.core.sync_path='/etc/config/ha_vrrp'
+
+-uci add_list ha_vrrp.core.sync_path='/etc/config/network'
+
+-uci add_list ha_vrrp.core.sync_path='/etc/config/firewall'
+
+-uci set ha_vrrp.core.auto_sync='1'
+
+-uci set ha_vrrp.core.auto_sync_interval='7'
+
+-uci set ha_vrrp.core.discover_cidr='192.168.254.0/24'
+
+-uci set ha_vrrp.core.discover_min='1'
+
+-uci set ha_vrrp.core.discover_max='10'
+
+-uci -q del_list ha_vrrp.core.health_wan_if 'wan'
+
+-uci add_list ha_vrrp.core.health_wan_if='wan'
+
+-uci set ha_vrrp.core.health_interval='2'
+
+-uci set ha_vrrp.core.health_fall='2'
+
+-uci set ha_vrrp.core.health_rise='2'
+
+-uci set ha_vrrp.core.health_weight='-30'
+
+-uci set ha_vrrp.core.health6_interval='3'
+
+-uci set ha_vrrp.core.health6_fall='2'
+
+-uci set ha_vrrp.core.health6_rise='2'
+
+-uci set ha_vrrp.core.health6_weight='-20'
+
+-uci -q delete ha_vrrp.inst_hb
+
+-uci set ha_vrrp.inst_hb='instance'
+
+-uci set ha_vrrp.inst_hb.name='HEARTBEAT'
+
+-uci set ha_vrrp.inst_hb.vrid='43'
+
+-uci set ha_vrrp.inst_hb.priority='150'
+
+-uci set ha_vrrp.inst_hb.state='MASTER'
+
+-uci set ha_vrrp.inst_hb.preempt='1'
+
+-uci set ha_vrrp.inst_hb.iface='eth0'
+
+-uci set ha_vrrp.inst_hb.use_vlan='1'
+
+-uci set ha_vrrp.inst_hb.vlan_id='200'
+
+-uci set ha_vrrp.inst_hb.vip_cidr='192.168.254.254/24'
+
+-uci set ha_vrrp.inst_hb.unicast_src_ip='192.168.254.1'
+
+-uci -q del_list ha_vrrp.inst_hb.unicast_peer
+
+-uci add_list ha_vrrp.inst_hb.unicast_peer='192.168.254.2'
+
+-uci -q delete ha_vrrp.inst_admin
+
+-uci set ha_vrrp.inst_admin='instance'
+
+-uci set ha_vrrp.inst_admin.name='ADMINLAN'
+
+-uci set ha_vrrp.inst_admin.vrid='41'
+
+-uci set ha_vrrp.inst_admin.priority='150'
+
+-uci set ha_vrrp.inst_admin.state='MASTER'
+
+-uci set ha_vrrp.inst_admin.preempt='1'
+
+-uci set ha_vrrp.inst_admin.iface='ADMINLAN'
+
+-uci set ha_vrrp.inst_admin.vip_cidr='192.168.1.254/24'
+
+-uci set ha_vrrp.inst_admin.unicast_src_ip='192.168.1.1'
+
+-uci -q del_list ha_vrrp.inst_admin.unicast_peer
+
+-uci add_list ha_vrrp.inst_admin.unicast_peer='192.168.1.2'
+
+-uci -q delete ha_vrrp.inst_gast
+
+-uci set ha_vrrp.inst_gast='instance'
+
+-uci set ha_vrrp.inst_gast.name='GAST'
+
+-uci set ha_vrrp.inst_gast.vrid='42'
+
+-uci set ha_vrrp.inst_gast.priority='150'
+
+-uci set ha_vrrp.inst_gast.state='MASTER'
+
+-uci set ha_vrrp.inst_gast.preempt='1'
+
+-uci set ha_vrrp.inst_gast.iface='GAST'
+
+-uci set ha_vrrp.inst_gast.vip_cidr='192.168.4.254/24'
+
+-uci set ha_vrrp.inst_gast.unicast_src_ip='192.168.4.1'
+
+-uci -q del_list ha_vrrp.inst_gast.unicast_peer
+
+-uci add_list ha_vrrp.inst_gast.unicast_peer='192.168.4.2'
+
+-uci commit ha_vrrp
+
+-/usr/sbin/ha-vrrp-apply
+
+-/etc/init.d/keepalived restart || true
+
+-/etc/init.d/ha-vrrp enable
+
+-/etc/init.d/ha-vrrp restart
+
+-echo '[ha-vrrp examples] done.'
+
+--- a/examples/apply-LamoboR1-2.sh
++++ b/examples/apply-LamoboR1-2.sh
+@@ -1,74 +0,0 @@
+-#!/bin/sh
+
+-set -e
+
+-echo '[ha-vrrp examples] applying configuration...'
+
+-uci set ha_vrrp.core.enabled='1'
+
+-uci set ha_vrrp.core.cluster_name='lab-ha'
+
+-uci set ha_vrrp.core.auth_pass='changeme-please'
+
+-uci set ha_vrrp.core.peer_host='192.168.254.1'
+
+-uci set ha_vrrp.core.peer_user='root'
+
+-uci set ha_vrrp.core.peer_port='22'
+
+-uci -q del_list ha_vrrp.core.sync_path '/etc/config/ha_vrrp'
+
+-uci -q del_list ha_vrrp.core.sync_path '/etc/config/network'
+
+-uci -q del_list ha_vrrp.core.sync_path '/etc/config/firewall'
+
+-uci add_list ha_vrrp.core.sync_path='/etc/config/ha_vrrp'
+
+-uci add_list ha_vrrp.core.sync_path='/etc/config/network'
+
+-uci add_list ha_vrrp.core.sync_path='/etc/config/firewall'
+
+-uci set ha_vrrp.core.auto_sync='1'
+
+-uci set ha_vrrp.core.auto_sync_interval='7'
+
+-uci set ha_vrrp.core.discover_cidr='192.168.254.0/24'
+
+-uci set ha_vrrp.core.discover_min='1'
+
+-uci set ha_vrrp.core.discover_max='10'
+
+-uci -q del_list ha_vrrp.core.health_wan_if 'wan'
+
+-uci add_list ha_vrrp.core.health_wan_if='wan'
+
+-uci set ha_vrrp.core.health_interval='2'
+
+-uci set ha_vrrp.core.health_fall='2'
+
+-uci set ha_vrrp.core.health_rise='2'
+
+-uci set ha_vrrp.core.health_weight='-30'
+
+-uci set ha_vrrp.core.health6_interval='3'
+
+-uci set ha_vrrp.core.health6_fall='2'
+
+-uci set ha_vrrp.core.health6_rise='2'
+
+-uci set ha_vrrp.core.health6_weight='-20'
+
+-uci -q delete ha_vrrp.inst_hb
+
+-uci set ha_vrrp.inst_hb='instance'
+
+-uci set ha_vrrp.inst_hb.name='HEARTBEAT'
+
+-uci set ha_vrrp.inst_hb.vrid='43'
+
+-uci set ha_vrrp.inst_hb.priority='100'
+
+-uci set ha_vrrp.inst_hb.state='BACKUP'
+
+-uci set ha_vrrp.inst_hb.preempt='1'
+
+-uci set ha_vrrp.inst_hb.iface='eth0'
+
+-uci set ha_vrrp.inst_hb.use_vlan='1'
+
+-uci set ha_vrrp.inst_hb.vlan_id='200'
+
+-uci set ha_vrrp.inst_hb.vip_cidr='192.168.254.254/24'
+
+-uci set ha_vrrp.inst_hb.unicast_src_ip='192.168.254.2'
+
+-uci -q del_list ha_vrrp.inst_hb.unicast_peer
+
+-uci add_list ha_vrrp.inst_hb.unicast_peer='192.168.254.1'
+
+-uci -q delete ha_vrrp.inst_admin
+
+-uci set ha_vrrp.inst_admin='instance'
+
+-uci set ha_vrrp.inst_admin.name='ADMINLAN'
+
+-uci set ha_vrrp.inst_admin.vrid='41'
+
+-uci set ha_vrrp.inst_admin.priority='100'
+
+-uci set ha_vrrp.inst_admin.state='BACKUP'
+
+-uci set ha_vrrp.inst_admin.preempt='1'
+
+-uci set ha_vrrp.inst_admin.iface='ADMINLAN'
+
+-uci set ha_vrrp.inst_admin.vip_cidr='192.168.1.254/24'
+
+-uci set ha_vrrp.inst_admin.unicast_src_ip='192.168.1.2'
+
+-uci -q del_list ha_vrrp.inst_admin.unicast_peer
+
+-uci add_list ha_vrrp.inst_admin.unicast_peer='192.168.1.1'
+
+-uci -q delete ha_vrrp.inst_gast
+
+-uci set ha_vrrp.inst_gast='instance'
+
+-uci set ha_vrrp.inst_gast.name='GAST'
+
+-uci set ha_vrrp.inst_gast.vrid='42'
+
+-uci set ha_vrrp.inst_gast.priority='100'
+
+-uci set ha_vrrp.inst_gast.state='BACKUP'
+
+-uci set ha_vrrp.inst_gast.preempt='1'
+
+-uci set ha_vrrp.inst_gast.iface='GAST'
+
+-uci set ha_vrrp.inst_gast.vip_cidr='192.168.4.254/24'
+
+-uci set ha_vrrp.inst_gast.unicast_src_ip='192.168.4.2'
+
+-uci -q del_list ha_vrrp.inst_gast.unicast_peer
+
+-uci add_list ha_vrrp.inst_gast.unicast_peer='192.168.4.1'
+
+-uci commit ha_vrrp
+
+-/usr/sbin/ha-vrrp-apply
+
+-/etc/init.d/keepalived restart || true
+
+-/etc/init.d/ha-vrrp enable
+
+-/etc/init.d/ha-vrrp restart
+
+-echo '[ha-vrrp examples] done.'
+
+--- a/ha-vrrp/Makefile
++++ b/ha-vrrp/Makefile
+@@ -1,47 +0,0 @@
+-include $(TOPDIR)/rules.mk
+
+-
+
+-PKG_NAME:=ha-vrrp
+
+-\g<1>0.5.15s
+
+-  CATEGORY:=Utilities
+
+-  TITLE:=HA VRRP (Keepalived) with UCI renderer (multi-instance, discovery, sync, health, autosync)
+
+-  DEPENDS:=+keepalived +ip-full +uci +openssh-client +ubus +jsonfilter +busybox
+
+-endef
+
+-
+
+-define Package/ha-vrrp/description
+
+- UCI-driven Keepalived (VRRP, unicast). Multi-instance, VLAN heartbeat, peer discovery & sync,
+
+- IPv4/IPv6 WAN-gateway health checks, multi-VIP, optional autosync daemon.
+
+-endef
+
+-
+
+-define Build/Prepare
+
+-endef
+
+-define Build/Configure
+
+-endef
+
+-define Build/Compile
+
+-endef
+
+-
+
+-define Package/ha-vrrp/install
+
+-	$(INSTALL_DIR) $(1)/etc/config
+
+-	$(INSTALL_CONF) ./files/etc/config/ha_vrrp $(1)/etc/config/ha_vrrp
+
+-
+
+-	$(INSTALL_DIR) $(1)/etc/init.d
+
+-	$(INSTALL_BIN) ./files/etc/init.d/ha-vrrp $(1)/etc/init.d/ha-vrrp
+
+-	$(INSTALL_BIN) ./files/etc/init.d/ha-vrrp-syncd $(1)/etc/init.d/ha-vrrp-syncd
+
+-
+
+-	$(INSTALL_DIR) $(1)/etc/hotplug.d/iface
+
+-	$(INSTALL_BIN) ./files/etc/hotplug.d/iface/95-ha-vrrp-apply $(1)/etc/hotplug.d/iface/95-ha-vrrp-apply
+
+-
+
+-	$(INSTALL_DIR) $(1)/usr/libexec/ha-vrrp
+
+-	$(INSTALL_BIN) ./files/usr/libexec/ha-vrrp/ensure_vlan.sh $(1)/usr/libexec/ha-vrrp/ensure_vlan.sh
+
+-	$(INSTALL_BIN) ./files/usr/libexec/ha-vrrp/notify_master.sh $(1)/usr/libexec/ha-vrrp/notify_master.sh
+
+-	$(INSTALL_BIN) ./files/usr/libexec/ha-vrrp/notify_backup.sh $(1)/usr/libexec/ha-vrrp/notify_backup.sh
+
+-	$(INSTALL_BIN) ./files/usr/libexec/ha-vrrp/discover_peers.sh $(1)/usr/libexec/ha-vrrp/discover_peers.sh
+
+-	$(INSTALL_BIN) ./files/usr/libexec/ha-vrrp/check_wan_gw.sh $(1)/usr/libexec/ha-vrrp/check_wan_gw.sh
+
+-	$(INSTALL_BIN) ./files/usr/libexec/ha-vrrp/check_wan6_gw.sh $(1)/usr/libexec/ha-vrrp/check_wan6_gw.sh
+
+-
+
+-	$(INSTALL_DIR) $(1)/usr/sbin
+
+-	$(INSTALL_BIN) ./files/usr/sbin/ha-vrrp-apply $(1)/usr/sbin/ha-vrrp-apply
+
+-	$(INSTALL_BIN) ./files/usr/sbin/ha-vrrp-sync $(1)/usr/sbin/ha-vrrp-sync
+
+-	$(INSTALL_BIN) ./files/usr/sbin/ha-vrrp-autosync $(1)/usr/sbin/ha-vrrp-autosync
+
+-endef
+
+-
+
+-$(eval $(call BuildPackage,ha-vrrp))
+
+--- a/ha-vrrp/files/etc/config/ha_vrrp
++++ b/ha-vrrp/files/etc/config/ha_vrrp
+@@ -1,49 +0,0 @@
+-config core 'core'
+
+-	option sync_method 'auto'
+
+-	option key_type 'auto'
+
+-	option enabled '1'
+
+-	option cluster_name 'lab-ha'
+
+-	option auth_pass 'changeme-please'
+
+-
+
+-	# Legacy single-instance options (kept for 0.2.0 compat, optional):
+
+-	# option vrid '42'
+
+-	# option priority '150'
+
+-	# option state 'BACKUP'
+
+-	# option advert_int '1'
+
+-	# option iface 'wan'
+
+-	# option use_vlan '0'
+
+-	# option vlan_id ''
+
+-	# option vip_cidr '192.0.2.200/24'
+
+-	# option unicast_src_ip '192.0.2.10'
+
+-	# list unicast_peer '192.0.2.11'
+
+-
+
+-	# Peer (HEARTBEAT)
+
+-	option peer_host '192.168.254.2'
+
+-	option peer_user 'root'
+
+-	option peer_port '22'
+
+-
+
+-	# Sync + Auto-Sync
+
+-	list sync_path '/etc/config/ha_vrrp'
+
+-	list sync_path '/etc/config/network'
+
+-	list sync_path '/etc/config/firewall'
+
+-	option auto_sync '0'
+
+-	option auto_sync_interval '7'
+
+-
+
+-	# Discovery
+
+-	option discover_cidr '192.168.254.0/24'
+
+-	option discover_min '1'
+
+-	option discover_max '10'
+
+-
+
+-	# Health IPv4
+
+-	list health_wan_if 'wan'
+
+-	option health_interval '2'
+
+-	option health_fall '2'
+
+-	option health_rise '2'
+
+-	option health_weight '-30'
+
+-
+
+-	# Health IPv6
+
+-	# list health_wan6_if 'wan6'
+
+-	option health6_interval '3'
+
+-	option health6_fall '2'
+
+-	option health6_rise '2'
+
+-	option health6_weight '-20'
+
+--- a/ha-vrrp/files/etc/hotplug.d/iface/95-ha-vrrp-apply
++++ b/ha-vrrp/files/etc/hotplug.d/iface/95-ha-vrrp-apply
+@@ -1,24 +0,0 @@
+-#!/bin/sh
+
+-get_dev() {
+
+-  local sec="$1"
+
+-  local IFACE USE_VLAN VLAN_ID DEV
+
+-  IFACE="$(uci -q get ha_vrrp.$sec.iface || echo)"
+
+-  [ -z "$IFACE" ] && return 1
+
+-  USE_VLAN="$(uci -q get ha_vrrp.$sec.use_vlan || echo 0)"
+
+-  VLAN_ID="$(uci -q get ha_vrrp.$sec.vlan_id || echo)"
+
+-  DEV="$IFACE"
+
+-  [ "$USE_VLAN" = "1" ] && [ -n "$VLAN_ID" ] && DEV="${IFACE}.${VLAN_ID}"
+
+-  echo "$DEV"
+
+-}
+
+-MON=""
+
+-INSTANCES="$(uci -q show ha_vrrp | awk -F. '/^ha_vrrp\.[^=]+=/ {print $2}' | cut -d= -f1 | sort -u | grep -E '^inst_' || true)"
+
+-if [ -z "$INSTANCES" ]; then
+
+-  MON="$(get_dev core || true)"
+
+-else
+
+-  for s in $INSTANCES; do d="$(get_dev "$s" || true)"; [ -n "$d" ] && MON="$MON $d"; done
+
+-fi
+
+-for d in $MON; do
+
+-  [ "$INTERFACE" = "$d" ] || continue
+
+-  /usr/sbin/ha-vrrp-apply && /etc/init.d/keepalived restart
+
+-  exit 0
+
+-done
+
+--- a/ha-vrrp/files/etc/init.d/ha-vrrp
++++ b/ha-vrrp/files/etc/init.d/ha-vrrp
+@@ -1,22 +0,0 @@
+-#!/bin/sh /etc/rc.common
+
+-START=69
+
+-STOP=11
+
+-USE_PROCD=1
+
+-
+
+-start_service() {
+
+-  local enabled="$(uci -q get ha_vrrp.core.enabled || echo 1)"
+
+-  [ "$enabled" = "1" ] || { logger -t ha-vrrp "disabled"; return 0; }
+
+-
+
+-  /usr/libexec/ha-vrrp/ensure_vlan.sh || true
+
+-  /usr/sbin/ha-vrrp-apply || true
+
+-
+
+-  /etc/init.d/keepalived stop >/dev/null 2>&1 || true
+
+-  /etc/init.d/keepalived start
+
+-
+
+-  /etc/init.d/ha-vrrp-syncd start >/dev/null 2>&1 || true
+
+-}
+
+-
+
+-stop_service() {
+
+-  /etc/init.d/ha-vrrp-syncd stop >/dev/null 2>&1 || true
+
+-  /etc/init.d/keepalived stop >/dev/null 2>&1 || true
+
+-}
+
+--- a/ha-vrrp/files/etc/init.d/ha-vrrp-syncd
++++ b/ha-vrrp/files/etc/init.d/ha-vrrp-syncd
+@@ -1,13 +0,0 @@
+-#!/bin/sh /etc/rc.common
+
+-START=70
+
+-USE_PROCD=1
+
+-PROG=/usr/sbin/ha-vrrp-autosync
+
+-
+
+-start_service() {
+
+-  local en="$(uci -q get ha_vrrp.core.auto_sync || echo 0)"
+
+-  [ "$en" = "1" ] || return 0
+
+-  procd_open_instance
+
+-  procd_set_param command "$PROG" -f
+
+-  procd_set_param respawn 5 10 0
+
+-  procd_close_instance
+
+-}
+
+--- a/ha-vrrp/files/usr/libexec/ha-vrrp/adapters/dhcpdns/dhcpdns.sh
++++ b/ha-vrrp/files/usr/libexec/ha-vrrp/adapters/dhcpdns/dhcpdns.sh
+@@ -1,2 +0,0 @@
+-#!/bin/sh
+
+-exit 0
+
+--- a/ha-vrrp/files/usr/libexec/ha-vrrp/adapters/dhcpdns/dnsmasq_fw4.sh
++++ b/ha-vrrp/files/usr/libexec/ha-vrrp/adapters/dhcpdns/dnsmasq_fw4.sh
+@@ -1,2 +0,0 @@
+-#!/bin/sh
+
+-exit 0
+
+--- a/ha-vrrp/files/usr/libexec/ha-vrrp/adapters/dhcpdns/dnsmasq_legacy.sh
++++ b/ha-vrrp/files/usr/libexec/ha-vrrp/adapters/dhcpdns/dnsmasq_legacy.sh
+@@ -1,2 +0,0 @@
+-#!/bin/sh
+
+-exit 0
+
+--- a/ha-vrrp/files/usr/libexec/ha-vrrp/adapters/fw/firewall.sh
++++ b/ha-vrrp/files/usr/libexec/ha-vrrp/adapters/fw/firewall.sh
+@@ -1,2 +0,0 @@
+-#!/bin/sh
+
+-exit 0
+
+--- a/ha-vrrp/files/usr/libexec/ha-vrrp/adapters/fw/iptables.sh
++++ b/ha-vrrp/files/usr/libexec/ha-vrrp/adapters/fw/iptables.sh
+@@ -1,2 +0,0 @@
+-#!/bin/sh
+
+-exit 0
+
+--- a/ha-vrrp/files/usr/libexec/ha-vrrp/adapters/fw/nft.sh
++++ b/ha-vrrp/files/usr/libexec/ha-vrrp/adapters/fw/nft.sh
+@@ -1,2 +0,0 @@
+-#!/bin/sh
+
+-exit 0
+
+--- a/ha-vrrp/files/usr/libexec/ha-vrrp/adapters/keepalived/ka_2_2plus.sh
++++ b/ha-vrrp/files/usr/libexec/ha-vrrp/adapters/keepalived/ka_2_2plus.sh
+@@ -1,2 +0,0 @@
+-#!/bin/sh
+
+-exit 0
+
+--- a/ha-vrrp/files/usr/libexec/ha-vrrp/adapters/keepalived/ka_2x.sh
++++ b/ha-vrrp/files/usr/libexec/ha-vrrp/adapters/keepalived/ka_2x.sh
+@@ -1,2 +0,0 @@
+-#!/bin/sh
+
+-exit 0
+
+--- a/ha-vrrp/files/usr/libexec/ha-vrrp/adapters/keepalived/keepalived.sh
++++ b/ha-vrrp/files/usr/libexec/ha-vrrp/adapters/keepalived/keepalived.sh
+@@ -1,2 +0,0 @@
+-#!/bin/sh
+
+-exit 0
+
+--- a/ha-vrrp/files/usr/libexec/ha-vrrp/adapters/netstack/dsa.sh
++++ b/ha-vrrp/files/usr/libexec/ha-vrrp/adapters/netstack/dsa.sh
+@@ -1,2 +0,0 @@
+-#!/bin/sh
+
+-exit 0
+
+--- a/ha-vrrp/files/usr/libexec/ha-vrrp/adapters/netstack/netstack.sh
++++ b/ha-vrrp/files/usr/libexec/ha-vrrp/adapters/netstack/netstack.sh
+@@ -1,2 +0,0 @@
+-#!/bin/sh
+
+-exit 0
+
+--- a/ha-vrrp/files/usr/libexec/ha-vrrp/adapters/netstack/swconfig.sh
++++ b/ha-vrrp/files/usr/libexec/ha-vrrp/adapters/netstack/swconfig.sh
+@@ -1,2 +0,0 @@
+-#!/bin/sh
+
+-exit 0
+
+--- a/ha-vrrp/files/usr/libexec/ha-vrrp/check_wan6_gw.sh
++++ b/ha-vrrp/files/usr/libexec/ha-vrrp/check_wan6_gw.sh
+@@ -1,7 +0,0 @@
+-#!/bin/sh
+
+-IF="$1"; [ -n "$IF" ] || exit 1
+
+-GW="$(ubus call network.interface.$IF status 2>/dev/null | jsonfilter -e '@.route6[0].nexthop' | head -n1)"
+
+-[ -n "$GW" ] && [ "$GW" != "null" ] || GW="$(ip -6 route show dev "$IF" default | awk '/default/ {print $3; exit}')"
+
+-[ -n "$GW" ] || exit 1
+
+-ping -6 -c1 -W1 "$GW" >/dev/null 2>&1
+
+-exit $?
+
+--- a/ha-vrrp/files/usr/libexec/ha-vrrp/check_wan_gw.sh
++++ b/ha-vrrp/files/usr/libexec/ha-vrrp/check_wan_gw.sh
+@@ -1,7 +0,0 @@
+-#!/bin/sh
+
+-IF="$1"; [ -n "$IF" ] || exit 1
+
+-GW="$(ubus call network.interface.$IF status 2>/dev/null | jsonfilter -e '@.route[0].nexthop' | head -n1)"
+
+-[ -n "$GW" ] && [ "$GW" != "null" ] || GW="$(ip route show dev "$IF" 0.0.0.0/0 | awk '/default/ {print $3; exit}')"
+
+-[ -n "$GW" ] || exit 1
+
+-ping -c1 -W1 "$GW" >/dev/null 2>&1
+
+-exit $?
+
+--- a/ha-vrrp/files/usr/libexec/ha-vrrp/discover_peers.sh
++++ b/ha-vrrp/files/usr/libexec/ha-vrrp/discover_peers.sh
+@@ -1,21 +0,0 @@
+-#!/bin/sh
+
+-set -eu
+
+-CIDR="$(uci -q get ha_vrrp.core.discover_cidr || echo)"
+
+-if [ -z "$CIDR" ] || [ "$CIDR" = "0.0.0.0/0" ]; then
+
+-  sec="inst_hb"
+
+-  if ! uci -q get ha_vrrp.$sec >/dev/null 2>&1; then
+
+-    for s in $(uci -q show ha_vrrp | awk -F. '/^ha_vrrp\.[^=]+=/ {print $2}' | cut -d= -f1); do
+
+-      n="$(uci -q get ha_vrrp.$s.name || echo)"; [ "$n" = "HEARTBEAT" ] && sec="$s" && break
+
+-    done
+
+-  fi
+
+-  src="$(uci -q get ha_vrrp.$sec.unicast_src_ip || echo)"
+
+-  vip="$(uci -q get ha_vrrp.$sec.vip_cidr || echo 192.168.254.254/24)"
+
+-  CIDR="${src%.*}.0/24"; [ -z "$src" ] && CIDR="${vip%.*/*}.0/24"
+
+-fi
+
+-NET="${CIDR%/*}"; BASE="${NET%.*}"; MIN="$(uci -q get ha_vrrp.core.discover_min || echo 1)"; MAX="$(uci -q get ha_vrrp.core.discover_max || echo 10)"
+
+-ME="$(uci -q get ha_vrrp.core.peer_host || echo)"
+
+-for i in $(seq "$MIN" "$MAX") 254; do
+
+-  IP="${BASE}.${i}"
+
+-  [ "$IP" = "$ME" ] && continue
+
+-  ping -c1 -W1 "$IP" >/dev/null 2>&1 && echo "$IP"
+
+-done
+
+--- a/ha-vrrp/files/usr/libexec/ha-vrrp/ensure_vlan.sh
++++ b/ha-vrrp/files/usr/libexec/ha-vrrp/ensure_vlan.sh
+@@ -1,20 +0,0 @@
+-#!/bin/sh
+
+-set -eu
+
+-ensure_one() {
+
+-  local sec="$1"
+
+-  local IFACE USE_VLAN VLAN_ID DEV
+
+-  IFACE="$(uci -q get ha_vrrp.$sec.iface || echo)"
+
+-  [ -n "$IFACE" ] || return 0
+
+-  USE_VLAN="$(uci -q get ha_vrrp.$sec.use_vlan || echo 0)"
+
+-  [ "$USE_VLAN" = "1" ] || return 0
+
+-  VLAN_ID="$(uci -q get ha_vrrp.$sec.vlan_id || echo)"
+
+-  [ -n "$VLAN_ID" ] || { echo "[ha-vrrp] $sec: use_vlan=1 but vlan_id missing"; return 1; }
+
+-  DEV="${IFACE}.${VLAN_ID}"
+
+-  ip link show "$DEV" >/dev/null 2>&1 && return 0
+
+-  ip link show "$IFACE" >/dev/null 2>&1 || { echo "[ha-vrrp] $sec: base if $IFACE not found"; return 1; }
+
+-  ip link add link "$IFACE" name "$DEV" type vlan id "$VLAN_ID"
+
+-  ip link set dev "$DEV" up
+
+-  echo "[ha-vrrp] VLAN ready: $DEV ($sec)"
+
+-}
+
+-INSTANCES="$(uci -q show ha_vrrp | awk -F. '/^ha_vrrp\.[^=]+=/ {print $2}' | cut -d= -f1 | sort -u | grep -E '^inst_' || true)"
+
+-if [ -z "$INSTANCES" ]; then ensure_one "core"; else for s in $INSTANCES; do ensure_one "$s"; done; fi
+
+--- a/ha-vrrp/files/usr/libexec/ha-vrrp/notify_backup.sh
++++ b/ha-vrrp/files/usr/libexec/ha-vrrp/notify_backup.sh
+@@ -1,2 +0,0 @@
+-#!/bin/sh
+
+-logger -t ha-vrrp "Transition -> BACKUP (state=$STATE)"
+
+--- a/ha-vrrp/files/usr/libexec/ha-vrrp/notify_master.sh
++++ b/ha-vrrp/files/usr/libexec/ha-vrrp/notify_master.sh
+@@ -1,2 +0,0 @@
+-#!/bin/sh
+
+-logger -t ha-vrrp "Transition -> MASTER (state=$STATE)"
+
+--- a/ha-vrrp/files/usr/libexec/ha-vrrp/sync/detect_ssh_stack.sh
++++ b/ha-vrrp/files/usr/libexec/ha-vrrp/sync/detect_ssh_stack.sh
+@@ -1,4 +0,0 @@
+-#!/bin/sh
+
+-if command -v ssh >/dev/null 2>&1 && ssh -V 2>&1 | grep -qi openssh; then echo openssh
+
+-elif command -v dbclient >/dev/null 2>&1 || command -v dropbearkey >/dev/null 2>&1; then echo dropbear
+
+-else echo none; fi
+
+--- a/ha-vrrp/files/usr/libexec/ha-vrrp/sync/generate_keys.sh
++++ b/ha-vrrp/files/usr/libexec/ha-vrrp/sync/generate_keys.sh
+@@ -1,22 +0,0 @@
+-#!/bin/sh
+
+-set -eu
+
+-UCI_GET() { uci -q get "$1" 2>/dev/null || true; }
+
+-STACK="$(/usr/libexec/ha-vrrp/sync/detect_ssh_stack.sh)"
+
+-PREF_TYPE="$(UCI_GET ha_vrrp.core.key_type)"; [ -z "$PREF_TYPE" ] && PREF_TYPE="auto"
+
+-mkdir -p /root/.ssh /etc/ha-vrrp/keys; chmod 700 /root/.ssh
+
+-choose_type() {
+
+-  case "$PREF_TYPE" in ed25519) echo ed25519;; rsa) echo rsa;;
+
+-    *) if command -v ssh-keygen >/dev/null 2>&1 && ssh-keygen -t ed25519 -q -N "" -f /tmp/_t_ed25519 2>/dev/null; then rm -f /tmp/_t_ed25519*; echo ed25519; return; fi
+
+-       if command -v dropbearkey >/dev/null 2>&1 && dropbearkey -t ed25519 -f /tmp/_t_db_ed25519 >/dev/null 2>&1; then rm -f /tmp/_t_db_ed25519; echo ed25519; return; fi
+
+-       echo rsa;; esac }
+
+-TYPE="$(choose_type)"
+
+-if [ "$STACK" = "openssh" ]; then
+
+-  [ "$TYPE" = ed25519 ] && { [ -f /root/.ssh/id_ed25519 ] || ssh-keygen -t ed25519 -N "" -f /root/.ssh/id_ed25519; }
+
+-  [ "$TYPE" = rsa ] && { [ -f /root/.ssh/id_rsa ] || ssh-keygen -t rsa -b 4096 -N "" -f /root/.ssh/id_rsa; }
+
+-  chmod 600 /root/.ssh/id_* 2>/dev/null || true; chmod 644 /root/.ssh/id_*.pub 2>/dev/null || true
+
+-elif [ "$STACK" = "dropbear" ]; then
+
+-  [ "$TYPE" = ed25519 ] && { [ -f /root/.ssh/id_dropbear_ed25519 ] || dropbearkey -t ed25519 -f /root/.ssh/id_dropbear_ed25519; dropbearkey -y -f /root/.ssh/id_dropbear_ed25519 | awk '/^ssh-ed25519/ {print $0}' > /root/.ssh/id_dropbear_ed25519.pub; }
+
+-  [ "$TYPE" = rsa ] && { [ -f /root/.ssh/id_dropbear_rsa ] || dropbearkey -t rsa -s 2048 -f /root/.ssh/id_dropbear_rsa; dropbearkey -y -f /root/.ssh/id_dropbear_rsa | awk '/^ssh-rsa/ {print $0}' > /root/.ssh/id_dropbear_rsa.pub; }
+
+-  chmod 600 /root/.ssh/id_dropbear_* 2>/dev/null || true; chmod 644 /root/.ssh/id_dropbear_*.pub 2>/dev/null || true
+
+-else echo "[generate_keys] ERROR: no SSH client available" >&2; exit 1; fi
+
+-PUB="$(ls /root/.ssh/*.pub 2>/dev/null | head -n1 || true)"; [ -n "$PUB" ] && cp -f "$PUB" /etc/ha-vrrp/keys/local_identity.pub || true
+
+--- a/ha-vrrp/files/usr/libexec/ha-vrrp/sync/push_keys.sh
++++ b/ha-vrrp/files/usr/libexec/ha-vrrp/sync/push_keys.sh
+@@ -1,18 +0,0 @@
+-#!/bin/sh
+
+-set -eu
+
+-STACK="$(/usr/libexec/ha-vrrp/sync/detect_ssh_stack.sh)"
+
+-UCI_GET() { uci -q get "$1" 2>/dev/null || true; }
+
+-PEER="$(UCI_GET ha_vrrp.core.peer_host)"; [ -z "$PEER" ] && { echo "[push_keys] peer_host not set" >&2; exit 1; }
+
+-PUB="$(ls /root/.ssh/*.pub 2>/dev/null | head -n1 || true)"; [ -z "$PUB" ] && PUB="/etc/ha-vrrp/keys/local_identity.pub"
+
+-[ -r "$PUB" ] || { echo "[push_keys] no public key found" >&2; exit 1; }
+
+-TMP="/tmp/ha_vrrp_pub_$$.pub"; cp -f "$PUB" "$TMP"
+
+-if [ "$STACK" = "openssh" ] && command -v ssh >/dev/null 2>&1 && command -v scp >/dev/null 2>&1; then
+
+-  ssh -o StrictHostKeyChecking=accept-new root@"$PEER" 'mkdir -p /root/.ssh && touch /root/.ssh/authorized_keys && chmod 600 /root/.ssh/authorized_keys'
+
+-  scp "$TMP" root@"$PEER":/tmp/ha_vrrp_pub_import.pub
+
+-  ssh root@"$PEER" 'grep -qxF "$(cat /tmp/ha_vrrp_pub_import.pub)" /root/.ssh/authorized_keys || cat /tmp/ha_vrrp_pub_import.pub >> /root/.ssh/authorized_keys; rm -f /tmp/ha_vrrp_pub_import.pub'
+
+-elif command -v dbclient >/dev/null 2>&1; then
+
+-  dbclient -y root@"$PEER" 'mkdir -p /root/.ssh && touch /root/.ssh/authorized_keys && chmod 600 /root/.ssh/authorized_keys'
+
+-  scp "$TMP" root@"$PEER":/tmp/ha_vrrp_pub_import.pub
+
+-  dbclient -y root@"$PEER" 'grep -qxF "$(cat /tmp/ha_vrrp_pub_import.pub)" /root/.ssh/authorized_keys || cat /tmp/ha_vrrp_pub_import.pub >> /root/.ssh/authorized_keys; rm -f /tmp/ha_vrrp_pub_import.pub'
+
+-else echo "[push_keys] ERROR: no ssh/scp client available" >&2; exit 1; fi
+
+-rm -f "$TMP"
+
+--- a/ha-vrrp/files/usr/libexec/ha-vrrp/sync/setup_ssh_config.sh
++++ b/ha-vrrp/files/usr/libexec/ha-vrrp/sync/setup_ssh_config.sh
+@@ -1,16 +0,0 @@
+-#!/bin/sh
+
+-set -eu
+
+-STACK="$(/usr/libexec/ha-vrrp/sync/detect_ssh_stack.sh)"
+
+-UCI_GET() { uci -q get "$1" 2>/dev/null || true; }
+
+-PEER="$(UCI_GET ha_vrrp.core.peer_host)"; CLUSTER="$(UCI_GET ha_vrrp.core.cluster_name)"
+
+-[ -z "$CLUSTER" ] && CLUSTER="CLUSTER"; [ -z "$PEER" ] && { echo "[setup_ssh_config] peer_host not set" >&2; exit 1; }
+
+-mkdir -p /root/.ssh; chmod 700 /root/.ssh
+
+-if [ "$STACK" = "openssh" ] ; then
+
+-  CFG="/root/.ssh/config"
+
+-  { echo "Host $CLUSTER"; echo "  HostName $PEER"; echo "  User root";
+
+-    if [ -f /root/.ssh/id_ed25519 ]; then echo "  IdentityFile /root/.ssh/id_ed25519"; elif [ -f /root/.ssh/id_rsa ]; then echo "  IdentityFile /root/.ssh/id_rsa"; fi
+
+-    echo "  StrictHostKeyChecking accept-new"; echo "  UserKnownHostsFile /root/.ssh/known_hosts"; } > "$CFG"
+
+-  chmod 600 "$CFG"; echo "[setup_ssh_config] OpenSSH config created for '$CLUSTER' ($PEER)"
+
+-else
+
+-  echo "[setup_ssh_config] Dropbear in use (dbclient/scp). Keine ~/.ssh/config notwendig."
+
+-fi
+
+--- a/ha-vrrp/files/usr/sbin/ha-vrrp-apply
++++ b/ha-vrrp/files/usr/sbin/ha-vrrp-apply
+@@ -1,144 +0,0 @@
+-#!/bin/sh
+
+-set -eu
+
+-CFG="/etc/keepalived/keepalived.conf"
+
+-
+
+-EN="$(uci -q get ha_vrrp.core.enabled || echo 1)"
+
+-[ "$EN" = "1" ] || { echo "[ha-vrrp] disabled"; exit 0; }
+
+-
+
+-CL="$(uci -q get ha_vrrp.core.cluster_name || echo lab-ha)"
+
+-PASS="$(uci -q get ha_vrrp.core.auth_pass || echo changeme-please)"
+
+-
+
+-# Health v4
+
+-HINT="$(uci -q show ha_vrrp | awk -F= '/^ha_vrrp.core.health_wan_if=/ {gsub(/'\''/,"",$2); print $2}')"
+
+-HINT_INT="$(uci -q get ha_vrrp.core.health_interval || echo 2)"
+
+-HINT_FALL="$(uci -q get ha_vrrp.core.health_fall || echo 2)"
+
+-HINT_RISE="$(uci -q get ha_vrrp.core.health_rise || echo 2)"
+
+-HINT_WEIGHT="$(uci -q get ha_vrrp.core.health_weight || echo -30)"
+
+-
+
+-# Health v6
+
+-H6INT="$(uci -q show ha_vrrp | awk -F= '/^ha_vrrp.core.health_wan6_if=/ {gsub(/'\''/,"",$2); print $2}')"
+
+-H6_INT="$(uci -q get ha_vrrp.core.health6_interval || echo 3)"
+
+-H6_FALL="$(uci -q get ha_vrrp.core.health6_fall || echo 2)"
+
+-H6_RISE="$(uci -q get ha_vrrp.core.health6_rise || echo 2)"
+
+-H6_WEIGHT="$(uci -q get ha_vrrp.core.health6_weight || echo -20)"
+
+-
+
+-cat > "$CFG" <<EOF
+
+-# AUTOGENERATED by ha-vrrp-apply – DO NOT EDIT
+
+-global_defs {
+
+-  router_id ${CL}
+
+-  enable_script_security
+
+-  script_user root
+
+-}
+
+-EOF
+
+-
+
+-for IF in $HINT; do
+
+-cat >> "$CFG" <<EOF
+
+-
+
+-vrrp_script CHK_WAN_${IF} {
+
+-  script "/usr/libexec/ha-vrrp/check_wan_gw.sh ${IF}"
+
+-  interval ${HINT_INT}
+
+-  fall ${HINT_FALL}
+
+-  rise ${HINT_RISE}
+
+-  weight ${HINT_WEIGHT}
+
+-}
+
+-EOF
+
+-done
+
+-
+
+-for IF in $H6INT; do
+
+-cat >> "$CFG" <<EOF
+
+-
+
+-vrrp_script CHK_WAN6_${IF} {
+
+-  script "/usr/libexec/ha-vrrp/check_wan6_gw.sh ${IF}"
+
+-  interval ${H6_INT}
+
+-  fall ${H6_FALL}
+
+-  rise ${H6_RISE}
+
+-  weight ${H6_WEIGHT}
+
+-}
+
+-EOF
+
+-done
+
+-
+
+-render_instance() {
+
+-  local sec="$1"
+
+-  local NAME VRID PRIO STATE ADV PREEMPT
+
+-  local IFACE USE_VLAN VLAN_ID DEV
+
+-  local VIP_CIDR SRC_IP NOTIFY_MASTER NOTIFY_BACKUP PEERS VIPS
+
+-
+
+-  NAME="$(uci -q get ha_vrrp.$sec.name || echo $sec)"
+
+-  VRID="$(uci -q get ha_vrrp.$sec.vrid || echo 42)"
+
+-  PRIO="$(uci -q get ha_vrrp.$sec.priority || echo 100)"
+
+-  STATE="$(uci -q get ha_vrrp.$sec.state || echo BACKUP)"
+
+-  ADV="$(uci -q get ha_vrrp.$sec.advert_int || echo 1)"
+
+-  PREEMPT="$(uci -q get ha_vrrp.$sec.preempt || echo 1)"
+
+-
+
+-  IFACE="$(uci -q get ha_vrrp.$sec.iface || echo wan)"
+
+-  USE_VLAN="$(uci -q get ha_vrrp.$sec.use_vlan || echo 0)"
+
+-  VLAN_ID="$(uci -q get ha_vrrp.$sec.vlan_id || echo)"
+
+-  DEV="$IFACE"; [ "$USE_VLAN" = "1" ] && [ -n "$VLAN_ID" ] && DEV="${IFACE}.${VLAN_ID}"
+
+-
+
+-  VIP_CIDR="$(uci -q get ha_vrrp.$sec.vip_cidr || echo)"
+
+-  VIPS="$(uci -q show ha_vrrp | awk -v s="$sec" -F= '$1 ~ "^ha_vrrp\\."s"\\.vip_list" {gsub(/'\''/,"",$2); print $2}')"
+
+-  SRC_IP="$(uci -q get ha_vrrp.$sec.unicast_src_ip || echo)"
+
+-  [ -n "$SRC_IP" ] || { echo "[ha-vrrp] ERROR: $sec: unicast_src_ip missing"; exit 1; }
+
+-
+
+-  NOTIFY_MASTER="$(uci -q get ha_vrrp.$sec.notify_master || echo /usr/libexec/ha-vrrp/notify_master.sh)"
+
+-  NOTIFY_BACKUP="$(uci -q get ha_vrrp.$sec.notify_backup || echo /usr/libexec/ha-vrrp/notify_backup.sh)"
+
+-  PEERS="$(uci -q show ha_vrrp | awk -v s="$sec" -F= '$1 ~ "^ha_vrrp\\."s"\\.unicast_peer" {gsub(/'\''/,"",$2); print $2}')"
+
+-
+
+-  {
+
+-    echo
+
+-    echo "vrrp_instance ${NAME}_VI_${VRID} {"
+
+-    echo "  state ${STATE}"
+
+-    echo "  interface ${DEV}"
+
+-    echo "  virtual_router_id ${VRID}"
+
+-    echo "  priority ${PRIO}"
+
+-    echo "  advert_int ${ADV}"
+
+-    echo "  garp_master_delay 1"
+
+-    echo "  garp_master_repeat 3"
+
+-    [ "$PREEMPT" = "0" ] && echo "  nopreempt"
+
+-    cat <<EOT
+
+-  authentication {
+
+-    auth_type PASS
+
+-    auth_pass ${PASS}
+
+-  }
+
+-
+
+-  unicast_src_ip ${SRC_IP}
+
+-  unicast_peer {
+
+-EOT
+
+-    for P in $PEERS; do echo "    ${P}"; done
+
+-    cat <<EOT
+
+-  }
+
+-EOT
+
+-    echo
+
+-    echo "  virtual_ipaddress {"
+
+-    if [ -n "$VIP_CIDR" ]; then echo "    ${VIP_CIDR}"; fi
+
+-    for V in $VIPS; do echo "    ${V}"; done
+
+-    echo "  }"
+
+-
+
+-    if [ -n "$HINT$H6INT" ]; then
+
+-      echo "  track_script {"
+
+-      for IF in $HINT; do echo "    CHK_WAN_${IF}"; done
+
+-      for IF in $H6INT; do echo "    CHK_WAN6_${IF}"; done
+
+-      echo "  }"
+
+-    fi
+
+-
+
+-    cat <<EOT
+
+-
+
+-  notify_master "${NOTIFY_MASTER}"
+
+-  notify_backup "${NOTIFY_BACKUP}"
+
+-}
+
+-EOT
+
+-  } >> "$CFG"
+
+-}
+
+-
+
+-INSTANCES="$(uci -q show ha_vrrp | awk -F. '/^ha_vrrp\\.[^=]+=/ {print $2}' | cut -d= -f1 | sort -u | grep -E '^inst_' || true)"
+
+-
+
+-# 0.2.0 backward-compat: if no explicit instances exist, render from core.* fields if present
+
+-if [ -z "$INSTANCES" ]; then
+
+-  if uci -q get ha_vrrp.core.vip_cidr >/dev/null 2>&1 || uci -q get ha_vrrp.core.unicast_src_ip >/dev/null 2>&1; then
+
+-    render_instance "core"
+
+-  else
+
+-    echo "[ha-vrrp] no instances defined"
+
+-  fi
+
+-else
+
+-  for s in $INSTANCES; do render_instance "$s"; done
+
+-fi
+
+--- a/ha-vrrp/files/usr/sbin/ha-vrrp-autosync
++++ b/ha-vrrp/files/usr/sbin/ha-vrrp-autosync
+@@ -1,16 +0,0 @@
+-#!/bin/sh
+
+-set -eu
+
+-INTERVAL="$(uci -q get ha_vrrp.core.auto_sync_interval || echo 7)"
+
+-last=""
+
+-sum_paths() {
+
+-  paths="$(uci -q show ha_vrrp | awk -F= '/^ha_vrrp.core.sync_path=/ {gsub(/'\''/,"",$2); print $2}')"
+
+-  for p in $paths; do [ -f "$p" ] && md5sum "$p"; done | md5sum | awk '{print $1}'
+
+-}
+
+-while :; do
+
+-  cur="$(sum_paths)"
+
+-  if [ "$cur" != "$last" ]; then
+
+-    last="$cur"
+
+-    /usr/sbin/ha-vrrp-sync push || true
+
+-  fi
+
+-  sleep "$INTERVAL"
+
+-done
+
+--- a/ha-vrrp/files/usr/sbin/ha-vrrp-sync
++++ b/ha-vrrp/files/usr/sbin/ha-vrrp-sync
+@@ -1,30 +0,0 @@
+-#!/bin/sh
+
+-set -eu
+
+-PHOST="$(uci -q get ha_vrrp.core.peer_host || echo)"
+
+-PUSER="$(uci -q get ha_vrrp.core.peer_user || echo root)"
+
+-PPORT="$(uci -q get ha_vrrp.core.peer_port || echo 22)"
+
+-[ -n "$PHOST" ] || { echo "[sync] No peer_host set"; exit 1; }
+
+-CMD="${1:-}"
+
+-ssh_nostrict="ssh -o StrictHostKeyChecking=no -p $PPORT $PUSER@$PHOST"
+
+-keysync() {
+
+-  mkdir -p /root/.ssh
+
+-  [ -f /root/.ssh/id_rsa ] || ssh-keygen -t rsa -N '' -f /root/.ssh/id_rsa >/dev/null 2>&1
+
+-  PUB="$(cat /root/.ssh/id_rsa.pub)"
+
+-  $ssh_nostrict "mkdir -p /root/.ssh; grep -qF \"$PUB\" /root/.ssh/authorized_keys 2>/dev/null || echo \"$PUB\" >> /root/.ssh/authorized_keys; chmod 700 /root/.ssh; chmod 600 /root/.ssh/authorized_keys"
+
+-  echo "[sync] keysync OK"
+
+-}
+
+-push() {
+
+-  paths="$(uci -q show ha_vrrp | awk -F= '/^ha_vrrp.core.sync_path=/ {gsub(/'\''/,"",$2); print $2}')"
+
+-  for p in $paths; do
+
+-    [ -f "$p" ] || continue
+
+-    echo "[sync] push $p -> $PHOST"
+
+-    scp -P "$PPORT" -o StrictHostKeyChecking=no "$p" "$PUSER@$PHOST:$p" >/dev/null
+
+-  done
+
+-  $ssh_nostrict "/etc/init.d/network reload >/dev/null 2>&1 || true; /etc/init.d/firewall restart >/dev/null 2>&1 || true; /etc/init.d/ha-vrrp restart >/dev/null 2>&1 || true"
+
+-  echo "[sync] push done"
+
+-}
+
+-case "$CMD" in
+
+-  keysync) keysync ;;
+
+-  push)    push ;;
+
+-  *) echo "Usage: ha-vrrp-sync [keysync|push]"; exit 1;;
+
+-esac
+
+--- a/legacy-ur-archive/openwrt-ha-vrrp/Makefile
++++ b/legacy-ur-archive/openwrt-ha-vrrp/Makefile
+@@ -1,31 +0,0 @@
+-include $(TOPDIR)/rules.mk
+
+-
+
+-PKG_NAME:=ha-vrrp-bundle
+
+-PKG_RELEASE:=1
+
+-PKG_LICENSE:=MIT
+
+-
+
+-include $(INCLUDE_DIR)/package.mk
+
+-
+
+-define Package/ha-vrrp-bundle
+
+-  SECTION:=utils
+
+-  CATEGORY:=Utilities
+
+-  TITLE:=HA VRRP (Keepalived) bundle with UCI + LuCI
+
+-  DEPENDS:=+keepalived +ip-full +uci +luci +uhttpd
+
+-endef
+
+-
+
+-define Package/ha-vrrp-bundle/description
+
+- HA on OpenWrt via Keepalived (VRRP, unicast), VLAN heartbeat, LuCI UI and UCI->keepalived.conf renderer.
+
+-endef
+
+-
+
+-define Build/Prepare
+
+-endef
+
+-define Build/Configure
+
+-endef
+
+-define Build/Compile
+
+-endef
+
+-
+
+-define Package/ha-vrrp-bundle/install
+
+-	$(CP) ./files/* $(1)/
+
+-endef
+
+-
+
+-$(eval $(call BuildPackage,ha-vrrp-bundle))
+
+--- a/legacy-ur-archive/openwrt-ha-vrrp/install.sh
++++ b/legacy-ur-archive/openwrt-ha-vrrp/install.sh
+@@ -1,82 +0,0 @@
+-#!/bin/sh
+
+-# Installer for openwrt-ha-vrrp (OpenWrt 19.07)
+
+-set -eu
+
+-
+
+-need() {
+
+-  which "$1" >/dev/null 2>&1
+
+-}
+
+-
+
+-echo "[install] Checking dependencies (opkg, keepalived, ip-full, uci, uhttpd, luci)..."
+
+-
+
+-if ! need opkg; then
+
+-  echo "[install] ERROR: opkg not found. Are you on OpenWrt?"; exit 1
+
+-fi
+
+-
+
+-opkg update >/dev/null 2>&1 || true
+
+-
+
+-# Core deps
+
+-for p in keepalived ip-full uci; do
+
+-  opkg list-installed | grep -q "^$p " || opkg install "$p"
+
+-done
+
+-
+
+-# Optional but nice
+
+-for p in arping luci uhttpd; do
+
+-  opkg list-installed | grep -q "^$p " || opkg install "$p" || true
+
+-done
+
+-
+
+-# Deploy files (do not overwrite existing /etc/config/ha_vrrp)
+
+-echo "[install] Deploying files..."
+
+-SRC_DIR="$(pwd)/files"
+
+-
+
+-# Create dirs
+
+-mkdir -p /etc/config /etc/init.d /etc/uci-defaults /usr/libexec/ha-vrrp /usr/sbin /etc/hotplug.d/iface
+
+-
+
+-# Config (preserve existing)
+
+-if [ ! -f /etc/config/ha_vrrp ]; then
+
+-  cp "$SRC_DIR/etc/config/ha_vrrp" /etc/config/ha_vrrp
+
+-else
+
+-  echo "[install] /etc/config/ha_vrrp exists, keeping it."
+
+-fi
+
+-
+
+-# The rest (overwrite allowed; they are ours)
+
+-cp "$SRC_DIR/etc/init.d/ha-vrrp" /etc/init.d/ha-vrrp
+
+-cp "$SRC_DIR/etc/uci-defaults/95_ha_vrrp_defaults" /etc/uci-defaults/95_ha_vrrp_defaults
+
+-cp "$SRC_DIR/etc/hotplug.d/iface/95-ha-vrrp-apply" /etc/hotplug.d/iface/95-ha-vrrp-apply
+
+-cp "$SRC_DIR/usr/sbin/ha-vrrp-apply" /usr/sbin/ha-vrrp-apply
+
+-cp "$SRC_DIR/usr/libexec/ha-vrrp/ensure_vlan.sh" /usr/libexec/ha-vrrp/ensure_vlan.sh
+
+-cp "$SRC_DIR/usr/libexec/ha-vrrp/notify_master.sh" /usr/libexec/ha-vrrp/notify_master.sh
+
+-cp "$SRC_DIR/usr/libexec/ha-vrrp/notify_backup.sh" /usr/libexec/ha-vrrp/notify_backup.sh
+
+-
+
+-# Permissions
+
+-chmod +x /etc/init.d/ha-vrrp
+
+-chmod +x /etc/uci-defaults/95_ha_vrrp_defaults || true
+
+-chmod +x /etc/hotplug.d/iface/95-ha-vrrp-apply
+
+-chmod +x /usr/sbin/ha-vrrp-apply
+
+-chmod +x /usr/libexec/ha-vrrp/*.sh
+
+-
+
+-# Enable services
+
+-/etc/init.d/keepalived enable || true
+
+-/etc/init.d/ha-vrrp enable || true
+
+-
+
+-# Apply defaults (once)
+
+-if [ -x /etc/uci-defaults/95_ha_vrrp_defaults ]; then
+
+-  /etc/uci-defaults/95_ha_vrrp_defaults || true
+
+-  rm -f /etc/uci-defaults/95_ha_vrrp_defaults || true
+
+-fi
+
+-
+
+-# Render keepalived.conf and start
+
+-/usr/libexec/ha-vrrp/ensure_vlan.sh || true
+
+-/usr/sbin/ha-vrrp-apply || true
+
+-
+
+-/etc/init.d/keepalived restart || true
+
+-/etc/init.d/ha-vrrp start || true
+
+-
+
+-# LuCI refresh
+
+-/etc/init.d/rpcd restart || true
+
+-/etc/init.d/uhttpd restart || true
+
+-
+
+-echo ""
+
+-echo "[install] Done."
+
+-echo "Next steps:"
+
+-echo "  - Set VRID, VIP, iface(+vlan) and unicast src/peers via UCI or LuCI"
+
+-echo "  - Then:  /etc/init.d/ha-vrrp restart"
+
+--- a/legacy-ur-archive/openwrt-ha-vrrp/luci-app-ha-vrrp/Makefile
++++ b/legacy-ur-archive/openwrt-ha-vrrp/luci-app-ha-vrrp/Makefile
+@@ -1,7 +0,0 @@
+-include $(TOPDIR)/rules.mk
+
+-
+
+-LUCI_TITLE:=LuCI app for HA VRRP (Keepalived)
+
+-LUCI_DEPENDS:=+luci +ha-vrrp-bundle
+
+-PKG_LICENSE:=MIT
+
+-
+
+-include $(TOPDIR)/feeds/luci/luci.mk
+
+--- a/legacy-ur-archive/openwrt-ha-vrrp/uninstall.sh
++++ b/legacy-ur-archive/openwrt-ha-vrrp/uninstall.sh
+@@ -1,18 +0,0 @@
+-#!/bin/sh
+
+-# Uninstall helper: stops services and removes our files (not keepalived package).
+
+-set -eu
+
+-
+
+-echo "[uninstall] Stopping services..."
+
+-/etc/init.d/ha-vrrp stop >/dev/null 2>&1 || true
+
+-/etc/init.d/keepalived stop >/dev/null 2>&1 || true
+
+-
+
+-echo "[uninstall] Removing files..."
+
+-rm -f /etc/init.d/ha-vrrp
+
+-rm -f /etc/hotplug.d/iface/95-ha-vrrp-apply
+
+-rm -f /usr/sbin/ha-vrrp-apply
+
+-rm -rf /usr/libexec/ha-vrrp
+
+-
+
+-# keep config by default; uncomment to remove:
+
+-# rm -f /etc/config/ha_vrrp
+
+-
+
+-echo "[uninstall] Note: keepalived package is still installed. Remove via 'opkg remove keepalived' if desired."
+
+--- a/luci-app-ha-vrrp/Makefile
++++ b/luci-app-ha-vrrp/Makefile
+@@ -1,3 +0,0 @@
+-include $(TOPDIR)/rules.mk
+
+-PKG_NAME:=luci-app-ha-vrrp
+
+-\g<1>0.5.15s/luci/luci.mk
+
+--- a/luci-app-ha-vrrp/luasrc/controller/ha_vrrp.lua
++++ b/luci-app-ha-vrrp/luasrc/controller/ha_vrrp.lua
+@@ -1,31 +0,0 @@
+-module("luci.controller.ha_vrrp", package.seeall)
+
+-
+
+-function index()
+
+-  if not nixio.fs.access("/etc/config/ha_vrrp") then return end
+
+-
+
+-  local e = entry({"admin","services","ha_vrrp"}, alias("admin","services","ha_vrrp","overview"), _("HA VRRP"), 60)
+
+-  e.dependent = true
+
+-
+
+-  entry({"admin","services","ha_vrrp","overview"},  cbi("ha_vrrp/overview"),  _("Overview"),       10).leaf = true
+
+-  entry({"admin","services","ha_vrrp","instances"}, cbi("ha_vrrp/instances"), _("Instances"),      20).leaf = true
+
+-  entry({"admin","services","ha_vrrp","sync"},      cbi("ha_vrrp/sync"),      _("Sync und Keys"),  30).leaf = true
+
+-  entry({"admin","services","ha_vrrp","settings"},  cbi("ha_vrrp/settings"),  _("Settings"),       40).leaf = true
+
+-
+
+-  entry({"admin","services","ha_vrrp","api","status"}, call("api_status")).leaf = true
+
+-end
+
+-
+
+-function api_status()
+
+-  local http = require "luci.http"
+
+-  local sys  = require "luci.sys"
+
+-  local uci  = require "luci.model.uci".cursor()
+
+-
+
+-  local peer = uci:get("ha_vrrp","core","peer_host") or ""
+
+-  local ping_ok = false
+
+-  if peer ~= "" then
+
+-    local rc = sys.call("ping -c1 -W1 "..peer.." >/dev/null 2>&1")
+
+-    ping_ok = (rc == 0)
+
+-  end
+
+-
+
+-  http.prepare_content("application/json")
+
+-  http.write_json({ ok=true, ts=os.time(), peer=peer, ping=ping_ok })
+
+-end
+
+--- a/luci-app-ha-vrrp/luasrc/model/cbi/ha_vrrp/instances.lua
++++ b/luci-app-ha-vrrp/luasrc/model/cbi/ha_vrrp/instances.lua
+@@ -1,27 +0,0 @@
+-local m = Map("ha_vrrp", translate("VRRP Instances"))
+
+-local s = m:section(TypedSection, "instance", translate("Instanzen"))
+
+-s.addremove = true
+
+-s.anonymous = true
+
+-
+
+-local o
+
+-o = s:option(Value, "name", translate("Name"))
+
+-o.datatype = "uciname"
+
+-
+
+-o = s:option(Value, "interface", translate("Interface"))
+
+-o.placeholder = "ADMINLAN"
+
+-
+
+-o = s:option(Value, "vip", translate("Virtual IP"))
+
+-o.placeholder = "192.168.1.254/24"
+
+-
+
+-o = s:option(Value, "vrid", translate("VRID"))
+
+-o.placeholder = "51"
+
+-
+
+-o = s:option(ListValue, "state", translate("State"))
+
+-o:value("MASTER", "MASTER")
+
+-o:value("BACKUP", "BACKUP")
+
+-
+
+-o = s:option(Value, "priority", translate("Priority"))
+
+-o.datatype = "uinteger"
+
+-o.placeholder = "150"
+
+-
+
+-return m
+
+--- a/luci-app-ha-vrrp/luasrc/model/cbi/ha_vrrp/main.lua
++++ b/luci-app-ha-vrrp/luasrc/model/cbi/ha_vrrp/main.lua
+@@ -1,42 +0,0 @@
+-local m = Map("ha_vrrp", translate("HA VRRP"),
+
+-  translate("VRRP (Keepalived) with multi-instance, VLAN-HB, peer sync/discovery, IPv4/IPv6 health, autosync.")
+
+-)
+
+-
+
+-local s = m:section(NamedSection, "core", "core", translate("Core"))
+
+-s:option(Flag, "enabled", translate("Enabled")).default = "1"
+
+-s:option(Value, "cluster_name", translate("Cluster Name")).rmempty=false
+
+-local pass = s:option(Value, "auth_pass", translate("Auth PASS")); pass.password=true
+
+-
+
+--- Peer (sync/status)
+
+-s:option(Value, "peer_host", translate("Peer Host (HEARTBEAT IP)")).rmempty=false
+
+-local u = s:option(Value, "peer_user", translate("Peer SSH user")); u.default="root"
+
+-local p = s:option(Value, "peer_port", translate("Peer SSH port")); p.default="22"
+
+-
+
+--- Sync
+
+-local sp = s:option(DynamicList, "sync_path", translate("Sync paths"))
+
+-sp:value("/etc/config/ha_vrrp"); sp:value("/etc/config/network"); sp:value("/etc/config/firewall")
+
+-local as = s:option(Flag, "auto_sync", translate("Auto Sync daemon")); as.default="0"
+
+-local ai = s:option(Value, "auto_sync_interval", translate("Auto Sync interval (s)")); ai.default="7"
+
+-
+
+--- Discovery
+
+-s:option(Value, "discover_cidr", translate("Discovery CIDR")).placeholder="192.168.254.0/24"
+
+-local dmin = s:option(Value, "discover_min", translate("Discovery start host")); dmin.default="1"
+
+-local dmax = s:option(Value, "discover_max", translate("Discovery end host")); dmax.default="10"
+
+-
+
+--- Health v4
+
+-local hi = s:option(DynamicList, "health_wan_if", translate("Health: IPv4 WAN ifaces"))
+
+-hi.placeholder="wan"
+
+-local iv = s:option(Value, "health_interval", translate("IPv4: interval (s)")); iv.default="2"
+
+-local fl = s:option(Value, "health_fall", translate("IPv4: fall")); fl.default="2"
+
+-local rs = s:option(Value, "health_rise", translate("IPv4: rise")); rs.default="2"
+
+-local wt = s:option(Value, "health_weight", translate("IPv4: weight on fail")); wt.default="-30"
+
+-
+
+--- Health v6
+
+-local h6 = s:option(DynamicList, "health_wan6_if", translate("Health: IPv6 WAN ifaces"))
+
+-h6.placeholder="wan6"
+
+-local i6 = s:option(Value, "health6_interval", translate("IPv6: interval (s)")); i6.default="3"
+
+-local f6 = s:option(Value, "health6_fall", translate("IPv6: fall")); f6.default="2"
+
+-local r6 = s:option(Value, "health6_rise", translate("IPv6: rise")); r6.default="2"
+
+-local w6 = s:option(Value, "health6_weight", translate("IPv6: weight on fail")); w6.default="-20"
+
+-
+
+-return m
+
+--- a/luci-app-ha-vrrp/luasrc/model/cbi/ha_vrrp/overview.lua
++++ b/luci-app-ha-vrrp/luasrc/model/cbi/ha_vrrp/overview.lua
+@@ -1,27 +0,0 @@
+-local sys  = require "luci.sys"
+
+-local uci  = require "luci.model.uci".cursor()
+
+-
+
+-local m = Map("ha_vrrp", translate("HA VRRP"))
+
+-
+
+-local s = m:section(SimpleSection, translate("Cluster-Status"))
+
+-local peer = uci:get("ha_vrrp","core","peer_host") or ""
+
+-local cluster = uci:get("ha_vrrp","core","cluster_name") or "-"
+
+-local key_type = uci:get("ha_vrrp","core","key_type") or "auto"
+
+-local sync_method = uci:get("ha_vrrp","core","sync_method") or "auto"
+
+-local ping_ok = false
+
+-if peer ~= "" then
+
+-  local rc = sys.call("ping -c1 -W1 "..peer.." >/dev/null 2>&1")
+
+-  ping_ok = (rc == 0)
+
+-end
+
+-
+
+-s.template = "ha_vrrp/overview"
+
+-
+
+-m.uci = {
+
+-  peer = peer,
+
+-  cluster = cluster,
+
+-  key_type = key_type,
+
+-  sync_method = sync_method,
+
+-  ping_ok = ping_ok and "reachable" or "unreachable"
+
+-}
+
+-
+
+-return m
+
+--- a/luci-app-ha-vrrp/luasrc/model/cbi/ha_vrrp/settings.lua
++++ b/luci-app-ha-vrrp/luasrc/model/cbi/ha_vrrp/settings.lua
+@@ -1,23 +0,0 @@
+-local m = Map("ha_vrrp", translate("Settings"))
+
+-local s = m:section(NamedSection, "core", "core", translate("Core Settings"))
+
+-
+
+-local o
+
+-o = s:option(Value, "cluster_name", translate("Cluster Name"))
+
+-o.placeholder = "YOURCLUSTER"
+
+-
+
+-o = s:option(Value, "peer_host", translate("Peer Host (IP/Name)"))
+
+-o.placeholder = "192.168.254.2"
+
+-
+
+-o = s:option(ListValue, "fw_backend", translate("Firewall Backend"))
+
+-o:value("auto", "auto"); o:value("iptables", "iptables"); o:value("nft", "nft")
+
+-
+
+-o = s:option(ListValue, "ka_backend", translate("Keepalived Backend"))
+
+-o:value("auto", "auto"); o:value("ka_2x", "ka_2x"); o:value("ka_2_2plus", "ka_2_2plus")
+
+-
+
+-o = s:option(ListValue, "dhcp_backend", translate("DHCP/DNS Backend"))
+
+-o:value("auto", "auto"); o:value("dnsmasq_legacy", "dnsmasq_legacy"); o:value("dnsmasq_fw4", "dnsmasq_fw4")
+
+-
+
+-o = s:option(ListValue, "net_backend", translate("Netzwerk Backend"))
+
+-o:value("auto", "auto"); o:value("swconfig", "swconfig"); o:value("dsa", "dsa")
+
+-
+
+-return m
+
+--- a/luci-app-ha-vrrp/luasrc/model/cbi/ha_vrrp/sync.lua
++++ b/luci-app-ha-vrrp/luasrc/model/cbi/ha_vrrp/sync.lua
+@@ -1,51 +0,0 @@
+-local sys  = require "luci.sys"
+
+-local util = require "luci.util"
+
+-local http = require "luci.http"
+
+-
+
+-local m = Map("ha_vrrp", translate("Sync und Keys"))
+
+-
+
+-local s = m:section(SimpleSection, translate("SSH/Sync Aktionen"))
+
+-s.template = "ha_vrrp/sync"
+
+-
+
+-local t = m:section(NamedSection, "core", "core", translate("Sync-Settings"))
+
+-local o
+
+-
+
+-o = t:option(Value, "peer_host", translate("Peer Host (IP/Hostname)"))
+
+-o.placeholder = "192.168.254.2"
+
+-
+
+-o = t:option(ListValue, "key_type", translate("Bevorzugter Schlüsseltyp"))
+
+-o:value("auto", "auto (ed25519 bevorzugt)")
+
+-o:value("ed25519", "ed25519")
+
+-o:value("rsa", "rsa")
+
+-o.default = "auto"
+
+-
+
+-o = t:option(ListValue, "sync_method", translate("Sync-Methode"))
+
+-o:value("auto", "auto")
+
+-o:value("scp", "scp")
+
+-o:value("rsync", "rsync")
+
+-o.default = "auto"
+
+-
+
+-local function action_btn(cmd, label)
+
+-  local btn = t:option(Button, "_"..cmd, label)
+
+-  btn.inputstyle = "apply"
+
+-  function btn.write(self, section, value)
+
+-    local rc = sys.call("/usr/libexec/ha-vrrp/sync/"..cmd..".sh >/tmp/ha_vrrp_"..cmd.." 2>&1")
+
+-    http.redirect(luci.dispatcher.build_url("admin/services/ha_vrrp/sync"))
+
+-  end
+
+-  return btn
+
+-end
+
+-
+
+-action_btn("generate_keys", translate("Schlüssel erzeugen"))
+
+-action_btn("setup_ssh_config", translate("SSH-Config einrichten"))
+
+-action_btn("push_keys", translate("Keys zum Peer pushen"))
+
+-
+
+-local up = t:option(FileUpload, "upload_pubkey", translate("Öffentlichen Schlüssel hochladen (.pub)"))
+
+-up.rmempty = true
+
+-function m.handle(self, state, data)
+
+-  if state == FORM_VALID and data and data.upload_pubkey then
+
+-    sys.call("mkdir -p /etc/ha-vrrp/keys && cp -f "..util.shellquote(data.upload_pubkey).." /etc/ha-vrrp/keys/authorized_pub_upload.pub")
+
+-  end
+
+-  return Map.handle(self, state, data)
+
+-end
+
+-
+
+-return m
+
+--- a/luci-app-ha-vrrp/luasrc/view/ha_vrrp/overview.htm
++++ b/luci-app-ha-vrrp/luasrc/view/ha_vrrp/overview.htm
+@@ -1,10 +0,0 @@
+-<%+header%>
+
+-<h2><%:HA VRRP Overview%></h2>
+
+-<ul>
+
+-  <li><b><%:Cluster%>:</b> <%=m.uci.cluster%></li>
+
+-  <li><b><%:Peer%>:</b> <%=m.uci.peer or "-"%> (<%:Status%>: <%=m.uci.ping_ok%>)</li>
+
+-  <li><b><%:Key-Typ%>:</b> <%=m.uci.key_type%></li>
+
+-  <li><b><%:Sync-Methode%>:</b> <%=m.uci.sync_method%></li>
+
+-</ul>
+
+-<p><a href="<%=url('admin/services/ha_vrrp/sync')%>"><%:Zu "Sync und Keys"%></a></p>
+
+-<%+footer%>
+
+--- a/luci-app-ha-vrrp/luasrc/view/ha_vrrp/status.htm
++++ b/luci-app-ha-vrrp/luasrc/view/ha_vrrp/status.htm
+@@ -1,96 +0,0 @@
+-<%+header%>
+
+-<h2>HA VRRP – Cluster Status</h2>
+
+-<div id="status">Loading...</div>
+
+-
+
+-<div class="cbi-page-actions" style="margin-top:1rem">
+
+-  <button class="cbi-button cbi-button-apply" onclick="applyHA()">Apply & Restart Keepalived</button>
+
+-  <button class="cbi-button cbi-button-action" onclick="discover()">Discover Peers</button>
+
+-  <button class="cbi-button cbi-button-apply" onclick="keysync()">SSH Key Sync</button>
+
+-  <button class="cbi-button cbi-button-apply" onclick="syncpush()">Sync Now</button>
+
+-</div>
+
+-
+
+-<script>
+
+-function applyHA(){
+
+-  fetch(L.env.cgi_base + '/admin/services/ha_vrrp/apply',{method:'POST'})
+
+-    .then(r=>r.json()).then(j=>alert(j.ok?'OK':'Error')).then(()=>load())
+
+-}
+
+-function discover(){
+
+-  fetch(L.env.cgi_base + '/admin/services/ha_vrrp/discover',{method:'POST'})
+
+-    .then(r=>r.json()).then(j=>{
+
+-      if(!j.peers || j.peers.length==0){alert('No peers found'); return;}
+
+-      alert('Found: ' + j.peers.join(', ') + '\nSet the desired Peer Host in the Core tab.');
+
+-    })
+
+-}
+
+-function keysync(){
+
+-  fetch(L.env.cgi_base + '/admin/services/ha_vrrp/keysync',{method:'POST'})
+
+-    .then(r=>r.json()).then(j=>alert(j.ok?'Key sync OK':'Key sync failed'))
+
+-}
+
+-function syncpush(){
+
+-  fetch(L.env.cgi_base + '/admin/services/ha_vrrp/sync',{method:'POST'})
+
+-    .then(r=>r.json()).then(j=>alert(j.ok?'Sync OK':'Sync failed'))
+
+-}
+
+-function load(){
+
+-  fetch(L.env.cgi_base + '/admin/services/ha_vrrp/statusjson')
+
+-    .then(r=>r.json()).then(data=>{
+
+-      let html = '';
+
+-      html += '<b>Local node:</b> ' + (data.node||'-') + '<br>';
+
+-      html += '<b>Peer:</b> ' + (data.peer||'-') + '<br><br>';
+
+-      html += '<table class="table"><tr><th>Instance</th><th>IF</th><th>VIP</th><th>Local</th><th>Peer</th></tr>';
+
+-      for(let i=0;i<data.local_instances.length;i++){
+
+-        const L = data.local_instances[i];
+
+-        const R = (data.peer_instances||[])[i] || {};
+
+-        html += '<tr>';
+
+-        html += '<td>'+L.name+'</td>';
+
+-        html += '<td>'+L.dev+'</td>';
+
+-        html += '<td>'+L.vip+'</td>';
+
+-        html += '<td>'+(L.local_master?'MASTER':'backup')+'</td>';
+
+-        html += '<td>'+(R.remote_master?'MASTER':'backup')+'</td>';
+
+-        html += '</tr>';
+
+-      }
+
+-      html += '</table>';
+
+-      document.getElementById('status').innerHTML = html;
+
+-    }).catch(()=>{ document.getElementById('status').innerText = 'Error loading status'; });
+
+-}
+
+-load();
+
+-</script>
+
+-
+
+-<hr>
+
+-<h3>Network Interfaces</h3>
+
+-<div id="ifaces">Loading interfaces…</div>
+
+-
+
+-<script>
+
+-function loadIfaces(){
+
+-  fetch(L.env.cgi_base + '/admin/services/ha_vrrp/listifaces')
+
+-    .then(r=>r.json()).then(data=>{
+
+-      let html='';
+
+-      html += '<table class="table"><tr><th>Name</th><th>Device</th><th>Proto</th><th>IPv4</th><th>DHCP Server</th><th>Aktion</th></tr>';
+
+-      for(const it of data.interfaces){
+
+-        html += '<tr>';
+
+-        html += '<td>'+it.name+'</td>';
+
+-        html += '<td>'+(it.device||'')+'</td>';
+
+-        html += '<td>'+(it.proto||'')+'</td>';
+
+-        html += '<td>'+(it.ipaddr||'')+(it.netmask?(' / '+it.netmask):'')+'</td>';
+
+-        html += '<td>'+(it.dhcp?'aktiv':'aus')+'</td>';
+
+-        html += '<td><button class="cbi-button cbi-button-apply" onclick="createInst(\''+it.name+'\')">VRRP anlegen</button></td>';
+
+-        html += '</tr>';
+
+-      }
+
+-      html += '</table>';
+
+-      document.getElementById('ifaces').innerHTML = html;
+
+-    }).catch(()=>{ document.getElementById('ifaces').innerText = 'Fehler beim Laden'; });
+
+-}
+
+-function createInst(ifn){
+
+-  const vip = prompt('VIP (CIDR), z.B. 192.168.1.254/24 für '+ifn+':');
+
+-  if(!vip) return;
+
+-  const vrid = prompt('VRID (1..254) – leer lassen für Auto:');
+
+-  const params = new URLSearchParams({iface: ifn, vip: vip});
+
+-  if(vrid) params.append('vrid', vrid);
+
+-  fetch(L.env.cgi_base + '/admin/services/ha_vrrp/createinst?'+params.toString(), {method:'POST'})
+
+-    .then(r=>r.json()).then(j=>{
+
+-      if(j && j.ok){ alert('Instanz '+j.section+' angelegt (VRID '+j.vrid+')'); load(); }
+
+-      else { alert('Fehler beim Anlegen'); }
+
+-    }).catch(()=>alert('Fehler'));
+
+-}
+
+-loadIfaces();
+
+-</script>
+
+-
+
+-<%+footer%>
+
+--- a/luci-app-ha-vrrp/luasrc/view/ha_vrrp/sync.htm
++++ b/luci-app-ha-vrrp/luasrc/view/ha_vrrp/sync.htm
+@@ -1,6 +0,0 @@
+-<%+header%>
+
+-<h2><%:Sync und Keys%></h2>
+
+-<p><%:Erzeuge/verwende SSH-Schlüssel für den Config-Sync zwischen Cluster-Nodes.
+
+-Dropbear und OpenSSH werden automatisch erkannt. ED25519 wird bevorzugt, wenn unterstützt; sonst RSA.%></p>
+
+-<p><%:Protokoll-Ausgaben findest du in /tmp/ha_vrrp_generate_keys, /tmp/ha_vrrp_setup_ssh_config, /tmp/ha_vrrp_push_keys.%></p>
+
+-<%+footer%>
+
+--- a/luci-app-ha-vrrp/luasrc/view/ha_vrrp/wizard.htm
++++ b/luci-app-ha-vrrp/luasrc/view/ha_vrrp/wizard.htm
+@@ -1,5 +0,0 @@
+-<%+header%>
+
+-<h2>HA VRRP – Quick Wizard</h2>
+
+-<p>Peer wählen → Keys erzeugen/importieren → Key-Sync → VRRP anlegen → Apply & Sync</p>
+
+-<script>/* JS same as earlier build, omitted for brevity in this rebuild script */</script>
+
+-<%+footer%>
+--- a/scripts/install_legacy_compatible.sh
++++ b/scripts/install_legacy_compatible.sh
+@@ -1,53 +0,0 @@
+-#!/bin/sh
+
+-# install_legacy_compatible.sh – CLI-verträglich zum Ur-Installer (ohne Flags, interaktiv-frei)
+
+-# Verhalten: Bestehende Pakete prüfen, keepalived/ip-full/uci/luci installieren, dann HA-Dateien kopieren,
+
+-# Dienste starten. Nutzt opkg; wenn nicht verfügbar, Abbruch (wie Ur-Archiv).
+
+-set -eu
+
+-
+
+-need() { command -v "$1" >/dev/null 2>&1; }
+
+-
+
+-echo "[install-legacy] Checking dependencies (opkg)…"
+
+-if ! need opkg; then
+
+-  echo "[install-legacy] ERROR: opkg not found. Are you on OpenWrt?"; exit 1
+
+-fi
+
+-
+
+-echo "[install-legacy] opkg update…"
+
+-opkg update >/dev/null 2>&1 || true
+
+-
+
+-# Ensure base packages
+
+-BASE_PKGS="keepalived ip-full uci uhttpd luci-compat luci-base"
+
+-for p in $BASE_PKGS; do
+
+-  if ! opkg list-installed | awk '{print $1}' | grep -qx "$p"; then
+
+-    echo "[install-legacy] Installing $p…"
+
+-    opkg install "$p"
+
+-  fi
+
+-done
+
+-
+
+-# Copy service files (like Ur-Installer tat)
+
+-SRC_DIR="$(cd "$(dirname "$0")/.."; pwd)"
+
+-echo "[install-legacy] Installing HA files from $SRC_DIR/ha-vrrp/files …"
+
+-cp -a "$SRC_DIR/ha-vrrp/files/." /
+
+-
+
+-# Install LuCI app minimal files (controller/view/model)
+
+-if [ -d /usr/lib/lua/luci ]; then
+
+-  echo "[install-legacy] Installing LuCI app…"
+
+-  mkdir -p /usr/lib/lua/luci/controller/ /usr/lib/lua/luci/model/cbi/ha_vrrp /usr/lib/lua/luci/view/ha_vrrp
+
+-  cp -a "$SRC_DIR/luci-app-ha-vrrp/luasrc/controller/." /usr/lib/lua/luci/controller/ 2>/dev/null || true
+
+-  cp -a "$SRC_DIR/luci-app-ha-vrrp/luasrc/model/cbi/ha_vrrp/." /usr/lib/lua/luci/model/cbi/ha_vrrp/ 2>/dev/null || true
+
+-  cp -a "$SRC_DIR/luci-app-ha-vrrp/luasrc/view/ha_vrrp/." /usr/lib/lua/luci/view/ha_vrrp/ 2>/dev/null || true
+
+-fi
+
+-
+
+-# Permissions
+
+-chmod +x /etc/init.d/ha-vrrp 2>/dev/null || true
+
+-chmod +x /etc/init.d/ha-vrrp-syncd 2>/dev/null || true
+
+-chmod +x /usr/sbin/ha-vrrp-* 2>/dev/null || true
+
+-chmod +x /usr/libexec/ha-vrrp/* 2>/dev/null || true
+
+-
+
+-# Start services
+
+-echo "[install-legacy] Enabling and starting services…"
+
+-/etc/init.d/ha-vrrp enable || true
+
+-/etc/init.d/ha-vrrp restart || true
+
+-/etc/init.d/rpcd restart || true
+
+-/etc/init.d/uhttpd restart || true
+
+-
+
+-echo "[install-legacy] Done."
+
+--- a/scripts/install_v0.5.13.sh
++++ b/scripts/install_v0.5.13.sh
+@@ -1,88 +0,0 @@
+-#!/bin/sh
+
+-# install_v0.5.13.sh - robust installer for openwrt-ha-vrrp v0.5.13
+
+-# - installs IPKs if present, else overlays files to /
+
+-# - detects repo root automatically (no hardcoded path)
+
+-set -eu
+
+-
+
+-PKG_VER="0.5.13"
+
+-echo "[install] Starting installer for openwrt-ha-vrrp v$PKG_VER"
+
+-
+
+-# Detect repo root (directory one level above this script)
+
+-SELF="$(readlink -f "$0" 2>/dev/null || realpath "$0")"
+
+-SCRIPTDIR="$(dirname "$SELF")"
+
+-REPO_ROOT="$(cd "$SCRIPTDIR/.." && pwd)"
+
+-echo "[install] Repo root: $REPO_ROOT"
+
+-
+
+-IPK_DIR_CANDIDATES="\
+
+-$REPO_ROOT/../ipk_0_5_13 \
+
+-$REPO_ROOT/ipk_0_5_13 \
+
+-/tmp \
+
+-$REPO_ROOT"
+
+-HA_IPK="ha-vrrp_${PKG_VER}-1_all.ipk"
+
+-LUCI_IPK="luci-app-ha-vrrp_${PKG_VER}-1_all.ipk"
+
+-
+
+-install_ipks() {
+
+-  for d in $IPK_DIR_CANDIDATES; do
+
+-    if [ -f "$d/$HA_IPK" ] && [ -f "$d/$LUCI_IPK" ]; then
+
+-      echo "[install] Installing IPKs from $d"
+
+-      opkg update || true
+
+-      opkg install "$d/$HA_IPK" "$d/$LUCI_IPK"
+
+-      return 0
+
+-    fi
+
+-  done
+
+-  return 1
+
+-}
+
+-
+
+-overlay_copy() {
+
+-  echo "[install] IPKs not found, proceeding with overlay copy..."
+
+-  # Copy ha-vrrp files/
+
+-  if [ -d "$REPO_ROOT/ha-vrrp/files" ]; then
+
+-    (cd "$REPO_ROOT/ha-vrrp/files" && tar cf - .) | (cd / && tar xvf -)
+
+-  else
+
+-    echo "[install] WARN: $REPO_ROOT/ha-vrrp/files not found"
+
+-  fi
+
+-
+
+-  # Copy LuCI luasrc -> /usr/lib/lua/luci/..
+
+-  if [ -d "$REPO_ROOT/luci-app-ha-vrrp/luasrc" ]; then
+
+-    mkdir -p /usr/lib/lua/luci
+
+-    (cd "$REPO_ROOT/luci-app-ha-vrrp/luasrc" && tar cf - .) | (cd /usr/lib/lua/luci && tar xvf -)
+
+-  else
+
+-    echo "[install] WARN: $REPO_ROOT/luci-app-ha-vrrp/luasrc not found"
+
+-  fi
+
+-}
+
+-
+
+-post_install() {
+
+-  # enable/restart services if present
+
+-  [ -x /etc/init.d/ha-vrrp ] && /etc/init.d/ha-vrrp enable >/dev/null 2>&1 || true
+
+-  [ -x /etc/init.d/ha-vrrp ] && /etc/init.d/ha-vrrp restart >/dev/null 2>&1 || true
+
+-  [ -x /etc/init.d/ha-vrrp-syncd ] && /etc/init.d/ha-vrrp-syncd enable >/dev/null 2>&1 || true
+
+-  [ -x /etc/init.d/ha-vrrp-syncd ] && /etc/init.d/ha-vrrp-syncd restart >/dev/null 2>&1 || true
+
+-  [ -x /etc/init.d/rpcd ] && /etc/init.d/rpcd restart >/dev/null 2>&1 || true
+
+-  [ -x /etc/init.d/uhttpd ] && /etc/init.d/uhttpd restart >/dev/null 2>&1 || true
+
+-
+
+-  # Apply keepalived config if tool exists
+
+-  if command -v ha-vrrp-apply >/dev/null 2>&1; then
+
+-    ha-vrrp-apply || true
+
+-    [ -x /etc/init.d/keepalived ] && /etc/init.d/keepalived restart >/dev/null 2>&1 || true
+
+-  fi
+
+-}
+
+-
+
+-if install_ipks; then
+
+-  echo "[install] IPK installation done."
+
+-else
+
+-  overlay_copy
+
+-fi
+
+-
+
+-# Sanity check
+
+-if [ ! -f /etc/config/ha_vrrp ]; then
+
+-  echo "[install] WARN: /etc/config/ha_vrrp missing after install"
+
+-fi
+
+-
+
+-# Report instances (if any)
+
+-if command -v uci >/dev/null 2>&1; then
+
+-  INST_CNT="$(uci show ha_vrrp 2>/dev/null | grep -cE '^ha_vrrp\.[^.]+=instance' || true)"
+
+-  echo "[ha-vrrp] instances found: ${INST_CNT:-0}"
+
+-fi
+
+-
+
+-post_install
+
+-echo "[install] Done."
+
+--- a/scripts/install_v0.5.14.sh
++++ b/scripts/install_v0.5.14.sh
+@@ -1,131 +0,0 @@
+-#!/bin/sh
+
+-# install_v0.5.14.sh – Installer mit zentraler Dependency-Config (config/dependencies.conf)
+
+-set -eu
+
+-
+
+-PKG_VER="0.5.14"
+
+-echo "[install] Starting installer for openwrt-ha-vrrp v$PKG_VER"
+
+-
+
+-SELF="$(readlink -f "$0" 2>/dev/null || realpath "$0" 2>/dev/null || echo "$0")"
+
+-SCRIPTDIR="$(cd "$(dirname "$SELF")" && pwd)"
+
+-REPO_ROOT="$(cd "$SCRIPTDIR/.." && pwd)"
+
+-CONF="$REPO_ROOT/config/dependencies.conf"
+
+-
+
+-echo "[install] Repo root: $REPO_ROOT"
+
+-echo "[install] Dependency config: $CONF"
+
+-
+
+-# OS detection (simple): allow override via $OS_KEY, else try /etc/openwrt_release
+
+-OS_KEY="${OS_KEY:-}"
+
+-if [ -z "$OS_KEY" ] && [ -f /etc/openwrt_release ]; then
+
+-  # e.g. DISTRIB_RELEASE='19.07.10'
+
+-  REL="$(. /etc/openwrt_release; echo ${DISTRIB_RELEASE:-unknown})"
+
+-  case "$REL" in
+
+-    19.07*) OS_KEY="openwrt-19.07" ;;
+
+-    21.02*) OS_KEY="openwrt-21.02" ;;
+
+-    22.03*) OS_KEY="openwrt-22.03" ;;
+
+-    23.05*) OS_KEY="openwrt-23.05" ;;
+
+-    *) OS_KEY="default" ;;
+
+-  esac
+
+-fi
+
+-[ -n "$OS_KEY" ] || OS_KEY="default"
+
+-echo "[install] OS key: $OS_KEY"
+
+-
+
+-read_conf_val() {
+
+-  # usage: read_conf_val <section> <key>
+
+-  awk -v sec="[$1]" -v key="$2" '
+
+-    BEGIN{IGNORECASE=1; in=0}
+
+-    /^\s*\[.*\]\s*$/ {in=($0==sec)?1:0}
+
+-    in && $1 ~ key { sub(/^[^=]*=\s*/,""); print; exit }
+
+-    END{}' "$CONF" 2>/dev/null | sed 's/#.*$//' | tr -s " \t" " " | sed 's/^ *//;s/ *$//'
+
+-}
+
+-
+
+-RUNTIME_DEF="$(read_conf_val default runtime)"
+
+-RUNTIME_OS="$(read_conf_val "$OS_KEY" runtime || true)"
+
+-RUNTIME_PKGS="$RUNTIME_DEF"
+
+-[ -n "${RUNTIME_OS:-}" ] && RUNTIME_PKGS="$RUNTIME_OS"
+
+-
+
+-echo "[install] Runtime deps: $RUNTIME_PKGS"
+
+-
+
+-# Try IPKs first
+
+-IPK_DIRS="$REPO_ROOT/../ipk_0_5_14 $REPO_ROOT/ipk_0_5_14 /tmp $REPO_ROOT"
+
+-HA_IPK="ha-vrrp_${PKG_VER}-1_all.ipk"
+
+-LUCI_IPK="luci-app-ha-vrrp_${PKG_VER}-1_all.ipk"
+
+-
+
+-install_ipks() {
+
+-  for d in $IPK_DIRS; do
+
+-    if [ -f "$d/$HA_IPK" ] && [ -f "$d/$LUCI_IPK" ]; then
+
+-      echo "[install] Installing IPKs from $d"
+
+-      opkg update || true
+
+-      opkg install "$d/$HA_IPK" "$d/$LUCI_IPK"
+
+-      return 0
+
+-    fi
+
+-  done
+
+-  return 1
+
+-}
+
+-
+
+-install_deps() {
+
+-  if command -v opkg >/dev/null 2>&1; then
+
+-    echo "[deps] Installing runtime deps via opkg: $RUNTIME_PKGS"
+
+-    opkg update || true
+
+-    for p in $RUNTIME_PKGS; do
+
+-      if ! opkg list-installed | grep -qE "^$p "; then
+
+-        opkg install "$p" || echo "[deps] WARN: could not install $p"
+
+-      fi
+
+-    done
+
+-  else
+
+-    echo "[deps] WARN: opkg not found; cannot install dependencies"
+
+-  fi
+
+-}
+
+-
+
+-overlay_copy() {
+
+-  echo "[install] IPKs not found, proceeding with overlay copy..."
+
+-  if [ -d "$REPO_ROOT/ha-vrrp/files" ]; then
+
+-    (cd "$REPO_ROOT/ha-vrrp/files" && tar cf - .) | (cd / && tar xvf -)
+
+-  else
+
+-    echo "[install] WARN: $REPO_ROOT/ha-vrrp/files not found"
+
+-  fi
+
+-  if [ -d "$REPO_ROOT/luci-app-ha-vrrp/luasrc" ]; then
+
+-    mkdir -p /usr/lib/lua/luci
+
+-    (cd "$REPO_ROOT/luci-app-ha-vrrp/luasrc" && tar cf - .) | (cd /usr/lib/lua/luci && tar xvf -)
+
+-  else
+
+-    echo "[install] WARN: $REPO_ROOT/luci-app-ha-vrrp/luasrc not found"
+
+-  fi
+
+-}
+
+-
+
+-post_install() {
+
+-  [ -x /etc/init.d/ha-vrrp ] && /etc/init.d/ha-vrrp enable >/dev/null 2>&1 || true
+
+-  [ -x /etc/init.d/ha-vrrp ] && /etc/init.d/ha-vrrp restart >/dev/null 2>&1 || true
+
+-  [ -x /etc/init.d/ha-vrrp-syncd ] && /etc/init.d/ha-vrrp-syncd enable >/dev/null 2>&1 || true
+
+-  [ -x /etc/init.d/ha-vrrp-syncd ] && /etc/init.d/ha-vrrp-syncd restart >/dev/null 2>&1 || true
+
+-  [ -x /etc/init.d/rpcd ] && /etc/init.d/rpcd restart >/dev/null 2>&1 || true
+
+-  [ -x /etc/init.d/uhttpd ] && /etc/init.d/uhttpd restart >/dev/null 2>&1 || true
+
+-
+
+-  if command -v ha-vrrp-apply >/dev/null 2>&1; then
+
+-    ha-vrrp-apply || true
+
+-    [ -x /etc/init.d/keepalived ] && /etc/init.d/keepalived restart >/dev/null 2>&1 || true
+
+-  fi
+
+-
+
+-  echo "[install] Hint: clear LuCI cache if menus missing:"
+
+-  echo "  rm -f /tmp/luci-indexcache /tmp/luci-modulecache/* 2>/dev/null || true; /etc/init.d/uhttpd restart"
+
+-}
+
+-
+
+-install_deps || true
+
+-
+
+-if install_ipks; then
+
+-  echo "[install] IPK installation done."
+
+-else
+
+-  overlay_copy
+
+-fi
+
+-
+
+-# final sanity
+
+-if [ ! -f /etc/config/ha_vrrp ]; then
+
+-  echo "[install] WARN: /etc/config/ha_vrrp missing after install"
+
+-fi
+
+-
+
+-# report
+
+-if command -v uci >/dev/null 2>&1; then
+
+-  INST_CNT="$(uci show ha_vrrp 2>/dev/null | grep -cE '^ha_vrrp\.[^.]+=instance' || true)"
+
+-  echo "[ha-vrrp] instances found: ${INST_CNT:-0}"
+
+-fi
+
+-
+
+-post_install
+
+-echo "[install] Done."
+
+--- a/scripts/install_v0.5.15.sh
++++ b/scripts/install_v0.5.15.sh
+@@ -1,132 +0,0 @@
+-sh "$(dirname "$0")/migratefrom0.5.14to0.5.15.sh" || true
+
+-#!/bin/sh
+
+-# install_v0.5.15.sh – Installer mit zentraler Dependency-Config (config/dependencies.conf)
+
+-set -eu
+
+-
+
+-PKG_VER="0.5.15"
+
+-echo "[install] Starting installer for openwrt-ha-vrrp v$PKG_VER"
+
+-
+
+-SELF="$(readlink -f "$0" 2>/dev/null || realpath "$0" 2>/dev/null || echo "$0")"
+
+-SCRIPTDIR="$(cd "$(dirname "$SELF")" && pwd)"
+
+-REPO_ROOT="$(cd "$SCRIPTDIR/.." && pwd)"
+
+-CONF="$REPO_ROOT/config/dependencies.conf"
+
+-
+
+-echo "[install] Repo root: $REPO_ROOT"
+
+-echo "[install] Dependency config: $CONF"
+
+-
+
+-# OS detection (simple): allow override via $OS_KEY, else try /etc/openwrt_release
+
+-OS_KEY="${OS_KEY:-}"
+
+-if [ -z "$OS_KEY" ] && [ -f /etc/openwrt_release ]; then
+
+-  # e.g. DISTRIB_RELEASE='19.07.10'
+
+-  REL="$(. /etc/openwrt_release; echo ${DISTRIB_RELEASE:-unknown})"
+
+-  case "$REL" in
+
+-    19.07*) OS_KEY="openwrt-19.07" ;;
+
+-    21.02*) OS_KEY="openwrt-21.02" ;;
+
+-    22.03*) OS_KEY="openwrt-22.03" ;;
+
+-    23.05*) OS_KEY="openwrt-23.05" ;;
+
+-    *) OS_KEY="default" ;;
+
+-  esac
+
+-fi
+
+-[ -n "$OS_KEY" ] || OS_KEY="default"
+
+-echo "[install] OS key: $OS_KEY"
+
+-
+
+-read_conf_val() {
+
+-  # usage: read_conf_val <section> <key>
+
+-  awk -v sec="[$1]" -v key="$2" '
+
+-    BEGIN{IGNORECASE=1; in=0}
+
+-    /^\s*\[.*\]\s*$/ {in=($0==sec)?1:0}
+
+-    in && $1 ~ key { sub(/^[^=]*=\s*/,""); print; exit }
+
+-    END{}' "$CONF" 2>/dev/null | sed 's/#.*$//' | tr -s " \t" " " | sed 's/^ *//;s/ *$//'
+
+-}
+
+-
+
+-RUNTIME_DEF="$(read_conf_val default runtime)"
+
+-RUNTIME_OS="$(read_conf_val "$OS_KEY" runtime || true)"
+
+-RUNTIME_PKGS="$RUNTIME_DEF"
+
+-[ -n "${RUNTIME_OS:-}" ] && RUNTIME_PKGS="$RUNTIME_OS"
+
+-
+
+-echo "[install] Runtime deps: $RUNTIME_PKGS"
+
+-
+
+-# Try IPKs first
+
+-IPK_DIRS="$REPO_ROOT/../ipk_0_5_14 $REPO_ROOT/ipk_0_5_14 /tmp $REPO_ROOT"
+
+-HA_IPK="ha-vrrp_${PKG_VER}-1_all.ipk"
+
+-LUCI_IPK="luci-app-ha-vrrp_${PKG_VER}-1_all.ipk"
+
+-
+
+-install_ipks() {
+
+-  for d in $IPK_DIRS; do
+
+-    if [ -f "$d/$HA_IPK" ] && [ -f "$d/$LUCI_IPK" ]; then
+
+-      echo "[install] Installing IPKs from $d"
+
+-      opkg update || true
+
+-      opkg install "$d/$HA_IPK" "$d/$LUCI_IPK"
+
+-      return 0
+
+-    fi
+
+-  done
+
+-  return 1
+
+-}
+
+-
+
+-install_deps() {
+
+-  if command -v opkg >/dev/null 2>&1; then
+
+-    echo "[deps] Installing runtime deps via opkg: $RUNTIME_PKGS"
+
+-    opkg update || true
+
+-    for p in $RUNTIME_PKGS; do
+
+-      if ! opkg list-installed | grep -qE "^$p "; then
+
+-        opkg install "$p" || echo "[deps] WARN: could not install $p"
+
+-      fi
+
+-    done
+
+-  else
+
+-    echo "[deps] WARN: opkg not found; cannot install dependencies"
+
+-  fi
+
+-}
+
+-
+
+-overlay_copy() {
+
+-  echo "[install] IPKs not found, proceeding with overlay copy..."
+
+-  if [ -d "$REPO_ROOT/ha-vrrp/files" ]; then
+
+-    (cd "$REPO_ROOT/ha-vrrp/files" && tar cf - .) | (cd / && tar xvf -)
+
+-  else
+
+-    echo "[install] WARN: $REPO_ROOT/ha-vrrp/files not found"
+
+-  fi
+
+-  if [ -d "$REPO_ROOT/luci-app-ha-vrrp/luasrc" ]; then
+
+-    mkdir -p /usr/lib/lua/luci
+
+-    (cd "$REPO_ROOT/luci-app-ha-vrrp/luasrc" && tar cf - .) | (cd /usr/lib/lua/luci && tar xvf -)
+
+-  else
+
+-    echo "[install] WARN: $REPO_ROOT/luci-app-ha-vrrp/luasrc not found"
+
+-  fi
+
+-}
+
+-
+
+-post_install() {
+
+-  [ -x /etc/init.d/ha-vrrp ] && /etc/init.d/ha-vrrp enable >/dev/null 2>&1 || true
+
+-  [ -x /etc/init.d/ha-vrrp ] && /etc/init.d/ha-vrrp restart >/dev/null 2>&1 || true
+
+-  [ -x /etc/init.d/ha-vrrp-syncd ] && /etc/init.d/ha-vrrp-syncd enable >/dev/null 2>&1 || true
+
+-  [ -x /etc/init.d/ha-vrrp-syncd ] && /etc/init.d/ha-vrrp-syncd restart >/dev/null 2>&1 || true
+
+-  [ -x /etc/init.d/rpcd ] && /etc/init.d/rpcd restart >/dev/null 2>&1 || true
+
+-  [ -x /etc/init.d/uhttpd ] && /etc/init.d/uhttpd restart >/dev/null 2>&1 || true
+
+-
+
+-  if command -v ha-vrrp-apply >/dev/null 2>&1; then
+
+-    ha-vrrp-apply || true
+
+-    [ -x /etc/init.d/keepalived ] && /etc/init.d/keepalived restart >/dev/null 2>&1 || true
+
+-  fi
+
+-
+
+-  echo "[install] Hint: clear LuCI cache if menus missing:"
+
+-  echo "  rm -f /tmp/luci-indexcache /tmp/luci-modulecache/* 2>/dev/null || true; /etc/init.d/uhttpd restart"
+
+-}
+
+-
+
+-install_deps || true
+
+-
+
+-if install_ipks; then
+
+-  echo "[install] IPK installation done."
+
+-else
+
+-  overlay_copy
+
+-fi
+
+-
+
+-# final sanity
+
+-if [ ! -f /etc/config/ha_vrrp ]; then
+
+-  echo "[install] WARN: /etc/config/ha_vrrp missing after install"
+
+-fi
+
+-
+
+-# report
+
+-if command -v uci >/dev/null 2>&1; then
+
+-  INST_CNT="$(uci show ha_vrrp 2>/dev/null | grep -cE '^ha_vrrp\.[^.]+=instance' || true)"
+
+-  echo "[ha-vrrp] instances found: ${INST_CNT:-0}"
+
+-fi
+
+-
+
+-post_install
+
+-echo "[install] Done."
+
+--- a/scripts/install_v0.5.16.sh
++++ b/scripts/install_v0.5.16.sh
+@@ -1,134 +0,0 @@
+-# MIGRATE CALL
+
+-sh "$(dirname "$0")/migratefrom0.5.15to0.5.16.sh" || true
+
+-sh "$(dirname "$0")/migratefrom0.5.14to0.5.15.sh" || true
+
+-#!/bin/sh
+
+-# install_v0.5.16.sh – Installer mit zentraler Dependency-Config (config/dependencies.conf)
+
+-set -eu
+
+-
+
+-PKG_VER="0.5.16"
+
+-echo "[install] Starting installer for openwrt-ha-vrrp v$PKG_VER"
+
+-
+
+-SELF="$(readlink -f "$0" 2>/dev/null || realpath "$0" 2>/dev/null || echo "$0")"
+
+-SCRIPTDIR="$(cd "$(dirname "$SELF")" && pwd)"
+
+-REPO_ROOT="$(cd "$SCRIPTDIR/.." && pwd)"
+
+-CONF="$REPO_ROOT/config/dependencies.conf"
+
+-
+
+-echo "[install] Repo root: $REPO_ROOT"
+
+-echo "[install] Dependency config: $CONF"
+
+-
+
+-# OS detection (simple): allow override via $OS_KEY, else try /etc/openwrt_release
+
+-OS_KEY="${OS_KEY:-}"
+
+-if [ -z "$OS_KEY" ] && [ -f /etc/openwrt_release ]; then
+
+-  # e.g. DISTRIB_RELEASE='19.07.10'
+
+-  REL="$(. /etc/openwrt_release; echo ${DISTRIB_RELEASE:-unknown})"
+
+-  case "$REL" in
+
+-    19.07*) OS_KEY="openwrt-19.07" ;;
+
+-    21.02*) OS_KEY="openwrt-21.02" ;;
+
+-    22.03*) OS_KEY="openwrt-22.03" ;;
+
+-    23.05*) OS_KEY="openwrt-23.05" ;;
+
+-    *) OS_KEY="default" ;;
+
+-  esac
+
+-fi
+
+-[ -n "$OS_KEY" ] || OS_KEY="default"
+
+-echo "[install] OS key: $OS_KEY"
+
+-
+
+-read_conf_val() {
+
+-  # usage: read_conf_val <section> <key>
+
+-  awk -v sec="[$1]" -v key="$2" '
+
+-    BEGIN{IGNORECASE=1; in=0}
+
+-    /^\s*\[.*\]\s*$/ {in=($0==sec)?1:0}
+
+-    in && $1 ~ key { sub(/^[^=]*=\s*/,""); print; exit }
+
+-    END{}' "$CONF" 2>/dev/null | sed 's/#.*$//' | tr -s " \t" " " | sed 's/^ *//;s/ *$//'
+
+-}
+
+-
+
+-RUNTIME_DEF="$(read_conf_val default runtime)"
+
+-RUNTIME_OS="$(read_conf_val "$OS_KEY" runtime || true)"
+
+-RUNTIME_PKGS="$RUNTIME_DEF"
+
+-[ -n "${RUNTIME_OS:-}" ] && RUNTIME_PKGS="$RUNTIME_OS"
+
+-
+
+-echo "[install] Runtime deps: $RUNTIME_PKGS"
+
+-
+
+-# Try IPKs first
+
+-IPK_DIRS="$REPO_ROOT/../ipk_0_5_14 $REPO_ROOT/ipk_0_5_14 /tmp $REPO_ROOT"
+
+-HA_IPK="ha-vrrp_${PKG_VER}-1_all.ipk"
+
+-LUCI_IPK="luci-app-ha-vrrp_${PKG_VER}-1_all.ipk"
+
+-
+
+-install_ipks() {
+
+-  for d in $IPK_DIRS; do
+
+-    if [ -f "$d/$HA_IPK" ] && [ -f "$d/$LUCI_IPK" ]; then
+
+-      echo "[install] Installing IPKs from $d"
+
+-      opkg update || true
+
+-      opkg install "$d/$HA_IPK" "$d/$LUCI_IPK"
+
+-      return 0
+
+-    fi
+
+-  done
+
+-  return 1
+
+-}
+
+-
+
+-install_deps() {
+
+-  if command -v opkg >/dev/null 2>&1; then
+
+-    echo "[deps] Installing runtime deps via opkg: $RUNTIME_PKGS"
+
+-    opkg update || true
+
+-    for p in $RUNTIME_PKGS; do
+
+-      if ! opkg list-installed | grep -qE "^$p "; then
+
+-        opkg install "$p" || echo "[deps] WARN: could not install $p"
+
+-      fi
+
+-    done
+
+-  else
+
+-    echo "[deps] WARN: opkg not found; cannot install dependencies"
+
+-  fi
+
+-}
+
+-
+
+-overlay_copy() {
+
+-  echo "[install] IPKs not found, proceeding with overlay copy..."
+
+-  if [ -d "$REPO_ROOT/ha-vrrp/files" ]; then
+
+-    (cd "$REPO_ROOT/ha-vrrp/files" && tar cf - .) | (cd / && tar xvf -)
+
+-  else
+
+-    echo "[install] WARN: $REPO_ROOT/ha-vrrp/files not found"
+
+-  fi
+
+-  if [ -d "$REPO_ROOT/luci-app-ha-vrrp/luasrc" ]; then
+
+-    mkdir -p /usr/lib/lua/luci
+
+-    (cd "$REPO_ROOT/luci-app-ha-vrrp/luasrc" && tar cf - .) | (cd /usr/lib/lua/luci && tar xvf -)
+
+-  else
+
+-    echo "[install] WARN: $REPO_ROOT/luci-app-ha-vrrp/luasrc not found"
+
+-  fi
+
+-}
+
+-
+
+-post_install() {
+
+-  [ -x /etc/init.d/ha-vrrp ] && /etc/init.d/ha-vrrp enable >/dev/null 2>&1 || true
+
+-  [ -x /etc/init.d/ha-vrrp ] && /etc/init.d/ha-vrrp restart >/dev/null 2>&1 || true
+
+-  [ -x /etc/init.d/ha-vrrp-syncd ] && /etc/init.d/ha-vrrp-syncd enable >/dev/null 2>&1 || true
+
+-  [ -x /etc/init.d/ha-vrrp-syncd ] && /etc/init.d/ha-vrrp-syncd restart >/dev/null 2>&1 || true
+
+-  [ -x /etc/init.d/rpcd ] && /etc/init.d/rpcd restart >/dev/null 2>&1 || true
+
+-  [ -x /etc/init.d/uhttpd ] && /etc/init.d/uhttpd restart >/dev/null 2>&1 || true
+
+-
+
+-  if command -v ha-vrrp-apply >/dev/null 2>&1; then
+
+-    ha-vrrp-apply || true
+
+-    [ -x /etc/init.d/keepalived ] && /etc/init.d/keepalived restart >/dev/null 2>&1 || true
+
+-  fi
+
+-
+
+-  echo "[install] Hint: clear LuCI cache if menus missing:"
+
+-  echo "  rm -f /tmp/luci-indexcache /tmp/luci-modulecache/* 2>/dev/null || true; /etc/init.d/uhttpd restart"
+
+-}
+
+-
+
+-install_deps || true
+
+-
+
+-if install_ipks; then
+
+-  echo "[install] IPK installation done."
+
+-else
+
+-  overlay_copy
+
+-fi
+
+-
+
+-# final sanity
+
+-if [ ! -f /etc/config/ha_vrrp ]; then
+
+-  echo "[install] WARN: /etc/config/ha_vrrp missing after install"
+
+-fi
+
+-
+
+-# report
+
+-if command -v uci >/dev/null 2>&1; then
+
+-  INST_CNT="$(uci show ha_vrrp 2>/dev/null | grep -cE '^ha_vrrp\.[^.]+=instance' || true)"
+
+-  echo "[ha-vrrp] instances found: ${INST_CNT:-0}"
+
+-fi
+
+-
+
+-post_install
+
+-echo "[install] Done."
+
+--- a/scripts/install_v0.5.2.sh
++++ b/scripts/install_v0.5.2.sh
+@@ -1,67 +0,0 @@
+-#!/bin/sh
+
+-# install_v0.5.2.sh – Smart installer for openwrt-ha-vrrp v0.5.2
+
+-set -eu
+
+-
+
+-need() { command -v "$1" >/dev/null 2>&1; }
+
+-
+
+-echo "[install] Starting installer for openwrt-ha-vrrp v0.5.2"
+
+-
+
+-if ! need opkg; then
+
+-  echo "[install] WARN: opkg not found (not an OpenWrt runtime?). Falling back to overlay copy."
+
+-  MODE="overlay"
+
+-else
+
+-  MODE="opkg"
+
+-fi
+
+-
+
+-# Try IPK-based install first
+
+-if [ "$MODE" = "opkg" ]; then
+
+-  echo "[install] Using opkg. If IPKs are provided, they will be installed."
+
+-  set +e
+
+-  HAPK="$(ls /tmp/ha-vrrp_0.5.2-1_*.ipk 2>/dev/null | head -n1)"
+
+-  LUCIIPK="$(ls /tmp/luci-app-ha-vrrp_0.5.2-1_*.ipk 2>/dev/null | head -n1)"
+
+-  set -e
+
+-  if [ -n "$HAPK" ] && [ -n "$LUCIIPK" ]; then
+
+-    opkg update || true
+
+-    opkg install "$HAPK" "$LUCIIPK"
+
+-    /etc/init.d/ha-vrrp enable
+
+-    /etc/init.d/ha-vrrp restart || true
+
+-    /etc/init.d/rpcd restart || true
+
+-    /etc/init.d/uhttpd restart || true
+
+-    echo "[install] Done (ipk mode)."
+
+-    exit 0
+
+-  else
+
+-    echo "[install] IPKs not found in /tmp, proceeding with overlay copy..."
+
+-    MODE="overlay"
+
+-  fi
+
+-fi
+
+-
+
+-# Overlay copy mode – copy files from this tree into rootfs
+
+-SRC_DIR="$(cd "$(dirname "$0")/.."; pwd)"
+
+-echo "[install] Copying files from $SRC_DIR to /"
+
+-cp -a "$SRC_DIR/ha-vrrp/files/." /
+
+-cp -a "$SRC_DIR/luci-app-ha-vrrp/." /tmp/_luci-ha-vrrp-src 2>/dev/null || true
+
+-# try to detect LuCI tree (on live systems, we only need configs and controllers)
+
+-if [ -d /usr/lib/lua/luci ]; then
+
+-  mkdir -p /usr/lib/lua/luci/controller/ /usr/lib/lua/luci/model/cbi/ /usr/lib/lua/luci/view/
+
+-  # Copy minimal app files
+
+-  if [ -d "$SRC_DIR/luci-app-ha-vrrp/luasrc" ]; then
+
+-    cp -a "$SRC_DIR/luci-app-ha-vrrp/luasrc/controller/." /usr/lib/lua/luci/controller/ 2>/dev/null || true
+
+-    mkdir -p /usr/lib/lua/luci/model/cbi/ha_vrrp /usr/lib/lua/luci/view/ha_vrrp
+
+-    cp -a "$SRC_DIR/luci-app-ha-vrrp/luasrc/model/cbi/ha_vrrp/." /usr/lib/lua/luci/model/cbi/ha_vrrp/ 2>/dev/null || true
+
+-    cp -a "$SRC_DIR/luci-app-ha-vrrp/luasrc/view/ha_vrrp/." /usr/lib/lua/luci/view/ha_vrrp/ 2>/dev/null || true
+
+-  fi
+
+-fi
+
+-
+
+-# Ensure permissions
+
+-chmod +x /etc/init.d/ha-vrrp || true
+
+-chmod +x /etc/init.d/ha-vrrp-syncd || true
+
+-chmod +x /usr/sbin/ha-vrrp-* || true
+
+-chmod +x /usr/libexec/ha-vrrp/* || true
+
+-
+
+-# Start services
+
+-/etc/init.d/ha-vrrp enable || true
+
+-/etc/init.d/ha-vrrp restart || true
+
+-/etc/init.d/rpcd restart || true
+
+-/etc/init.d/uhttpd restart || true
+
+-
+
+-echo "[install] Done (overlay mode)."
+
+--- a/scripts/install_v0.5.3.sh
++++ b/scripts/install_v0.5.3.sh
+@@ -1,67 +0,0 @@
+-#!/bin/sh
+
+-# install_v0.5.3.sh – Smart installer for openwrt-ha-vrrp v0.5.3
+
+-set -eu
+
+-
+
+-need() { command -v "$1" >/dev/null 2>&1; }
+
+-
+
+-echo "[install] Starting installer for openwrt-ha-vrrp v0.5.3"
+
+-
+
+-if ! need opkg; then
+
+-  echo "[install] WARN: opkg not found (not an OpenWrt runtime?). Falling back to overlay copy."
+
+-  MODE="overlay"
+
+-else
+
+-  MODE="opkg"
+
+-fi
+
+-
+
+-# Try IPK-based install first
+
+-if [ "$MODE" = "opkg" ]; then
+
+-  echo "[install] Using opkg. If IPKs are provided, they will be installed."
+
+-  set +e
+
+-  HAPK="$(ls /tmp/ha-vrrp_0.5.3-1_*.ipk 2>/dev/null | head -n1)"
+
+-  LUCIIPK="$(ls /tmp/luci-app-ha-vrrp_0.5.3-1_*.ipk 2>/dev/null | head -n1)"
+
+-  set -e
+
+-  if [ -n "$HAPK" ] && [ -n "$LUCIIPK" ]; then
+
+-    opkg update || true
+
+-    opkg install "$HAPK" "$LUCIIPK"
+
+-    /etc/init.d/ha-vrrp enable
+
+-    /etc/init.d/ha-vrrp restart || true
+
+-    /etc/init.d/rpcd restart || true
+
+-    /etc/init.d/uhttpd restart || true
+
+-    echo "[install] Done (ipk mode)."
+
+-    exit 0
+
+-  else
+
+-    echo "[install] IPKs not found in /tmp, proceeding with overlay copy..."
+
+-    MODE="overlay"
+
+-  fi
+
+-fi
+
+-
+
+-# Overlay copy mode – copy files from this tree into rootfs
+
+-SRC_DIR="$(cd "$(dirname "$0")/.."; pwd)"
+
+-echo "[install] Copying files from $SRC_DIR to /"
+
+-cp -a "$SRC_DIR/ha-vrrp/files/." /
+
+-cp -a "$SRC_DIR/luci-app-ha-vrrp/." /tmp/_luci-ha-vrrp-src 2>/dev/null || true
+
+-# try to detect LuCI tree (on live systems, we only need configs and controllers)
+
+-if [ -d /usr/lib/lua/luci ]; then
+
+-  mkdir -p /usr/lib/lua/luci/controller/ /usr/lib/lua/luci/model/cbi/ /usr/lib/lua/luci/view/
+
+-  # Copy minimal app files
+
+-  if [ -d "$SRC_DIR/luci-app-ha-vrrp/luasrc" ]; then
+
+-    cp -a "$SRC_DIR/luci-app-ha-vrrp/luasrc/controller/." /usr/lib/lua/luci/controller/ 2>/dev/null || true
+
+-    mkdir -p /usr/lib/lua/luci/model/cbi/ha_vrrp /usr/lib/lua/luci/view/ha_vrrp
+
+-    cp -a "$SRC_DIR/luci-app-ha-vrrp/luasrc/model/cbi/ha_vrrp/." /usr/lib/lua/luci/model/cbi/ha_vrrp/ 2>/dev/null || true
+
+-    cp -a "$SRC_DIR/luci-app-ha-vrrp/luasrc/view/ha_vrrp/." /usr/lib/lua/luci/view/ha_vrrp/ 2>/dev/null || true
+
+-  fi
+
+-fi
+
+-
+
+-# Ensure permissions
+
+-chmod +x /etc/init.d/ha-vrrp || true
+
+-chmod +x /etc/init.d/ha-vrrp-syncd || true
+
+-chmod +x /usr/sbin/ha-vrrp-* || true
+
+-chmod +x /usr/libexec/ha-vrrp/* || true
+
+-
+
+-# Start services
+
+-/etc/init.d/ha-vrrp enable || true
+
+-/etc/init.d/ha-vrrp restart || true
+
+-/etc/init.d/rpcd restart || true
+
+-/etc/init.d/uhttpd restart || true
+
+-
+
+-echo "[install] Done (overlay mode)."
+
+--- a/scripts/migratefrom0.5.14to0.5.15.sh
++++ b/scripts/migratefrom0.5.14to0.5.15.sh
+@@ -1,3 +0,0 @@
+-#!/bin/sh
+
+-echo '[migrate] 0.5.14 -> 0.5.15'
+
+-exit 0
+
+--- a/scripts/migratefrom0.5.15to0.5.16.sh
++++ b/scripts/migratefrom0.5.15to0.5.16.sh
+@@ -1,21 +0,0 @@
+-#!/bin/sh
+
+-# migratefrom0.5.15to0.5.16.sh – prepare new UI/keys and safe defaults
+
+-set -eu
+
+-echo "[migrate] 0.5.15 → 0.5.16 starting"
+
+-
+
+-# Ensure config root
+
+-mkdir -p /etc/ha-vrrp
+
+-
+
+-# Add any new UCI keys (idempotent)
+
+-uci -q batch <<'EOF'
+
+-set ha_vrrp.core=core
+
+-set ha_vrrp.core.cluster_name='YOURCLUSTER'
+
+-set ha_vrrp.core.fw_backend='auto'
+
+-set ha_vrrp.core.ka_backend='auto'
+
+-set ha_vrrp.core.dhcp_backend='auto'
+
+-set ha_vrrp.core.net_backend='auto'
+
+-EOF
+
+-uci -q commit ha_vrrp || true
+
+-
+
+-# No destructive changes; views are added by package files
+
+-echo "[migrate] done"
+
+--- a/scripts/uninstall_legacy_compatible.sh
++++ b/scripts/uninstall_legacy_compatible.sh
+@@ -1,25 +0,0 @@
+-#!/bin/sh
+
+-# uninstall_legacy_compatible.sh – orientiert am Ur-Uninstaller
+
+-set -eu
+
+-
+
+-echo "[uninstall-legacy] Stopping services…"
+
+-/etc/init.d/ha-vrrp stop 2>/dev/null || true
+
+-/etc/init.d/keepalived stop 2>/dev/null || true
+
+-/etc/init.d/ha-vrrp disable 2>/dev/null || true
+
+-
+
+-echo "[uninstall-legacy] Removing installed files…"
+
+-rm -f /etc/init.d/ha-vrrp /etc/init.d/ha-vrrp-syncd
+
+-rm -f /etc/hotplug.d/iface/95-ha-vrrp-apply
+
+-rm -rf /usr/libexec/ha-vrrp
+
+-rm -f /usr/sbin/ha-vrrp-apply /usr/sbin/ha-vrrp-sync /usr/sbin/ha-vrrp-autosync
+
+-
+
+-# Keep config as original did by default
+
+-# rm -f /etc/config/ha_vrrp
+
+-
+
+-# LuCI app files (only if overlay-installed)
+
+-rm -f /usr/lib/lua/luci/controller/ha_vrrp.lua 2>/dev/null || true
+
+-rm -rf /usr/lib/lua/luci/model/cbi/ha_vrrp 2>/dev/null || true
+
+-rm -rf /usr/lib/lua/luci/view/ha_vrrp 2>/dev/null || true
+
+-
+
+-echo "[uninstall-legacy] Note: keepalived package remains. Remove with 'opkg remove keepalived' if desired."
+
+-echo "[uninstall-legacy] Done."
+
+--- a/scripts/uninstall_v0.5.13.sh
++++ b/scripts/uninstall_v0.5.13.sh
+@@ -1,36 +0,0 @@
+-#!/bin/sh
+
+-# uninstall_v0.5.13.sh - clean uninstall for openwrt-ha-vrrp v0.5.13
+
+-set -eu
+
+-
+
+-echo "[uninstall] Stopping services (if running)"
+
+-[ -x /etc/init.d/ha-vrrp ] && /etc/init.d/ha-vrrp stop || true
+
+-[ -x /etc/init.d/ha-vrrp-syncd ] && /etc/init.d/ha-vrrp-syncd stop || true
+
+-
+
+-echo "[uninstall] Removing files"
+
+-# Core conffile kept unless --purge passed
+
+-PURGE=0
+
+-[ "${1:-}" = "--purge" ] && PURGE=1
+
+-
+
+-rm -f /etc/hotplug.d/iface/95-ha-vrrp-apply
+
+-rm -f /etc/init.d/ha-vrrp
+
+-rm -f /etc/init.d/ha-vrrp-syncd
+
+-rm -f /usr/sbin/ha-vrrp-apply
+
+-rm -f /usr/sbin/ha-vrrp-sync
+
+-rm -f /usr/sbin/ha-vrrp-autosync
+
+-rm -rf /usr/libexec/ha-vrrp
+
+-
+
+-# LuCI
+
+-rm -f /usr/lib/lua/luci/controller/ha_vrrp.lua
+
+-rm -rf /usr/lib/lua/luci/model/cbi/ha_vrrp
+
+-rm -rf /usr/lib/lua/luci/view/ha_vrrp
+
+-
+
+-if [ "$PURGE" -eq 1 ]; then
+
+-  echo "[uninstall] Purging /etc/config/ha_vrrp"
+
+-  rm -f /etc/config/ha_vrrp
+
+-fi
+
+-
+
+-echo "[uninstall] Restarting LuCI"
+
+-[ -x /etc/init.d/rpcd ] && /etc/init.d/rpcd restart || true
+
+-[ -x /etc/init.d/uhttpd ] && /etc/init.d/uhttpd restart || true
+
+-
+
+-echo "[uninstall] Done."
+
+--- a/scripts/uninstall_v0.5.14.sh
++++ b/scripts/uninstall_v0.5.14.sh
+@@ -1,33 +0,0 @@
+-#!/bin/sh
+
+-# uninstall_v0.5.14.sh – clean uninstall
+
+-set -eu
+
+-echo "[uninstall] Stopping services (if running)"
+
+-[ -x /etc/init.d/ha-vrrp ] && /etc/init.d/ha-vrrp stop || true
+
+-[ -x /etc/init.d/ha-vrrp-syncd ] && /etc/init.d/ha-vrrp-syncd stop || true
+
+-
+
+-PURGE=0
+
+-[ "${1:-}" = "--purge" ] && PURGE=1
+
+-
+
+-echo "[uninstall] Removing files"
+
+-rm -f /etc/hotplug.d/iface/95-ha-vrrp-apply
+
+-rm -f /etc/init.d/ha-vrrp
+
+-rm -f /etc/init.d/ha-vrrp-syncd
+
+-rm -f /usr/sbin/ha-vrrp-apply
+
+-rm -f /usr/sbin/ha-vrrp-sync
+
+-rm -f /usr/sbin/ha-vrrp-autosync
+
+-rm -rf /usr/libexec/ha-vrrp
+
+-
+
+-rm -f /usr/lib/lua/luci/controller/ha_vrrp.lua
+
+-rm -rf /usr/lib/lua/luci/model/cbi/ha_vrrp
+
+-rm -rf /usr/lib/lua/luci/view/ha_vrrp
+
+-
+
+-if [ "$PURGE" -eq 1 ]; then
+
+-  echo "[uninstall] Purging /etc/config/ha_vrrp"
+
+-  rm -f /etc/config/ha_vrrp
+
+-fi
+
+-
+
+-echo "[uninstall] Restarting LuCI"
+
+-[ -x /etc/init.d/rpcd ] && /etc/init.d/rpcd restart || true
+
+-[ -x /etc/init.d/uhttpd ] && /etc/init.d/uhttpd restart || true
+
+-
+
+-echo "[uninstall] Done."
+
+--- a/scripts/uninstall_v0.5.2.sh
++++ b/scripts/uninstall_v0.5.2.sh
+@@ -1,28 +0,0 @@
+-#!/bin/sh
+
+-# uninstall_v0.5.2.sh – Uninstaller for openwrt-ha-vrrp v0.5.2
+
+-set -eu
+
+-
+
+-echo "[uninstall] Stopping services..."
+
+-/etc/init.d/ha-vrrp stop 2>/dev/null || true
+
+-/etc/init.d/keepalived stop 2>/dev/null || true
+
+-/etc/init.d/ha-vrrp disable 2>/dev/null || true
+
+-
+
+-if command -v opkg >/dev/null 2>&1; then
+
+-  echo "[uninstall] Removing packages via opkg (if installed)..."
+
+-  opkg remove luci-app-ha-vrrp 2>/dev/null || true
+
+-  opkg remove ha-vrrp 2>/dev/null || true
+
+-fi
+
+-
+
+-echo "[uninstall] Removing overlay files (safe subset)..."
+
+-rm -f /etc/config/ha_vrrp
+
+-rm -f /etc/init.d/ha-vrrp /etc/init.d/ha-vrrp-syncd
+
+-rm -f /etc/hotplug.d/iface/95-ha-vrrp-apply
+
+-rm -rf /usr/libexec/ha-vrrp
+
+-rm -f /usr/sbin/ha-vrrp-*
+
+-
+
+-# LuCI app files (if overlay-copied)
+
+-rm -f /usr/lib/lua/luci/controller/ha_vrrp.lua 2>/dev/null || true
+
+-rm -rf /usr/lib/lua/luci/model/cbi/ha_vrrp 2>/dev/null || true
+
+-rm -rf /usr/lib/lua/luci/view/ha_vrrp 2>/dev/null || true
+
+-
+
+-echo "[uninstall] Done."
+
+--- a/scripts/uninstall_v0.5.3.sh
++++ b/scripts/uninstall_v0.5.3.sh
+@@ -1,28 +0,0 @@
+-#!/bin/sh
+
+-# uninstall_v0.5.3.sh – Uninstaller for openwrt-ha-vrrp v0.5.3
+
+-set -eu
+
+-
+
+-echo "[uninstall] Stopping services..."
+
+-/etc/init.d/ha-vrrp stop 2>/dev/null || true
+
+-/etc/init.d/keepalived stop 2>/dev/null || true
+
+-/etc/init.d/ha-vrrp disable 2>/dev/null || true
+
+-
+
+-if command -v opkg >/dev/null 2>&1; then
+
+-  echo "[uninstall] Removing packages via opkg (if installed)..."
+
+-  opkg remove luci-app-ha-vrrp 2>/dev/null || true
+
+-  opkg remove ha-vrrp 2>/dev/null || true
+
+-fi
+
+-
+
+-echo "[uninstall] Removing overlay files (safe subset)..."
+
+-rm -f /etc/config/ha_vrrp
+
+-rm -f /etc/init.d/ha-vrrp /etc/init.d/ha-vrrp-syncd
+
+-rm -f /etc/hotplug.d/iface/95-ha-vrrp-apply
+
+-rm -rf /usr/libexec/ha-vrrp
+
+-rm -f /usr/sbin/ha-vrrp-*
+
+-
+
+-# LuCI app files (if overlay-copied)
+
+-rm -f /usr/lib/lua/luci/controller/ha_vrrp.lua 2>/dev/null || true
+
+-rm -rf /usr/lib/lua/luci/model/cbi/ha_vrrp 2>/dev/null || true
+
+-rm -rf /usr/lib/lua/luci/view/ha_vrrp 2>/dev/null || true
+
+-
+
+-echo "[uninstall] Done."
+
+--- a/scripts/upgrade-path.sh
++++ b/scripts/upgrade-path.sh
+@@ -1,22 +0,0 @@
+-#!/bin/sh
+
+-# upgrade-path.sh – print upgrade path steps FROM → TO using docs/UPDATE_PATH.csv
+
+-# Usage: sh scripts/upgrade-path.sh 0.3.0 0.5.4
+
+-set -eu
+
+-FROM="${1:-}"
+
+-TO="${2:-}"
+
+-CSV="$(dirname "$0")/../docs/UPDATE_PATH.csv"
+
+-[ -n "$FROM" ] && [ -n "$TO" ] || { echo "Usage: $0 FROM TO" >&2; exit 1; }
+
+-[ -f "$CSV" ] || { echo "Missing $CSV" >&2; exit 1; }
+
+-
+
+-# Find indices
+
+-IFROM="$(awk -F, -v v="$FROM" 'NR>1 && $2==v {print $1}' "$CSV")"
+
+-ITO="$(awk -F, -v v="$TO"   'NR>1 && $2==v {print $1}' "$CSV")"
+
+-[ -n "$IFROM" ] && [ -n "$ITO" ] || { echo "Unknown version(s): FROM=$FROM TO=$TO" >&2; exit 2; }
+
+-
+
+-# Ascending or descending
+
+-if [ "$IFROM" -le "$ITO" ]; then
+
+-  awk -F, -v a="$IFROM" -v b="$ITO" 'NR>1 && $1>=a && $1<=b {print $2}' "$CSV"
+
+-else
+
+-  # downgrade path (reverse)
+
+-  awk -F, -v a="$ITO" -v b="$IFROM" 'NR>1 && $1>=a && $1<=b {print $2}' "$CSV" | tac
+
+-fi
