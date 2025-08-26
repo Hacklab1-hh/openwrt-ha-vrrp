@@ -1,0 +1,14 @@
+# Textdateien standardisiert als LF committen
+*           text=auto eol=lf
+
+# Shell/Make/Lua sicher als LF
+*.sh        text eol=lf
+Makefile    text eol=lf
+*.lua       text eol=lf
+*.md        text eol=lf
+*.conf      text eol=lf
+*.json      text eol=lf
+*.yaml      text eol=lf
+*.yml       text eol=lf
+*.txt       text eol=lf
+
