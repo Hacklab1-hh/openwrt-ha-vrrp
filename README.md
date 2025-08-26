@@ -22,3 +22,7 @@ make package/luci-app-ha-vrrp/compile V=s
 
 ## v0.5.7
 - LuCI: Peer-Verwaltung mit drei Wegen: **Auto-Discover**, **Discover (Liste)**, **manuell eintragen & speichern**. Optional kann der Peer direkt als `unicast_peer` für eine ausgewählte Instanz gesetzt werden.
+
+
+## v0.5.8
+- LuCI: Peer-Discover mit Interface-Auswahl. **HEARTBEAT** ist vorausgewählt, falls vorhanden. Sowohl **Discover (Liste)** als auch **Auto-Discover** berücksichtigen das gewählte Interface.

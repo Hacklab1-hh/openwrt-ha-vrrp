@@ -307,7 +307,13 @@ function autodiscover()
     src_ip = uci:get("network", iface, "ipaddr") or ""
     if src_ip == "" then
       local f = io.popen("ubus call network.interface."..iface.." status 2>/dev/null | jsonfilter -e '@.ipv4_address[0].address'")
-      if f then src_ip = (f:read(\"*a\") or \"\"):gsub(\"%s+$\",\"\") f:close() end
+      if f then src_ip = (f:read("*a") or ""):gsub("%s+$",""); f:close() end
+    end
+    -- derive cidr from network config if possible
+    local mask = uci:get("network", iface, "netmask") or ""
+    if src_ip ~= "" and mask ~= "" then
+      os.execute(string.format("uci -q set ha_vrrp.core.discover_cidr='%s/%s'", src_ip, mask))
+      os.execute("uci -q commit ha_vrrp")
     end
   end
 
