@@ -13,3 +13,7 @@
 - Controller: Endpoints 'keysync' und 'syncpush' rufen die neuen Skripte auf.
 - Migration: scripts/migrate_0.5.16_002_to_007.sh setzt Defaults und mappt legacy Keys.
 
+
+## 0.5.16-007_reviewfix1 (2025-08-24)
+- Added FEATURES.md (aggregiert aus docs/features/FEATURES_*.md)
+- Overview-Template abgesichert (Guard auf self.map.uci)
