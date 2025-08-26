@@ -1,0 +1,230 @@
+diff -ruN old/docs/CHANGELOG.md new/docs/CHANGELOG.md
+--- old/docs/CHANGELOG.md	1970-01-01 01:00:00.000000000 +0100
++++ new/docs/CHANGELOG.md	2025-08-24 03:58:35.774318954 +0200
+@@ -0,0 +1,2 @@
++## v0.5.16-004
++Siehe CHANGELOG_0.5.16-004.md
+diff -ruN old/docs/CHANGELOG_0.5.16-004.md new/docs/CHANGELOG_0.5.16-004.md
+--- old/docs/CHANGELOG_0.5.16-004.md	1970-01-01 01:00:00.000000000 +0100
++++ new/docs/CHANGELOG_0.5.16-004.md	2025-08-24 03:58:35.754320380 +0200
+@@ -0,0 +1,8 @@
++# Changelog v0.5.16-004
++
++- Fix: Overview 500 wegen `m` nil → Template greift nun auf `self.map.uci` zu.
++- Neu: Version-/Backend-Anzeige in Overview.
++- Neu: Settings um `ssh_backend`, `peer_netmask_cidr` und Hilfetexte erweitert.
++- Neu: Sync-Seite unterstützt Upload von privatem Schlüssel (lokal), lokalem Pub und Peer-Pub (Trust).
++- Neu: Instances-View mit Kurzbeschreibung (Platzhalter).
++- Config: Standardwerte `ssh_backend=auto`, `peer_netmask_cidr=24`, `cluster_version=0.5.16-004`.
+diff -ruN old/docs/KNOWN_ISSUES.md new/docs/KNOWN_ISSUES.md
+--- old/docs/KNOWN_ISSUES.md	1970-01-01 01:00:00.000000000 +0100
++++ new/docs/KNOWN_ISSUES.md	2025-08-24 03:58:35.774318954 +0200
+@@ -0,0 +1,2 @@
++## v0.5.16-004
++Siehe KNOWN_ISSUES_0.5.16-004.md
+diff -ruN old/docs/KNOWN_ISSUES_0.5.16-004.md new/docs/KNOWN_ISSUES_0.5.16-004.md
+--- old/docs/KNOWN_ISSUES_0.5.16-004.md	1970-01-01 01:00:00.000000000 +0100
++++ new/docs/KNOWN_ISSUES_0.5.16-004.md	2025-08-24 03:58:35.774318954 +0200
+@@ -0,0 +1,6 @@
++# Known Issues v0.5.16-004
++
++- JS-basierte LuCI-Formular-Widgets (`L.ui.*`) werden auf OpenWrt 19.07 nicht verwendet; künftige Releases können eine
++  separate JS-UI für neuere LuCI-Versionen anbieten.
++- Sync-„rsync“-Methode ist UI-seitig auswählbar, Backend-Handler folgt in späterer Subversion.
++- Upload von Schlüsseln führt keine Formatvalidierung durch; fehlerhafte Dateien werden stillschweigend übernommen.
+diff -ruN old/docs/README.md new/docs/README.md
+--- old/docs/README.md	1970-01-01 01:00:00.000000000 +0100
++++ new/docs/README.md	2025-08-24 03:58:35.774318954 +0200
+@@ -0,0 +1,2 @@
++## v0.5.16-004
++Siehe README_0.5.16-004.md
+diff -ruN old/docs/README_0.5.16-004.md new/docs/README_0.5.16-004.md
+--- old/docs/README_0.5.16-004.md	1970-01-01 01:00:00.000000000 +0100
++++ new/docs/README_0.5.16-004.md	2025-08-24 03:58:35.734321806 +0200
+@@ -0,0 +1,19 @@
++# openwrt-ha-vrrp v0.5.16-004
++
++**Datum:** 2025-08-24 03:58:35
++
++## Kurzbeschreibung
++Bugfix für LuCI-Views (Overview 500-Fehler behoben), erweiterte Settings (SSH-Backend, CIDR neben Peer-Host),
++Sync-Uploads (lokaler privater/öffentlicher Key, Peer-Pub), Versionsanzeige in Overview, Default-Config erweitert.
++
++## Wichtige Änderungen
++- Overview-Template nutzt `self.map.uci` statt `m` → behebt 500 Internal Server Error auf 19.07.
++- Anzeige der Addon-Version und des SSH-Backends in der Übersicht.
++- Settings: neue Felder `ssh_backend` (auto/openssh/dropbear) und `peer_netmask_cidr` (CIDR, z.B. 24).
++- Sync: Upload von lokalem privaten Schlüssel, lokalem Pub und Peer-Pub (Trust).
++- Instances: kleine Beschreibung (Stub).
++- Default `/etc/config/ha_vrrp`: `ssh_backend`, `peer_netmask_cidr`, `cluster_version` ergänzt.
++
++## Hinweise
++- Für OpenWrt 19.07 bleibt das UI serverseitiges CBI ohne moderne `L.ui`-Widgets; vermeidet den `L.ui is undefined`-Fehler.
++- Logs zu Sync-Aktionen: `/tmp/ha_vrrp_*`.
+diff -ruN old/ha-vrrp/files/etc/config/ha_vrrp new/ha-vrrp/files/etc/config/ha_vrrp
+--- old/ha-vrrp/files/etc/config/ha_vrrp	2025-08-23 21:19:24.000000000 +0200
++++ new/ha-vrrp/files/etc/config/ha_vrrp	2025-08-24 03:58:35.474340345 +0200
+@@ -47,3 +47,6 @@
+ 	option health6_fall '2'
+ 	option health6_rise '2'
+ 	option health6_weight '-20'
++	option ssh_backend 'auto'
++	option peer_netmask_cidr '24'
++	option cluster_version '0.5.16-004'
+diff -ruN old/luci-app-ha-vrrp/luasrc/model/cbi/ha_vrrp/instances.lua new/luci-app-ha-vrrp/luasrc/model/cbi/ha_vrrp/instances.lua
+--- old/luci-app-ha-vrrp/luasrc/model/cbi/ha_vrrp/instances.lua	2025-08-23 19:45:43.000000000 +0200
++++ new/luci-app-ha-vrrp/luasrc/model/cbi/ha_vrrp/instances.lua	2025-08-24 03:58:35.674326084 +0200
+@@ -1,27 +1,4 @@
+-local m = Map("ha_vrrp", translate("VRRP Instances"))
+-local s = m:section(TypedSection, "instance", translate("Instanzen"))
+-s.addremove = true
+-s.anonymous = true
+-
+-local o
+-o = s:option(Value, "name", translate("Name"))
+-o.datatype = "uciname"
+-
+-o = s:option(Value, "interface", translate("Interface"))
+-o.placeholder = "ADMINLAN"
+-
+-o = s:option(Value, "vip", translate("Virtual IP"))
+-o.placeholder = "192.168.1.254/24"
+-
+-o = s:option(Value, "vrid", translate("VRID"))
+-o.placeholder = "51"
+-
+-o = s:option(ListValue, "state", translate("State"))
+-o:value("MASTER", "MASTER")
+-o:value("BACKUP", "BACKUP")
+-
+-o = s:option(Value, "priority", translate("Priority"))
+-o.datatype = "uinteger"
+-o.placeholder = "150"
+-
++local m = Map("ha_vrrp", translate("Instances"))
++local s = m:section(SimpleSection, translate("Instanzen Übersicht"))
++s.template = "ha_vrrp/instances"
+ return m
+diff -ruN old/luci-app-ha-vrrp/luasrc/model/cbi/ha_vrrp/overview.lua new/luci-app-ha-vrrp/luasrc/model/cbi/ha_vrrp/overview.lua
+--- old/luci-app-ha-vrrp/luasrc/model/cbi/ha_vrrp/overview.lua	2025-08-23 21:19:24.000000000 +0200
++++ new/luci-app-ha-vrrp/luasrc/model/cbi/ha_vrrp/overview.lua	2025-08-24 03:58:35.524336780 +0200
+@@ -8,6 +8,9 @@
+ local cluster = uci:get("ha_vrrp","core","cluster_name") or "-"
+ local key_type = uci:get("ha_vrrp","core","key_type") or "auto"
+ local sync_method = uci:get("ha_vrrp","core","sync_method") or "auto"
++local ssh_backend = uci:get("ha_vrrp","core","ssh_backend") or "auto"
++local priority = uci:get("ha_vrrp","core","priority") or "150"
++local version = uci:get("ha_vrrp","core","cluster_version") or "-"
+ local ping_ok = false
+ if peer ~= "" then
+   local rc = sys.call("ping -c1 -W1 "..peer.." >/dev/null 2>&1")
+@@ -21,7 +24,25 @@
+   cluster = cluster,
+   key_type = key_type,
+   sync_method = sync_method,
++  ssh_backend = ssh_backend,
++  priority = priority,
++  version = version,
+   ping_ok = ping_ok and "reachable" or "unreachable"
+ }
+ 
++local psec = m:section(TypedSection, "discover", translate("Peer Discovery"))
++psec.anonymous = true
++local ifc = psec:option(ListValue, "iface", translate("Interface"))
++ifc:value("HEARTBEAT", "HEARTBEAT")
++ifc:value("ADMINLAN", "ADMINLAN")
++ifc:value("LAN", "LAN")
++ifc.default = "HEARTBEAT"
++local run = psec:option(Button, "_run_discover", translate("Discover"))
++run.inputstyle="apply"
++function run.write(self, section, value)
++  local iface = ifc:formvalue(section) or "HEARTBEAT"
++  local rc = sys.call(string.format("/usr/libexec/ha-vrrp/discover.sh %q > /tmp/ha_vrrp_discover.json 2>&1", iface))
++  luci.http.redirect(luci.dispatcher.build_url("admin/services/ha_vrrp/overview"))
++end
++
+ return m
+diff -ruN old/luci-app-ha-vrrp/luasrc/model/cbi/ha_vrrp/settings.lua new/luci-app-ha-vrrp/luasrc/model/cbi/ha_vrrp/settings.lua
+--- old/luci-app-ha-vrrp/luasrc/model/cbi/ha_vrrp/settings.lua	2025-08-23 19:45:43.000000000 +0200
++++ new/luci-app-ha-vrrp/luasrc/model/cbi/ha_vrrp/settings.lua	2025-08-24 03:58:35.604331075 +0200
+@@ -21,3 +21,11 @@
+ o:value("auto", "auto"); o:value("swconfig", "swconfig"); o:value("dsa", "dsa")
+ 
+ return m
++
++-- v0.5.16-004 additions
++local o = s:option(ListValue, 'ssh_backend', translate('SSH-Backend'))
++o:value('auto','auto'); o:value('openssh','OpenSSH'); o:value('dropbear','Dropbear')
++o.description = translate('Auto erkennt OpenSSH/Dropbear und nutzt bevorzugt OpenSSH wenn verfügbar.')
++local o = s:option(Value, 'peer_netmask_cidr', translate('Peer-Netzmaske (CIDR)'))
++o.datatype='ufloat'; o.placeholder='24'
++o.description = translate('CIDR-Präfix, z.B. 24 für /24')
+diff -ruN old/luci-app-ha-vrrp/luasrc/model/cbi/ha_vrrp/sync.lua new/luci-app-ha-vrrp/luasrc/model/cbi/ha_vrrp/sync.lua
+--- old/luci-app-ha-vrrp/luasrc/model/cbi/ha_vrrp/sync.lua	2025-08-23 21:19:24.000000000 +0200
++++ new/luci-app-ha-vrrp/luasrc/model/cbi/ha_vrrp/sync.lua	2025-08-24 03:58:35.634328936 +0200
+@@ -49,3 +49,25 @@
+ end
+ 
+ return m
++
++-- v0.5.16-004: Upload local priv/pub and peer pub
++local up_local_pub = t:option(FileUpload, "upload_local_pub", translate("Lokalen öffentlichen Schlüssel (.pub) hochladen"))
++local up_local_priv = t:option(FileUpload, "upload_local_priv", translate("Lokalen privaten Schlüssel hochladen"))
++local up_peer_pub = t:option(FileUpload, "upload_peer_pub", translate("Peer-öffentlichen Schlüssel (.pub) hochladen (trust)"))
++up_local_pub.rmempty = true; up_local_priv.rmempty = true; up_peer_pub.rmempty = true
++
++function m.handle(self, state, data)
++  if state == FORM_VALID and data then
++    if data.upload_local_pub then
++      sys.call("mkdir -p /etc/ha-vrrp/keys && cp -f "..util.shellquote(data.upload_local_pub).." /etc/ha-vrrp/keys/local_identity.pub")
++    end
++    if data.upload_local_priv then
++      sys.call("mkdir -p /etc/ha-vrrp/keys && cp -f "..util.shellquote(data.upload_local_priv).." /etc/ha-vrrp/keys/local_identity")
++      sys.call("chmod 600 /etc/ha-vrrp/keys/local_identity")
++    end
++    if data.upload_peer_pub then
++      sys.call("mkdir -p /etc/ha-vrrp/keys && cp -f "..util.shellquote(data.upload_peer_pub).." /etc/ha-vrrp/keys/peer_authorized.pub")
++    end
++  end
++  return Map.handle(self, state, data)
++end
+diff -ruN old/luci-app-ha-vrrp/luasrc/view/ha_vrrp/instances.htm new/luci-app-ha-vrrp/luasrc/view/ha_vrrp/instances.htm
+--- old/luci-app-ha-vrrp/luasrc/view/ha_vrrp/instances.htm	1970-01-01 01:00:00.000000000 +0100
++++ new/luci-app-ha-vrrp/luasrc/view/ha_vrrp/instances.htm	2025-08-24 03:58:35.694324658 +0200
+@@ -0,0 +1,4 @@
++<%+header%>
++<h2><%:VRRP Instanzen%></h2>
++<p><%:Hier siehst du eine kurze Beschreibung zu deinen VRRP-Instanzen. Künftige Versionen listen Details und erlauben Inline-Änderungen.%></p>
++<%+footer%>
+diff -ruN old/luci-app-ha-vrrp/luasrc/view/ha_vrrp/overview.htm new/luci-app-ha-vrrp/luasrc/view/ha_vrrp/overview.htm
+--- old/luci-app-ha-vrrp/luasrc/view/ha_vrrp/overview.htm	2025-08-23 21:19:24.000000000 +0200
++++ new/luci-app-ha-vrrp/luasrc/view/ha_vrrp/overview.htm	2025-08-24 03:58:35.554334640 +0200
+@@ -1,10 +1,14 @@
+ <%+header%>
+ <h2><%:HA VRRP Overview%></h2>
++<% local data = self and self.map and self.map.uci or {} %>
+ <ul>
+-  <li><b><%:Cluster%>:</b> <%=m.uci.cluster%></li>
+-  <li><b><%:Peer%>:</b> <%=m.uci.peer or "-"%> (<%:Status%>: <%=m.uci.ping_ok%>)</li>
+-  <li><b><%:Key-Typ%>:</b> <%=m.uci.key_type%></li>
+-  <li><b><%:Sync-Methode%>:</b> <%=m.uci.sync_method%></li>
++  <li><b><%:Addon-Version%>:</b> <%=data.version or "-"%></li>
++  <li><b><%:Cluster%>:</b> <%=data.cluster or "-"%></li>
++  <li><b><%:Peer%>:</b> <%=data.peer or "-"%> (<%:Status%>: <%=data.ping_ok or "-"%>)</li>
++  <li><b><%:SSH-Backend%>:</b> <%=data.ssh_backend or "auto"%></li>
++  <li><b><%:Key-Typ%>:</b> <%=data.key_type or "auto"%></li>
++  <li><b><%:Sync-Methode%>:</b> <%=data.sync_method or "auto"%></li>
++  <li><b><%:Priority%>:</b> <%=data.priority or "-"%></li>
+ </ul>
+ <p><a href="<%=url('admin/services/ha_vrrp/sync')%>"><%:Zu "Sync und Keys"%></a></p>
+ <%+footer%>
+diff -ruN old/luci-app-ha-vrrp/luasrc/view/ha_vrrp/sync.htm new/luci-app-ha-vrrp/luasrc/view/ha_vrrp/sync.htm
+--- old/luci-app-ha-vrrp/luasrc/view/ha_vrrp/sync.htm	2025-08-23 21:19:24.000000000 +0200
++++ new/luci-app-ha-vrrp/luasrc/view/ha_vrrp/sync.htm	2025-08-24 03:58:35.654327510 +0200
+@@ -2,5 +2,5 @@
+ <h2><%:Sync und Keys%></h2>
+ <p><%:Erzeuge/verwende SSH-Schlüssel für den Config-Sync zwischen Cluster-Nodes.
+ Dropbear und OpenSSH werden automatisch erkannt. ED25519 wird bevorzugt, wenn unterstützt; sonst RSA.%></p>
+-<p><%:Protokoll-Ausgaben findest du in /tmp/ha_vrrp_generate_keys, /tmp/ha_vrrp_setup_ssh_config, /tmp/ha_vrrp_push_keys.%></p>
++<p><%:Protokoll-Ausgaben findest du in /tmp/ha_vrrp_*.%></p>
+ <%+footer%>
