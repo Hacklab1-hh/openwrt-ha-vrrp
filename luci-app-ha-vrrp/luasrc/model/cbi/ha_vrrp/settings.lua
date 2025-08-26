@@ -21,11 +21,3 @@ o = s:option(ListValue, "net_backend", translate("Netzwerk Backend"))
 o:value("auto", "auto"); o:value("swconfig", "swconfig"); o:value("dsa", "dsa")
 
 return m
-
--- v0.5.16-004 additions
-local o = s:option(ListValue, 'ssh_backend', translate('SSH-Backend'))
-o:value('auto','auto'); o:value('openssh','OpenSSH'); o:value('dropbear','Dropbear')
-o.description = translate('Auto erkennt OpenSSH/Dropbear und nutzt bevorzugt OpenSSH wenn verfügbar.')
-local o = s:option(Value, 'peer_netmask_cidr', translate('Peer-Netzmaske (CIDR)'))
-o.datatype='ufloat'; o.placeholder='24'
-o.description = translate('CIDR-Präfix, z.B. 24 für /24')

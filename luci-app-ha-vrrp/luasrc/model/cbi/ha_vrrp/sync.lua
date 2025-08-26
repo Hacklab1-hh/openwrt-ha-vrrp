@@ -49,25 +49,3 @@ function m.handle(self, state, data)
 end
 
 return m
-
--- v0.5.16-004: Upload local priv/pub and peer pub
-local up_local_pub = t:option(FileUpload, "upload_local_pub", translate("Lokalen öffentlichen Schlüssel (.pub) hochladen"))
-local up_local_priv = t:option(FileUpload, "upload_local_priv", translate("Lokalen privaten Schlüssel hochladen"))
-local up_peer_pub = t:option(FileUpload, "upload_peer_pub", translate("Peer-öffentlichen Schlüssel (.pub) hochladen (trust)"))
-up_local_pub.rmempty = true; up_local_priv.rmempty = true; up_peer_pub.rmempty = true
-
-function m.handle(self, state, data)
-  if state == FORM_VALID and data then
-    if data.upload_local_pub then
-      sys.call("mkdir -p /etc/ha-vrrp/keys && cp -f "..util.shellquote(data.upload_local_pub).." /etc/ha-vrrp/keys/local_identity.pub")
-    end
-    if data.upload_local_priv then
-      sys.call("mkdir -p /etc/ha-vrrp/keys && cp -f "..util.shellquote(data.upload_local_priv).." /etc/ha-vrrp/keys/local_identity")
-      sys.call("chmod 600 /etc/ha-vrrp/keys/local_identity")
-    end
-    if data.upload_peer_pub then
-      sys.call("mkdir -p /etc/ha-vrrp/keys && cp -f "..util.shellquote(data.upload_peer_pub).." /etc/ha-vrrp/keys/peer_authorized.pub")
-    end
-  end
-  return Map.handle(self, state, data)
-end

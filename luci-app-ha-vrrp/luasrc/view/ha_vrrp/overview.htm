@@ -1,14 +1,10 @@
 <%+header%>
 <h2><%:HA VRRP Overview%></h2>
-<% local data = self and self.map and self.map.uci or {} %>
 <ul>
-  <li><b><%:Addon-Version%>:</b> <%=data.version or "-"%></li>
-  <li><b><%:Cluster%>:</b> <%=data.cluster or "-"%></li>
-  <li><b><%:Peer%>:</b> <%=data.peer or "-"%> (<%:Status%>: <%=data.ping_ok or "-"%>)</li>
-  <li><b><%:SSH-Backend%>:</b> <%=data.ssh_backend or "auto"%></li>
-  <li><b><%:Key-Typ%>:</b> <%=data.key_type or "auto"%></li>
-  <li><b><%:Sync-Methode%>:</b> <%=data.sync_method or "auto"%></li>
-  <li><b><%:Priority%>:</b> <%=data.priority or "-"%></li>
+  <li><b><%:Cluster%>:</b> <%=m.uci.cluster%></li>
+  <li><b><%:Peer%>:</b> <%=m.uci.peer or "-"%> (<%:Status%>: <%=m.uci.ping_ok%>)</li>
+  <li><b><%:Key-Typ%>:</b> <%=m.uci.key_type%></li>
+  <li><b><%:Sync-Methode%>:</b> <%=m.uci.sync_method%></li>
 </ul>
 <p><a href="<%=url('admin/services/ha_vrrp/sync')%>"><%:Zu "Sync und Keys"%></a></p>
 <%+footer%>

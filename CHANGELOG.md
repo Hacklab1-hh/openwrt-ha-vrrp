@@ -1,7 +1,7 @@
 # Changelog
 
-## 0.5.16-005 (2025-08-24)
-- LuCI: fehlende Controller-Endpoints ergänzt (`statusjson`, `apply`, `interfaces`, `discover`, `keysync`, `syncpush`, `createinst`).
-- LuCI: `instances.lua` auf `iface`, `vip_cidr`, `unicast_src_ip`, `unicast_peer` angepasst (kompatibel zu `ha-vrrp-apply`).
-- Migration: `scripts/migrate_0.5.16_004_to_005.sh` fügt Alt-Schlüssel (`interface`,`vip`) zusammen und setzt best-effort `unicast_src_ip`.
-- Installer: führt Migration automatisch aus.
+## 0.5.16-006 (2025-08-24)
+- LuCI: UI aus 0.5.16-002 zurückgeholt (Views & CBI) für volle Funktion.
+- Controller: ergänzt um fehlende Endpoints, Apply ruft Migration auf.
+- Migration: `migrate_0.5.16_002_to_006.sh` für interface→iface, vip→vip_cidr, setzt unicast_src_ip.
+- Installer: Migration automatisch eingebunden.
