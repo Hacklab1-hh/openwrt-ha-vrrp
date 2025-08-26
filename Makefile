@@ -23,3 +23,11 @@ bundle:
 
 clean:
 	rm -f ../openwrt-ha-vrrp-0.5.2.bundle.tar.gz
+
+
+.PHONY: legacy-install legacy-uninstall
+legacy-install:
+	sh scripts/install_legacy_compatible.sh
+
+legacy-uninstall:
+	sh scripts/uninstall_legacy_compatible.sh
