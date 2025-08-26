@@ -1,0 +1,35 @@
+<%+header%>
+<h2>HA VRRP – Status</h2>
+<pre>
+<%
+ local uci=require"luci.model.uci".cursor()
+ local vip=uci:get("ha_vrrp","core","vip_cidr") or "-"
+ local iface=uci:get("ha_vrrp","core","iface") or "-"
+ local vlan=uci:get("ha_vrrp","core","vlan_id") or ""
+ local use_vlan=uci:get("ha_vrrp","core","use_vlan") or "0"
+ if use_vlan=="1" and vlan~="" then iface=iface .. "." .. vlan end
+ local vrid=uci:get("ha_vrrp","core","vrid") or "-"
+ local prio=uci:get("ha_vrrp","core","priority") or "-"
+ local state=uci:get("ha_vrrp","core","state") or "-"
+-%>
+VIP: <%=vip%>
+IF : <%=iface%>
+VRID: <%=vrid%>
+Prio: <%=prio%>
+Init: <%=state%>
+</pre>
+
+<div class="cbi-page-actions">
+  <button class="cbi-button cbi-button-apply" onclick="applyHA()">Apply & Restart Keepalived</button>
+</div>
+
+<script>
+function applyHA(){
+  fetch(L.env.cgi_base + '/admin/services/ha_vrrp/apply',{method:'POST'})
+    .then(r=>r.json()).then(j=>{
+      alert(j.ok?'OK':'Error');
+      location.reload();
+    }).catch(()=>alert('Error'));
+}
+</script>
+<%+footer%>

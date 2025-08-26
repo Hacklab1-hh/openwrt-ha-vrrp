@@ -1,0 +1,12 @@
+#!/bin/sh
+# Re-render and restart keepalived when our interface comes up/down.
+IFACE="$(uci -q get ha_vrrp.core.iface)"
+VLAN_ID="$(uci -q get ha_vrrp.core.vlan_id)"
+USE_VLAN="$(uci -q get ha_vrrp.core.use_vlan)"
+
+DEV="$IFACE"
+[ "$USE_VLAN" = "1" ] && [ -n "$VLAN_ID" ] && DEV="$IFACE.$VLAN_ID"
+
+[ "$INTERFACE" = "$DEV" ] || exit 0
+
+/usr/sbin/ha-vrrp-apply && /etc/init.d/keepalived restart

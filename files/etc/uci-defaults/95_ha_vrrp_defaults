@@ -1,0 +1,14 @@
+#!/bin/sh
+. /lib/functions.sh
+config_load ha_vrrp
+config_get enabled core enabled
+[ "$enabled" = "1" ] || exit 0
+
+config_get prio core priority
+if [ -z "$prio" ]; then
+  hn="$(uci -q get system.@system[0].hostname || echo openwrt)"
+  sum=0; for c in $(echo -n "$hn" | od -An -tu1); do sum=$((sum + c)); done
+  uci set ha_vrrp.core.priority="$((100 + (sum % 60)))"
+  uci commit ha_vrrp
+fi
+exit 0

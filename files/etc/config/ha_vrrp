@@ -1,0 +1,30 @@
+config ha 'core'
+	option enabled '1'
+
+	# Cluster
+	option cluster_name 'lab-ha'
+	option auth_pass 'changeme-please'
+
+	# Logic
+	option preempt '1'
+	option advert_int '1'
+	option vrid '42'
+	option priority '150'
+	option state 'BACKUP'
+
+	# Interface / VLAN
+	option iface 'wan'
+	option use_vlan '0'
+	option vlan_id ''
+
+	# Addresses
+	option vip_cidr '192.0.2.200/24'
+	option unicast_src_ip '192.0.2.10'
+	list unicast_peer '192.0.2.11'
+
+	# Notify hooks
+	option notify_master '/usr/libexec/ha-vrrp/notify_master.sh'
+	option notify_backup '/usr/libexec/ha-vrrp/notify_backup.sh'
+
+	# Optional extra GARP via arping
+	option extra_garp '0'
