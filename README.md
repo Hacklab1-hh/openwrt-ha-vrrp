@@ -1,4 +1,4 @@
-# openwrt-ha-vrrp – Release Notes – v0.5.15
+# openwrt-ha-vrrp – Release Notes – v0.1.0
 
 **Datum:** 2025-08-23
 

@@ -1,4 +1,6 @@
 config core 'core'
+	option sync_method 'auto'
+	option key_type 'auto'
 	option enabled '1'
 	option cluster_name 'lab-ha'
 	option auth_pass 'changeme-please'

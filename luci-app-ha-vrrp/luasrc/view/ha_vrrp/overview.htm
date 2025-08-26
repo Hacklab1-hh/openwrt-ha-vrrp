@@ -1,0 +1,10 @@
+<%+header%>
+<h2><%:HA VRRP Overview%></h2>
+<ul>
+  <li><b><%:Cluster%>:</b> <%=m.uci.cluster%></li>
+  <li><b><%:Peer%>:</b> <%=m.uci.peer or "-"%> (<%:Status%>: <%=m.uci.ping_ok%>)</li>
+  <li><b><%:Key-Typ%>:</b> <%=m.uci.key_type%></li>
+  <li><b><%:Sync-Methode%>:</b> <%=m.uci.sync_method%></li>
+</ul>
+<p><a href="<%=url('admin/services/ha_vrrp/sync')%>"><%:Zu "Sync und Keys"%></a></p>
+<%+footer%>
