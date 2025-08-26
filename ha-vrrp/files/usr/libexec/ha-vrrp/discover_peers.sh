@@ -1,6 +1,5 @@
 #!/bin/sh
 set -eu
-# prefer configured discover_cidr; else derive from HEARTBEAT instance/core
 CIDR="$(uci -q get ha_vrrp.core.discover_cidr || echo)"
 if [ -z "$CIDR" ] || [ "$CIDR" = "0.0.0.0/0" ]; then
   sec="inst_hb"

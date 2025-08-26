@@ -1,20 +1,23 @@
 include $(TOPDIR)/rules.mk
+
 PKG_NAME:=ha-vrrp
-PKG_VERSION:=0.5.0
+PKG_VERSION:=0.5.1
 PKG_RELEASE:=1
 PKG_LICENSE:=MIT
+PKG_MAINTAINER:=ChatGPT
+
 include $(INCLUDE_DIR)/package.mk
 
 define Package/ha-vrrp
   SECTION:=utils
   CATEGORY:=Utilities
-  TITLE:=HA VRRP (Keepalived) with UCI renderer, sync, discovery, health, autosync
+  TITLE:=HA VRRP (Keepalived) with UCI renderer (multi-instance, discovery, sync, health, autosync)
   DEPENDS:=+keepalived +ip-full +uci +openssh-client +ubus +jsonfilter +busybox
 endef
 
 define Package/ha-vrrp/description
- UCI-driven Keepalived (VRRP, unicast) with optional VLAN heartbeat, multi-instance,
- peer discovery (configurable), peer sync (SSH), WAN/IPv6 gateway health, and optional autosync daemon.
+ UCI-driven Keepalived (VRRP, unicast). Multi-instance, VLAN heartbeat, peer discovery & sync,
+ IPv4/IPv6 WAN-gateway health checks, multi-VIP, optional autosync daemon.
 endef
 
 define Build/Prepare

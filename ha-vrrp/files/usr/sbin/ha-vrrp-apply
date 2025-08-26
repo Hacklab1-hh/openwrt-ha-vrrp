@@ -8,14 +8,14 @@ EN="$(uci -q get ha_vrrp.core.enabled || echo 1)"
 CL="$(uci -q get ha_vrrp.core.cluster_name || echo lab-ha)"
 PASS="$(uci -q get ha_vrrp.core.auth_pass || echo changeme-please)"
 
-# health v4
+# Health v4
 HINT="$(uci -q show ha_vrrp | awk -F= '/^ha_vrrp.core.health_wan_if=/ {gsub(/'\''/,"",$2); print $2}')"
 HINT_INT="$(uci -q get ha_vrrp.core.health_interval || echo 2)"
 HINT_FALL="$(uci -q get ha_vrrp.core.health_fall || echo 2)"
 HINT_RISE="$(uci -q get ha_vrrp.core.health_rise || echo 2)"
 HINT_WEIGHT="$(uci -q get ha_vrrp.core.health_weight || echo -30)"
 
-# health v6
+# Health v6
 H6INT="$(uci -q show ha_vrrp | awk -F= '/^ha_vrrp.core.health_wan6_if=/ {gsub(/'\''/,"",$2); print $2}')"
 H6_INT="$(uci -q get ha_vrrp.core.health6_interval || echo 3)"
 H6_FALL="$(uci -q get ha_vrrp.core.health6_fall || echo 2)"
@@ -114,7 +114,6 @@ EOT
     for V in $VIPS; do echo "    ${V}"; done
     echo "  }"
 
-    # track scripts from v4 and/or v6
     if [ -n "$HINT$H6INT" ]; then
       echo "  track_script {"
       for IF in $HINT; do echo "    CHK_WAN_${IF}"; done
@@ -132,9 +131,14 @@ EOT
 }
 
 INSTANCES="$(uci -q show ha_vrrp | awk -F. '/^ha_vrrp\\.[^=]+=/ {print $2}' | cut -d= -f1 | sort -u | grep -E '^inst_' || true)"
+
+# 0.2.0 backward-compat: if no explicit instances exist, render from core.* fields if present
 if [ -z "$INSTANCES" ]; then
-  uci -q get ha_vrrp.core.vip_cidr >/dev/null 2>&1 || { echo "[ha-vrrp] no instances defined"; exit 0; }
-  render_instance "core"
+  if uci -q get ha_vrrp.core.vip_cidr >/dev/null 2>&1 || uci -q get ha_vrrp.core.unicast_src_ip >/dev/null 2>&1; then
+    render_instance "core"
+  else
+    echo "[ha-vrrp] no instances defined"
+  fi
 else
   for s in $INSTANCES; do render_instance "$s"; done
 fi

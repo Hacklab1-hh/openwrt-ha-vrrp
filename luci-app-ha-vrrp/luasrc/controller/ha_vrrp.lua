@@ -63,7 +63,6 @@ end
 local function vip_for(sec, uci)
   local vip = uci:get("ha_vrrp", sec, "vip_cidr") or ""
   if vip == "" then
-    -- try first list vip_list element
     local c = io.popen("uci -q show ha_vrrp | awk -F= '/^ha_vrrp\."..sec.."\.vip_list/ {gsub(/\'\'/, "", $2); print $2; exit}'")
     if c then
       local out = c:read("*a") or ""; c:close()
@@ -108,6 +107,16 @@ function statusjson()
       local_master = local_master
     }
   end)
+
+  -- Backward compat: if no explicit instances, synthesize one from 'core' for status view
+  if #instances == 0 then
+    local dev = dev_for("core", uci)
+    local vip = vip_for("core", uci)
+    if dev ~= "" or vip ~= "" then
+      local local_master = (dev ~= "" and vip ~= "" and vip_present_local(dev, vip)) or false
+      instances[#instances+1] = { sec="core", name="core", dev=dev, vip=vip, local_master=local_master }
+    end
+  end
 
   local peer_instances = {}
   if peer_host ~= "" then

@@ -32,7 +32,7 @@ function syncpush(){
 function load(){
   fetch(L.env.cgi_base + '/admin/services/ha_vrrp/statusjson')
     .then(r=>r.json()).then(data=>{
-      let html='';
+      let html = '';
       html += '<b>Local node:</b> ' + (data.node||'-') + '<br>';
       html += '<b>Peer:</b> ' + (data.peer||'-') + '<br><br>';
       html += '<table class="table"><tr><th>Instance</th><th>IF</th><th>VIP</th><th>Local</th><th>Peer</th></tr>';

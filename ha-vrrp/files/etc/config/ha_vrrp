@@ -3,32 +3,43 @@ config core 'core'
 	option cluster_name 'lab-ha'
 	option auth_pass 'changeme-please'
 
+	# Legacy single-instance options (kept for 0.2.0 compat, optional):
+	# option vrid '42'
+	# option priority '150'
+	# option state 'BACKUP'
+	# option advert_int '1'
+	# option iface 'wan'
+	# option use_vlan '0'
+	# option vlan_id ''
+	# option vip_cidr '192.0.2.200/24'
+	# option unicast_src_ip '192.0.2.10'
+	# list unicast_peer '192.0.2.11'
+
 	# Peer (HEARTBEAT)
 	option peer_host '192.168.254.2'
 	option peer_user 'root'
 	option peer_port '22'
 
-	# Sync (manual + optional autosync)
+	# Sync + Auto-Sync
 	list sync_path '/etc/config/ha_vrrp'
 	list sync_path '/etc/config/network'
 	list sync_path '/etc/config/firewall'
-	option auto_sync '0'        # 1 = enable autosync daemon
+	option auto_sync '0'
 	option auto_sync_interval '7'
 
 	# Discovery
-	option discover_cidr '192.168.254.0/24'  # override auto-detect
+	option discover_cidr '192.168.254.0/24'
 	option discover_min '1'
 	option discover_max '10'
-	# .254 wird immer zusätzlich geprüft
 
-	# Health v4
+	# Health IPv4
 	list health_wan_if 'wan'
 	option health_interval '2'
 	option health_fall '2'
 	option health_rise '2'
 	option health_weight '-30'
 
-	# Health v6
+	# Health IPv6
 	# list health_wan6_if 'wan6'
 	option health6_interval '3'
 	option health6_fall '2'

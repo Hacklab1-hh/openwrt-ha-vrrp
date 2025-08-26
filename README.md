@@ -1,13 +1,13 @@
-# openwrt-ha-vrrp v0.5.0
+# openwrt-ha-vrrp v0.5.1
 
-**What’s new vs 0.4.0**
-- IPv6 WAN-Gateway Health (`health_wan6_if`), ICMPv6 to dynamic default gw
-- Multi-VIP per Instanz: `list vip_list` (zusätzlich/alternativ zu `vip_cidr`)
-- Peer-Discovery konfigurierbar: `discover_cidr` (z. B. `192.168.254.0/24`), `discover_min`, `discover_max`
-- Optional **Auto-Sync-Dienst** (`ha-vrrp-syncd`, procd): überwacht definierte Dateien und pusht Änderungen automatisch
-- Kleinere Robustheits-Fixes im Renderer (GARP, nopreempt-Flag, Logging)
+Built from base **0.2.0** and extended through 0.3.0–0.5.0:
+- Peer discovery (configurable), Peer sync (SSH keys + push)
+- VLAN heartbeat, multi-instance
+- WAN/IPv6 health checks (dynamic DHCP gateway)
+- Multi-VIP per instance (`vip_list`), legacy `core`-instance fallback kept
+- Optional Auto-Sync daemon (procd)
 
-**Build (SDK/Buildroot)**
+**Build**
 ```sh
 cp -a ha-vrrp <buildroot>/package/
 cp -a luci-app-ha-vrrp <buildroot>/package/
