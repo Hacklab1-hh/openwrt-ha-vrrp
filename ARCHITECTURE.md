@@ -183,3 +183,10 @@ openwrt-ha-vrrp-<version>/
 - OS-Matrix 21.02/22.03/23.05 validieren
 
 
+
+### Migration & Rollback Pipeline (ab 0.5.9)
+
+- Skripte: `/usr/lib/ha-vrrp/scripts/migrate_<from>_to_<to>.sh` mit `do_migrate` & `do_rollback`.
+- Hilfsbibliothek: `/usr/lib/ha-vrrp/scripts/lib/miglib.sh` (Logging, Dry-Run, Snapshots, Safe-FileOps, UCI-Helpers).
+- Dispatcher: `/usr/lib/ha-vrrp/scripts/run_migration.sh` für CLI-gestützte Ketten.
+- Installer ruft `--migrate`, Uninstaller/Downgrade ruft `--rollback`.
