@@ -33,5 +33,3 @@ rows = [
   { "version": "0.5.16-003",  "parent": "0.5.16-002","notes": "Patch: ssh-copy-key/RPC/Discover-Konzept ergänzt" },
   { "version": "0.5.16-004",  "parent": "0.5.16-003","notes": "Stabile CBI/Controller-Files + Doku (CONCEPTS/ARCHITECTURE); Overview-500 & L.ui-Fehler behoben" }
 ]
-
-# Note: ab 0.5.10↔0.5.11 stehen bidirektionale Migrationsskripte (migrate/rollback) zur Verfügung.

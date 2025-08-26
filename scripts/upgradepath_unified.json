@@ -1,30 +1,176 @@
-# Unified & Expanded Upgrade Path (ranges expanded)
-0.1.0
-0.2.0 <- 0.1.0
-0.3.0 <- 0.4.0
-0.4.0 <- 0.5.0
-0.5.0
-0.5.1 <- 0.5.0
-0.5.2 <- 0.5.0
-0.5.3 <- 0.5.2
-0.5.4 <- 0.5.3
-0.5.5 <- 0.5.4
-0.5.6 <- 0.5.5
-0.5.8 <- 0.5.6
-0.5.9 <- 0.5.6
-0.5.10 <- 0.5.9
-0.5.11 <- 0.5.10
-0.5.12 <- 0.5.11
-0.5.13 <- 0.5.12
-0.5.14 <- 0.5.13
-0.5.15 <- 0.5.14
-0.5.16 <- 0.5.15
-0.5.16-001 <- 0.5.16
-0.5.16-002 <- 0.5.16-001
-0.5.16-003 <- 0.5.16-002
-0.5.16-004 <- 0.5.16-003
-0.5.16-005 <- 0.5.16-004
-0.5.16-006 <- 0.5.16-005
-0.5.16-007 <- 0.5.16-006
-0.5.16-008 <- 0.5.16-007
-0.5.16-009 <- 0.5.16-008
+[
+  {
+    "version": "0.1.0",
+    "parent": null,
+    "series": "0.1",
+    "notes": "{ \"version\": \"0.2.0\",       \"parent\": \"0.1.0\",     \"notes\": \"Übernahme der Ur-Version, Grundgerüst bereinigt/erweitert\" },"
+  },
+  {
+    "version": "0.2.0",
+    "parent": null,
+    "series": "0.2",
+    "notes": "(\"0.2.0\",\"0.3.0\",\"—\",[\".tar.gz\",\".zip\"],\"installer-v0.3.0.sh\"),"
+  },
+  {
+    "version": "0.3.0",
+    "parent": null,
+    "series": "0.3",
+    "notes": "(\"0.3.0\",\"0.3.0_a\",\"Hotfix\",[\".tar.gz\",\".zip\"],\"migrate_0.3.0_to_0.3.0_a.sh → installer\"),"
+  },
+  {
+    "version": "0.4.0",
+    "parent": null,
+    "series": "0.4",
+    "notes": "(\"0.4.0\",\"0.4.0_a\",\"Hotfix\",[\".tar.gz\",\".zip\"],\"migrate_0.4.0_to_0.4.0_a.sh → installer\"),"
+  },
+  {
+    "version": "0.5.0",
+    "parent": null,
+    "series": "0.5",
+    "notes": "(\"0.5.0\",\"0.5.1\",\"Patch\",[\".tar.gz\",\".zip\"],\"migrate_0.5.0_to_0.5.1.sh\"),"
+  },
+  {
+    "version": "0.5.1",
+    "parent": "0.5.0",
+    "series": "0.5",
+    "notes": "(\"0.5.1\",\"0.5.2\",\"Legacy / Scripts\",[\".tar.gz\",\".zip\"],\"installer-v0.5.2.sh\"),"
+  },
+  {
+    "version": "0.5.2",
+    "parent": "0.5.1",
+    "series": "0.5",
+    "notes": "(\"0.5.2\",\"0.5.3 … 0.5.8\",\"Minor Releases\",[\".tar.gz\",\".zip\"],\"jeweiliger Installer\"),"
+  },
+  {
+    "version": "0.5.3",
+    "parent": "0.5.2",
+    "series": "0.5",
+    "notes": "(\"0.5.2\",\"0.5.3 … 0.5.8\",\"Minor Releases\",[\".tar.gz\",\".zip\"],\"jeweiliger Installer\"),"
+  },
+  {
+    "version": "0.5.4",
+    "parent": "0.5.3",
+    "series": "0.5",
+    "notes": "{ \"version\": \"0.5.5\",       \"parent\": \"0.5.4\",     \"notes\": \"Ergänzungen/Refactorings\" },"
+  },
+  {
+    "version": "0.5.5",
+    "parent": "0.5.4",
+    "series": "0.5",
+    "notes": "{ \"version\": \"0.5.6\",       \"parent\": \"0.5.5\",     \"notes\": \"Interfaces-/DHCP-Liste, VRRP-Segmente anlegbar\" },"
+  },
+  {
+    "version": "0.5.6",
+    "parent": "0.5.5",
+    "series": "0.5",
+    "notes": "{ \"version\": \"0.5.9\",       \"parent\": \"0.5.6\",     \"notes\": \"Doku-/Changelog-/Featurelist-Chain je Version eingeführt\" },"
+  },
+  {
+    "version": "0.5.8",
+    "parent": "0.5.6",
+    "series": "0.5",
+    "notes": "(\"0.5.8\",\"0.5.9\",\"—\",[\".tar.gz\",\".zip\"],\"installer-v0.5.9.sh\"),"
+  },
+  {
+    "version": "0.5.9",
+    "parent": "0.5.8",
+    "series": "0.5",
+    "notes": "(\"0.5.9\",\"0.5.10\",\"—\",[\".tar.gz\",\".zip\"],\"installer-v0.5.10.sh\"),"
+  },
+  {
+    "version": "0.5.10",
+    "parent": "0.5.9",
+    "series": "0.5",
+    "notes": "(\"0.5.10\",\"0.5.11\",\"—\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.11.sh\"),"
+  },
+  {
+    "version": "0.5.11",
+    "parent": "0.5.10",
+    "series": "0.5",
+    "notes": "(\"0.5.11\",\"0.5.12\",\"—\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.12.sh\"),"
+  },
+  {
+    "version": "0.5.12",
+    "parent": "0.5.11",
+    "series": "0.5",
+    "notes": "(\"0.5.12\",\"0.5.13\",\"—\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.13.sh\"),"
+  },
+  {
+    "version": "0.5.13",
+    "parent": "0.5.12",
+    "series": "0.5",
+    "notes": "(\"0.5.13\",\"0.5.14\",\"—\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.14.sh\"),"
+  },
+  {
+    "version": "0.5.14",
+    "parent": "0.5.13",
+    "series": "0.5",
+    "notes": "(\"0.5.14\",\"0.5.15_b\",\"—\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.15_b.sh\"),"
+  },
+  {
+    "version": "0.5.15",
+    "parent": "0.5.14",
+    "series": "0.5",
+    "notes": "{ \"version\": \"0.5.16\",      \"parent\": \"0.5.15\",    \"notes\": \"CBI-only auf 19.07, Controller entschlackt, Templates nutzen self.map.uci\" },"
+  },
+  {
+    "version": "0.5.16",
+    "parent": "0.5.15",
+    "series": "0.5",
+    "notes": "(\"0.5.16-009\",\"0.5.16-009_reviewfix3\",\"Docs + Path integriert\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.16-009_reviewfix3.sh\")"
+  },
+  {
+    "version": "0.5.16-001",
+    "parent": "0.5.16",
+    "series": "0.5",
+    "notes": "{ \"version\": \"0.5.16-002\",  \"parent\": \"0.5.16-001\",\"notes\": \"Sync-/Key-Ansicht verbessert; Upload-Felder\" },"
+  },
+  {
+    "version": "0.5.16-002",
+    "parent": "0.5.16-001",
+    "series": "0.5",
+    "notes": "(\"0.5.16-002\",\"0.5.16-004\",\"Patch\",[\".tar\",\".tar.gz\"],\"migrate_002_to_004.sh → installer\"),"
+  },
+  {
+    "version": "0.5.16-003",
+    "parent": "0.5.16-002",
+    "series": "0.5",
+    "notes": "{ \"version\": \"0.5.16-004\",  \"parent\": \"0.5.16-003\",\"notes\": \"Stabile CBI/Controller-Files + Doku (CONCEPTS/ARCHITECTURE); Overview-500 & L.ui-Fehler behoben\" }"
+  },
+  {
+    "version": "0.5.16-004",
+    "parent": "0.5.16-003",
+    "series": "0.5",
+    "notes": "(\"0.5.16-004\",\"0.5.16-005\",\"—\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.16-005.sh\"),"
+  },
+  {
+    "version": "0.5.16-005",
+    "parent": "0.5.16-004",
+    "series": "0.5",
+    "notes": "(\"0.5.16-005\",\"0.5.16-006\",\"+fixed\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.16-006_fixed.sh\"),"
+  },
+  {
+    "version": "0.5.16-006",
+    "parent": "0.5.16-005",
+    "series": "0.5",
+    "notes": "(\"0.5.16-006\",\"0.5.16-007\",\"Stable UI\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.16-007.sh\"),"
+  },
+  {
+    "version": "0.5.16-007",
+    "parent": "0.5.16-006",
+    "series": "0.5",
+    "notes": "(\"0.5.16-007\",\"0.5.16-007_infofix2_installerfix1_uninstallerfix1_managerfix1_installergrid1\",\"Fix-Linien vollständig\",[\".tar\",\".tar.gz\"],\"installer-v0.5.16-007.sh + Manager(Grid)\"),"
+  },
+  {
+    "version": "0.5.16-008",
+    "parent": "0.5.16-007",
+    "series": "0.5",
+    "notes": "(\"0.5.16-008\",\"0.5.16-008_patched_fixed_infofix\",\"Controller/UI-Fixes\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.16-008_patched_fixed_infofix.sh\"),"
+  },
+  {
+    "version": "0.5.16-009",
+    "parent": "0.5.16-008",
+    "series": "0.5",
+    "notes": "(\"0.5.16-009\",\"0.5.16-009_reviewfix3\",\"Docs + Path integriert\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.16-009_reviewfix3.sh\")"
+  }
+]

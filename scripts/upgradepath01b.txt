@@ -28,5 +28,3 @@ rows = [
     ("0.5.16-008_patched_fixed_infofix","0.5.16-009","Letzter Stand (Overview-Fix)",[".tar",".tar.gz",".zip"],"migrate_0.5.16_008_to_009.sh → installer"),
     ("0.5.16-009","0.5.16-009_reviewfix3","Docs + Path integriert",[".tar",".tar.gz",".zip"],"installer-v0.5.16-009_reviewfix3.sh")
 ]
-
-# Note: ab 0.5.10↔0.5.11 stehen bidirektionale Migrationsskripte (migrate/rollback) zur Verfügung.

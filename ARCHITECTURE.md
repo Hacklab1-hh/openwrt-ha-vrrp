@@ -184,9 +184,5 @@ openwrt-ha-vrrp-<version>/
 
 
 
-### Migration & Rollback Pipeline (ab 0.5.9)
-
-- Skripte: `/usr/lib/ha-vrrp/scripts/migrate_<from>_to_<to>.sh` mit `do_migrate` & `do_rollback`.
-- Hilfsbibliothek: `/usr/lib/ha-vrrp/scripts/lib/miglib.sh` (Logging, Dry-Run, Snapshots, Safe-FileOps, UCI-Helpers).
-- Dispatcher: `/usr/lib/ha-vrrp/scripts/run_migration.sh` für CLI-gestützte Ketten.
-- Installer ruft `--migrate`, Uninstaller/Downgrade ruft `--rollback`.
+### Upgradepfad-Engine
+`lib/upgradepath.sh` stellt `build_chain` und `step_pairs` bereit, um Versionspfade aus `upgradepath_unified.txt` herzuleiten.
