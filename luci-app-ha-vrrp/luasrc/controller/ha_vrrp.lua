@@ -20,6 +20,9 @@ function index()
   entry({"admin","services","ha_vrrp","statusjson"}, call("statusjson"), nil).leaf = true
   entry({"admin","services","ha_vrrp","listifaces"}, call("listifaces"), nil).leaf = true
   entry({"admin","services","ha_vrrp","createinst"}, call("createinst"), nil).leaf = true
+  entry({"admin","services","ha_vrrp","discover_adv"}, call("discover_adv"), nil).leaf = true
+  entry({"admin","services","ha_vrrp","autodiscover"}, call("autodiscover"), nil).leaf = true
+  entry({"admin","services","ha_vrrp","setpeer"}, call("setpeer"), nil).leaf = true
 end
 
 function apply()
@@ -137,6 +140,13 @@ function statusjson()
   http.prepare_content("application/json")
   http.write_json({
     node = host, peer = peer_host,
+    instance_sections = (function()
+      local t = {}
+      uci:foreach("ha_vrrp", "instance", function(s)
+        t[#t+1] = { id = s[".name"], name = (s.name or s[".name"]) }
+      end)
+      return t
+    end)(),
     local_instances = instances, peer_instances = peer_instances
   })
 end
@@ -244,4 +254,95 @@ function createinst()
 
   http.prepare_content("application/json")
   http.write_json({ ok = true, section = sec, vrid = vrid, src = src_ip })
+end
+
+
+-- Advanced discovery: allow iface or cidr override
+function discover_adv()
+  local http = require "luci.http"
+  local uci = require "luci.model.uci".cursor()
+  local iface = http.formvalue("iface") or ""
+  local cidr = http.formvalue("cidr") or ""
+
+  local subnet = cidr
+  if subnet == "" and iface ~= "" then
+    local ip = uci:get("network", iface, "ipaddr") or ""
+    local mask = uci:get("network", iface, "netmask") or ""
+    if ip ~= "" and mask ~= "" then
+      subnet = ip .. "/" .. mask
+    end
+  end
+
+  -- If still empty, fall back to core.discover_cidr
+  if subnet == "" then
+    subnet = uci:get("ha_vrrp", "core", "discover_cidr") or ""
+  end
+
+  -- Temporarily override discover_cidr for the script call
+  local cmd = "/usr/libexec/ha-vrrp/discover_peers.sh"
+  if subnet ~= "" then
+    -- We can't pass args, so we set UCI temporarily
+    os.execute(string.format("uci -q set ha_vrrp.core.discover_cidr='%s'", subnet))
+    os.execute("uci -q commit ha_vrrp")
+  end
+
+  local f = io.popen(cmd .. " 2>/dev/null")
+  local out = f and (f:read("*a") or "") or ""
+  if f then f:close() end
+
+  local list = {}
+  for ip in out:gmatch("([%d%.]+)") do list[#list+1] = ip end
+  http.prepare_content("application/json")
+  http.write_json({ peers = list, used_cidr = subnet })
+end
+
+-- Auto choose first discovered peer != local src ip
+function autodiscover()
+  local http = require "luci.http"
+  local uci = require "luci.model.uci".cursor()
+  local iface = http.formvalue("iface") or ""
+
+  local src_ip = ""
+  if iface ~= "" then
+    src_ip = uci:get("network", iface, "ipaddr") or ""
+    if src_ip == "" then
+      local f = io.popen("ubus call network.interface."..iface.." status 2>/dev/null | jsonfilter -e '@.ipv4_address[0].address'")
+      if f then src_ip = (f:read(\"*a\") or \"\"):gsub(\"%s+$\",\"\") f:close() end
+    end
+  end
+
+  local f = io.popen("/usr/libexec/ha-vrrp/discover_peers.sh 2>/dev/null")
+  local out = f and (f:read(\"*a\") or \"\") or \"\"
+  if f then f:close() end
+
+  local chosen = ""
+  for ip in out:gmatch(\"([%d%.]+)\") do
+    if ip ~= src_ip then chosen = ip; break end
+  end
+  if chosen ~= \"\" then
+    uci:set(\"ha_vrrp\",\"core\",\"peer_host\",chosen)
+    uci:commit(\"ha_vrrp\")
+  end
+
+  http.prepare_content(\"application/json\")
+  http.write_json({ ok = (chosen ~= \"\"), peer = chosen })
+end
+
+-- Set peer for core and optionally add as unicast_peer for a given instance
+function setpeer()
+  local http = require \"luci.http\"
+  local uci = require \"luci.model.uci\".cursor()
+  local peer = http.formvalue(\"peer\") or \"\"
+  local inst = http.formvalue(\"inst\") or \"\"  -- optional instance section to add unicast_peer
+  if peer == \"\" then
+    http.status(400, \"peer required\"); http.write(\"peer required\"); return
+  end
+  uci:set(\"ha_vrrp\",\"core\",\"peer_host\",peer)
+  if inst ~= \"\" then
+    uci:delete(\"ha_vrrp\", inst, \"unicast_peer\") -- reset and add fresh
+    uci:add_list(\"ha_vrrp\", inst, \"unicast_peer\", peer)
+  end
+  uci:commit(\"ha_vrrp\")
+  http.prepare_content(\"application/json\")
+  http.write_json({ ok = true, peer = peer, inst = inst })
 end

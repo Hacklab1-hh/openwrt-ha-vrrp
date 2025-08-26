@@ -18,3 +18,7 @@ make package/luci-app-ha-vrrp/compile V=s
 
 ## v0.5.6
 - LuCI: zeigt Network/Interfaces inkl. DHCP-Status (dnsmasq) und erlaubt das Anlegen neuer VRRP-Instanzen auf ausgewählten Interfaces.
+
+
+## v0.5.7
+- LuCI: Peer-Verwaltung mit drei Wegen: **Auto-Discover**, **Discover (Liste)**, **manuell eintragen & speichern**. Optional kann der Peer direkt als `unicast_peer` für eine ausgewählte Instanz gesetzt werden.
