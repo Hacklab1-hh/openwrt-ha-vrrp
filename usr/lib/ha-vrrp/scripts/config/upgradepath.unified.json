@@ -1,0 +1,328 @@
+{
+  "schema": "1.0",
+  "generated": "2025-08-26T15:28:26.289691Z",
+  "discover": {
+    "patterns": [
+      "openwrt-ha-vrrp-*.tar.gz",
+      "openwrt-ha-vrrp-*.tar",
+      "openwrt-ha-vrrp-*.zip"
+    ],
+    "prefer": [
+      "tar.gz",
+      "tar",
+      "zip"
+    ],
+    "version_regex": "(\\d+\\.\\d+\\.\\d+(?:-[0-9A-Za-z_\\.\\-\\+]+)?)"
+  },
+  "aliases": {
+    "0.5.15b": "0.5.15_b",
+    "0.5.16-006 fixed1": "0.5.16-006_fixed"
+  },
+  "versions": [
+    {
+      "version": "0.0.1",
+      "archive": "openwrt-ha-vrrp-0.0.1.tar.gz"
+    },
+    {
+      "version": "0.2.0",
+      "archive": "openwrt-ha-vrrp-0.2.0.tar.gz",
+      "parent": "0.0.1"
+    },
+    {
+      "version": "0.3.0",
+      "archive": "openwrt-ha-vrrp-0.3.0.tar.gz",
+      "parent": "0.2.0"
+    },
+    {
+      "version": "0.3.0_a",
+      "archive": "openwrt-ha-vrrp-0.3.0_a.tar.gz",
+      "parent": "0.3.0"
+    },
+    {
+      "version": "0.4.0",
+      "archive": "openwrt-ha-vrrp-0.4.0.tar.gz",
+      "parent": "0.3.0_a"
+    },
+    {
+      "version": "0.4.0_a",
+      "archive": "openwrt-ha-vrrp-0.4.0_a.tar.gz",
+      "parent": "0.4.0"
+    },
+    {
+      "version": "0.5.0",
+      "archive": "openwrt-ha-vrrp-0.5.0.tar.gz",
+      "parent": "0.4.0_a"
+    },
+    {
+      "version": "0.5.1",
+      "archive": "openwrt-ha-vrrp-0.5.1.tar.gz",
+      "parent": "0.5.0"
+    },
+    {
+      "version": "0.5.2",
+      "archive": "openwrt-ha-vrrp-0.5.2.tar.gz",
+      "parent": "0.5.1"
+    },
+    {
+      "version": "0.5.2+legacy",
+      "archive": "openwrt-ha-vrrp-0.5.2+legacy.tar.gz",
+      "parent": "0.5.2"
+    },
+    {
+      "version": "0.5.2+legacy+scripts",
+      "archive": "openwrt-ha-vrrp-0.5.2+legacy+scripts.tar.gz",
+      "parent": "0.5.2+legacy"
+    },
+    {
+      "version": "0.5.3",
+      "archive": "openwrt-ha-vrrp-0.5.3.tar.gz",
+      "parent": "0.5.2+legacy+scripts"
+    },
+    {
+      "version": "0.5.4",
+      "archive": "openwrt-ha-vrrp-0.5.4.tar.gz",
+      "parent": "0.5.3"
+    },
+    {
+      "version": "0.5.5",
+      "archive": "openwrt-ha-vrrp-0.5.5.tar.gz",
+      "parent": "0.5.4"
+    },
+    {
+      "version": "0.5.6",
+      "archive": "openwrt-ha-vrrp-0.5.6.tar.gz",
+      "parent": "0.5.5"
+    },
+    {
+      "version": "0.5.7",
+      "archive": "openwrt-ha-vrrp-0.5.7.tar.gz",
+      "parent": "0.5.6"
+    },
+    {
+      "version": "0.5.8",
+      "archive": "openwrt-ha-vrrp-0.5.8.tar.gz",
+      "parent": "0.5.7"
+    },
+    {
+      "version": "0.5.9",
+      "archive": "openwrt-ha-vrrp-0.5.9.tar.gz",
+      "parent": "0.5.8"
+    },
+    {
+      "version": "0.5.10",
+      "archive": "openwrt-ha-vrrp-0.5.10.tar.gz",
+      "parent": "0.5.9"
+    },
+    {
+      "version": "0.5.11",
+      "archive": "openwrt-ha-vrrp-0.5.11.tar.gz",
+      "parent": "0.5.10"
+    },
+    {
+      "version": "0.5.12",
+      "archive": "openwrt-ha-vrrp-0.5.12.tar.gz",
+      "parent": "0.5.11"
+    },
+    {
+      "version": "0.5.13",
+      "archive": "openwrt-ha-vrrp-0.5.13.tar.gz",
+      "parent": "0.5.12"
+    },
+    {
+      "version": "0.5.14",
+      "archive": "openwrt-ha-vrrp-0.5.14.tar.gz",
+      "parent": "0.5.13"
+    },
+    {
+      "version": "0.5.15_b",
+      "archive": "openwrt-ha-vrrp-0.5.15_b.tar.gz",
+      "parent": "0.5.14"
+    },
+    {
+      "version": "0.5.16-002",
+      "archive": "openwrt-ha-vrrp-0.5.16-002.tar.gz",
+      "parent": "0.5.15_b"
+    },
+    {
+      "version": "0.5.16-003",
+      "archive": "openwrt-ha-vrrp-0.5.16-003.tar.gz",
+      "parent": "0.5.16-002"
+    },
+    {
+      "version": "0.5.16-004",
+      "archive": "openwrt-ha-vrrp-0.5.16-004.tar.gz",
+      "parent": "0.5.16-003"
+    },
+    {
+      "version": "0.5.16-004 patched1",
+      "archive": "openwrt-ha-vrrp-0.5.16-004 patched1.tar.gz",
+      "parent": "0.5.16-004"
+    },
+    {
+      "version": "0.5.16-005",
+      "archive": "openwrt-ha-vrrp-0.5.16-005.tar.gz",
+      "parent": "0.5.16-004 patched1"
+    },
+    {
+      "version": "0.5.16-006",
+      "archive": "openwrt-ha-vrrp-0.5.16-006.tar.gz",
+      "parent": "0.5.16-005"
+    },
+    {
+      "version": "0.5.16-006a",
+      "archive": "openwrt-ha-vrrp-0.5.16-006a.tar.gz",
+      "parent": "0.5.16-006"
+    },
+    {
+      "version": "0.5.16-006_fixed",
+      "archive": "openwrt-ha-vrrp-0.5.16-006_fixed.tar.gz",
+      "parent": "0.5.16-006a"
+    },
+    {
+      "version": "0.5.16-007",
+      "archive": "openwrt-ha-vrrp-0.5.16-007.tar.gz",
+      "parent": "0.5.16-006_fixed"
+    },
+    {
+      "version": "0.5.16-007_docfix1",
+      "archive": "openwrt-ha-vrrp-0.5.16-007_docfix1.tar.gz",
+      "parent": "0.5.16-007"
+    },
+    {
+      "version": "0.5.16-007_infofix2",
+      "archive": "openwrt-ha-vrrp-0.5.16-007_infofix2.tar.gz",
+      "parent": "0.5.16-007_docfix1"
+    },
+    {
+      "version": "0.5.16-007_infofix2_installerfix1",
+      "archive": "openwrt-ha-vrrp-0.5.16-007_infofix2_installerfix1.tar.gz",
+      "parent": "0.5.16-007_infofix2"
+    },
+    {
+      "version": "0.5.16-007_infofix2_installerfix1_uninstallerfix1",
+      "archive": "openwrt-ha-vrrp-0.5.16-007_infofix2_installerfix1_uninstallerfix1.tar.gz",
+      "parent": "0.5.16-007_infofix2_installerfix1"
+    },
+    {
+      "version": "0.5.16-007_infofix2_installerfix1_uninstallerfix1_managerfix1",
+      "archive": "openwrt-ha-vrrp-0.5.16-007_infofix2_installerfix1_uninstallerfix1_managerfix1.tar.gz",
+      "parent": "0.5.16-007_infofix2_installerfix1_uninstallerfix1"
+    },
+    {
+      "version": "0.5.16-007_infofix2_installerfix1_uninstallerfix1_managerfix1_installergrid1",
+      "archive": "openwrt-ha-vrrp-0.5.16-007_infofix2_installerfix1_uninstallerfix1_managerfix1_installergrid1.tar.gz",
+      "parent": "0.5.16-007_infofix2_installerfix1_uninstallerfix1_managerfix1"
+    },
+    {
+      "version": "0.5.16-007_reviewfix1",
+      "archive": "openwrt-ha-vrrp-0.5.16-007_reviewfix1.tar.gz",
+      "parent": "0.5.16-007_infofix2_installerfix1_uninstallerfix1_managerfix1_installergrid1"
+    },
+    {
+      "version": "0.5.16-007_reviewfix2",
+      "archive": "openwrt-ha-vrrp-0.5.16-007_reviewfix2.tar.gz",
+      "parent": "0.5.16-007_reviewfix1"
+    },
+    {
+      "version": "0.5.16-007_reviewfix3",
+      "archive": "openwrt-ha-vrrp-0.5.16-007_reviewfix3.tar.gz",
+      "parent": "0.5.16-007_reviewfix2"
+    },
+    {
+      "version": "0.5.16-007_reviewfix3a",
+      "archive": "openwrt-ha-vrrp-0.5.16-007_reviewfix3a.tar.gz",
+      "parent": "0.5.16-007_reviewfix3"
+    },
+    {
+      "version": "0.5.16-007_reviewfix3b002",
+      "archive": "openwrt-ha-vrrp-0.5.16-007_reviewfix3b002.tar.gz",
+      "parent": "0.5.16-007_reviewfix3a"
+    },
+    {
+      "version": "0.5.16-007_reviewfix3b003",
+      "archive": "openwrt-ha-vrrp-0.5.16-007_reviewfix3b003.tar.gz",
+      "parent": "0.5.16-007_reviewfix3b002"
+    },
+    {
+      "version": "0.5.16-007_reviewfix4",
+      "archive": "openwrt-ha-vrrp-0.5.16-007_reviewfix4.tar.gz",
+      "parent": "0.5.16-007_reviewfix3b003"
+    },
+    {
+      "version": "0.5.16-007_reviewfix5",
+      "archive": "openwrt-ha-vrrp-0.5.16-007_reviewfix5.tar.gz",
+      "parent": "0.5.16-007_reviewfix4"
+    },
+    {
+      "version": "0.5.16-007_reviewfix6",
+      "archive": "openwrt-ha-vrrp-0.5.16-007_reviewfix6.tar.gz",
+      "parent": "0.5.16-007_reviewfix5"
+    },
+    {
+      "version": "0.5.16-007_reviewfix7",
+      "archive": "openwrt-ha-vrrp-0.5.16-007_reviewfix7.tar.gz",
+      "parent": "0.5.16-007_reviewfix6"
+    },
+    {
+      "version": "0.5.16-007_reviewfix8",
+      "archive": "openwrt-ha-vrrp-0.5.16-007_reviewfix8.tar.gz",
+      "parent": "0.5.16-007_reviewfix7"
+    },
+    {
+      "version": "0.5.16-007_reviewfix9",
+      "archive": "openwrt-ha-vrrp-0.5.16-007_reviewfix9.tar.gz",
+      "parent": "0.5.16-007_reviewfix8"
+    },
+    {
+      "version": "0.5.16-007_reviewfix10",
+      "archive": "openwrt-ha-vrrp-0.5.16-007_reviewfix10.tar.gz",
+      "parent": "0.5.16-007_reviewfix9"
+    },
+    {
+      "version": "0.5.16-007_reviewfix11",
+      "archive": "openwrt-ha-vrrp-0.5.16-007_reviewfix11.tar.gz",
+      "parent": "0.5.16-007_reviewfix10"
+    },
+    {
+      "version": "0.5.16-007_reviewfix12",
+      "archive": "openwrt-ha-vrrp-0.5.16-007_reviewfix12.tar.gz",
+      "parent": "0.5.16-007_reviewfix11"
+    },
+    {
+      "version": "0.5.16-007_reviewfix13",
+      "archive": "openwrt-ha-vrrp-0.5.16-007_reviewfix13.tar.gz",
+      "parent": "0.5.16-007_reviewfix12"
+    },
+    {
+      "version": "0.5.16-007_reviewfix14",
+      "parent": "0.5.16-007_reviewfix13",
+      "archive": "openwrt-ha-vrrp-0.5.16-007_reviewfix14.tar.gz"
+    },
+    {
+      "version": "0.5.16-007_reviewfix14a",
+      "parent": "0.5.16-007_reviewfix14",
+      "archive": "openwrt-ha-vrrp-0.5.16-007_reviewfix14a.tar.gz",
+      "migrate_from_parent": "scripts/migrate_0.5.16-007_reviewfix14_to_14a.sh",
+      "migrate_to_parent": "scripts/migrate_0.5.16-007_reviewfix14a_to_14.sh"
+    },
+    {
+      "version": "0.5.16-007_reviewfix14b",
+      "parent": "0.5.16-007_reviewfix14a",
+      "archive": "openwrt-ha-vrrp-0.5.16-007_reviewfix14b.tar.gz",
+      "migrate_from_parent": "scripts/migrate_0.5.16-007_reviewfix14a_to_14b.sh",
+      "migrate_to_parent": "scripts/migrate_0.5.16-007_reviewfix14b_to_14a.sh"
+    },
+    {
+      "version": "0.5.16-007_reviewfix14b1",
+      "parent": "0.5.16-007_reviewfix14b",
+      "archive": "openwrt-ha-vrrp-0.5.16-007_reviewfix14b1.tar.gz"
+    },
+    {
+      "version": "0.5.16-007_reviewfix14c",
+      "parent": "0.5.16-007_reviewfix14b",
+      "archive": "openwrt-ha-vrrp-0.5.16-007_reviewfix14c.tar.gz",
+      "migrate_from_parent": "scripts/migrate_0.5.16-007_reviewfix14b_to_14c.sh",
+      "migrate_to_parent": "scripts/migrate_0.5.16-007_reviewfix14c_to_14b.sh"
+    }
+  ]
+}

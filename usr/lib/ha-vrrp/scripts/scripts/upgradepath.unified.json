@@ -1,0 +1,1079 @@
+[
+  {
+    "version": "0.1.0",
+    "parent": null,
+    "series": "0.1",
+    "released": "",
+    "stability": "",
+    "tags": [],
+    "summary": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    },
+    "notes": "{ \"version\": \"0.2.0\",       \"parent\": \"0.1.0\",     \"notes\": \"Übernahme der Ur-Version, Grundgerüst bereinigt/erweitert\" },",
+    "patch_name": "",
+    "changelog": "",
+    "fixline": "{ \"version\": \"0.2.0\",       \"parent\": \"0.1.0\",     \"notes\": \"Übernahme der Ur-Version, Grundgerüst bereinigt/erweitert\" },"
+  },
+  {
+    "version": "0.2.0",
+    "parent": null,
+    "series": "0.2",
+    "released": "",
+    "stability": "",
+    "tags": [],
+    "summary": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    },
+    "notes": "(\"0.2.0\",\"0.3.0\",\"—\",[\".tar.gz\",\".zip\"],\"installer-v0.3.0.sh\"),",
+    "patch_name": "",
+    "changelog": "",
+    "fixline": "(\"0.2.0\",\"0.3.0\",\"—\",[\".tar.gz\",\".zip\"],\"installer-v0.3.0.sh\"),"
+  },
+  {
+    "version": "0.3.0",
+    "parent": null,
+    "series": "0.3",
+    "released": "",
+    "stability": "",
+    "tags": [],
+    "summary": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    },
+    "notes": "(\"0.3.0\",\"0.3.0_a\",\"Hotfix\",[\".tar.gz\",\".zip\"],\"migrate_0.3.0_to_0.3.0_a.sh → installer\"),",
+    "patch_name": "",
+    "changelog": "",
+    "fixline": "(\"0.3.0\",\"0.3.0_a\",\"Hotfix\",[\".tar.gz\",\".zip\"],\"migrate_0.3.0_to_0.3.0_a.sh → installer\"),"
+  },
+  {
+    "version": "0.4.0",
+    "parent": null,
+    "series": "0.4",
+    "released": "",
+    "stability": "",
+    "tags": [],
+    "summary": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    },
+    "notes": "(\"0.4.0\",\"0.4.0_a\",\"Hotfix\",[\".tar.gz\",\".zip\"],\"migrate_0.4.0_to_0.4.0_a.sh → installer\"),",
+    "patch_name": "",
+    "changelog": "",
+    "fixline": "(\"0.4.0\",\"0.4.0_a\",\"Hotfix\",[\".tar.gz\",\".zip\"],\"migrate_0.4.0_to_0.4.0_a.sh → installer\"),"
+  },
+  {
+    "version": "0.5.0",
+    "parent": null,
+    "series": "0.5",
+    "released": "",
+    "stability": "",
+    "tags": [],
+    "summary": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    },
+    "notes": "(\"0.5.0\",\"0.5.1\",\"Patch\",[\".tar.gz\",\".zip\"],\"migrate_0.5.0_to_0.5.1.sh\"),",
+    "patch_name": "",
+    "changelog": "",
+    "fixline": "(\"0.5.0\",\"0.5.1\",\"Patch\",[\".tar.gz\",\".zip\"],\"migrate_0.5.0_to_0.5.1.sh\"),"
+  },
+  {
+    "version": "0.5.1",
+    "parent": "0.5.0",
+    "series": "0.5",
+    "released": "",
+    "stability": "",
+    "tags": [],
+    "summary": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    },
+    "notes": "(\"0.5.1\",\"0.5.2\",\"Legacy / Scripts\",[\".tar.gz\",\".zip\"],\"installer-v0.5.2.sh\"),",
+    "patch_name": "",
+    "changelog": "",
+    "fixline": "(\"0.5.1\",\"0.5.2\",\"Legacy / Scripts\",[\".tar.gz\",\".zip\"],\"installer-v0.5.2.sh\"),"
+  },
+  {
+    "version": "0.5.10",
+    "parent": "0.5.9",
+    "series": "0.5",
+    "released": "",
+    "stability": "",
+    "tags": [],
+    "summary": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    },
+    "notes": "(\"0.5.10\",\"0.5.11\",\"—\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.11.sh\"),",
+    "patch_name": "",
+    "changelog": "- Key-Management UI initiiert; erste Sync-Mechanik (scp).",
+    "fixline": "(\"0.5.10\",\"0.5.11\",\"—\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.11.sh\"),"
+  },
+  {
+    "version": "0.5.11",
+    "parent": "0.5.10",
+    "series": "0.5",
+    "released": "",
+    "stability": "",
+    "tags": [],
+    "summary": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    },
+    "notes": "(\"0.5.11\",\"0.5.12\",\"—\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.12.sh\"),",
+    "patch_name": "",
+    "changelog": "- IPKs erstmals; Controller-Fehler beim LuCI-Laden beobachtet.",
+    "fixline": "(\"0.5.11\",\"0.5.12\",\"—\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.12.sh\"),"
+  },
+  {
+    "version": "0.5.12",
+    "parent": "0.5.11",
+    "series": "0.5",
+    "released": "",
+    "stability": "",
+    "tags": [],
+    "summary": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    },
+    "notes": "(\"0.5.12\",\"0.5.13\",\"—\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.13.sh\"),",
+    "patch_name": "",
+    "changelog": "- Installer/Uninstaller ergänzt; bekannter Uninstaller-Bug.",
+    "fixline": "(\"0.5.12\",\"0.5.13\",\"—\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.13.sh\"),"
+  },
+  {
+    "version": "0.5.13",
+    "parent": "0.5.12",
+    "series": "0.5",
+    "released": "",
+    "stability": "",
+    "tags": [],
+    "summary": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    },
+    "notes": "(\"0.5.13\",\"0.5.14\",\"—\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.14.sh\"),",
+    "patch_name": "",
+    "changelog": "- Fixes im Installer; UI teils leer; Cache nötig.",
+    "fixline": "(\"0.5.13\",\"0.5.14\",\"—\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.14.sh\"),"
+  },
+  {
+    "version": "0.5.14",
+    "parent": "0.5.13",
+    "series": "0.5",
+    "released": "",
+    "stability": "",
+    "tags": [],
+    "summary": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    },
+    "notes": "(\"0.5.14\",\"0.5.15_b\",\"—\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.15_b.sh\"),",
+    "patch_name": "",
+    "changelog": "- Menü sichtbar; UI zeigte JSON statt CBI; Uninstaller unvollständig.",
+    "fixline": "(\"0.5.14\",\"0.5.15_b\",\"—\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.15_b.sh\"),"
+  },
+  {
+    "version": "0.5.15",
+    "parent": "0.5.14",
+    "series": "0.5",
+    "released": "",
+    "stability": "",
+    "tags": [],
+    "summary": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    },
+    "notes": "{ \"version\": \"0.5.16\",      \"parent\": \"0.5.15\",    \"notes\": \"CBI-only auf 19.07, Controller entschlackt, Templates nutzen self.map.uci\" },",
+    "patch_name": "",
+    "changelog": "- Migrationspfad skizziert; LuCI stabilisiert.",
+    "fixline": "{ \"version\": \"0.5.16\",      \"parent\": \"0.5.15\",    \"notes\": \"CBI-only auf 19.07, Controller entschlackt, Templates nutzen self.map.uci\" },"
+  },
+  {
+    "version": "0.5.16",
+    "parent": "0.5.15",
+    "series": "0.5",
+    "released": "",
+    "stability": "",
+    "tags": [],
+    "summary": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    },
+    "notes": "(\"0.5.16-009\",\"0.5.16-009_reviewfix3\",\"Docs + Path integriert\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.16-009_reviewfix3.sh\")",
+    "patch_name": "",
+    "changelog": "- Controller/CBI/Views bereinigt; Overview-500 behoben; Settings erweitert.",
+    "fixline": "(\"0.5.16-009\",\"0.5.16-009_reviewfix3\",\"Docs + Path integriert\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.16-009_reviewfix3.sh\")"
+  },
+  {
+    "version": "0.5.16-001",
+    "parent": "0.5.16",
+    "series": "0.5",
+    "released": "",
+    "stability": "",
+    "tags": [],
+    "summary": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    },
+    "notes": "{ \"version\": \"0.5.16-002\",  \"parent\": \"0.5.16-001\",\"notes\": \"Sync-/Key-Ansicht verbessert; Upload-Felder\" },",
+    "patch_name": "001",
+    "changelog": "",
+    "fixline": "{ \"version\": \"0.5.16-002\",  \"parent\": \"0.5.16-001\",\"notes\": \"Sync-/Key-Ansicht verbessert; Upload-Felder\" },"
+  },
+  {
+    "version": "0.5.16-002",
+    "parent": "0.5.16-001",
+    "series": "0.5",
+    "released": "",
+    "stability": "",
+    "tags": [],
+    "summary": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    },
+    "notes": "(\"0.5.16-002\",\"0.5.16-004\",\"Patch\",[\".tar\",\".tar.gz\"],\"migrate_002_to_004.sh → installer\"),",
+    "patch_name": "002",
+    "changelog": "",
+    "fixline": "(\"0.5.16-002\",\"0.5.16-004\",\"Patch\",[\".tar\",\".tar.gz\"],\"migrate_002_to_004.sh → installer\"),"
+  },
+  {
+    "version": "0.5.16-003",
+    "parent": "0.5.16-002",
+    "series": "0.5",
+    "released": "",
+    "stability": "",
+    "tags": [],
+    "summary": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    },
+    "notes": "{ \"version\": \"0.5.16-004\",  \"parent\": \"0.5.16-003\",\"notes\": \"Stabile CBI/Controller-Files + Doku (CONCEPTS/ARCHITECTURE); Overview-500 & L.ui-Fehler behoben\" }",
+    "patch_name": "003",
+    "changelog": "",
+    "fixline": "{ \"version\": \"0.5.16-004\",  \"parent\": \"0.5.16-003\",\"notes\": \"Stabile CBI/Controller-Files + Doku (CONCEPTS/ARCHITECTURE); Overview-500 & L.ui-Fehler behoben\" }"
+  },
+  {
+    "version": "0.5.16-004",
+    "parent": "0.5.16-003",
+    "series": "0.5",
+    "released": "",
+    "stability": "",
+    "tags": [],
+    "summary": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    },
+    "notes": "(\"0.5.16-004\",\"0.5.16-005\",\"—\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.16-005.sh\"),",
+    "patch_name": "004",
+    "changelog": "",
+    "fixline": "(\"0.5.16-004\",\"0.5.16-005\",\"—\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.16-005.sh\"),"
+  },
+  {
+    "version": "0.5.16-005",
+    "parent": "0.5.16-004",
+    "series": "0.5",
+    "released": "",
+    "stability": "",
+    "tags": [],
+    "summary": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    },
+    "notes": "(\"0.5.16-005\",\"0.5.16-006\",\"+fixed\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.16-006_fixed.sh\"),",
+    "patch_name": "005",
+    "changelog": "",
+    "fixline": "(\"0.5.16-005\",\"0.5.16-006\",\"+fixed\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.16-006_fixed.sh\"),"
+  },
+  {
+    "version": "0.5.16-006",
+    "parent": "0.5.16-005",
+    "series": "0.5",
+    "released": "",
+    "stability": "",
+    "tags": [],
+    "summary": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    },
+    "notes": "(\"0.5.16-006\",\"0.5.16-007\",\"Stable UI\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.16-007.sh\"),",
+    "patch_name": "006",
+    "changelog": "- LuCI: UI aus 0.5.16-002 zurückgeholt (Views & CBI) für volle Funktion.\n- Controller: ergänzt um fehlende Endpoints, Apply ruft Migration auf.\n- Migration: `migrate_0.5.16_002_to_006.sh` für interface→iface, vip→vip_cidr, setzt unicast_src_ip.\n- Installer: Migration automatisch eingebunden.",
+    "fixline": "(\"0.5.16-006\",\"0.5.16-007\",\"Stable UI\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.16-007.sh\"),"
+  },
+  {
+    "version": "0.5.16-007",
+    "parent": "0.5.16-006",
+    "series": "0.5",
+    "released": "",
+    "stability": "",
+    "tags": [],
+    "summary": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    },
+    "notes": "(\"0.5.16-007\",\"0.5.16-007_infofix2_installerfix1_uninstallerfix1_managerfix1_installergrid1\",\"Fix-Linien vollständig\",[\".tar\",\".tar.gz\"],\"installer-v0.5.16-007.sh + Manager(Grid)\"),",
+    "patch_name": "007",
+    "changelog": "- LuCI Settings: neue Option 'ssh_backend' (auto/dropbear/openssh).\n- Neues Hilfsskript: /usr/lib/ha-vrrp/lib/ssh_backend.sh (wählt SSH/SCP-Binaries).\n- Neue backend-aware Beispiele: /usr/libexec/ha-vrrp/keysync.sh und syncpush.sh.\n- Controller: Endpoints 'keysync' und 'syncpush' rufen die neuen Skripte auf.\n- Migration: scripts/migrate_0.5.16_002_to_007.sh setzt Defaults und mappt legacy Keys.",
+    "fixline": "(\"0.5.16-007\",\"0.5.16-007_infofix2_installerfix1_uninstallerfix1_managerfix1_installergrid1\",\"Fix-Linien vollständig\",[\".tar\",\".tar.gz\"],\"installer-v0.5.16-0…"
+  },
+  {
+    "version": "0.5.16-008",
+    "parent": "0.5.16-007",
+    "series": "0.5",
+    "released": "",
+    "stability": "",
+    "tags": [],
+    "summary": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    },
+    "notes": "(\"0.5.16-008\",\"0.5.16-008_patched_fixed_infofix\",\"Controller/UI-Fixes\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.16-008_patched_fixed_infofix.sh\"),",
+    "patch_name": "008",
+    "changelog": "",
+    "fixline": "(\"0.5.16-008\",\"0.5.16-008_patched_fixed_infofix\",\"Controller/UI-Fixes\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.16-008_patched_fixed_infofix.sh\"),"
+  },
+  {
+    "version": "0.5.16-009",
+    "parent": "0.5.16-008",
+    "series": "0.5",
+    "released": "",
+    "stability": "",
+    "tags": [],
+    "summary": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    },
+    "notes": "(\"0.5.16-009\",\"0.5.16-009_reviewfix3\",\"Docs + Path integriert\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.16-009_reviewfix3.sh\")",
+    "patch_name": "009",
+    "changelog": "",
+    "fixline": "(\"0.5.16-009\",\"0.5.16-009_reviewfix3\",\"Docs + Path integriert\",[\".tar\",\".tar.gz\",\".zip\"],\"installer-v0.5.16-009_reviewfix3.sh\")"
+  },
+  {
+    "version": "0.5.2",
+    "parent": "0.5.1",
+    "series": "0.5",
+    "released": "",
+    "stability": "",
+    "tags": [],
+    "summary": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    },
+    "notes": "(\"0.5.2\",\"0.5.3 … 0.5.8\",\"Minor Releases\",[\".tar.gz\",\".zip\"],\"jeweiliger Installer\"),",
+    "patch_name": "",
+    "changelog": "",
+    "fixline": "(\"0.5.2\",\"0.5.3 … 0.5.8\",\"Minor Releases\",[\".tar.gz\",\".zip\"],\"jeweiliger Installer\"),"
+  },
+  {
+    "version": "0.5.3",
+    "parent": "0.5.2",
+    "series": "0.5",
+    "released": "",
+    "stability": "",
+    "tags": [],
+    "summary": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    },
+    "notes": "(\"0.5.2\",\"0.5.3 … 0.5.8\",\"Minor Releases\",[\".tar.gz\",\".zip\"],\"jeweiliger Installer\"),",
+    "patch_name": "",
+    "changelog": "",
+    "fixline": "(\"0.5.2\",\"0.5.3 … 0.5.8\",\"Minor Releases\",[\".tar.gz\",\".zip\"],\"jeweiliger Installer\"),"
+  },
+  {
+    "version": "0.5.4",
+    "parent": "0.5.3",
+    "series": "0.5",
+    "released": "",
+    "stability": "",
+    "tags": [],
+    "summary": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    },
+    "notes": "{ \"version\": \"0.5.5\",       \"parent\": \"0.5.4\",     \"notes\": \"Ergänzungen/Refactorings\" },",
+    "patch_name": "",
+    "changelog": "",
+    "fixline": "{ \"version\": \"0.5.5\",       \"parent\": \"0.5.4\",     \"notes\": \"Ergänzungen/Refactorings\" },"
+  },
+  {
+    "version": "0.5.5",
+    "parent": "0.5.4",
+    "series": "0.5",
+    "released": "",
+    "stability": "",
+    "tags": [],
+    "summary": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    },
+    "notes": "{ \"version\": \"0.5.6\",       \"parent\": \"0.5.5\",     \"notes\": \"Interfaces-/DHCP-Liste, VRRP-Segmente anlegbar\" },",
+    "patch_name": "",
+    "changelog": "",
+    "fixline": "{ \"version\": \"0.5.6\",       \"parent\": \"0.5.5\",     \"notes\": \"Interfaces-/DHCP-Liste, VRRP-Segmente anlegbar\" },"
+  },
+  {
+    "version": "0.5.6",
+    "parent": "0.5.5",
+    "series": "0.5",
+    "released": "",
+    "stability": "",
+    "tags": [],
+    "summary": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    },
+    "notes": "{ \"version\": \"0.5.9\",       \"parent\": \"0.5.6\",     \"notes\": \"Doku-/Changelog-/Featurelist-Chain je Version eingeführt\" },",
+    "patch_name": "",
+    "changelog": "",
+    "fixline": "{ \"version\": \"0.5.9\",       \"parent\": \"0.5.6\",     \"notes\": \"Doku-/Changelog-/Featurelist-Chain je Version eingeführt\" },"
+  },
+  {
+    "version": "0.5.8",
+    "parent": "0.5.6",
+    "series": "0.5",
+    "released": "",
+    "stability": "",
+    "tags": [],
+    "summary": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    },
+    "notes": "(\"0.5.8\",\"0.5.9\",\"—\",[\".tar.gz\",\".zip\"],\"installer-v0.5.9.sh\"),",
+    "patch_name": "",
+    "changelog": "",
+    "fixline": "(\"0.5.8\",\"0.5.9\",\"—\",[\".tar.gz\",\".zip\"],\"installer-v0.5.9.sh\"),"
+  },
+  {
+    "version": "0.5.9",
+    "parent": "0.5.8",
+    "series": "0.5",
+    "released": "",
+    "stability": "",
+    "tags": [],
+    "summary": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    },
+    "notes": "(\"0.5.9\",\"0.5.10\",\"—\",[\".tar.gz\",\".zip\"],\"installer-v0.5.10.sh\"),",
+    "patch_name": "",
+    "changelog": "- Erweiterte Doku-/Changelog-Struktur eingeführt.",
+    "fixline": "(\"0.5.9\",\"0.5.10\",\"—\",[\".tar.gz\",\".zip\"],\"installer-v0.5.10.sh\"),"
+  },
+  {
+    "version": "0.5.16-007_reviewfix3a",
+    "parent": "0.5.16-007",
+    "series": "0.5",
+    "released": "",
+    "stability": "stable",
+    "tags": [
+      "reviewfix"
+    ],
+    "summary": "Basis Fix-Version",
+    "fixline": "Basis Fix-Version",
+    "patch_name": "007_reviewfix3a",
+    "notes": "Basis Fix-Version; Ausgangspunkt für Reviewfix-Kette.",
+    "changelog": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    }
+  },
+  {
+    "version": "0.5.16-007_reviewfix4",
+    "parent": "0.5.16-007_reviewfix3a",
+    "series": "0.5",
+    "released": "",
+    "stability": "stable",
+    "tags": [
+      "reviewfix"
+    ],
+    "summary": "Generische Kettenmigration eingeführt",
+    "fixline": "Generische Kettenmigration eingeführt",
+    "patch_name": "007_reviewfix4",
+    "notes": "Generische Kettenmigration eingeführt; Installer/Docs aktualisiert.",
+    "changelog": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    }
+  },
+  {
+    "version": "0.5.16-007_reviewfix5",
+    "parent": "0.5.16-007_reviewfix4",
+    "series": "0.5",
+    "released": "",
+    "stability": "stable",
+    "tags": [
+      "reviewfix"
+    ],
+    "summary": "Migrationsleiter 0.5.9→0.5.16-007 aufgebaut (Stubs).",
+    "fixline": "Migrationsleiter 0.5.9→0.5.16-007 aufgebaut (Stubs).",
+    "patch_name": "007_reviewfix5",
+    "notes": "Migrationsleiter 0.5.9→0.5.16-007 aufgebaut (Stubs).",
+    "changelog": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    }
+  },
+  {
+    "version": "0.5.16-007_reviewfix6",
+    "parent": "0.5.16-007_reviewfix5",
+    "series": "0.5",
+    "released": "",
+    "stability": "stable",
+    "tags": [
+      "reviewfix"
+    ],
+    "summary": "Cheatsheet ergänzt",
+    "fixline": "Cheatsheet ergänzt",
+    "patch_name": "007_reviewfix6",
+    "notes": "Cheatsheet ergänzt; Paket umbenannt.",
+    "changelog": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    }
+  },
+  {
+    "version": "0.5.16-007_reviewfix7",
+    "parent": "0.5.16-007_reviewfix6",
+    "series": "0.5",
+    "released": "",
+    "stability": "stable",
+    "tags": [
+      "reviewfix",
+      "upgradepath",
+      "generator",
+      "migrate"
+    ],
+    "summary": "Single Source of Truth: ./config/upgradepath.unified.json + Ableitungen",
+    "fixline": "Single Source of Truth: ./config/upgradepath.unified.json + Ableitungen",
+    "patch_name": "007_reviewfix7",
+    "notes": "Single Source of Truth: ./config/upgradepath.unified.json + Ableitungen; Altdateien verschoben.",
+    "changelog": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    }
+  },
+  {
+    "version": "0.5.16-007_reviewfix8",
+    "parent": "0.5.16-007_reviewfix7",
+    "series": "0.5",
+    "released": "",
+    "stability": "stable",
+    "tags": [
+      "reviewfix"
+    ],
+    "summary": "upgrade-path.sh auf unified TXT/Lib umgestellt.",
+    "fixline": "upgrade-path.sh auf unified TXT/Lib umgestellt.",
+    "patch_name": "007_reviewfix8",
+    "notes": "upgrade-path.sh auf unified TXT/Lib umgestellt.",
+    "changelog": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    }
+  },
+  {
+    "version": "0.5.16-007_reviewfix9",
+    "parent": "0.5.16-007_reviewfix8",
+    "series": "0.5",
+    "released": "",
+    "stability": "stable",
+    "tags": [
+      "reviewfix",
+      "upgradepath",
+      "generator",
+      "migrate"
+    ],
+    "summary": "ha-vrrp-manage.sh auf Chain-Engine (TXT) umgestellt",
+    "fixline": "ha-vrrp-manage.sh auf Chain-Engine (TXT) umgestellt",
+    "patch_name": "007_reviewfix9",
+    "notes": "ha-vrrp-manage.sh auf Chain-Engine (TXT) umgestellt; Symlinks minimiert.",
+    "changelog": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    }
+  },
+  {
+    "version": "0.5.16-007_reviewfix10",
+    "parent": "0.5.16-007_reviewfix9",
+    "series": "0.5",
+    "released": "",
+    "stability": "stable",
+    "tags": [
+      "reviewfix",
+      "upgradepath",
+      "generator",
+      "migrate"
+    ],
+    "summary": "Angereicherte JSON aus UPGRADE_PATH.json gemerged",
+    "fixline": "Angereicherte JSON aus UPGRADE_PATH.json gemerged",
+    "patch_name": "007_reviewfix10",
+    "notes": "Angereicherte JSON aus UPGRADE_PATH.json gemerged; TXT/MD regeneriert.",
+    "changelog": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    }
+  },
+  {
+    "version": "0.5.16-007_reviewfix11",
+    "parent": "0.5.16-007_reviewfix10",
+    "series": "0.5",
+    "released": "",
+    "stability": "stable",
+    "tags": [
+      "reviewfix"
+    ],
+    "summary": "fixline/patch_name/Changelog import",
+    "fixline": "fixline/patch_name/Changelog import",
+    "patch_name": "007_reviewfix11",
+    "notes": "fixline/patch_name/Changelog import; Schema-Doku ergänzt.",
+    "changelog": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    }
+  },
+  {
+    "version": "0.5.16-007_reviewfix12",
+    "parent": "0.5.16-007_reviewfix11",
+    "series": "0.5",
+    "released": "",
+    "stability": "stable",
+    "tags": [
+      "reviewfix",
+      "upgradepath",
+      "generator",
+      "migrate"
+    ],
+    "summary": "BusyBox-Generator eingebaut",
+    "fixline": "BusyBox-Generator eingebaut",
+    "patch_name": "007_reviewfix12",
+    "notes": "BusyBox-Generator eingebaut; Migration-Stubs aus JSON materialisiert.",
+    "changelog": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    }
+  },
+  {
+    "version": "0.5.16-007_reviewfix13",
+    "parent": "0.5.16-007_reviewfix12",
+    "series": "0.5",
+    "released": "",
+    "stability": "stable",
+    "tags": [
+      "reviewfix",
+      "upgradepath",
+      "generator",
+      "migrate"
+    ],
+    "summary": "Upgrade-Kette 3a→13 finalisiert",
+    "fixline": "Upgrade-Kette 3a→13 finalisiert",
+    "patch_name": "007_reviewfix13",
+    "notes": "Upgrade-Kette 3a→13 finalisiert; alle reviewfix-Stufen in JSON & TXT/MD konsolidiert.",
+    "changelog": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    }
+  }
+]
