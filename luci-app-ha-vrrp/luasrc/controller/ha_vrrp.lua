@@ -15,7 +15,7 @@ function index()
   -- API
   entry({"admin","services","ha_vrrp","api","status"}, call("api_status")).leaf = true
 
-  -- Frontend-Endpoints, die status.htm aufruft:
+  -- Frontend Endpoints
   entry({"admin","services","ha_vrrp","statusjson"}, call("statusjson")).leaf = true
   entry({"admin","services","ha_vrrp","apply"},      call("apply_cfg")).leaf = true
   entry({"admin","services","ha_vrrp","interfaces"}, call("list_ifaces")).leaf = true
@@ -25,7 +25,6 @@ function index()
   entry({"admin","services","ha_vrrp","createinst"}, call("createinst")).leaf = true
 end
 
--- Bestehendes Mini-Status-API
 function api_status()
   local http = require "luci.http"
   local sys  = require "luci.sys"
@@ -42,7 +41,6 @@ function api_status()
   http.write_json({ ok=true, ts=os.time(), peer=peer, ping=ping_ok })
 end
 
--- Hilfsfunktionen
 local function read_cmd(cmd)
   local f = io.popen(cmd .. " 2>/dev/null")
   if not f then return "" end
@@ -52,12 +50,10 @@ local function read_cmd(cmd)
 end
 
 local function get_instances(uci)
-  -- sammelt UCI-Instanzen (Sektionen vom Typ "instance" oder "inst_*")
   local inst = {}
   uci:foreach("ha_vrrp","instance", function(s)
     s.__section = s[".name"]; inst[#inst+1] = s
   end)
-  -- Fallback: generische Sektionen "inst_*"
   uci:foreach("ha_vrrp", nil, function(s)
     local n = s[".name"] or ""
     if n:match("^inst_") then s.__section=n; inst[#inst+1]=s end
@@ -65,7 +61,6 @@ local function get_instances(uci)
   return inst
 end
 
--- JSON für status.htm
 function statusjson()
   local http = require "luci.http"
   local sys  = require "luci.sys"
@@ -81,25 +76,19 @@ function statusjson()
     local name = s.name or s.__section or "-"
     local dev  = s.iface or s.interface or "wan"
     local vip  = s.vip_cidr or s.vip or ""
-    local_instances[#local_instances+1] = {
-      name = name, dev = dev, vip = vip, local_master = false
-    }
+    local_instances[#local_instances+1] = { name = name, dev = dev, vip = vip, local_master = false }
   end
 
-  -- Peer-Infos (optional): hier Dummy/Placeholder; echte Abfrage ggf. über RPCD/ubus/ssh json
   local peer_instances = {}
   for _,li in ipairs(local_instances) do
     peer_instances[#peer_instances+1] = { name = li.name, remote_master = false }
   end
 
   http.prepare_content("application/json")
-  http.write_json({
-    ok=true, node=node, peer=peer, ping=ping_ok,
-    local_instances=local_instances, peer_instances=peer_instances
-  })
+  http.write_json({ ok=true, node=node, peer=peer, ping=ping_ok,
+    local_instances=local_instances, peer_instances=peer_instances })
 end
 
--- Apply & Keepalived Neustart
 function apply_cfg()
   local http = require "luci.http"
   read_cmd("ha-vrrp-apply >/dev/null 2>&1 || true; /etc/init.d/keepalived restart >/dev/null 2>&1 || true")
@@ -107,7 +96,6 @@ function apply_cfg()
   http.write_json({ ok=true })
 end
 
--- Netz-Interfaces (für Wizard/Statusseite)
 function list_ifaces()
   local http = require "luci.http"
   local out = read_cmd("ip -o -4 link show | awk -F': ' '{print $2}' | grep -v '^lo$'")
@@ -117,7 +105,6 @@ function list_ifaces()
   http.write_json({ ok=true, interfaces=ifs })
 end
 
--- Auto-Discovery
 function discover_peers()
   local http = require "luci.http"
   read_cmd("/usr/libexec/ha-vrrp/discover_peers.sh >/tmp/ha-vrrp-discover.log 2>&1 || true")
@@ -125,7 +112,6 @@ function discover_peers()
   http.write_json({ ok=true })
 end
 
--- SSH-Key-Sync
 function keysync()
   local http = require "luci.http"
   read_cmd("ha-vrrp-sync keysync >/tmp/ha-vrrp-keysync.log 2>&1 || true")
@@ -133,7 +119,6 @@ function keysync()
   http.write_json({ ok=true })
 end
 
--- Aktiven Sync schieben
 function syncpush()
   local http = require "luci.http"
   read_cmd("ha-vrrp-sync push >/tmp/ha-vrrp-syncpush.log 2>&1 || true")
@@ -141,7 +126,6 @@ function syncpush()
   http.write_json({ ok=true })
 end
 
--- Instanz anlegen (Wizard-Button)
 function createinst()
   local http = require "luci.http"
   local uci  = require "luci.model.uci".cursor()
@@ -153,7 +137,6 @@ function createinst()
     http.status(400, "Bad Request"); http.write("missing iface/vip"); return
   end
 
-  -- section name
   local sec = "inst_" .. (vrid ~= "" and vrid or tostring(math.random(2,254)))
   uci:set("ha_vrrp", sec, "instance")
   uci:set("ha_vrrp", sec, "name", sec)
@@ -162,7 +145,6 @@ function createinst()
   if vrid ~= "" then uci:set("ha_vrrp", sec, "vrid", tonumber(vrid)) end
   uci:set("ha_vrrp", sec, "state", "BACKUP")
   uci:set("ha_vrrp", sec, "priority", 150)
-  -- WICHTIG: unicast_src_ip MUSS gesetzt werden; wir versuchen eine Auto-IP vom iface:
   local auto_ip = read_cmd("ip -o -4 addr show dev "..iface.." | awk '{print $4}' | cut -d/ -f1 | head -n1"):gsub("%s+$","")
   if auto_ip ~= "" then uci:set("ha_vrrp", sec, "unicast_src_ip", auto_ip) end
   uci:commit("ha_vrrp")
@@ -170,4 +152,3 @@ function createinst()
   http.prepare_content("application/json")
   http.write_json({ ok=true, section=sec, vrid=uci:get("ha_vrrp",sec,"vrid") or "-" })
 end
-
