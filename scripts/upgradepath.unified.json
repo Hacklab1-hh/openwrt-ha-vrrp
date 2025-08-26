@@ -752,5 +752,328 @@
     "patch_name": "",
     "changelog": "- Erweiterte Doku-/Changelog-Struktur eingeführt.",
     "fixline": "(\"0.5.9\",\"0.5.10\",\"—\",[\".tar.gz\",\".zip\"],\"installer-v0.5.10.sh\"),"
+  },
+  {
+    "version": "0.5.16-007_reviewfix3a",
+    "parent": "0.5.16-007",
+    "series": "0.5",
+    "released": "",
+    "stability": "stable",
+    "tags": [
+      "reviewfix"
+    ],
+    "summary": "Basis Fix-Version",
+    "fixline": "Basis Fix-Version",
+    "patch_name": "007_reviewfix3a",
+    "notes": "Basis Fix-Version; Ausgangspunkt für Reviewfix-Kette.",
+    "changelog": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    }
+  },
+  {
+    "version": "0.5.16-007_reviewfix4",
+    "parent": "0.5.16-007_reviewfix3a",
+    "series": "0.5",
+    "released": "",
+    "stability": "stable",
+    "tags": [
+      "reviewfix"
+    ],
+    "summary": "Generische Kettenmigration eingeführt",
+    "fixline": "Generische Kettenmigration eingeführt",
+    "patch_name": "007_reviewfix4",
+    "notes": "Generische Kettenmigration eingeführt; Installer/Docs aktualisiert.",
+    "changelog": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    }
+  },
+  {
+    "version": "0.5.16-007_reviewfix5",
+    "parent": "0.5.16-007_reviewfix4",
+    "series": "0.5",
+    "released": "",
+    "stability": "stable",
+    "tags": [
+      "reviewfix"
+    ],
+    "summary": "Migrationsleiter 0.5.9→0.5.16-007 aufgebaut (Stubs).",
+    "fixline": "Migrationsleiter 0.5.9→0.5.16-007 aufgebaut (Stubs).",
+    "patch_name": "007_reviewfix5",
+    "notes": "Migrationsleiter 0.5.9→0.5.16-007 aufgebaut (Stubs).",
+    "changelog": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    }
+  },
+  {
+    "version": "0.5.16-007_reviewfix6",
+    "parent": "0.5.16-007_reviewfix5",
+    "series": "0.5",
+    "released": "",
+    "stability": "stable",
+    "tags": [
+      "reviewfix"
+    ],
+    "summary": "Cheatsheet ergänzt",
+    "fixline": "Cheatsheet ergänzt",
+    "patch_name": "007_reviewfix6",
+    "notes": "Cheatsheet ergänzt; Paket umbenannt.",
+    "changelog": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    }
+  },
+  {
+    "version": "0.5.16-007_reviewfix7",
+    "parent": "0.5.16-007_reviewfix6",
+    "series": "0.5",
+    "released": "",
+    "stability": "stable",
+    "tags": [
+      "reviewfix",
+      "upgradepath",
+      "generator",
+      "migrate"
+    ],
+    "summary": "Single Source of Truth: upgradepath.unified.json + Ableitungen",
+    "fixline": "Single Source of Truth: upgradepath.unified.json + Ableitungen",
+    "patch_name": "007_reviewfix7",
+    "notes": "Single Source of Truth: upgradepath.unified.json + Ableitungen; Altdateien verschoben.",
+    "changelog": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    }
+  },
+  {
+    "version": "0.5.16-007_reviewfix8",
+    "parent": "0.5.16-007_reviewfix7",
+    "series": "0.5",
+    "released": "",
+    "stability": "stable",
+    "tags": [
+      "reviewfix"
+    ],
+    "summary": "upgrade-path.sh auf unified TXT/Lib umgestellt.",
+    "fixline": "upgrade-path.sh auf unified TXT/Lib umgestellt.",
+    "patch_name": "007_reviewfix8",
+    "notes": "upgrade-path.sh auf unified TXT/Lib umgestellt.",
+    "changelog": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    }
+  },
+  {
+    "version": "0.5.16-007_reviewfix9",
+    "parent": "0.5.16-007_reviewfix8",
+    "series": "0.5",
+    "released": "",
+    "stability": "stable",
+    "tags": [
+      "reviewfix",
+      "upgradepath",
+      "generator",
+      "migrate"
+    ],
+    "summary": "ha-vrrp-manage.sh auf Chain-Engine (TXT) umgestellt",
+    "fixline": "ha-vrrp-manage.sh auf Chain-Engine (TXT) umgestellt",
+    "patch_name": "007_reviewfix9",
+    "notes": "ha-vrrp-manage.sh auf Chain-Engine (TXT) umgestellt; Symlinks minimiert.",
+    "changelog": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    }
+  },
+  {
+    "version": "0.5.16-007_reviewfix10",
+    "parent": "0.5.16-007_reviewfix9",
+    "series": "0.5",
+    "released": "",
+    "stability": "stable",
+    "tags": [
+      "reviewfix",
+      "upgradepath",
+      "generator",
+      "migrate"
+    ],
+    "summary": "Angereicherte JSON aus UPGRADE_PATH.json gemerged",
+    "fixline": "Angereicherte JSON aus UPGRADE_PATH.json gemerged",
+    "patch_name": "007_reviewfix10",
+    "notes": "Angereicherte JSON aus UPGRADE_PATH.json gemerged; TXT/MD regeneriert.",
+    "changelog": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    }
+  },
+  {
+    "version": "0.5.16-007_reviewfix11",
+    "parent": "0.5.16-007_reviewfix10",
+    "series": "0.5",
+    "released": "",
+    "stability": "stable",
+    "tags": [
+      "reviewfix"
+    ],
+    "summary": "fixline/patch_name/Changelog import",
+    "fixline": "fixline/patch_name/Changelog import",
+    "patch_name": "007_reviewfix11",
+    "notes": "fixline/patch_name/Changelog import; Schema-Doku ergänzt.",
+    "changelog": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    }
+  },
+  {
+    "version": "0.5.16-007_reviewfix12",
+    "parent": "0.5.16-007_reviewfix11",
+    "series": "0.5",
+    "released": "",
+    "stability": "stable",
+    "tags": [
+      "reviewfix",
+      "upgradepath",
+      "generator",
+      "migrate"
+    ],
+    "summary": "BusyBox-Generator eingebaut",
+    "fixline": "BusyBox-Generator eingebaut",
+    "patch_name": "007_reviewfix12",
+    "notes": "BusyBox-Generator eingebaut; Migration-Stubs aus JSON materialisiert.",
+    "changelog": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    }
+  },
+  {
+    "version": "0.5.16-007_reviewfix13",
+    "parent": "0.5.16-007_reviewfix12",
+    "series": "0.5",
+    "released": "",
+    "stability": "stable",
+    "tags": [
+      "reviewfix",
+      "upgradepath",
+      "generator",
+      "migrate"
+    ],
+    "summary": "Upgrade-Kette 3a→13 finalisiert",
+    "fixline": "Upgrade-Kette 3a→13 finalisiert",
+    "patch_name": "007_reviewfix13",
+    "notes": "Upgrade-Kette 3a→13 finalisiert; alle reviewfix-Stufen in JSON & TXT/MD konsolidiert.",
+    "changelog": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    }
   }
 ]

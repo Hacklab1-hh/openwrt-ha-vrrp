@@ -1,6 +1,6 @@
 <%+header%>
 <h2>HA VRRP – Cluster Status</h2>
-<div id="status">Loading...</div>
+<div id="status" class="cbi-section">Loading...</div>
 
 <div class="cbi-page-actions" style="margin-top:1rem">
   <button class="cbi-button cbi-button-apply" onclick="applyHA()">Apply & Restart Keepalived</button>
@@ -10,87 +10,42 @@
 </div>
 
 <script>
-function applyHA(){
-  fetch(L.env.cgi_base + '/admin/services/ha_vrrp/apply',{method:'POST'})
-    .then(r=>r.json()).then(j=>alert(j.ok?'OK':'Error')).then(()=>load())
+function renderStatus(data){
+  const el = document.getElementById('status');
+  el.textContent = '';
+  const table = document.createElement('table'); table.className = 'table cbi-section-table';
+  const rows = [
+    ['Time', data.now],
+    ['Host', data.host],
+    ['Cluster', data.cluster],
+    ['Role', data.role],
+    ['Keepalived', data.ka],
+    ['VRRP addrs', data.vrrp],
+    ['Peer', data.peer],
+    ['Peer reachable', data.peer_ping ? 'yes' : 'no']
+  ];
+  rows.forEach(r => {
+    const tr = document.createElement('tr');
+    const th = document.createElement('th'); th.textContent = r[0];
+    const td = document.createElement('td'); td.textContent = (r[1]===undefined?'':r[1]);
+    tr.appendChild(th); tr.appendChild(td); table.appendChild(tr);
+  });
+  el.appendChild(table);
 }
-function discover(){
-  fetch(L.env.cgi_base + '/admin/services/ha_vrrp/discover',{method:'POST'})
-    .then(r=>r.json()).then(j=>{
-      if(!j.peers || j.peers.length==0){alert('No peers found'); return;}
-      alert('Found: ' + j.peers.join(', ') + '\nSet the desired Peer Host in the Core tab.');
-    })
+async function poll(){
+  try{
+    const res = await fetch(L.env.cgi_base + '/admin/services/ha_vrrp/api/statusjson');
+    const data = await res.json(); renderStatus(data);
+  }catch(e){}
+  setTimeout(poll, 3000);
 }
-function keysync(){
-  fetch(L.env.cgi_base + '/admin/services/ha_vrrp/keysync',{method:'POST'})
-    .then(r=>r.json()).then(j=>alert(j.ok?'Key sync OK':'Key sync failed'))
+async function applyHA(){ await fetch(L.env.cgi_base + '/admin/services/ha_vrrp/api/apply'); }
+async function discover(){
+  const res = await fetch(L.env.cgi_base + '/admin/services/ha_vrrp/api/peers'); const j = await res.json();
+  alert('Peers: ' + (j.peers||[]).join(', '));
 }
-function syncpush(){
-  fetch(L.env.cgi_base + '/admin/services/ha_vrrp/sync',{method:'POST'})
-    .then(r=>r.json()).then(j=>alert(j.ok?'Sync OK':'Sync failed'))
-}
-function load(){
-  fetch(L.env.cgi_base + '/admin/services/ha_vrrp/statusjson')
-    .then(r=>r.json()).then(data=>{
-      let html = '';
-      html += '<b>Local node:</b> ' + (data.node||'-') + '<br>';
-      html += '<b>Peer:</b> ' + (data.peer||'-') + '<br><br>';
-      html += '<table class="table"><tr><th>Instance</th><th>IF</th><th>VIP</th><th>Local</th><th>Peer</th></tr>';
-      for(let i=0;i<data.local_instances.length;i++){
-        const L = data.local_instances[i];
-        const R = (data.peer_instances||[])[i] || {};
-        html += '<tr>';
-        html += '<td>'+L.name+'</td>';
-        html += '<td>'+L.dev+'</td>';
-        html += '<td>'+L.vip+'</td>';
-        html += '<td>'+(L.local_master?'MASTER':'backup')+'</td>';
-        html += '<td>'+(R.remote_master?'MASTER':'backup')+'</td>';
-        html += '</tr>';
-      }
-      html += '</table>';
-      document.getElementById('status').innerHTML = html;
-    }).catch(()=>{ document.getElementById('status').innerText = 'Error loading status'; });
-}
-load();
+async function keysync(){ await fetch(L.env.cgi_base + '/admin/services/ha_vrrp/api/keysync'); }
+async function syncpush(){ await fetch(L.env.cgi_base + '/admin/services/ha_vrrp/api/syncpush'); }
+poll();
 </script>
-
-<hr>
-<h3>Network Interfaces</h3>
-<div id="ifaces">Loading interfaces…</div>
-
-<script>
-function loadIfaces(){
-  fetch(L.env.cgi_base + '/admin/services/ha_vrrp/listifaces')
-    .then(r=>r.json()).then(data=>{
-      let html='';
-      html += '<table class="table"><tr><th>Name</th><th>Device</th><th>Proto</th><th>IPv4</th><th>DHCP Server</th><th>Aktion</th></tr>';
-      for(const it of data.interfaces){
-        html += '<tr>';
-        html += '<td>'+it.name+'</td>';
-        html += '<td>'+(it.device||'')+'</td>';
-        html += '<td>'+(it.proto||'')+'</td>';
-        html += '<td>'+(it.ipaddr||'')+(it.netmask?(' / '+it.netmask):'')+'</td>';
-        html += '<td>'+(it.dhcp?'aktiv':'aus')+'</td>';
-        html += '<td><button class="cbi-button cbi-button-apply" onclick="createInst(\''+it.name+'\')">VRRP anlegen</button></td>';
-        html += '</tr>';
-      }
-      html += '</table>';
-      document.getElementById('ifaces').innerHTML = html;
-    }).catch(()=>{ document.getElementById('ifaces').innerText = 'Fehler beim Laden'; });
-}
-function createInst(ifn){
-  const vip = prompt('VIP (CIDR), z.B. 192.168.1.254/24 für '+ifn+':');
-  if(!vip) return;
-  const vrid = prompt('VRID (1..254) – leer lassen für Auto:');
-  const params = new URLSearchParams({iface: ifn, vip: vip});
-  if(vrid) params.append('vrid', vrid);
-  fetch(L.env.cgi_base + '/admin/services/ha_vrrp/createinst?'+params.toString(), {method:'POST'})
-    .then(r=>r.json()).then(j=>{
-      if(j && j.ok){ alert('Instanz '+j.section+' angelegt (VRID '+j.vrid+')'); load(); }
-      else { alert('Fehler beim Anlegen'); }
-    }).catch(()=>alert('Fehler'));
-}
-loadIfaces();
-</script>
-
 <%+footer%>
