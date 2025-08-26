@@ -150,22 +150,22 @@ case "$CUR" in
   "")
     ;;
   0.5.16-002)
-    run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrate_0.5.16_002_to_007.sh"
-    run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrate_0.5.16_007_to_008.sh"
+    run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrations/migrate_0.5.16_002_to_007.sh"
+    run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrations/migrate_0.5.16_007_to_008.sh"
     ;;
   0.5.16-003|0.5.16-004|0.5.16-005|0.5.16-006)
-    run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrate_0.5.16_002_to_007.sh"
-    run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrate_0.5.16_007_to_008.sh"
+    run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrations/migrate_0.5.16_002_to_007.sh"
+    run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrations/migrate_0.5.16_007_to_008.sh"
     ;;
   0.5.16-007)
-    run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrate_0.5.16_007_to_008.sh"
+    run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrations/migrate_0.5.16_007_to_008.sh"
     ;;
   0.5.16-008)
     echo "[*] System ist bereits auf 0.5.16-008; Re-Install." ;;
   *)
     echo "[!] Unbekannter Startstand: $CUR  → konservative Migration 002→007→008."
-    run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrate_0.5.16_002_to_007.sh" || true
-    run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrate_0.5.16_007_to_008.sh" || true
+    run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrations/migrate_0.5.16_002_to_007.sh" || true
+    run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrations/migrate_0.5.16_007_to_008.sh" || true
     ;;
 esac
 
@@ -225,29 +225,29 @@ case "$CUR" in
   "")
     ;;
   0.5.16-002)
-    run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrate_0.5.16_002_to_007.sh"
-    run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrate_0.5.16_007_to_008.sh"
-    run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrate_0.5.16_008_to_009.sh"
+    run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrations/migrate_0.5.16_002_to_007.sh"
+    run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrations/migrate_0.5.16_007_to_008.sh"
+    run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrations/migrate_0.5.16_008_to_009.sh"
     ;;
   0.5.16-003|0.5.16-004|0.5.16-005|0.5.16-006)
-    run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrate_0.5.16_002_to_007.sh"
-    run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrate_0.5.16_007_to_008.sh"
-    run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrate_0.5.16_008_to_009.sh"
+    run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrations/migrate_0.5.16_002_to_007.sh"
+    run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrations/migrate_0.5.16_007_to_008.sh"
+    run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrations/migrate_0.5.16_008_to_009.sh"
     ;;
   0.5.16-007)
-    run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrate_0.5.16_007_to_008.sh"
-    run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrate_0.5.16_008_to_009.sh"
+    run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrations/migrate_0.5.16_007_to_008.sh"
+    run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrations/migrate_0.5.16_008_to_009.sh"
     ;;
   0.5.16-008)
-    run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrate_0.5.16_008_to_009.sh"
+    run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrations/migrate_0.5.16_008_to_009.sh"
     ;;
   0.5.16-009)
     echo "[*] System ist bereits auf 0.5.16-009; Re-Install." ;;
   *)
     echo "[!] Unbekannter Startstand: $CUR  → konservative Migration 002→007→008→009."
-    run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrate_0.5.16_002_to_007.sh" || true
-    run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrate_0.5.16_007_to_008.sh" || true
-    run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrate_0.5.16_008_to_009.sh" || true
+    run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrations/migrate_0.5.16_002_to_007.sh" || true
+    run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrations/migrate_0.5.16_007_to_008.sh" || true
+    run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrations/migrate_0.5.16_008_to_009.sh" || true
     ;;
 esac
 

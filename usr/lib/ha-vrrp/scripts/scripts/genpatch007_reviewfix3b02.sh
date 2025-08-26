@@ -81,11 +81,11 @@ echo "[*] Gefundene installierte Version: ${CUR:-<keine>}"
 run_mig() { [ -x "$1" ] || { echo "[*] Überspringe Migration (nicht vorhanden): $1"; return 0; }; echo "[*] Migration: $1"; "$1" || true; }
 case "$CUR" in
   "") ;;
-  0.5.16-002) run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrate_0.5.16_002_to_007.sh"; run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrate_0.5.16_007_to_008.sh" ;;
-  0.5.16-003|0.5.16-004|0.5.16-005|0.5.16-006) run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrate_0.5.16_002_to_007.sh"; run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrate_0.5.16_007_to_008.sh" ;;
-  0.5.16-007) run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrate_0.5.16_007_to_008.sh" ;;
+  0.5.16-002) run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrations/migrate_0.5.16_002_to_007.sh"; run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrations/migrate_0.5.16_007_to_008.sh" ;;
+  0.5.16-003|0.5.16-004|0.5.16-005|0.5.16-006) run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrations/migrate_0.5.16_002_to_007.sh"; run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrations/migrate_0.5.16_007_to_008.sh" ;;
+  0.5.16-007) run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrations/migrate_0.5.16_007_to_008.sh" ;;
   0.5.16-008) echo "[*] System ist bereits auf 0.5.16-008; Re-Install." ;;
-  *) echo "[!] Unbekannter Startstand: $CUR  → konservative Migration 002→007→008."; run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrate_0.5.16_002_to_007.sh" || true; run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrate_0.5.16_007_to_008.sh" || true ;;
+  *) echo "[!] Unbekannter Startstand: $CUR  → konservative Migration 002→007→008."; run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrations/migrate_0.5.16_002_to_007.sh" || true; run_mig "$PKGROOT/usr/lib/ha-vrrp/scripts/migrations/migrate_0.5.16_007_to_008.sh" || true ;;
 esac
 [ -d "$PKGROOT/luci-app-ha-vrrp" ] && cp -a "$PKGROOT/luci-app-ha-vrrp/." /
 [ -d "$PKGROOT/usr" ] && cp -a "$PKGROOT/usr/." /

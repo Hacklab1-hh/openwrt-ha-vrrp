@@ -29,7 +29,7 @@ do_migrate_chain() {
     echo "[!] Keine Kette gefunden (CUR=$CUR TARGET=$TARGET_VERSION)."; return 0
   fi
   echo "$steps" | while read -r FROM TO; do
-    script="/usr/lib/ha-vrrp/scripts/migrate_${FROM}_to_${TO}.sh"
+    script="/usr/lib/ha-vrrp/scripts/migrations/migrate_${FROM}_to_${TO}.sh"
     if [ -x "$script" ]; then echo "[*] MIGRATE Schritt: $FROM → $TO"; "$script" --migrate || true
     else echo "[!] Migrationsskript fehlt: $script (skip)"; fi
   done
@@ -41,7 +41,7 @@ do_rollback_chain() {
   steps="$("$HERE/lib/upgradepath.sh" step_pairs "$TARGET_VERSION" "$parent" 2>/dev/null || true)"
   if [ -z "$steps" ]; then echo "[!] Keine Rollback-Kette gefunden."; return 0; fi
   echo "$steps" | while read -r FROM TO; do
-    script="/usr/lib/ha-vrrp/scripts/migrate_${FROM}_to_${TO}.sh"
+    script="/usr/lib/ha-vrrp/scripts/migrations/migrate_${FROM}_to_${TO}.sh"
     if [ -x "$script" ]; then echo "[*] ROLLBACK Schritt: $TO ← $FROM"; "$script" --rollback || true
     else echo "[!] Migrationsskript fehlt: $script (skip)"; fi
   done

@@ -1,3 +1,3 @@
-# Changelog v0.5.9
+# Changelog – v0.5.9
 
-- Erweiterte Doku-/Changelog-Struktur eingeführt.
+- Automatisch generierte Doku aus Archiv-PARSING & Chat-Notizen

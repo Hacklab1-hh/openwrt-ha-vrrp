@@ -1,6 +1,6 @@
 {
   "schema": "1.0",
-  "generated": "2025-08-26T15:28:26.289691Z",
+  "generated": "2025-08-26T15:50:29.912606Z",
   "discover": {
     "patterns": [
       "openwrt-ha-vrrp-*.tar.gz",
@@ -302,15 +302,15 @@
       "version": "0.5.16-007_reviewfix14a",
       "parent": "0.5.16-007_reviewfix14",
       "archive": "openwrt-ha-vrrp-0.5.16-007_reviewfix14a.tar.gz",
-      "migrate_from_parent": "scripts/migrate_0.5.16-007_reviewfix14_to_14a.sh",
-      "migrate_to_parent": "scripts/migrate_0.5.16-007_reviewfix14a_to_14.sh"
+      "migrate_from_parent": "scripts/migrations/migrate_0.5.16-007_reviewfix14_to_14a.sh",
+      "migrate_to_parent": "scripts/migrations/migrate_0.5.16-007_reviewfix14a_to_14.sh"
     },
     {
       "version": "0.5.16-007_reviewfix14b",
       "parent": "0.5.16-007_reviewfix14a",
       "archive": "openwrt-ha-vrrp-0.5.16-007_reviewfix14b.tar.gz",
-      "migrate_from_parent": "scripts/migrate_0.5.16-007_reviewfix14a_to_14b.sh",
-      "migrate_to_parent": "scripts/migrate_0.5.16-007_reviewfix14b_to_14a.sh"
+      "migrate_from_parent": "scripts/migrations/migrate_0.5.16-007_reviewfix14a_to_14b.sh",
+      "migrate_to_parent": "scripts/migrations/migrate_0.5.16-007_reviewfix14b_to_14a.sh"
     },
     {
       "version": "0.5.16-007_reviewfix14b1",
@@ -321,8 +321,8 @@
       "version": "0.5.16-007_reviewfix14c",
       "parent": "0.5.16-007_reviewfix14b",
       "archive": "openwrt-ha-vrrp-0.5.16-007_reviewfix14c.tar.gz",
-      "migrate_from_parent": "scripts/migrate_0.5.16-007_reviewfix14b_to_14c.sh",
-      "migrate_to_parent": "scripts/migrate_0.5.16-007_reviewfix14c_to_14b.sh"
+      "migrate_from_parent": "scripts/migrations/migrate_0.5.16-007_reviewfix14b_to_14c.sh",
+      "migrate_to_parent": "scripts/migrations/migrate_0.5.16-007_reviewfix14c_to_14b.sh"
     }
   ]
 }
