@@ -877,10 +877,10 @@
       "generator",
       "migrate"
     ],
-    "summary": "Single Source of Truth: upgradepath.unified.json + Ableitungen",
-    "fixline": "Single Source of Truth: upgradepath.unified.json + Ableitungen",
+    "summary": "Single Source of Truth: ./config/upgradepath.unified.json + Ableitungen",
+    "fixline": "Single Source of Truth: ./config/upgradepath.unified.json + Ableitungen",
     "patch_name": "007_reviewfix7",
-    "notes": "Single Source of Truth: upgradepath.unified.json + Ableitungen; Altdateien verschoben.",
+    "notes": "Single Source of Truth: ./config/upgradepath.unified.json + Ableitungen; Altdateien verschoben.",
     "changelog": "",
     "changes": {
       "file_moves": [],

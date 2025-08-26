@@ -1,12 +1,12 @@
 #!/bin/sh
 set -eu
 HERE="$(cd "$(dirname "$0")/.." && pwd)"
-SRC="$HERE/upgradepath.unified.json"
+SRC="$HERE/./config/upgradepath.unified.json"
 TXT="$HERE/upgradepath_unified.txt"
 MD="$HERE/upgradepath_unified.md"
 [ -r "$SRC" ] || { echo "[!] missing $SRC" >&2; exit 1; }
 {
-  echo "# Unified Upgrade Path (generated from upgradepath.unified.json)"
+  echo "# Unified Upgrade Path (generated from ./config/upgradepath.unified.json)"
   awk '
     BEGIN{ ver=""; par=""; }
     /"version"[ \t]*:/ { gsub(/.*"version"[ \t]*:[ \t]*"/,""); gsub(/".*/,""); ver=$0 }
@@ -20,7 +20,7 @@ MD="$HERE/upgradepath_unified.md"
   ' "$SRC"
 } > "$TXT"
 {
-  echo "# Upgrade Path (generated from upgradepath.unified.json)"
+  echo "# Upgrade Path (generated from ./config/upgradepath.unified.json)"
   echo
   echo "| Version | Parent | Patch | Released | Stability | Tags | Fixline |"
   echo "|---|---|---|---|---|---|---|"

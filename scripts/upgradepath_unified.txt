@@ -1,4 +1,4 @@
-# Unified Upgrade Path (generated from upgradepath.unified.json)
+# Unified Upgrade Path (generated from ./config/upgradepath.unified.json)
 0.5.16-007_reviewfix10 <- 0.5.16-007_reviewfix9
 0.5.16-007_reviewfix11 <- 0.5.16-007_reviewfix10
 0.5.16-007_reviewfix12 <- 0.5.16-007_reviewfix11

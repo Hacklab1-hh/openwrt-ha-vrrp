@@ -1,6 +1,6 @@
 #!/bin/sh
 # scripts/tools/upgradepath-migrate.sh
-# Moves old update/upgrade path files to scripts/_old, consolidates into scripts/upgradepath.unified.json,
+# Moves old update/upgrade path files to scripts/_old, consolidates into scripts/./config/upgradepath.unified.json,
 # then generates scripts/upgradepath_unified.{txt,md} and adds compatibility symlinks.
 
 set -eu
@@ -23,7 +23,7 @@ move_old() {
 
 # Read from existing JSON or TXT under _old to build unified JSON
 build_unified_json() {
-  OUT="$SCRIPTS/upgradepath.unified.json"
+  OUT="$SCRIPTS/./config/upgradepath.unified.json"
   JSON_SRC="$OLD/upgradepath_unified.json"
   TXT_SRC="$OLD/upgradepath_unified.txt"
   if [ -f "$JSON_SRC" ]; then
@@ -50,11 +50,11 @@ build_unified_json() {
 }
 
 gen_derivatives() {
-  SRC="$SCRIPTS/upgradepath.unified.json"
+  SRC="$SCRIPTS/./config/upgradepath.unified.json"
   TXT="$SCRIPTS/upgradepath_unified.txt"
   MD="$SCRIPTS/upgradepath_unified.md"
   # TXT
-  echo "# Unified Upgrade Path (generated from upgradepath.unified.json)" > "$TXT"
+  echo "# Unified Upgrade Path (generated from ./config/upgradepath.unified.json)" > "$TXT"
   awk '
     BEGIN { print "" }
     /"version"/ { gsub(/.*"version":[ ]*"/,""); gsub(/".*/,""); ver=$0 }
@@ -69,7 +69,7 @@ gen_derivatives() {
 
   # MD
   {
-    echo "# Upgrade Path (generated from upgradepath.unified.json)"
+    echo "# Upgrade Path (generated from ./config/upgradepath.unified.json)"
     echo
     echo "| Version | Parent | Released | Stability | Tags | Summary |"
     echo "|---|---|---|---|---|---|"
@@ -94,15 +94,15 @@ make_symlinks() {
   cd "$SCRIPTS"
   ln -sf upgradepath_unified.txt updatepath.txt
   ln -sf upgradepath_unified.txt upgrade_path.txt
-  ln -sf upgradepath.unified.json updatepath.json
-  ln -sf upgradepath.unified.json upgrade_path.json
+  ln -sf ./config/upgradepath.unified.json updatepath.json
+  ln -sf ./config/upgradepath.unified.json upgrade_path.json
   ln -sf upgradepath_unified.md updatepath.md
   ln -sf upgradepath_unified.md upgrade_path.md
 }
 
 echo "[*] Moving old update/upgrade path files to scripts/_old …"
 move_old
-echo "[*] Building scripts/upgradepath.unified.json …"
+echo "[*] Building scripts/./config/upgradepath.unified.json …"
 build_unified_json
 echo "[*] Generating TXT/MD derivatives …"
 gen_derivatives

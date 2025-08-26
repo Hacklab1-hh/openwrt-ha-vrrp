@@ -17,6 +17,7 @@ case "$cmd" in
 esac
 
 # Auto-migrate upgrade/update paths to 14a layout
-if [ -x "$(dirname "$0")/migrate_0.5.16-007_reviewfix14_to_14a.sh" ]; then
-  "$(dirname "$0")/migrate_0.5.16-007_reviewfix14_to_14a.sh" || true
 fi
+
+# Ensure path helpers are available (14b)
+. "$(dirname "$0")/lib_paths.sh"

@@ -1,4 +1,4 @@
-# upgradepath.unified.json – Schema (angereichert)
+# ./config/upgradepath.unified.json – Schema (angereichert)
 
 Pro Eintrag:
 - `version` (string) – z. B. `0.5.16-007`

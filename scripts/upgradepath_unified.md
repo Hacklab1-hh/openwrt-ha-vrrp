@@ -1,4 +1,4 @@
-# Upgrade Path (generated from upgradepath.unified.json)
+# Upgrade Path (generated from ./config/upgradepath.unified.json)
 
 | Version | Parent | Patch | Released | Stability | Tags | Fixline |
 |---|---|---|---|---|---|---|
@@ -10,7 +10,7 @@
 | `0.5.16-007_reviewfix4` | `0.5.16-007_reviewfix3a` | `007_reviewfix4` |  | stable | reviewfix | Generische Kettenmigration eingeführt |
 | `0.5.16-007_reviewfix5` | `0.5.16-007_reviewfix4` | `007_reviewfix5` |  | stable | reviewfix | Migrationsleiter 0.5.9→0.5.16-007 aufgebaut (Stubs). |
 | `0.5.16-007_reviewfix6` | `0.5.16-007_reviewfix5` | `007_reviewfix6` |  | stable | reviewfix | Cheatsheet ergänzt |
-| `0.5.16-007_reviewfix7` | `0.5.16-007_reviewfix6` | `007_reviewfix7` |  | stable | reviewfix, upgradepath, generator, migrate | Single Source of Truth: upgradepath.unified.json + Ableitungen |
+| `0.5.16-007_reviewfix7` | `0.5.16-007_reviewfix6` | `007_reviewfix7` |  | stable | reviewfix, upgradepath, generator, migrate | Single Source of Truth: ./config/upgradepath.unified.json + Ableitungen |
 | `0.5.16-007_reviewfix8` | `0.5.16-007_reviewfix7` | `007_reviewfix8` |  | stable | reviewfix | upgrade-path.sh auf unified TXT/Lib umgestellt. |
 | `0.5.16-007_reviewfix9` | `0.5.16-007_reviewfix8` | `007_reviewfix9` |  | stable | reviewfix, upgradepath, generator, migrate | ha-vrrp-manage.sh auf Chain-Engine (TXT) umgestellt |
 | `0.1.0` | `` | `` |  |  |  | { "version": "0.2.0",       "parent": "0.1.0",     "notes": "Übernahme der Ur-Version, Grundgerüst bereinigt/erweitert" }, |
