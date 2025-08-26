@@ -1,50 +1,38 @@
 #!/bin/sh
-# migrate_0.5.13_to_0.5.14.sh
-# Auto-generated stub for bidirectional migration 0.5.13 ⇄ 0.5.14
-# Fill in FILE_MOVES_MIG / UCI_RENAMES_MIG / UCI_DEFAULTS_MIG / TRASH_MIG as needed.
+# migrate_0.5.13_to_0.5.14.sh – auto-generated from upgradepath.unified.json
 set -eu
 HERE="$(cd "$(dirname "$0")" && pwd)"
 . "$HERE/lib/miglib.sh"
 
-# -------- Customize this section for your release change --------
-# Use TAB (\t) as delimiter in the *_MIG lists
-
 FILE_MOVES_MIG=$(cat <<'EOF'
-# /path/src<TAB>/path/dst
+
 EOF
 )
-
 UCI_RENAMES_MIG=$(cat <<'EOF'
-# pkg.section<TAB>oldopt<TAB>newopt
+
 EOF
 )
-
 UCI_DEFAULTS_MIG=$(cat <<'EOF'
-# key (pkg.section.option)<TAB>value
+
 EOF
 )
-
 TRASH_MIG=$(cat <<'EOF'
-# /path/to/remove
+
 EOF
 )
 
-# Inverse mappings for rollback
 FILE_MOVES_RB=$(cat <<'EOF'
-# /path/dst<TAB>/path/src
+
 EOF
 )
-
 UCI_RENAMES_RB=$(cat <<'EOF'
-# pkg.section<TAB>newopt<TAB>oldopt
-EOF
-)
 
-UCI_UNSET_ON_RB=$(cat <<'EOF'
-# keys to delete that were newly introduced in 0.5.14
 EOF
 )
-# ---------------------------------------------------------------
+UCI_UNSET_ON_RB=$(cat <<'EOF'
+
+EOF
+)
 
 apply_file_moves() { echo "$1" | while IFS="$(printf '\t')" read -r SRC DST; do [ -n "${SRC:-}" ] || continue; [ -n "${DST:-}" ] || continue; safe_mv "$SRC" "$DST"; done; }
 apply_trash_list(){ echo "$1" | while IFS= read -r P; do [ -n "${P:-}" ] || continue; safe_rm "$P"; done; }
@@ -52,7 +40,7 @@ apply_uci_renames(){ echo "$1" | while IFS="$(printf '\t')" read -r PKGSEC OLD N
 apply_uci_defaults(){ echo "$1" | while IFS="$(printf '\t')" read -r KEY VAL; do [ -n "${KEY:-}" ] || continue; uci_set_if_missing "$KEY" "$VAL"; done; }
 unset_uci_keys(){ echo "$1" | while IFS= read -r KEY; do [ -n "${KEY:-}" ] || continue; if uci -q get "$KEY" >/dev/null 2>&1; then if is_dryrun; then echo "DRYRUN: uci delete $KEY"; else uci -q delete "$KEY" || true; fi; fi; done; }
 
-do_migrate() { 
+do_migrate(){
   inf "MIGRATION 0.5.13 → 0.5.14"
   mk_snapshot "pre-mig-0.5.13_to_0.5.14" /etc/config/ha_vrrp /usr/lib/ha-vrrp /luci-app-ha-vrrp || true
   apply_file_moves "$FILE_MOVES_MIG"
@@ -61,7 +49,6 @@ do_migrate() {
   apply_trash_list "$TRASH_MIG"
   ok "Migration 0.5.13 → 0.5.14 abgeschlossen."
 }
-
 do_rollback(){
   inf "ROLLBACK 0.5.14 → 0.5.13"
   mk_snapshot "pre-rb-0.5.14_to_0.5.13" /etc/config/ha_vrrp /usr/lib/ha-vrrp /luci-app-ha-vrrp || true
@@ -70,6 +57,5 @@ do_rollback(){
   unset_uci_keys "$UCI_UNSET_ON_RB"; uci_commit_ha
   ok "Rollback 0.5.14 → 0.5.13 abgeschlossen."
 }
-
 parse_args "$@"
 [ "${_ARG_DIRECTION:-migrate}" = "rollback" ] && do_rollback || do_migrate
