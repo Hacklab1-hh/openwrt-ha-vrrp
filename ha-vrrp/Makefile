@@ -1,15 +1,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=ha-vrrp
-PKG_VERSION:=0.5.14
-PKG_RELEASE:=1
-PKG_LICENSE:=MIT
-PKG_MAINTAINER:=ChatGPT
-
-include $(INCLUDE_DIR)/package.mk
-
-define Package/ha-vrrp
-  SECTION:=utils
+\g<1>0.5.15s
   CATEGORY:=Utilities
   TITLE:=HA VRRP (Keepalived) with UCI renderer (multi-instance, discovery, sync, health, autosync)
   DEPENDS:=+keepalived +ip-full +uci +openssh-client +ubus +jsonfilter +busybox
