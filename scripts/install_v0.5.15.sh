@@ -1,3 +1,14 @@
+# --- repo root autodetect (robust) ---
+ROOT_HINT="$(dirname -- "$0")"
+ROOT_DIR="$(CDPATH= cd -- "$ROOT_HINT"/../.. && pwd)"
+if [ ! -f "$ROOT_DIR/config/upgradepath.unified.json" ]; then
+  ROOT_DIR="$(CDPATH= cd -- "$ROOT_HINT"/.. && pwd)"
+fi
+if [ ! -f "$ROOT_DIR/config/upgradepath.unified.json" ]; then
+  ROOT_DIR="$(CDPATH= cd -- "$ROOT_HINT" && pwd)"
+fi
+export ROOT_DIR
+
 sh "$(dirname "$0")/migratefrom0.5.14to0.5.15.sh" || true
 #!/bin/sh
 # install_v0.5.15.sh – Installer mit zentraler Dependency-Config (config/dependencies.conf)

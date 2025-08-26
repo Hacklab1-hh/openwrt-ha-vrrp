@@ -1,4 +1,15 @@
 #!/usr/bin/env python3
+# --- repo root autodetect (robust) ---
+ROOT_HINT="$(dirname -- "$0")"
+ROOT_DIR="$(CDPATH= cd -- "$ROOT_HINT"/../.. && pwd)"
+if [ ! -f "$ROOT_DIR/config/upgradepath.unified.json" ]; then
+  ROOT_DIR="$(CDPATH= cd -- "$ROOT_HINT"/.. && pwd)"
+fi
+if [ ! -f "$ROOT_DIR/config/upgradepath.unified.json" ]; then
+  ROOT_DIR="$(CDPATH= cd -- "$ROOT_HINT" && pwd)"
+fi
+export ROOT_DIR
+
 # genpatch007_reviewfix3b02.py — Pfade auf /root/vrrp-repo umgestellt
 import os, zipfile, tarfile, shutil, datetime, textwrap, json, stat, hashlib
 

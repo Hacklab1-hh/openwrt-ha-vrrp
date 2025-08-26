@@ -1,4 +1,15 @@
 #!/bin/sh
+# --- repo root autodetect (robust) ---
+ROOT_HINT="$(dirname -- "$0")"
+ROOT_DIR="$(CDPATH= cd -- "$ROOT_HINT"/../.. && pwd)"
+if [ ! -f "$ROOT_DIR/config/upgradepath.unified.json" ]; then
+  ROOT_DIR="$(CDPATH= cd -- "$ROOT_HINT"/.. && pwd)"
+fi
+if [ ! -f "$ROOT_DIR/config/upgradepath.unified.json" ]; then
+  ROOT_DIR="$(CDPATH= cd -- "$ROOT_HINT" && pwd)"
+fi
+export ROOT_DIR
+
 # scripts/tools/upgradepath-migrate.sh
 # Moves old update/upgrade path files to scripts/_old, consolidates into scripts/./config/upgradepath.unified.json,
 # then generates scripts/upgradepath_unified.{txt,md} and adds compatibility symlinks.

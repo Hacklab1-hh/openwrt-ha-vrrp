@@ -1,6 +1,6 @@
 {
   "schema": "1.0",
-  "generated": "2025-08-26T15:50:29.914288Z",
+  "generated": "2025-08-26T15:59:44.266652Z",
   "strategy": {
     "default": "sequential",
     "allow_skip_with_intermediate": true
@@ -369,6 +369,18 @@
       "type": "rollback",
       "idempotent": true,
       "script": "scripts/migrations/migrate_0.5.16-007_reviewfix14c_to_14b.sh"
+    },
+    {
+      "from": "0.5.16-007_reviewfix14b2",
+      "to": "0.5.16-007_reviewfix14b2a",
+      "type": "inplace",
+      "idempotent": true
+    },
+    {
+      "from": "0.5.16-007_reviewfix14b2a",
+      "to": "0.5.16-007_reviewfix14b2b",
+      "type": "inplace",
+      "idempotent": true
     }
   ]
 }

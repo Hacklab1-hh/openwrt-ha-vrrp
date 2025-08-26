@@ -1,6 +1,6 @@
 {
   "schema": "1.0",
-  "generated": "2025-08-26T15:50:29.912606Z",
+  "generated": "2025-08-26T15:59:44.266599Z",
   "discover": {
     "patterns": [
       "openwrt-ha-vrrp-*.tar.gz",
@@ -323,6 +323,20 @@
       "archive": "openwrt-ha-vrrp-0.5.16-007_reviewfix14c.tar.gz",
       "migrate_from_parent": "scripts/migrations/migrate_0.5.16-007_reviewfix14b_to_14c.sh",
       "migrate_to_parent": "scripts/migrations/migrate_0.5.16-007_reviewfix14c_to_14b.sh"
+    },
+    {
+      "version": "0.5.16-007_reviewfix14b2",
+      "archive": "openwrt-ha-vrrp-0.5.16-007_reviewfix14b2.tar.gz"
+    },
+    {
+      "version": "0.5.16-007_reviewfix14b2a",
+      "archive": "openwrt-ha-vrrp-0.5.16-007_reviewfix14b2a.tar.gz",
+      "parent": "0.5.16-007_reviewfix14b2"
+    },
+    {
+      "version": "0.5.16-007_reviewfix14b2b",
+      "archive": "openwrt-ha-vrrp-0.5.16-007_reviewfix14b2b.tar.gz",
+      "parent": "0.5.16-007_reviewfix14b2a"
     }
   ]
 }
