@@ -1,2 +1,3 @@
 #!/bin/sh
-# migrate 0.5.16_007 → 0.5.16_008 (dummy)
+set -eu
+echo "[*] MIGRATE 0.5.16-007 → 0.5.16-008"

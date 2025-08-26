@@ -1,0 +1,287 @@
+[
+  {
+    "source": "0.2.0",
+    "target": "0.3.0",
+    "fix_line": "—",
+    "artifacts": [
+      ".tar.gz",
+      ".zip"
+    ],
+    "recommended_method": "installer-v0.3.0.sh"
+  },
+  {
+    "source": "0.3.0",
+    "target": "0.3.0_a",
+    "fix_line": "Hotfix",
+    "artifacts": [
+      ".tar.gz",
+      ".zip"
+    ],
+    "recommended_method": "migrate_0.3.0_to_0.3.0_a.sh → installer"
+  },
+  {
+    "source": "0.3.0_a",
+    "target": "0.4.0",
+    "fix_line": "—",
+    "artifacts": [
+      ".tar.gz",
+      ".zip"
+    ],
+    "recommended_method": "installer-v0.4.0.sh"
+  },
+  {
+    "source": "0.4.0",
+    "target": "0.4.0_a",
+    "fix_line": "Hotfix",
+    "artifacts": [
+      ".tar.gz",
+      ".zip"
+    ],
+    "recommended_method": "migrate_0.4.0_to_0.4.0_a.sh → installer"
+  },
+  {
+    "source": "0.4.0_a",
+    "target": "0.5.0",
+    "fix_line": "—",
+    "artifacts": [
+      ".tar.gz",
+      ".zip"
+    ],
+    "recommended_method": "installer-v0.5.0.sh"
+  },
+  {
+    "source": "0.5.0",
+    "target": "0.5.1",
+    "fix_line": "Patch",
+    "artifacts": [
+      ".tar.gz",
+      ".zip"
+    ],
+    "recommended_method": "migrate_0.5.0_to_0.5.1.sh"
+  },
+  {
+    "source": "0.5.1",
+    "target": "0.5.2",
+    "fix_line": "Legacy / Scripts",
+    "artifacts": [
+      ".tar.gz",
+      ".zip"
+    ],
+    "recommended_method": "installer-v0.5.2.sh"
+  },
+  {
+    "source": "0.5.2",
+    "target": "0.5.3 … 0.5.8",
+    "fix_line": "Minor Releases",
+    "artifacts": [
+      ".tar.gz",
+      ".zip"
+    ],
+    "recommended_method": "jeweiliger Installer"
+  },
+  {
+    "source": "0.5.8",
+    "target": "0.5.9",
+    "fix_line": "—",
+    "artifacts": [
+      ".tar.gz",
+      ".zip"
+    ],
+    "recommended_method": "installer-v0.5.9.sh"
+  },
+  {
+    "source": "0.5.9",
+    "target": "0.5.10",
+    "fix_line": "—",
+    "artifacts": [
+      ".tar.gz",
+      ".zip"
+    ],
+    "recommended_method": "installer-v0.5.10.sh"
+  },
+  {
+    "source": "0.5.10",
+    "target": "0.5.11",
+    "fix_line": "—",
+    "artifacts": [
+      ".tar",
+      ".tar.gz",
+      ".zip"
+    ],
+    "recommended_method": "installer-v0.5.11.sh"
+  },
+  {
+    "source": "0.5.11",
+    "target": "0.5.12",
+    "fix_line": "—",
+    "artifacts": [
+      ".tar",
+      ".tar.gz",
+      ".zip"
+    ],
+    "recommended_method": "installer-v0.5.12.sh"
+  },
+  {
+    "source": "0.5.12",
+    "target": "0.5.13",
+    "fix_line": "—",
+    "artifacts": [
+      ".tar",
+      ".tar.gz",
+      ".zip"
+    ],
+    "recommended_method": "installer-v0.5.13.sh"
+  },
+  {
+    "source": "0.5.13",
+    "target": "0.5.14",
+    "fix_line": "—",
+    "artifacts": [
+      ".tar",
+      ".tar.gz",
+      ".zip"
+    ],
+    "recommended_method": "installer-v0.5.14.sh"
+  },
+  {
+    "source": "0.5.14",
+    "target": "0.5.15_b",
+    "fix_line": "—",
+    "artifacts": [
+      ".tar",
+      ".tar.gz",
+      ".zip"
+    ],
+    "recommended_method": "installer-v0.5.15_b.sh"
+  },
+  {
+    "source": "0.5.15_b",
+    "target": "0.5.16",
+    "fix_line": "Basis 0.5.16",
+    "artifacts": [
+      ".tar",
+      ".tar.gz",
+      ".zip"
+    ],
+    "recommended_method": "installer-v0.5.16.sh"
+  },
+  {
+    "source": "0.5.16",
+    "target": "0.5.16-002",
+    "fix_line": "Subrelease",
+    "artifacts": [
+      ".tar",
+      ".tar.gz",
+      ".zip"
+    ],
+    "recommended_method": "installer-v0.5.16-002.sh"
+  },
+  {
+    "source": "0.5.16-002",
+    "target": "0.5.16-004",
+    "fix_line": "Patch",
+    "artifacts": [
+      ".tar",
+      ".tar.gz"
+    ],
+    "recommended_method": "migrate_002_to_004.sh → installer"
+  },
+  {
+    "source": "0.5.16-004",
+    "target": "0.5.16-005",
+    "fix_line": "—",
+    "artifacts": [
+      ".tar",
+      ".tar.gz",
+      ".zip"
+    ],
+    "recommended_method": "installer-v0.5.16-005.sh"
+  },
+  {
+    "source": "0.5.16-005",
+    "target": "0.5.16-006",
+    "fix_line": "+fixed",
+    "artifacts": [
+      ".tar",
+      ".tar.gz",
+      ".zip"
+    ],
+    "recommended_method": "installer-v0.5.16-006_fixed.sh"
+  },
+  {
+    "source": "0.5.16-006",
+    "target": "0.5.16-007",
+    "fix_line": "Stable UI",
+    "artifacts": [
+      ".tar",
+      ".tar.gz",
+      ".zip"
+    ],
+    "recommended_method": "installer-v0.5.16-007.sh"
+  },
+  {
+    "source": "0.5.16-007",
+    "target": "0.5.16-007_infofix2_installerfix1_uninstallerfix1_managerfix1_installergrid1",
+    "fix_line": "Fix-Linien vollständig",
+    "artifacts": [
+      ".tar",
+      ".tar.gz"
+    ],
+    "recommended_method": "installer-v0.5.16-007.sh + Manager(Grid)"
+  },
+  {
+    "source": "0.5.16-007_infofix2_installerfix1_uninstallerfix1_managerfix1_installergrid1",
+    "target": "0.5.16-007_reviewfix3a",
+    "fix_line": "Docs konsolidiert (incl. erweiterte ARCHITECTURE.md)",
+    "artifacts": [
+      ".tar",
+      ".tar.gz",
+      ".zip"
+    ],
+    "recommended_method": "installer-v0.5.16-007_reviewfix3a.sh"
+  },
+  {
+    "source": "0.5.16-007_reviewfix3a",
+    "target": "0.5.16-008",
+    "fix_line": "Migration auf CIDR/Discover",
+    "artifacts": [
+      ".tar",
+      ".tar.gz",
+      ".zip"
+    ],
+    "recommended_method": "migrate_0.5.16_007_to_008.sh → installer"
+  },
+  {
+    "source": "0.5.16-008",
+    "target": "0.5.16-008_patched_fixed_infofix",
+    "fix_line": "Controller/UI-Fixes",
+    "artifacts": [
+      ".tar",
+      ".tar.gz",
+      ".zip"
+    ],
+    "recommended_method": "installer-v0.5.16-008_patched_fixed_infofix.sh"
+  },
+  {
+    "source": "0.5.16-008_patched_fixed_infofix",
+    "target": "0.5.16-009",
+    "fix_line": "Letzter Stand (Overview-Fix)",
+    "artifacts": [
+      ".tar",
+      ".tar.gz",
+      ".zip"
+    ],
+    "recommended_method": "migrate_0.5.16_008_to_009.sh → installer"
+  },
+  {
+    "source": "0.5.16-009",
+    "target": "0.5.16-009_reviewfix3",
+    "fix_line": "Docs + Path integriert",
+    "artifacts": [
+      ".tar",
+      ".tar.gz",
+      ".zip"
+    ],
+    "recommended_method": "installer-v0.5.16-009_reviewfix3.sh"
+  }
+]
