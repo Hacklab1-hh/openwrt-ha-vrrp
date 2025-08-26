@@ -422,3 +422,7 @@ Build in OpenWrt SDK:
 ## v0.5.10
 - **Update-Pfad** (maschinenlesbar): `docs/update-path.json`, `docs/update-path.yaml`, `docs/UPDATE_PATH.csv`, `docs/UPDATE_EDGES.csv`.
 - Helper: `scripts/upgrade-path.sh FROM TO` listet die Zwischenversionen.
+
+
+## v0.5.12
+- Fix: LuCI-Controller Quoting/Syntax korrigiert (kein ccache/dispatcher-Error mehr).
