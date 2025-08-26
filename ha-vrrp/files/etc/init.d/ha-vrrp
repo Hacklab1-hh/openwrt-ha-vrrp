@@ -1,2 +1,17 @@
 #!/bin/sh /etc/rc.common
-START=99
+START=69
+STOP=11
+USE_PROCD=1
+
+start_service() {
+  local enabled="$(uci -q get ha_vrrp.core.enabled || echo 1)"
+  [ "$enabled" = "1" ] || { logger -t ha-vrrp "disabled"; return 0; }
+  /usr/libexec/ha-vrrp/ensure_vlan.sh || true
+  /usr/sbin/ha-vrrp-apply || true
+  /etc/init.d/keepalived stop >/dev/null 2>&1 || true
+  /etc/init.d/keepalived start
+}
+
+stop_service() {
+  /etc/init.d/keepalived stop >/dev/null 2>&1 || true
+}

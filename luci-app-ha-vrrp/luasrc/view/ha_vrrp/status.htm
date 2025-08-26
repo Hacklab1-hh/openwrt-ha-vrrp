@@ -1,37 +1,25 @@
 <%+header%>
-<h2>HA VRRP – Status</h2>
-<pre>
-<%
- local uci=require"luci.model.uci".cursor()
- local function out_inst(sec)
-   local name=uci:get("ha_vrrp",sec,"name") or sec
-   local vrid=uci:get("ha_vrrp",sec,"vrid") or "-"
-   local vip=uci:get("ha_vrrp",sec,"vip_cidr") or "-"
-   local iface=uci:get("ha_vrrp",sec,"iface") or "-"
-   local use_vlan=uci:get("ha_vrrp",sec,"use_vlan") or "0"
-   local vlan=uci:get("ha_vrrp",sec,"vlan_id") or ""
-   if use_vlan=="1" and vlan~="" then iface=iface.."."..vlan end
-   write(string.format("Instance: %s  VRID: %s  IF: %s  VIP: %s\\n", name, vrid, iface, vip))
- end
-
- -- list instances
- for sec in uci:sections("ha_vrrp") do
-   if sec:match("^inst_") or sec=="core" then out_inst(sec) end
- end
-%>
-</pre>
-
-<div class="cbi-page-actions">
+<h2>HA VRRP – Cluster Status</h2>
+<div id="status">Loading...</div>
+<div class="cbi-page-actions" style="margin-top:1rem">
   <button class="cbi-button cbi-button-apply" onclick="applyHA()">Apply & Restart Keepalived</button>
+  <button class="cbi-button cbi-button-action" onclick="discover()">Discover Peers</button>
+  <button class="cbi-button cbi-button-apply" onclick="keysync()">SSH Key Sync</button>
+  <button class="cbi-button cbi-button-apply" onclick="syncpush()">Sync Now</button>
 </div>
-
 <script>
-function applyHA(){
-  fetch(L.env.cgi_base + '/admin/services/ha_vrrp/apply',{method:'POST'})
-    .then(r=>r.json()).then(j=>{
-      alert(j.ok?'OK':'Error');
-      location.reload();
-    }).catch(()=>alert('Error'));
-}
+function applyHA(){fetch(L.env.cgi_base + '/admin/services/ha_vrrp/apply',{method:'POST'}).then(r=>r.json()).then(j=>alert(j.ok?'OK':'Error')).then(()=>load())}
+function discover(){fetch(L.env.cgi_base + '/admin/services/ha_vrrp/discover',{method:'POST'}).then(r=>r.json()).then(j=>{if(!j.peers||j.peers.length==0){alert('No peers found');return;}alert('Found: '+j.peers.join(', ')+'\nSet Peer Host in Core tab.');})}
+function keysync(){fetch(L.env.cgi_base + '/admin/services/ha_vrrp/keysync',{method:'POST'}).then(r=>r.json()).then(j=>alert(j.ok?'Key sync OK':'Key sync failed'))}
+function syncpush(){fetch(L.env.cgi_base + '/admin/services/ha_vrrp/sync',{method:'POST'}).then(r=>r.json()).then(j=>alert(j.ok?'Sync OK':'Sync failed'))}
+function load(){fetch(L.env.cgi_base + '/admin/services/ha_vrrp/statusjson').then(r=>r.json()).then(data=>{
+  let html=''; html+='<b>Local node:</b> '+(data.node||'-')+'<br>'; html+='<b>Peer:</b> '+(data.peer||'-')+'<br><br>';
+  html+='<table class="table"><tr><th>Instance</th><th>IF</th><th>VIP</th><th>Local</th><th>Peer</th></tr>';
+  for(let i=0;i<data.local_instances.length;i++){const L=data.local_instances[i]; const R=(data.peer_instances||[])[i]||{};
+    html+='<tr><td>'+L.name+'</td><td>'+L.dev+'</td><td>'+L.vip+'</td><td>'+(L.local_master?'MASTER':'backup')+'</td><td>'+(R.remote_master?'MASTER':'backup')+'</td></tr>';
+  }
+  html+='</table>'; document.getElementById('status').innerHTML=html;
+}).catch(()=>{document.getElementById('status').innerText='Error loading status';});}
+load();
 </script>
 <%+footer%>

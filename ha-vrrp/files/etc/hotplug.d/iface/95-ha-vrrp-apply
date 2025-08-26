@@ -1,5 +1,4 @@
 #!/bin/sh
-# Re-render and restart keepalived when any instance device changes
 get_dev() {
   local sec="$1"
   local IFACE USE_VLAN VLAN_ID DEV
@@ -11,18 +10,15 @@ get_dev() {
   [ "$USE_VLAN" = "1" ] && [ -n "$VLAN_ID" ] && DEV="${IFACE}.${VLAN_ID}"
   echo "$DEV"
 }
-
 MON=""
 INSTANCES="$(uci -q show ha_vrrp | awk -F. '/^ha_vrrp\.[^=]+=/ {print $2}' | cut -d= -f1 | sort -u | grep -E '^inst_' || true)"
 if [ -z "$INSTANCES" ]; then
   MON="$(get_dev core || true)"
 else
   for s in $INSTANCES; do
-    d="$(get_dev "$s" || true)"
-    [ -n "$d" ] && MON="$MON $d"
+    d="$(get_dev "$s" || true)"; [ -n "$d" ] && MON="$MON $d"
   done
 fi
-
 for d in $MON; do
   [ "$INTERFACE" = "$d" ] || continue
   /usr/sbin/ha-vrrp-apply && /etc/init.d/keepalived restart

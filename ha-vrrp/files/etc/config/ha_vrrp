@@ -1,2 +1,14 @@
 config core 'core'
 	option enabled '1'
+	option cluster_name 'lab-ha'
+	option auth_pass 'changeme-please'
+
+	# Peer for sync/status
+	option peer_host '192.168.254.2'
+	option peer_user 'root'
+	option peer_port '22'
+
+	# Files that will be pushed to peer
+	list sync_path '/etc/config/ha_vrrp'
+	list sync_path '/etc/config/network'
+	list sync_path '/etc/config/firewall'
