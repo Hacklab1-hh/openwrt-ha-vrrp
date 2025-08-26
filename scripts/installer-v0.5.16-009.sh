@@ -1,9 +1,9 @@
         #!/bin/sh
-        # Version-specific installer for openwrt-ha-vrrp 0.5.16
+        # Version-specific installer for openwrt-ha-vrrp 0.5.16-009
         # Performs pre-migration (directory moves/renames) BEFORE copying new files.
         set -eu
         DESTROOT="${DESTROOT:-/}"
-        TARGET="0.5.16"
+        TARGET="0.5.16-009"
         SERIES="0.5.16"
         LATEST="0.5.16-009"
         HERE="$(cd "$(dirname "$0")" && pwd)"
@@ -81,7 +81,7 @@ version_ge() { # $1 >= $2 ?
 
           # Version marker
           mkdir -p "$DESTROOT/usr/lib/ha-vrrp"
-          echo "0.5.16" > "$DESTROOT/usr/lib/ha-vrrp/VERSION"
+          echo "0.5.16-009" > "$DESTROOT/usr/lib/ha-vrrp/VERSION"
         }
 
         main() {
