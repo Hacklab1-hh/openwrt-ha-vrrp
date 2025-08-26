@@ -3,20 +3,22 @@
 <pre>
 <%
  local uci=require"luci.model.uci".cursor()
- local vip=uci:get("ha_vrrp","core","vip_cidr") or "-"
- local iface=uci:get("ha_vrrp","core","iface") or "-"
- local vlan=uci:get("ha_vrrp","core","vlan_id") or ""
- local use_vlan=uci:get("ha_vrrp","core","use_vlan") or "0"
- if use_vlan=="1" and vlan~="" then iface=iface .. "." .. vlan end
- local vrid=uci:get("ha_vrrp","core","vrid") or "-"
- local prio=uci:get("ha_vrrp","core","priority") or "-"
- local state=uci:get("ha_vrrp","core","state") or "-"
--%>
-VIP: <%=vip%>
-IF : <%=iface%>
-VRID: <%=vrid%>
-Prio: <%=prio%>
-Init: <%=state%>
+ local function out_inst(sec)
+   local name=uci:get("ha_vrrp",sec,"name") or sec
+   local vrid=uci:get("ha_vrrp",sec,"vrid") or "-"
+   local vip=uci:get("ha_vrrp",sec,"vip_cidr") or "-"
+   local iface=uci:get("ha_vrrp",sec,"iface") or "-"
+   local use_vlan=uci:get("ha_vrrp",sec,"use_vlan") or "0"
+   local vlan=uci:get("ha_vrrp",sec,"vlan_id") or ""
+   if use_vlan=="1" and vlan~="" then iface=iface.."."..vlan end
+   write(string.format("Instance: %s  VRID: %s  IF: %s  VIP: %s\\n", name, vrid, iface, vip))
+ end
+
+ -- list instances
+ for sec in uci:sections("ha_vrrp") do
+   if sec:match("^inst_") or sec=="core" then out_inst(sec) end
+ end
+%>
 </pre>
 
 <div class="cbi-page-actions">
