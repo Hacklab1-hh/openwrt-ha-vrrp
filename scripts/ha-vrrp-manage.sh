@@ -1,126 +1,81 @@
 #!/bin/sh
-# ha-vrrp-manage.sh — Meta-Manager für Install/Uninstall/Update (Serie 0.5.16)
-# Nutzung:
-#   sh scripts/ha-vrrp-manage.sh detect
-#   sh scripts/ha-vrrp-manage.sh install <version|series>
-#   sh scripts/ha-vrrp-manage.sh uninstall [<version|series|current>]
-#   sh scripts/ha-vrrp-manage.sh update [--to 0.5.16-009]
+# ha-vrrp-manage.sh — data-driven update/rollback using scripts/upgradepath_unified.txt
+# Usage:
+#   scripts/ha-vrrp-manage.sh update <TARGET_VERSION>
+#   scripts/ha-vrrp-manage.sh rollback [<TARGET_VERSION>]   # if target omitted: rollback current to its parent
+
 set -eu
-
-SERIES="0.5.16"
-LATEST="0.5.16-009"
 HERE="$(cd "$(dirname "$0")" && pwd)"
-PKGROOT="$(cd "$HERE/.." && pwd)"
-DESTROOT="${DESTROOT:-/}"
+. "$HERE/lib/upgradepath.sh"
 
-red() { printf "\033[31m%s\033[0m\n" "$*" >&2; }
-green() { printf "\033[32m%s\033[0m\n" "$*"; }
-info() { printf "[*] %s\n" "$*"; }
+VERSION_FILE="/usr/lib/ha-vrrp/VERSION"
 
-detect_version() {
-  # 1) Installed marker
-  if [ -f "/usr/lib/ha-vrrp/VERSION" ]; then
-    ver="$(cat /usr/lib/ha-vrrp/VERSION | tr -d '\r\n')"
-    [ -n "$ver" ] && echo "$ver" && return 0
-  fi
-  # 2) UCI
-  if command -v uci >/dev/null 2>&1; then
-    ver="$(uci -q get ha_vrrp.core.cluster_version 2>/dev/null || true)"
-    [ -n "$ver" ] && echo "$ver" && return 0
-  fi
-  # 3) Fallback (unknown)
-  echo "unknown"
-  return 0
+current_version() {
+  [ -f "$VERSION_FILE" ] && cat "$VERSION_FILE" || echo ""
 }
 
-backup_config() {
-  ts="$(date +%Y%m%d-%H%M%S)"
-  dst="/etc/ha-vrrp/backup-$ts.tgz"
-  mkdir -p /etc/ha-vrrp
-  tar czf "$dst" /etc/config/ha_vrrp /etc/ha-vrrp 2>/dev/null || true
-  info "Config-Backup unter: $dst"
-}
-
-run_migrations() {
-  # Optional vorhandene Migrationen ausführen
-  for s in         "/usr/lib/ha-vrrp/scripts/migrate_0.5.16_002_to_007.sh"         "/usr/lib/ha-vrrp/scripts/migrate_0.5.16_007_to_008.sh"       ; do
-    [ -x "$s" ] && { info "Running migration: $s"; "$s" || true; }
+# Execute migration steps between FROM and TO
+run_chain_migrate() {
+  FROM="$1"; TO="$2"
+  steps="$("$HERE/lib/upgradepath.sh" step_pairs "$FROM" "$TO" 2>/dev/null || true)"
+  [ -n "$steps" ] || { echo "[!] Keine Migrationskette von $FROM nach $TO gefunden."; return 2; }
+  echo "$steps" | while read -r A B; do
+    script="/usr/lib/ha-vrrp/scripts/migrate_${A}_to_${B}.sh"
+    if [ -x "$script" ]; then
+      echo "[*] MIGRATE: $A → $B"
+      "$script" --migrate || true
+    else
+      echo "[!] Migrationsskript fehlt: $script (übersprungen)"
+    fi
   done
 }
 
-refresh_luci() {
-  rm -f /tmp/luci-indexcache /tmp/luci-modulecache/* 2>/dev/null || true
-  /etc/init.d/rpcd restart 2>/dev/null || true
-  /etc/init.d/uhttpd restart 2>/dev/null || true
+run_chain_rollback() {
+  FROM="$1"; TO="$2"
+  steps="$("$HERE/lib/upgradepath.sh" step_pairs "$FROM" "$TO" 2>/dev/null || true)"
+  [ -n "$steps" ] || { echo "[!] Keine Rollback-Kette von $FROM nach $TO gefunden."; return 2; }
+  echo "$steps" | while read -r A B; do
+    script="/usr/lib/ha-vrrp/scripts/migrate_${A}_to_${B}.sh"
+    if [ -x "$script" ]; then
+      echo "[*] ROLLBACK: $B ← $A"
+      "$script" --rollback || true
+    else
+      echo "[!] Migrationsskript fehlt: $script (übersprungen)"
+    fi
+  done
 }
 
-do_install() {
-  target="$1"
-  case "$target" in
-    "$SERIES") target="v$SERIES";;
-    "$LATEST") target="v$LATEST";;
-    v*) : ;;
-    *) target="v$target";;
-  esac
-  inst="$HERE/installer-$target.sh"
-  if [ ! -x "$inst" ]; then
-    red "Installer nicht gefunden: $inst"
-    exit 2
-  fi
-  backup_config
-  info "Installiere via: $inst"
-  DESTROOT="$DESTROOT" "$inst"
-  run_migrations
-  refresh_luci
-  green "Install fertig: $target"
-}
+cmd="${1:-}"; shift || true
 
-do_uninstall() {
-  target="${1:-current}"
-  case "$target" in
-    current)
-      ver="$(detect_version)"
-      [ "$ver" = "unknown" ] && { red "Keine installierte Version erkannt."; exit 3; }
-      target="v$ver"
-      ;;
-    "$SERIES") target="v$SERIES";;
-    "$LATEST") target="v$LATEST";;
-    v*) : ;;
-    *) target="v$target";;
-  esac
-  uninst="$HERE/uninstaller-$target.sh"
-  if [ ! -x "$uninst" ]; then
-    red "Uninstaller nicht gefunden: $uninst"
-    exit 2
-  fi
-  info "Deinstalliere via: $uninst"
-  DESTROOT="$DESTROOT" "$uninst"
-  refresh_luci
-  green "Uninstall fertig: $target"
-}
-
-do_update() {
-  target="${1:-$LATEST}"
-  if [ "$target" = "$SERIES" ]; then target="$LATEST"; fi
-  current="$(detect_version)"
-  info "Gefundene Version: $current → Ziel: $target"
-  if [ "$current" = "$target" ]; then
-    info "Bereits auf Zielversion."
-    exit 0
-  fi
-  # Installiere Zielversion
-  do_install "$target"
-  green "Update abgeschlossen: $current → $target"
-}
-
-cmd="${1:-help}"; shift || true
 case "$cmd" in
-  detect) detect_version ;;
-  install) do_install "${1:-$LATEST}" ;;
-  uninstall) do_uninstall "${1:-current}" ;;
-  update) do_update "${1:-$LATEST}" ;;
+  update)
+    TARGET="${1:-}"
+    [ -n "$TARGET" ] || { echo "Usage: $0 update <TARGET_VERSION>"; exit 1; }
+    CUR="$(current_version)"
+    if [ -z "$CUR" ]; then
+      echo "[*] Kein aktueller Versionsstand (frische Installation) — keine Migrationen notwendig."
+    else
+      run_chain_migrate "$CUR" "$TARGET"
+    fi
+    ;;
+
+  rollback)
+    TARGET="${1:-}"
+    if [ -n "$TARGET" ]; then
+      PARENT="$( "$HERE/lib/upgradepath.sh" parent_of "$TARGET" 2>/dev/null || true )"
+      [ -n "$PARENT" ] || { echo "[!] Kein Parent zu $TARGET gefunden."; exit 2; }
+      run_chain_rollback "$TARGET" "$PARENT"
+    else
+      CUR="$(current_version)"
+      [ -n "$CUR" ] || { echo "[!] Aktuelle Version unbekannt (Datei $VERSION_FILE fehlt)."; exit 3; }
+      PARENT="$( "$HERE/lib/upgradepath.sh" parent_of "$CUR" 2>/dev/null || true )"
+      [ -n "$PARENT" ] || { echo "[!] Kein Parent zu $CUR gefunden."; exit 4; }
+      run_chain_rollback "$CUR" "$PARENT"
+    fi
+    ;;
+
   *)
-    echo "Usage: $0 [detect|install <ver|series>|uninstall [<ver|series|current>]|update [--to <ver>] ]"
-    exit 1
+    echo "Usage: $0 {update <ver>|rollback [<ver>]}"
+    exit 9
     ;;
 esac
