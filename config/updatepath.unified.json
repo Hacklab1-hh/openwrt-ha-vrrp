@@ -1,6 +1,6 @@
 {
   "schema": "1.0",
-  "generated": "2025-08-26T15:59:44.266652Z",
+  "generated": "2025-08-26T16:27:12.968445Z",
   "strategy": {
     "default": "sequential",
     "allow_skip_with_intermediate": true
@@ -381,6 +381,13 @@
       "to": "0.5.16-007_reviewfix14b2b",
       "type": "inplace",
       "idempotent": true
+    },
+    {
+      "from": "0.5.16-007_reviewfix14b2b",
+      "to": "0.5.16-007_reviewfix14c",
+      "type": "inplace",
+      "idempotent": true,
+      "script": "scripts/migrations/self_test.sh"
     }
   ]
 }

@@ -17,7 +17,7 @@
       ".tar.gz",
       ".zip"
     ],
-    "recommended_method": "migrate_0.3.0_to_0.3.0_a.sh → installer"
+    "recommended_method": "scripts/migrations/migrate_0.3.0_to_0.3.0_a.sh → installer"
   },
   {
     "source": "0.3.0_a",
@@ -37,7 +37,7 @@
       ".tar.gz",
       ".zip"
     ],
-    "recommended_method": "migrate_0.4.0_to_0.4.0_a.sh → installer"
+    "recommended_method": "scripts/migrations/migrate_0.4.0_to_0.4.0_a.sh → installer"
   },
   {
     "source": "0.4.0_a",
@@ -57,7 +57,7 @@
       ".tar.gz",
       ".zip"
     ],
-    "recommended_method": "migrate_0.5.0_to_0.5.1.sh"
+    "recommended_method": "scripts/migrations/migrate_0.5.0_to_0.5.1.sh"
   },
   {
     "source": "0.5.1",
@@ -184,7 +184,7 @@
       ".tar",
       ".tar.gz"
     ],
-    "recommended_method": "migrate_002_to_004.sh → installer"
+    "recommended_method": "scripts/migrations/migrate_002_to_004.sh → installer"
   },
   {
     "source": "0.5.16-004",
@@ -249,7 +249,7 @@
       ".tar.gz",
       ".zip"
     ],
-    "recommended_method": "migrate_0.5.16_007_to_008.sh → installer"
+    "recommended_method": "scripts/migrations/migrate_0.5.16_007_to_008.sh → installer"
   },
   {
     "source": "0.5.16-008",
@@ -271,7 +271,7 @@
       ".tar.gz",
       ".zip"
     ],
-    "recommended_method": "migrate_0.5.16_008_to_009.sh → installer"
+    "recommended_method": "scripts/migrations/migrate_0.5.16_008_to_009.sh → installer"
   },
   {
     "source": "0.5.16-009",

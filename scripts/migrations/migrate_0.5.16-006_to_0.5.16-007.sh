@@ -1,5 +1,5 @@
 #!/bin/sh
-# migrate_0.5.9_to_0.5.10.sh – auto-generated from upgradepath.unified.json
+# scripts/migrations/migrate_0.5.16-006_to_0.5.16-007.sh – auto-generated from upgradepath.unified.json
 set -eu
 HERE="$(cd "$(dirname "$0")" && pwd)"
 . "$HERE/lib/miglib.sh"
@@ -41,21 +41,21 @@ apply_uci_defaults(){ echo "$1" | while IFS="$(printf '\t')" read -r KEY VAL; do
 unset_uci_keys(){ echo "$1" | while IFS= read -r KEY; do [ -n "${KEY:-}" ] || continue; if uci -q get "$KEY" >/dev/null 2>&1; then if is_dryrun; then echo "DRYRUN: uci delete $KEY"; else uci -q delete "$KEY" || true; fi; fi; done; }
 
 do_migrate(){
-  inf "MIGRATION 0.5.9 → 0.5.10"
-  mk_snapshot "pre-mig-0.5.9_to_0.5.10" /etc/config/ha_vrrp /usr/lib/ha-vrrp /luci-app-ha-vrrp || true
+  inf "MIGRATION 0.5.16-006 → 0.5.16-007"
+  mk_snapshot "pre-mig-0.5.16-006_to_0.5.16-007" /etc/config/ha_vrrp /usr/lib/ha-vrrp /luci-app-ha-vrrp || true
   apply_file_moves "$FILE_MOVES_MIG"
   apply_uci_renames "$UCI_RENAMES_MIG"
   apply_uci_defaults "$UCI_DEFAULTS_MIG"; uci_commit_ha
   apply_trash_list "$TRASH_MIG"
-  ok "Migration 0.5.9 → 0.5.10 abgeschlossen."
+  ok "Migration 0.5.16-006 → 0.5.16-007 abgeschlossen."
 }
 do_rollback(){
-  inf "ROLLBACK 0.5.10 → 0.5.9"
-  mk_snapshot "pre-rb-0.5.10_to_0.5.9" /etc/config/ha_vrrp /usr/lib/ha-vrrp /luci-app-ha-vrrp || true
+  inf "ROLLBACK 0.5.16-007 → 0.5.16-006"
+  mk_snapshot "pre-rb-0.5.16-007_to_0.5.16-006" /etc/config/ha_vrrp /usr/lib/ha-vrrp /luci-app-ha-vrrp || true
   apply_file_moves "$FILE_MOVES_RB"
   apply_uci_renames "$UCI_RENAMES_RB"
   unset_uci_keys "$UCI_UNSET_ON_RB"; uci_commit_ha
-  ok "Rollback 0.5.10 → 0.5.9 abgeschlossen."
+  ok "Rollback 0.5.16-007 → 0.5.16-006 abgeschlossen."
 }
 parse_args "$@"
 [ "${_ARG_DIRECTION:-migrate}" = "rollback" ] && do_rollback || do_migrate

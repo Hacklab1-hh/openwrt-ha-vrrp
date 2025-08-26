@@ -1,6 +1,6 @@
 {
   "schema": "1.0",
-  "generated": "2025-08-26T15:59:44.266599Z",
+  "generated": "2025-08-26T16:27:12.968409Z",
   "discover": {
     "patterns": [
       "openwrt-ha-vrrp-*.tar.gz",
