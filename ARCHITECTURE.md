@@ -186,3 +186,6 @@ openwrt-ha-vrrp-<version>/
 
 ### Upgradepfad-Engine
 `lib/upgradepath.sh` stellt `build_chain` und `step_pairs` bereit, um Versionspfade aus `upgradepath_unified.txt` herzuleiten.
+
+### Migrationsleiter
+Die Upgradepfad-Engine nutzt `scripts/upgradepath_unified.txt`. Migrationstemplates liegen unter `/usr/lib/ha-vrrp/scripts/` für alle Stufen 0.5.9…0.5.16-007_reviewfix5.
