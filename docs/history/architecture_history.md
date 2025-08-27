@@ -12,16 +12,16 @@ In der Version **0.5.16‑007_reviwefix17** wurde die Architektur des HA‑VRRP�
 - **Migrationsframework**: Die unified Upgrade‑Path‑Definition wurde um diese Version ergänzt.  Das zugehörige Migration‑Skript dokumentiert das Update, erstellt ein Backup und setzt die neue Version.
 
 Diese Änderungen festigen die modulare Architektur des Projekts, erleichtern die Wartung und ermöglichen eine nahtlose Integration in andere Systeme.
-## 0.5.16-007_reviewfix17
+## 0.5.16-007_reviewfix17_a1
 
-# Architektur‑Notizen reviewfix17
+# Architektur‑Notizen reviewfix17_a1
 
-In der Version **0.5.16‑007_reviewfix17** wurde die Architektur des HA‑VRRP‑Add‑ons wie folgt erweitert:
+In der Version **0.5.16‑007_reviewfix17_a1** wurden die in *reviwefix17* eingeführten Architekturverbesserungen weiter konsolidiert und dokumentiert.  Diese Teilfassung dient dazu, den aktuellen Stand für die automatische Zusammenführung in `CONCEPTS.md`/`ARCHITECTURE.md` festzuhalten.
 
-- **Schichtenmodell für die UI**: Die LuCI‑Oberfläche besteht aus Controller, Modell (CBI) und Views.  Für jede Funktionalität (Übersicht, Status, Allgemein, Peers & Sync, Backup/Restore, Erweitert) gibt es einen eigenen View‑ und Modell‑Layer.  Der Controller registriert zusätzlich den JSON‑Status‑Endpunkt `status_json`.
-- **Helper‑Skripte**: Ein neuer Satz von Helpers (`helper_update_version_tags.sh`, `helper_sync_docs.sh`, `helper_smoketests.sh`, `helper_build_package.sh`) automatisiert die Pflege der Dokumente und den Release‑Prozess.  Diese Scripts werden aus den Manager‑Skripten (Installer, Uninstaller, Migration) aufgerufen.
-- **Status‑API**: Über einen neuen CGI‑Handler (`/cgi‑bin/ha‑vrrp‑status`) sowie eine LuCI‑Action wird der Betriebszustand als JSON ausgegeben.  Der Status liest die aktuelle Version (`/etc/ha‑vrrp/version`), prüft den Keepalived‑Prozess und den letzten Migrationszustand (`/etc/ha‑vrrp/state.json`).
-- **Synchronisationsschicht**: Die Sync‑Skripte laden ZIP‑Archive von GitHub und entpacken sie auf dem lokalen System, sodass `current` immer auf den aktuell installierten Stand zeigt.  Dadurch wird der Einsatz ohne installiertes `git` und in Offline‑Umgebungen unterstützt.
-- **Migrationsframework**: Die unified Upgrade‑Path‑Definition wurde um diese Version ergänzt.  Das zugehörige Migration‑Skript dokumentiert das Update, erstellt ein Backup und setzt die neue Version.
+Die wichtigsten Punkte dieser Version sind:
 
-Diese Änderungen festigen die modulare Architektur des Projekts, erleichtern die Wartung und ermöglichen eine nahtlose Integration in andere Systeme.
+- **Konsolidierung der Dokumente**: Alle Changelog‑Dateien wurden in das neue Verzeichnis `docs/changelogs` verschoben.  Die Namen der Teilfassungen folgen nun konsequent dem Muster `<VERSION>.md`, wodurch Skripte und Release‑Workflows die Dateien leichter erkennen können.
+- **UI‑Build‑Workflow**: Ein dedizierter Prompt (`docs/release-workflow-prompt/ui-build-PROMPT.md`) beschreibt nun, wie die LuCI‑UI modular entwickelt, fehlertolerant gestaltet und mittels JSON‑Status‑API erweitert wird.
+- **Helper‑Anpassungen**: `helper_build_package.sh` schließt das alte Verzeichnis `docs/changelog` aus, um doppelte Dateien im Release‑Archiv zu verhindern.  Die Migrations‑ und Release‑Skripte verweisen ausschließlich auf `docs/changelogs`.
+
+Diese Änderungen betreffen primär die Dokumentations‑ und Build‑Infrastruktur und haben keinen Einfluss auf die Kernlogik des Add‑ons.

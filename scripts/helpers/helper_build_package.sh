@@ -20,9 +20,11 @@ VERSION="$(tr -d '\r\n' < "$root/VERSION")"
 pkgname="openwrt-ha-vrrp-$VERSION"
 
 # Create package tar (exclude dist directory itself)
+# Exclude old `docs/changelog` directory to avoid duplicate or outdated changelog files.
 tar -C "$root" -cf "$dist/$pkgname.tar" \
     --exclude='./dist' \
     --exclude='./.git' \
+    --exclude='./docs/changelog' \
     .
 gzip -f "$dist/$pkgname.tar"
 

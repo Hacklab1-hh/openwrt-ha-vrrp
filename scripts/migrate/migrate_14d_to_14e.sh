@@ -8,7 +8,7 @@ cat <<'EOF'
 scripts/installer.sh
 scripts/uninstaller.sh
 scripts/node/lib_repo.sh
-docs/changelog/0.5.16-007_reviewfix14e.md
+docs/changelogs/0.5.16-007_reviewfix14e.md
 docs/features/0.5.16-007_reviewfix14e.md
 scripts/migrate/json_patch_14e.py
 EOF

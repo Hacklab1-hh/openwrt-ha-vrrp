@@ -44,8 +44,9 @@ fi
 echo "New version: $VERSION (parent: $PARENT)"
 
 # Create docs stubs
-mkdir -p "$ROOT_DIR/docs/changelog" "$ROOT_DIR/docs/features"
-CHANGE_MD="$ROOT_DIR/docs/changelog/${VERSION}.md"
+# Changelogs are now stored under docs/changelogs instead of docs/changelog
+mkdir -p "$ROOT_DIR/docs/changelogs" "$ROOT_DIR/docs/features"
+CHANGE_MD="$ROOT_DIR/docs/changelogs/${VERSION}.md"
 FEAT_MD="$ROOT_DIR/docs/features/${VERSION}.md"
 [ -f "$CHANGE_MD" ] || {
 cat > "$CHANGE_MD" <<EOF

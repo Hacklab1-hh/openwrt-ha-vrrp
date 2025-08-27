@@ -1077,7 +1077,7 @@
     }
   }
   , {
-    "version": "0.5.16-007_reviewfix17",
+    "version": "0.5.16-007_reviwefix17",
     "parent": "0.5.16-007_reviewfix16_featurefix5_fix2",
     "series": "0.5",
     "released": "",
@@ -1087,7 +1087,7 @@
     ],
     "summary": "Modular UI, cross-platform sync scripts, JSON status API, helpers",
     "fixline": "Modular UI, cross-platform sync scripts, JSON status API, helpers",
-    "patch_name": "007_reviewfix17",
+    "patch_name": "007_reviwefix17",
     "notes": "Added modular UI, cross-platform sync scripts, JSON status API, helpers; version bump to reviwefix17.",
     "changelog": "",
     "changes": {
