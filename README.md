@@ -1,3 +1,5 @@
+Current Version: 0.5.16-007_reviewfix16_featurefix4
+
 # openwrt-ha-vrrp (OpenWrt 19.07)
 
 High-availability via **Keepalived + VRRP (unicast)** with **optional VLAN heartbeat** and a minimal LuCI UI.

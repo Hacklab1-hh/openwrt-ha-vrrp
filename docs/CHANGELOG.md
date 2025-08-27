@@ -1,3 +1,5 @@
+Current Version: 0.5.16-007_reviewfix16_featurefix4
+
 # Changelog
 
 ## 0.5.16-006 (2025-08-24)
@@ -27,3 +29,8 @@
 - Introduce `current.md` workflow under `docs/releases/current/`.
 - Enhanced `scripts/tools/release-helper.sh` to materialize `current.md` into release docs, changelogs, and migrate script.
 - Added git `commit-msg` hook to enforce updating `current.md` when code changes are staged.
+
+- docs: relocate workflow prompt to `docs/release-workflow-prompt/development-change-PROMPT-WORKFLOW.md`
+
+## 0.5.16-007_reviewfix16_featurefix4 — 2025-08-27
+- Materialize current.md; add migration for workflow prompt path; sync central docs.

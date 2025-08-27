@@ -1,3 +1,5 @@
+Current Version: 0.5.16-007_reviewfix16_featurefix4
+
 # openwrt-ha-vrrp – Release Notes – v0.1.0
 
 **Datum:** 2025-08-23
@@ -439,3 +441,6 @@ Set Hooks-Pfad:
 ```bash
 git config core.hooksPath .githooks
 ```
+
+## Release/Workflow
+- Workflow-Prompt: `docs/release-workflow-prompt/development-change-PROMPT-WORKFLOW.md`

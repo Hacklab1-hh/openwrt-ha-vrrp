@@ -1,3 +1,5 @@
+Current Version: 0.5.16-007_reviewfix16_featurefix4
+
 # Concepts — OpenWRT HA VRRP (Serie 0.5.16)
 **Stand:** 2025-08-24
 
