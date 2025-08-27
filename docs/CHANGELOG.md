@@ -36,3 +36,8 @@
 - Ships stable JSON CLI API (`/usr/sbin/ha-vrrp-api`) used by all LuCI actions.
 - Provides LuCI IPK packaging skeleton under `luci-ha-vrrp/` with `root/` payload.
 - Keeps 19.07-safe CBI (no L.ui; defensive error handling via JSON).
+
+## 0.5.16-007_reviewfix16_featurefix2 — 2025-08-27
+- Scripts cleanup: removed versioned scripts from `scripts/` root (kept under `scripts/installer/`, `scripts/uninstaller/`, etc.).
+- Docs refactor: versioned `*.md` moved into `docs/changelogs/` or `docs/releases/<version>/` with normalized names.
+- Migration script added: `scripts/migrate/migrate-to-0.5.16-007_reviewfix16_featurefix2.sh`.
