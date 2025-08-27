@@ -22,3 +22,17 @@
 - Neu: Dispatcher für installer/uninstaller + GitHub-Fetch + Upgrade-Runner.
 - Reorg: Versionierte Docs in Unterordner 0.5.16-007/.
 - Migration: 15a3 → 15a4 (Stub).
+
+## 0.5.16-007_reviewfix16 — 2025-08-27
+- Add classic LuCI (CBI) UI under *Services → HA VRRP*:
+  - **Overview** with quick action buttons (render/apply, restart, ensure VLAN, discover, keygen/push, sync)
+  - **General** CBI for core settings (enable, cluster_name, auth_pass, health, autosync, ssh backend, WAN iface)
+  - **Peers & Sync** CBI for peer_host/user/port, link netmask, watched files list
+- Ship UI directly via installer (`files/usr/lib/lua/luci/...`) for OpenWrt 19.07+ compatibility.
+- Provide version-specialized installer/uninstaller scripts.
+
+## 0.5.16-007_reviewfix16_featurefix1 — 2025-08-27
+- Featurefix rollup on reviewfix16: includes LuCI Status, Logs, Discover, and split VRRP Segment CBI.
+- Ships stable JSON CLI API (`/usr/sbin/ha-vrrp-api`) used by all LuCI actions.
+- Provides LuCI IPK packaging skeleton under `luci-ha-vrrp/` with `root/` payload.
+- Keeps 19.07-safe CBI (no L.ui; defensive error handling via JSON).

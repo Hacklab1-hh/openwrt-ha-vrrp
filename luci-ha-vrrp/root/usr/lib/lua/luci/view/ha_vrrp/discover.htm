@@ -1,0 +1,25 @@
+
+<%+header%>
+<h2><%:HA VRRP — Discover%></h2>
+<div class="cbi-section">
+  <p><%:Run discovery to scan the heartbeat segment for peers. Configure CIDR in UCI (ha_vrrp.core.discover_cidr) or in Segment page.%></p>
+  <p><button class="btn cbi-button" onclick="doDiscover()"><%:Run discovery%></button></p>
+  <h3><%:Result%></h3>
+  <pre id="disc_out" style="max-height:360px;overflow:auto;"></pre>
+</div>
+<script>
+function doDiscover(){
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "<%=luci.dispatcher.build_url('admin','services','ha_vrrp','action')%>", true);
+  xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+  xhr.onreadystatechange = function(){
+    if (xhr.readyState === 4){
+      try { var j = JSON.parse(xhr.responseText);
+            document.getElementById("disc_out").textContent = JSON.stringify(j, null, 2);
+      } catch(e) { document.getElementById("disc_out").textContent = xhr.responseText; }
+    }
+  };
+  xhr.send("cmd=" + encodeURIComponent("discover"));
+}
+</script>
+<%+footer%>

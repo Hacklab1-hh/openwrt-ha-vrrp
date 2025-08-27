@@ -1,0 +1,33 @@
+
+<%+header%>
+<h2><%:HA VRRP — Status%></h2>
+<div class="cbi-section">
+  <p><%:Live role, VIPs and health. Auto-refresh every 5s.%></p>
+  <div id="status_box" class="cbi-value"><em>loading…</em></div>
+</div>
+<script>
+function fetchStatus(){
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "<%=luci.dispatcher.build_url('admin','services','ha_vrrp','action')%>", true);
+  xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+  xhr.onreadystatechange = function(){
+    if (xhr.readyState === 4){
+      var box = document.getElementById("status_box");
+      try {
+        var j = JSON.parse(xhr.responseText);
+        if(!j.ok){ box.textContent = "error: " + (j.error||"unknown"); return; }
+        var lines = [];
+        lines.push("keepalived running: " + j.running);
+        lines.push("role: " + j.role);
+        lines.push("vips: " + JSON.stringify(j.vips));
+        lines.push("health: " + JSON.stringify(j.health));
+        box.textContent = lines.join("\\n");
+      } catch(e) { box.textContent = xhr.responseText; }
+    }
+  };
+  xhr.send("cmd=" + encodeURIComponent("status-full"));
+}
+fetchStatus();
+setInterval(fetchStatus, 5000);
+</script>
+<%+footer%>

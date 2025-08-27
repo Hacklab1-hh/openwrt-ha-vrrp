@@ -1,0 +1,63 @@
+#!/bin/sh
+set -eu
+json() { printf '%s' "$1" | sed ':a;N;$!ba;s/\n/\\n/g;s/"/\\"/g'; }
+kv()   { printf '"%s":"%s"' "$1" "$(json "$2")"; }
+run() { out="$(sh -c "$1" 2>&1)" || { echo "$out"; return 1; }; echo "$out"; }
+
+get_vips() {
+  vips=""
+  core_vip="$(uci -q get ha_vrrp.core.vip_cidr || echo)"
+  [ -n "$core_vip" ] && vips="$vips$([ -n "$vips" ] && echo ',')\"$core_vip\""
+  for s in $(uci -q show ha_vrrp | awk -F. '/^ha_vrrp\.[^=]+=/ {print $2}' | cut -d= -f1 | sort -u); do
+    [ "$s" = "core" ] && continue
+    vip="$(uci -q get ha_vrrp.$s.vip_cidr || echo)"
+    [ -n "$vip" ] && vips="$vips$([ -n "$vips" ] && echo ',')\"$vip\""
+  done
+  printf '[%s]' "$vips"
+}
+has_ip_cidr() { cidr="$1"; addr="${cidr%/*}"; ip addr show | awk '/inet /{print $2}' | grep -q "^$cidr$" || ip addr show | awk '/inet /{print $2}' | cut -d/ -f1 | grep -q "^$addr$"; }
+role_guess() {
+  vips_json="$(get_vips)"
+  if [ "$(echo "$vips_json" | wc -c)" -gt 4 ]; then
+    for vip in $(echo "$vips_json" | tr -d '[]" ' | tr ',' '\n'); do
+      [ -n "$vip" ] || continue
+      if has_ip_cidr "$vip"; then echo MASTER; return; fi
+    done
+  fi
+  if pidof keepalived >/dev/null 2>&1; then echo BACKUP; else echo STOPPED; fi
+}
+health_json() {
+  hw="$(uci -q get ha_vrrp.core.health_wan_if || echo wan)"
+  hv="$(/usr/libexec/ha-vrrp/check_wan_gw.sh "$hw" >/dev/null 2>&1 && echo up || echo down)"
+  hw6="$(uci -q get ha_vrrp.core.health_wan6_if || echo)"
+  if [ -n "$hw6" ]; then
+    hv6="$(/usr/libexec/ha-vrrp/check_wan6_gw.sh "$hw6" >/dev/null 2>&1 && echo up || echo down)"
+  else
+    hv6="n/a"
+  fi
+  printf '"wan_iface":"%s","wan_status":"%s","wan6_iface":"%s","wan6_status":"%s"' "$hw" "$hv" "$hw6" "$hv6"
+}
+log_tail() { n="$1"; [ -n "$n" ] || n=120; if command -v logread >/dev/null 2>&1; then logread | grep -E "keepalived|ha-vrrp" | tail -n "$n"; else dmesg | tail -n "$n"; fi; }
+
+cmd="${1:-}"
+case "$cmd" in
+  status|role)
+    role="$(role_guess)"; printf '{"ok":true,"role":"%s"}\n' "$role" ;;
+  vips)
+    printf '{"ok":true,"vips":%s}\n' "$(get_vips)" ;;
+  health)
+    printf '{"ok":true,"health":{%s}}\n' "$(health_json)" ;;
+  status-full)
+    role="$(role_guess)"; vips="$(get_vips)"; health="$(health_json)"; running="false"; pidof keepalived >/dev/null 2>&1 && running="true"
+    printf '{"ok":true,"running":%s,"role":"%s","vips":%s,"health":{%s}}\n' "$running" "$role" "$vips" "$health" ;;
+  apply)       out="$(run "/usr/sbin/ha-vrrp-apply")"             && printf '{"ok":true,"output":"%s"}\n' "$(json "$out")" || { printf '{"ok":false,"error":"%s"}\n' "$(json "$out")"; exit 1; } ;;
+  ensure-vlan) out="$(run "/usr/libexec/ha-vrrp/ensure_vlan.sh")" && printf '{"ok":true,"output":"%s"}\n' "$(json "$out")" || { printf '{"ok":false,"error":"%s"}\n' "$(json "$out")"; exit 1; } ;;
+  discover)    out="$(run "/usr/libexec/ha-vrrp/discover_peers.sh")" && printf '{"ok":true,"output":"%s"}\n' "$(json "$out")" || { printf '{"ok":false,"error":"%s"}\n' "$(json "$out")"; exit 1; } ;;
+  keys-gen)    out="$(run "/usr/libexec/ha-vrrp/keysync.sh gen")"    && printf '{"ok":true,"output":"%s"}\n' "$(json "$out")" || { printf '{"ok":false,"error":"%s"}\n' "$(json "$out")"; exit 1; } ;;
+  keys-push)   out="$(run "/usr/libexec/ha-vrrp/keysync.sh push")"   && printf '{"ok":true,"output":"%s"}\n' "$(json "$out")" || { printf '{"ok":false,"error":"%s"}\n' "$(json "$out")"; exit 1; } ;;
+  sync-push)   out="$(run "/usr/sbin/ha-vrrp-sync push")"            && printf '{"ok":true,"output":"%s"}\n' "$(json "$out")" || { printf '{"ok":false,"error":"%s"}\n' "$(json "$out")"; exit 1; } ;;
+  restart)     out="$(run "/etc/init.d/ha-vrrp restart")"            && printf '{"ok":true,"output":"%s"}\n' "$(json "$out")" || { printf '{"ok":false,"error":"%s"}\n' "$(json "$out")"; exit 1; } ;;
+  log-tail:*)
+    n="${cmd#log-tail:}"; out="$(log_tail "$n" || true)"; printf '{"ok":true,"lines":%s,"output":"%s"}\n' "$(printf '%s' "$n" | sed 's/[^0-9]//g')" "$(json "$out")" ;;
+  *) printf '{"ok":false,"error":"unknown command"}\n'; exit 1 ;;
+esac

@@ -1,0 +1,45 @@
+<%+header%>
+<h2><%:HA VRRP — Overview%></h2>
+<div class="cbi-section">
+  <div class="cbi-value">
+    <label class="cbi-value-title"><%:Cluster version%></label>
+    <div class="cbi-value-field"><%=luci.model.uci.cursor():get("ha_vrrp","core","cluster_version") or "n/a"%></div>
+  </div>
+  <div class="cbi-value">
+    <label class="cbi-value-title"><%:Peer%></label>
+    <div class="cbi-value-field"><%=luci.model.uci.cursor():get("ha_vrrp","core","peer_host") or "n/a"%></div>
+  </div>
+  <div class="cbi-section-node">
+    <h3><%:Quick actions%></h3>
+    <p><%:Run common maintenance commands. Output will be shown below.%></p>
+    <p>
+      <button class="btn cbi-button" onclick="haAction('apply')"><%:Render & Apply%></button>
+      <button class="btn cbi-button" onclick="haAction('restart')"><%:Restart service%></button>
+      <button class="btn cbi-button" onclick="haAction('ensure-vlan')"><%:Ensure VLAN%></button>
+      <button class="btn cbi-button" onclick="haAction('discover')"><%:Discover peers%></button>
+      <button class="btn cbi-button" onclick="haAction('keys-gen')"><%:Generate keys%></button>
+      <button class="btn cbi-button" onclick="haAction('keys-push')"><%:Push keys%></button>
+      <button class="btn cbi-button" onclick="haAction('sync-push')"><%:Sync push%></button>
+    </p>
+    <pre id="ha_out" style="max-height:360px;overflow:auto;"></pre>
+  </div>
+</div>
+<script type="text/javascript">
+function haAction(cmd){
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "<%=luci.dispatcher.build_url('admin','services','ha_vrrp','action')%>", true);
+  xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+  xhr.onreadystatechange = function(){
+    if (xhr.readyState === 4){
+      try {
+        var j = JSON.parse(xhr.responseText);
+        document.getElementById("ha_out").textContent = (j.output || "").trim();
+      } catch(e) {
+        document.getElementById("ha_out").textContent = xhr.responseText;
+      }
+    }
+  };
+  xhr.send("cmd=" + encodeURIComponent(cmd));
+}
+</script>
+<%+footer%>
