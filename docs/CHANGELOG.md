@@ -18,7 +18,7 @@
 - Added FEATURES.md (aggregiert aus docs/features/FEATURES_*.md)
 - Overview-Template abgesichert (Guard auf self.map.uci)
 
-### 2025-08-27 – 0.5.16-007_reviewfix15a
-- Aktiviert: GitHub-Fetch in `scripts/installer.sh`/`scripts/uninstaller.sh` (+ `scripts/tools/`).
-- Reorg: Versionierte Docs in Unterordner `0.5.16-007/`.
-- Migration: `migrate_0.5.16-007_reviewfix15_to_0.5.16-007_reviewfix15a.sh` (Stub).
+### 2025-08-27 – 0.5.16-007_reviewfix15a4
+- Neu: Dispatcher für installer/uninstaller + GitHub-Fetch + Upgrade-Runner.
+- Reorg: Versionierte Docs in Unterordner 0.5.16-007/.
+- Migration: 15a3 → 15a4 (Stub).

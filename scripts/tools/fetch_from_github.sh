@@ -1,12 +1,12 @@
 #!/bin/sh
-# Fetches a package tarball from GitHub and extracts it to a destination.
+# Fetches a package tarball from GitHub and extracts it to DESTDIR.
 # Env:
-#   GITHUB_REPO  : owner/repo (default: Hacklab1-hh/openwrt-ha-vrrp)
-#   SRC_REF      : tag/branch/commit (default: main or VERSION if provided)
-#   VERSION      : version string used to choose SRC_REF if set
-#   DESTDIR      : extraction destination (required)
-#   CURL_OPTS    : extra curl options (optional)
-#   WGET_OPTS    : extra wget options (optional)
+#   GITHUB_REPO : owner/repo (default: Hacklab1-hh/openwrt-ha-vrrp)
+#   SRC_REF     : tag/branch/commit (default: main or VERSION if provided)
+#   VERSION     : version string used to choose SRC_REF if set
+#   DESTDIR     : extraction destination (required)
+#   CURL_OPTS   : extra curl options (optional)
+#   WGET_OPTS   : extra wget options (optional)
 
 set -eu
 . "$(dirname -- "$0")/common.sh"
@@ -29,8 +29,9 @@ URL_HEAD="https://codeload.github.com/${REPO}/tar.gz/refs/heads/${REF}"
 
 download_and_extract() {
   local url="$1"
-  local tmp="$(mktemp -d)"
-  local tgz="$tmp/pkg.tgz"
+  local tmp tgz top
+  tmp="$(mktemp -d)"
+  tgz="$tmp/pkg.tgz"
   if command -v curl >/dev/null 2>&1; then
     curl -fsSL ${CURL_OPTS:-} -o "$tgz" "$url" || return 1
   elif command -v wget >/dev/null 2>&1; then
