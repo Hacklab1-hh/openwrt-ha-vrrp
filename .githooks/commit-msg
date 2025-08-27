@@ -1,0 +1,16 @@
+#!/bin/sh
+# .githooks/commit-msg — ensure docs/releases/current/current.md is updated if code changed
+set -eu
+# Determine staged file list (from index)
+CHANGED="$(git diff --cached --name-only || true)"
+
+needs_current=0
+echo "$CHANGED" | grep -E '^(ha-vrrp/|files/|usr/|etc/|scripts/|luci-ha-vrrp/)' >/dev/null && needs_current=1
+
+if [ "$needs_current" -eq 1 ]; then
+  echo "$CHANGED" | grep -E '^docs/releases/current/current\.md$' >/dev/null || {
+    echo "[hook] Please update docs/releases/current/current.md to reflect your changes." >&2
+    exit 1
+  }
+fi
+exit 0

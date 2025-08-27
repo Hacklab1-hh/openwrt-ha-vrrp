@@ -432,3 +432,10 @@ Build in OpenWrt SDK:
 - GitHub-Fetch: via scripts/tools/fetch_from_github.sh (Tag/Branch/Commit).
 - Upgrade-Runner (leicht): scripts/tools/upgradepath-runner.sh.
 - Docs: Versionierte Dateien unter architecture/0.5.16-007/ und concepts/0.5.16-007/.
+
+
+## Git Hooks
+Set Hooks-Pfad:
+```bash
+git config core.hooksPath .githooks
+```
