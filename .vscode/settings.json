@@ -1,0 +1,23 @@
+{
+  "git.autofetch": false,
+  "git.autorefresh": false,
+  "git.pruneOnFetch": true,
+  "git.repositoryScanMaxDepth": 1,
+  "git.detectSubmodules": false,
+  "git.openRepositoryInParentFolders": "never",
+
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    "**/usr/**": true,
+    "**/legacy-ur-archive/**": true,
+    "**/scripts/_old/**": true
+  },
+  "search.exclude": {
+    "**/.git": true,
+    "**/usr/**": true,
+    "**/legacy-ur-archive/**": true,
+    "**/scripts/_old/**": true
+  }
+}
