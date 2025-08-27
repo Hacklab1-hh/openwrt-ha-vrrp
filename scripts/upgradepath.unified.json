@@ -1076,4 +1076,32 @@
       "uci_unset": []
     }
   }
+  , {
+    "version": "0.5.16-007_reviewfix17",
+    "parent": "0.5.16-007_reviewfix16_featurefix5_fix2",
+    "series": "0.5",
+    "released": "",
+    "stability": "stable",
+    "tags": [
+      "reviewfix"
+    ],
+    "summary": "Modular UI, cross-platform sync scripts, JSON status API, helpers",
+    "fixline": "Modular UI, cross-platform sync scripts, JSON status API, helpers",
+    "patch_name": "007_reviewfix17",
+    "notes": "Added modular UI, cross-platform sync scripts, JSON status API, helpers; version bump to reviwefix17.",
+    "changelog": "",
+    "changes": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_defaults_set": [],
+      "remove_paths": [],
+      "breaking": false,
+      "deprecations": []
+    },
+    "rollback": {
+      "file_moves": [],
+      "uci_renames": [],
+      "uci_unset": []
+    }
+  }
 ]

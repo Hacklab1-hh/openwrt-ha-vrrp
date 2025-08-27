@@ -1,0 +1,27 @@
+# Architecture History
+## 0.5.16-007_reviwefix17
+
+# Architektur‑Notizen reviwefix17
+
+In der Version **0.5.16‑007_reviwefix17** wurde die Architektur des HA‑VRRP‑Add‑ons wie folgt erweitert:
+
+- **Schichtenmodell für die UI**: Die LuCI‑Oberfläche besteht aus Controller, Modell (CBI) und Views.  Für jede Funktionalität (Übersicht, Status, Allgemein, Peers & Sync, Backup/Restore, Erweitert) gibt es einen eigenen View‑ und Modell‑Layer.  Der Controller registriert zusätzlich den JSON‑Status‑Endpunkt `status_json`.
+- **Helper‑Skripte**: Ein neuer Satz von Helpers (`helper_update_version_tags.sh`, `helper_sync_docs.sh`, `helper_smoketests.sh`, `helper_build_package.sh`) automatisiert die Pflege der Dokumente und den Release‑Prozess.  Diese Scripts werden aus den Manager‑Skripten (Installer, Uninstaller, Migration) aufgerufen.
+- **Status‑API**: Über einen neuen CGI‑Handler (`/cgi‑bin/ha‑vrrp‑status`) sowie eine LuCI‑Action wird der Betriebszustand als JSON ausgegeben.  Der Status liest die aktuelle Version (`/etc/ha‑vrrp/version`), prüft den Keepalived‑Prozess und den letzten Migrationszustand (`/etc/ha‑vrrp/state.json`).
+- **Synchronisationsschicht**: Die Sync‑Skripte laden ZIP‑Archive von GitHub und entpacken sie auf dem lokalen System, sodass `current` immer auf den aktuell installierten Stand zeigt.  Dadurch wird der Einsatz ohne installiertes `git` und in Offline‑Umgebungen unterstützt.
+- **Migrationsframework**: Die unified Upgrade‑Path‑Definition wurde um diese Version ergänzt.  Das zugehörige Migration‑Skript dokumentiert das Update, erstellt ein Backup und setzt die neue Version.
+
+Diese Änderungen festigen die modulare Architektur des Projekts, erleichtern die Wartung und ermöglichen eine nahtlose Integration in andere Systeme.
+## 0.5.16-007_reviewfix17
+
+# Architektur‑Notizen reviewfix17
+
+In der Version **0.5.16‑007_reviewfix17** wurde die Architektur des HA‑VRRP‑Add‑ons wie folgt erweitert:
+
+- **Schichtenmodell für die UI**: Die LuCI‑Oberfläche besteht aus Controller, Modell (CBI) und Views.  Für jede Funktionalität (Übersicht, Status, Allgemein, Peers & Sync, Backup/Restore, Erweitert) gibt es einen eigenen View‑ und Modell‑Layer.  Der Controller registriert zusätzlich den JSON‑Status‑Endpunkt `status_json`.
+- **Helper‑Skripte**: Ein neuer Satz von Helpers (`helper_update_version_tags.sh`, `helper_sync_docs.sh`, `helper_smoketests.sh`, `helper_build_package.sh`) automatisiert die Pflege der Dokumente und den Release‑Prozess.  Diese Scripts werden aus den Manager‑Skripten (Installer, Uninstaller, Migration) aufgerufen.
+- **Status‑API**: Über einen neuen CGI‑Handler (`/cgi‑bin/ha‑vrrp‑status`) sowie eine LuCI‑Action wird der Betriebszustand als JSON ausgegeben.  Der Status liest die aktuelle Version (`/etc/ha‑vrrp/version`), prüft den Keepalived‑Prozess und den letzten Migrationszustand (`/etc/ha‑vrrp/state.json`).
+- **Synchronisationsschicht**: Die Sync‑Skripte laden ZIP‑Archive von GitHub und entpacken sie auf dem lokalen System, sodass `current` immer auf den aktuell installierten Stand zeigt.  Dadurch wird der Einsatz ohne installiertes `git` und in Offline‑Umgebungen unterstützt.
+- **Migrationsframework**: Die unified Upgrade‑Path‑Definition wurde um diese Version ergänzt.  Das zugehörige Migration‑Skript dokumentiert das Update, erstellt ein Backup und setzt die neue Version.
+
+Diese Änderungen festigen die modulare Architektur des Projekts, erleichtern die Wartung und ermöglichen eine nahtlose Integration in andere Systeme.
