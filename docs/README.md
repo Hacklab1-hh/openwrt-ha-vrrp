@@ -426,3 +426,7 @@ Build in OpenWrt SDK:
 
 ## v0.5.12
 - Fix: LuCI-Controller Quoting/Syntax korrigiert (kein ccache/dispatcher-Error mehr).
+
+## Release 0.5.16-007_reviewfix15a
+- Installer/Uninstaller: GitHub-Fetch-Logik aktiv (Tag/Branch/Commit via SRC_REF/VERSION).
+- Docs: Versionierte Dateien unter `architecture/0.5.16-007/` und `concepts/0.5.16-007/`.
