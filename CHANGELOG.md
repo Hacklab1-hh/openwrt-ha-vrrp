@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## 0.5.16-007_reviewfix17_a4.md
+
+## 0.5.16‑007_reviewfix17_a4
+
+Die Version **0.5.16‑007_reviewfix17_a4** ergänzt das Projekt um ein konfigurierbares Preset‑System, das zwischen Dev‑ und Node‑Umgebungen unterscheidet, und dokumentiert die unterstützten OpenWrt‑Versionen für Mango (GL‑MT300N‑V2), Lamobo R1 und x86.  Die wichtigsten Änderungen sind:
+
+- **Preset‑System**: Die neue Datei `config/presets.json` definiert Basispfade, Downloadordner, IPK‑Repositories und Arbeitsverzeichnisse für `dev` (Linux/Windows) und `node` (OpenWrt).  Sie enthält außerdem Geräteprofile mit empfohlenen OpenWrt‑Versionen und Upgrade‑Hinweisen【92603978916730†L320-L322】【633554760445073†L148-L156】【878966515062870†L23-L27】.
+- **Versionssprung‑Workflow**: Das Workflow‑System beschreibt nun, wie ein Versionssprung durchgeführt wird: Versionsbump, Aktualisierung der Tags in den Dokumenten via `helper_update_version_tags.sh` und Neuerzeugung der zentralen MD‑Dateien über `helper_sync_docs.sh`.
+- **Aktualisierte Architektur‑ und Konzept‑Dokumente**: Die Teilfassungen `docs/architecture/0.5.16-007_reviewfix17_a4.md` und `docs/concepts/0.5.16-007_reviewfix17_a4.md` dokumentieren das Preset‑System, die neuen Arbeitsordner und die Gerätespezifischen OpenWrt‑Versionen.  Zusätzlich wurden die zentralen Architektur‑ und Konzept‑Dokumente für Installer und Migration um Hinweise auf das Preset‑System ergänzt.
+- **Pfadhandhabung in Skripten**: `common.sh` und der Installer berücksichtigen nun das Preset beim Ableiten der Zielpfade.  Ein Helper‑Skript verschiebt im Dev‑Modus heruntergeladene Artefakte in das lokale Repo (`_workspace/vrrp-repo`) und ermöglicht den Transfer per `scp` auf Nodes.
+
+Diese Version verbessert die Flexibilität des Add‑ons in unterschiedlichen Umgebungen und erleichtert zukünftige Upgrades für spezifische Hardware.
 ## 0.5.16-007_reviewfix17_a3.md
 
 ## 0.5.16‑007_reviewfix17_a3

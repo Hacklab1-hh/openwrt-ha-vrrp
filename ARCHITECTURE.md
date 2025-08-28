@@ -13,6 +13,25 @@ In der Version **0.5.16‑007_reviwefix17** wurde die Architektur des HA‑VRRP�
 - **Migrationsframework**: Die unified Upgrade‑Path‑Definition wurde um diese Version ergänzt.  Das zugehörige Migration‑Skript dokumentiert das Update, erstellt ein Backup und setzt die neue Version.
 
 Diese Änderungen festigen die modulare Architektur des Projekts, erleichtern die Wartung und ermöglichen eine nahtlose Integration in andere Systeme.
+## 0.5.16-007_reviewfix17_a4.md
+
+# Architektur‑Notizen reviewfix17_a4
+
+Die Version **0.5.16‑007_reviewfix17_a4** erweitert die bestehende Architektur um ein konfigurierbares Preset‑System und berücksichtigt unterschiedliche Basispfade für Entwicklungsumgebungen und produktive Nodes.  Außerdem beschreibt sie den Workflow für Versionssprünge, damit die Basisdateien mit den Helpern korrekt erstellt werden.
+
+## Neues Preset‑System
+
+- **Konfigurationsdatei `config/presets.json`**: In dieser Datei werden **Pre‑Sets für `dev` und `node`** definiert.  Jedes Preset beschreibt Basisverzeichnisse, Repository‑Pfade und Arbeitsordner, sowohl für Linux als auch für Windows (im Entwicklungsmodus) oder für OpenWrt‑Umgebungen (im Node‑Modus).  Dadurch kann der Installer das passende Layout wählen und ist in der Lage, Artefakte wie Tarball‑Archive oder IPK‑Pakete in die korrekten Verzeichnisse zu kopieren.  Das Dev‑Preset definiert zum Beispiel, dass sich der Workspace unter `~/Downloads` bzw. `%USERPROFILE%\Downloads` befindet und dass Archive in einen lokalen `_workspace/vrrp-repo` verschoben werden.  Das Node‑Preset legt fest, dass Installationen unter `/root/openwrt-ha-vrrp-current` stattfinden und Repositories nach `/root/openwrt-ha-vrrp-repo` kopiert werden.
+- **Unterstützte OpenWrt‑Versionen**: Innerhalb derselben Datei werden als Referenz die aktuell unterstützten OpenWrt‑Versionen pro Gerät hinterlegt.  Für das Mango/GL‑MT300N‑V2 wird OpenWrt 22.03.4 als aktuelle Version ausgewiesen【92603978916730†L320-L322】.  Für Lamobo R1 gibt es keinen Migrationspfad von 19.07 auf 22.03【633554760445073†L148-L156】.  Für generische x86‑Geräte können Upgrades via sysupgrade von 21.02 über 22.03 auf 23.05 durchgeführt werden【878966515062870†L23-L27】.  Diese Angaben dienen dazu, im Installer optionale Upgrades vorzuschlagen oder kompatible Firmware zu ermitteln.
+- **Arbeitsordner `current`**: Im Dev‑Preset ist der aktuelle Arbeitsordner immer das Verzeichnis, aus dem der Installer ausgeführt wird.  Im Node‑Preset wird hingegen in `/root/openwrt-ha-vrrp-current` gearbeitet; dort liegen auch die generierten Konfigurationsdateien und Symlinks.
+
+## Workflow bei Versionssprüngen
+
+- **Basisdateien aktualisieren**: Bei jedem Versionssprung wird das Helper‑Skript `helper_update_version_tags.sh` ausgeführt.  Es aktualisiert den Versions‑Header in zentralen Dateien (`README.md`, `CHANGELOG.md`, `ARCHITECTURE.md`, `CONCEPTS.md`, `FEATURES.md`, `KNOWN_ISSUES.md`) und entfernt alte Fix‑Suffixe.  Anschließend ruft `helper_sync_docs.sh` den Aggregator `gen-base-md.sh` auf, der anhand der Konfiguration in `config/doc_aggregation.json` die zentralen Dateien neu generiert (entweder werden Teilfassungen angehängt oder ausschließlich die neueste Fassung verwendet).
+- **Pflege des Upgrade‑Pfads**: Für jede neue Version wird in `config/upgradepath.unified.json` ein neues Element ergänzt, das die Vorgängerversion, das zugehörige Archiv und optional ein Migrationsskript benennt.  Bei `a4` wird beispielsweise eine Zeile mit der Version `0.5.16-007_reviewfix17_a4` hinzugefügt, die auf `0.5.16-007_reviewfix17_a3` verweist.  Tools wie `run_migrations.sh` können damit die korrekte Reihenfolge der Migrationsskripte ermitteln.
+- **Auswahl des Presets**: Der Installer liest `presets.json` und entscheidet anhand der Umgebung (OpenWrt vs. Desktop) und der Nutzereingaben, welches Preset zur Anwendung kommt.  Dadurch sind weitere Anpassungen – etwa andere Basispfade oder zusätzliche Pakete – zentral konfigurierbar und müssen nicht in den Shell‑Skripten selbst geändert werden.
+
+Diese Erweiterungen sorgen dafür, dass das Add‑on sich sowohl in der Entwicklungsumgebung als auch im produktiven Einsatz flexibel anpassen lässt.  Der Versionssprung‑Workflow bleibt reproduzierbar und stellt sicher, dass neue Versionen korrekt integriert werden.
 ## 0.5.16-007_reviewfix17_a3.md
 
 # Architektur‑Notizen reviewfix17_a3

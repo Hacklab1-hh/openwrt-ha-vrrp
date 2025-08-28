@@ -1,0 +1,70 @@
+{
+  "presets": {
+    "dev": {
+      "description": "Entwicklungsumgebung (Linux/Windows). Alle Pfade relativ zum Benutzer‑Workspace.",
+      "base_paths": {
+        "linux": {
+          "current_dir": "${workspace}/openwrt-ha-vrrp-current",
+          "repo_dir": "${workspace}/vrrp-repo",
+          "ipk_repo_dir": "${workspace}/vrrp-ipk-repo"
+        },
+        "windows": {
+          "current_dir": "%USERPROFILE%\\_workspace\\openwrt-ha-vrrp-current",
+          "repo_dir": "%USERPROFILE%\\_workspace\\vrrp-repo",
+          "ipk_repo_dir": "%USERPROFILE%\\_workspace\\vrrp-ipk-repo"
+        }
+      },
+      "download_dir": {
+        "linux": "${HOME}/Downloads",
+        "windows": "%USERPROFILE%\\Downloads"
+      },
+      "description_current": "Im Dev‑Modus ist der aktuelle Arbeitsordner immer der Ort, aus dem der Installer ausgeführt wird.",
+      "scp_instructions": [
+        "scp <source>\\vrrp-repo\\openwrt-ha-vrrp-*.*.*.(tar.gz|tar|zip) <NODE>:/root/vrrp-repo/",
+        "scp <source>\\vrrp-ipk-repo\\ha-vrrp_*-1_all.ipk <NODE>:/root/vrrp-ipk-repo/"
+      ]
+    },
+    "node": {
+      "description": "Produktivumgebung (OpenWrt). Pfade relativ zum Router-Dateisystem.",
+      "base_paths": {
+        "openwrt": {
+          "current_dir": "/root/openwrt-ha-vrrp-current",
+          "repo_dir": "/root/openwrt-ha-vrrp-repo",
+          "ipk_repo_dir": "/root/vrrp-ipk-repo"
+        }
+      },
+      "download_dir": {},
+      "description_current": "Im Node‑Modus wird in /root/openwrt-ha-vrrp-current gearbeitet."
+    }
+  },
+  "device_profiles": {
+    "glinet_mango": {
+      "device_name": "GL.iNet GL‑MT300N‑V2 (Mango)",
+      "supported_openwrt_versions": [
+        "19.07",
+        "21.02",
+        "22.03"
+      ],
+      "recommended_version": "22.03.4",
+      "upgrade_notes": "Sysupgrade auf 22.03.x ist möglich; Device nutzt 22.03.4 laut Firmware‑Versionstabelle von GL.iNet【92603978916730†L320-L322】."
+    },
+    "lamobo_r1": {
+      "device_name": "Banana Pi Lamobo R1",
+      "supported_openwrt_versions": [
+        "19.07",
+        "21.02",
+        "22.03"
+      ],
+      "upgrade_notes": "Kein Migrationspfad von 19.07 zu 22.03 – aufgrund der Umstellung von swconfig auf DSA【633554760445073†L148-L156】; Neuinstallation erforderlich."
+    },
+    "x86_generic": {
+      "device_name": "x86/64 (PC/VM/server)",
+      "supported_openwrt_versions": [
+        "21.02",
+        "22.03",
+        "23.05"
+      ],
+      "upgrade_notes": "Upgrades von 21.02 über 22.03 zu 23.05 via sysupgrade sind allgemein unterstützt; Backup der Konfiguration und Pakete empfohlen【878966515062870†L23-L27】."
+    }
+  }
+}
