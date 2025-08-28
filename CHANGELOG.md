@@ -1,5 +1,18 @@
 # CHANGELOG
 
+## 0.5.16-007_reviewfix17_a4_fix1.md
+
+## 0.5.16‑007_reviewfix17_a4_fix1
+
+Diese Version **0.5.16‑007_reviewfix17_a4_fix1** ist ein kleiner Wartungs‑Release.  Sie übernimmt alle Architektur‑ und Konzeptdokumente aus der Vorgängerversion *reviewfix17_a4* und hebt lediglich die Versionsnummer an.  Es wurden keine neuen Funktionen eingeführt.
+
+Wesentliche Punkte:
+
+- **Versionsbump**: Erhöhung der Versionsnummer auf `0.5.16‑007_reviewfix17_a4_fix1` in `VERSION` und allen zentralen Dokumenten.
+- **Übernahme der Architektur‑Dokumente**: Die in *a4* eingeführten Architektur‑ und Konzept‑Teilfassungen wurden unverändert übernommen und unter dem neuen Versionsnamen abgelegt (`docs/architecture/0.5.16-007_reviewfix17_a4_fix1.md`, `docs/concepts/0.5.16-007_reviewfix17_a4_fix1.md`).  Dadurch bleiben das Preset‑System und der Versionssprung‑Workflow vollständig dokumentiert.
+- **Kein Migrationsbedarf**: Es wird kein zusätzliches Migrationsskript benötigt, da keine strukturellen oder funktionalen Änderungen vorgenommen wurden.
+
+Dieser Fix‑Release dient der Konsistenz der Versionierung und der fortlaufenden Dokumentation.
 ## 0.5.16-007_reviewfix17_a4.md
 
 ## 0.5.16‑007_reviewfix17_a4
