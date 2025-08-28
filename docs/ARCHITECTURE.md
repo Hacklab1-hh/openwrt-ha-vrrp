@@ -100,6 +100,27 @@ Die bereits in *a4* und *a4_fix1* beschriebenen Abläufe gelten weiterhin:
 - **Konfigurationsprofile nutzen:** Der Installer liest weiterhin `config/presets.json` aus, um abhängig vom Zielsystem (Dev oder Node) die korrekten Pfade und Arbeitsverzeichnisse zu wählen.  Darüber hinaus enthalten die Geräteprofile die aktuell unterstützten OpenWrt‑Versionen für Mango/GL‑MT300N‑V2, Lamobo R1 und x86【92603978916730†L320-L322】【633554760445073†L148-L156】【878966515062870†L23-L27】.
 
 Diese Teilfassung fügt somit vor allem das Manager‑Skript und die Konsolidierung der Readme‑Dateien hinzu.  Sie stellt sicher, dass die bestehende Architektur mit ihren Presets, Pfaden und Upgrade‑Workflows auch nach dem Versionssprung konsistent bleibt.
+## 0.5.16-007_reviewfix17_a4_fix3.md
+
+# Architektur‑Notizen reviewfix17_a4_fix3
+
+Die Version **0.5.16‑007_reviewfix17_a4_fix3** erweitert das vorhandene System um komfortable Hilfsskripte zum Lesen und Pflegen der Dokumentation.  Gleichzeitig bleiben alle in den Vorgängerversionen eingeführten Konzepte – wie das Preset‑System, die Geräteprofile und der versionierte Upgrade‑Workflow – bestehen.  Im Fokus dieses Fix‑Releases stehen die CLI‑Werkzeuge, die Entwickler:innen und Anwender:innen direkten Zugriff auf die versionsspezifischen Readme‑ und Hilfedateien ermöglichen.
+
+## Neue CLI‑Werkzeuge
+
+- **scripts/readme.sh**: Dieses Skript zeigt den Inhalt der README‑Teilfassung für die aktuelle oder eine angegebene Version an.  Wird kein Parameter übergeben, liest es die aktuelle Version aus der Datei `VERSION` und gibt die entsprechende Datei aus `docs/readmes/` aus.  Über einen Parameter kann ein beliebiger Versionsstring, der Name eines Tarballs (`openwrt-ha-vrrp-<version>.tar.gz`), eines IPK‑Pakets (`ha-vrrp_<version>-*.ipk`) oder ein Commit‑Tag übergeben werden; das Skript extrahiert daraus den Versionsanteil und gibt das passende Readme aus.
+- **scripts/help.sh**: Dieses Hilfeskript beschreibt die Nutzung der wichtigsten Helfer des Projekts.  Es listet die Parameter für `manage_docs.sh` sowie die Verwendung von `readme.sh` auf und dient als Einstiegspunkt für neue Entwickler:innen.
+
+## Integration mit dem Dokumentationsworkflow
+
+Die neuen Skripte bauen auf dem bestehenden Dokumentationsworkflow auf:
+
+- **Versionsspezifische Readmes**: Alle README‑Teildokumente werden im Ordner `docs/readmes` verwaltet.  `readme.sh` findet anhand des Versionsstrings die entsprechende Datei.  Für alte oder manuelle Entwürfe gibt es zusätzlich das Archivverzeichnis `docs/readmeas`.
+- **Manage‑Docs‑Skript**: Mit `manage_docs.sh` lassen sich weiterhin Einträge zu den Teilfassungen hinzufügen und – per `--new-version` – neue Releases finalisieren.  Nach einem Versionsbump aktualisieren die Helper‑Skripte (`helper_update_version_tags.sh`, `helper_sync_docs.sh` und `gen-base-md.sh`) automatisch die zentralen Dokumente und die History.
+
+## Upgradepfad
+
+Wie alle Releases fügt auch **a4_fix3** einen neuen Eintrag in `config/upgradepath.unified.json` hinzu.  Der Eintrag verweist auf den Vorgänger `a4_fix2` als `parent` und benennt das zugehörige Archiv.  Das Migrationsskript (`migrate-to-0.5.16-007_reviewfix17_a4_fix3.sh`) bleibt eine leere Hülle, da dieses Release keine funktionalen Änderungen am Runtime‑Verhalten vornimmt.
 ## 0.5.16-007_reviwefix17.md
 
 # Architektur‑Notizen reviwefix17

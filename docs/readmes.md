@@ -527,3 +527,25 @@ Bitte beachten Sie den ausführlichen Changelog in `docs/changelogs/0.5.16-007_r
 ## Installation / Uninstallation / Build
 
 Die Installations- und Uninstallationsscripte bleiben unverändert gegenüber der Vorversion.  Entwickler:innen können das neue Manager‑Skript nutzen, um neue Releases zu erstellen und die Dokumentation zu aktualisieren.  Der reguläre Build‑Prozess via `helper_build_package.sh` erzeugt weiterhin das Pakettarball in `dist/`.
+## 0.5.16-007_reviewfix17_a4_fix3.md
+
+# openwrt-ha-vrrp – Release Notes – v0.5.16‑007_reviewfix17_a4_fix3
+
+**Datum:** 2025‑08‑28
+
+## Features
+
+Diese Version führt zwei kleine CLI‑Werkzeuge ein:
+
+* **scripts/readme.sh** – Ein Helferskript, das die README‑Teilfassung der aktuellen oder einer angegebenen Version auf der Kommandozeile ausgibt.  Es erkennt sowohl reine Versionsbezeichnungen als auch Paket‑ oder IPK‑Dateinamen und extrahiert den Versionsstring automatisch.
+* **scripts/help.sh** – Eine kurze Übersicht über die wichtigsten Werkzeuge des Projekts, insbesondere wie `manage_docs.sh` und `readme.sh` verwendet werden.
+
+## Changelog
+
+Die vollständige Liste der Änderungen finden Sie in `docs/changelogs/0.5.16-007_reviewfix17_a4_fix3.md`.
+
+## Installation / Uninstallation / Build
+
+Es gibt keine Änderungen an den Installations- oder Uninstallationsscripten gegenüber der Vorversion.  Entwickler:innen können `manage_docs.sh` nutzen, um weitere Einträge hinzuzufügen und neue Versionen zu erstellen.  Für den Build‑Prozess wird weiterhin `helper_build_package.sh` verwendet.
+
+

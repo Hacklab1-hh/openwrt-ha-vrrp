@@ -298,3 +298,22 @@ Diese Wartungsversion erweitert **reviewfix17_a4_fix1** um ein zentrales Manager
 ## Hinweise
 
 Es handelt sich um einen rein dokumentationsbezogenen Release.  Die laufenden Installer‑, Uninstaller‑ und UI‑Komponenten bleiben unverändert.  Anwender:innen, die **reviewfix17_a4_fix1** nutzen, müssen keine zusätzlichen Schritte durchführen, außer ggf. das neue Manager‑Skript zur Pflege eigener Notizen zu nutzen.  Für Entwickler:innen empfiehlt es sich, die neuen Readme‑Verzeichnisse zu berücksichtigen und im Zuge weiterer Versionen regelmäßig die Teilfassungen zu aktualisieren.
+## 0.5.16-007_reviewfix17_a4_fix3.md
+
+# Changelog – 0.5.16‑007_reviewfix17_a4_fix3
+
+## Zusammenfassung
+
+Dieses Release ist ein kleines Wartungsupdate, das die Entwickler:innen‑Werkzeuge erweitert.  Es führt neue CLI‑Skripte ein, mit denen die README‑Dateien versionsspezifisch ausgegeben werden können, und ergänzt ein zentrales Hilfeskript mit einer Übersicht der vorhandenen Werkzeuge.  Die eigentlichen Funktionen des Add‑ons bleiben unverändert.
+
+## Änderungen
+
+- **Neue CLI‑Skripte**
+  - `scripts/readme.sh`: Gibt die README‑Teilfassung für die aktuelle oder eine angegebene Version auf der Kommandozeile aus.  Erkennt Versionsnummern in Paketnamen (Tarballs, Zip‑ oder IPK‑Dateien) und Commit‑Tags.
+  - `scripts/help.sh`: Zeigt eine Kurzübersicht aller wichtigen Helfer im Projekt an, inklusive der Parameter für `manage_docs.sh` und der Nutzung von `readme.sh`.
+- **Neue Teilfassungen**: Für Architektur und Konzepte gibt es neue Dateien, die die oben genannten Erweiterungen beschreiben.
+- **Upgradepfad**: `config/upgradepath.unified.json` wurde um einen Eintrag für diese Version erweitert; das zugehörige Migrationsskript ist leer, da keine Laufzeitänderungen vorgenommen wurden.
+
+## Hinweise
+
+Dieses Release richtet sich vor allem an Entwickler:innen, die das Repository bearbeiten.  Es werden keine neuen Funktionen im Add‑on selbst eingeführt.  Die vorherigen Upgrade‑ und Preset‑Konzepte bleiben gültig.

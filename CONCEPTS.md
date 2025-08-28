@@ -13,6 +13,23 @@ Diese Version konzentriert sich auf die Verbesserung der Bedienoberfläche und d
 - **Helper‑Workflows**: Skripte zur Versions‑Normalisierung, zur Pflege der Konzept‑/Architektur‑Dokumente und zur Paketgenerierung sorgen dafür, dass die Dateien `CONCEPTS.md` und `ARCHITECTURE.md` stets den aktuellen Gesamtstand widerspiegeln, während versionsspezifische Teilfassungen im Ordner `docs/concepts` erhalten bleiben.
 
 Diese Konzepte bilden die Grundlage für die fortlaufende Entwicklung des Add‑ons und bereiten den Weg für zukünftige Integrationen.
+## 0.5.16-007_reviewfix17_a4_fix3.md
+
+# Konzepte reviewfix17_a4_fix3
+
+Diese Teilfassung dokumentiert die Ergänzungen im Rahmen des Fix‑Releases **reviewfix17_a4_fix3**.  Die Architektur des Add‑ons bleibt unverändert; vielmehr werden neue Hilfsskripte eingeführt, um die Dokumentation komfortabler lesen und pflegen zu können.
+
+## Readme anzeigen per CLI
+
+Mit `scripts/readme.sh` steht nun ein kleines Tool zur Verfügung, das die README‑Teilfassung einer bestimmten Version direkt in der Konsole ausgibt.  Ohne Parameter liest es die aktuelle Version aus der `VERSION`‑Datei und gibt `docs/readmes/<version>.md` aus.  Wird ein Parameter übergeben, versucht das Skript, daraus einen Versionsstring zu extrahieren:  Es erkennt Paketnamen (Tar‑/Zip‑Archive und IPK‑Pakete) ebenso wie reine Versions‑ oder Commit‑Bezeichnungen.  Anschließend sucht es nach einer Datei gleichen Namens in `docs/readmes` oder `docs/readmeas`.
+
+## Help‑Skript
+
+Das neue `scripts/help.sh` fasst die wichtigsten Befehle und Skripte zusammen.  Es dient als Einstiegspunkt und verweist insbesondere auf die Nutzung von `manage_docs.sh` zum Hinzufügen von Einträgen sowie die neuen CLI‑Tools zum Lesen der Dokumente.
+
+## Dokumentationspflege und Versionssprünge
+
+Die Konzepte aus den vorherigen Versionen bleiben gültig: Das Preset‑System definiert Umgebungsprofile, Gerätedaten werden in `presets.json` gepflegt und `upgradepath.unified.json` hält die lineare Kette der Releases fest.  `manage_docs.sh` kann weiterhin dazu genutzt werden, Teilfassungen zu ergänzen und einen Versionssprung durchzuführen.  Die neuen Skripte erleichtern vor allem die Einsicht in bestehende Dokumente und erweitern damit die Werkzeuge des Entwicklungsframeworks.
 ## 0.5.16-007_reviewfix17_a4_fix2.md
 
 # Konzepte reviewfix17_a4_fix2

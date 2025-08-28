@@ -100,6 +100,23 @@ Die bisher im Verzeichnis `docs/Readme` liegenden Readme‑Dateien werden nach `
 Wie bereits in den vorherigen Versionen erläutert, basiert die Installation und Konfiguration auf den Preset‑Definitionen in `config/presets.json`.  Je nach Umgebung (`dev` oder `node`) werden unterschiedliche Arbeitsverzeichnisse und Basispfade gesetzt.  Gleichzeitig enthält die Datei Gerätedefinitionen mit dem jeweils empfohlenen OpenWrt‑Release: Mangos verwenden 22.03.4【92603978916730†L320-L322】, Lamobo R1 benötigt eine Neuinstallation, da kein Upgradepfad von 19.07 auf 22.03 existiert【633554760445073†L148-L156】, und für x86 sind Upgrades über 21.02 → 22.03 → 23.05 möglich【878966515062870†L23-L27】.
 
 In dieser Version werden keine neuen Kernkonzepte eingeführt.  Vielmehr wird das bisherige Modell um ein Skript zur leichteren Pflege von Dokumentationsdateien ergänzt und die Dateistruktur vereinheitlicht.  Die Migrationstools und Upgradepfade bleiben unverändert erhalten.
+## 0.5.16-007_reviewfix17_a4_fix3.md
+
+# Konzepte reviewfix17_a4_fix3
+
+Diese Teilfassung dokumentiert die Ergänzungen im Rahmen des Fix‑Releases **reviewfix17_a4_fix3**.  Die Architektur des Add‑ons bleibt unverändert; vielmehr werden neue Hilfsskripte eingeführt, um die Dokumentation komfortabler lesen und pflegen zu können.
+
+## Readme anzeigen per CLI
+
+Mit `scripts/readme.sh` steht nun ein kleines Tool zur Verfügung, das die README‑Teilfassung einer bestimmten Version direkt in der Konsole ausgibt.  Ohne Parameter liest es die aktuelle Version aus der `VERSION`‑Datei und gibt `docs/readmes/<version>.md` aus.  Wird ein Parameter übergeben, versucht das Skript, daraus einen Versionsstring zu extrahieren:  Es erkennt Paketnamen (Tar‑/Zip‑Archive und IPK‑Pakete) ebenso wie reine Versions‑ oder Commit‑Bezeichnungen.  Anschließend sucht es nach einer Datei gleichen Namens in `docs/readmes` oder `docs/readmeas`.
+
+## Help‑Skript
+
+Das neue `scripts/help.sh` fasst die wichtigsten Befehle und Skripte zusammen.  Es dient als Einstiegspunkt und verweist insbesondere auf die Nutzung von `manage_docs.sh` zum Hinzufügen von Einträgen sowie die neuen CLI‑Tools zum Lesen der Dokumente.
+
+## Dokumentationspflege und Versionssprünge
+
+Die Konzepte aus den vorherigen Versionen bleiben gültig: Das Preset‑System definiert Umgebungsprofile, Gerätedaten werden in `presets.json` gepflegt und `upgradepath.unified.json` hält die lineare Kette der Releases fest.  `manage_docs.sh` kann weiterhin dazu genutzt werden, Teilfassungen zu ergänzen und einen Versionssprung durchzuführen.  Die neuen Skripte erleichtern vor allem die Einsicht in bestehende Dokumente und erweitern damit die Werkzeuge des Entwicklungsframeworks.
 ## 0.5.16-007_reviwefix17.md
 
 # Konzepte reviwefix17
