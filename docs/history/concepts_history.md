@@ -25,3 +25,16 @@ Diese Teilfassung ergänzt die in Version *reviwefix17* beschriebenen Konzepte u
 - **Anpassungen in Helper‑Skripten**: Die Helper‑Skripte wurden erweitert, um das alte `docs/changelog` beim Packen auszuschließen und die neuen History‑Dateien (`concepts_history.md`, `architecture_history.md`) zu pflegen.
 
 Diese organisatorischen Konzepte verbessern den Release‑Prozess und stellen sicher, dass Dokumentation und Skripte konsistent bleiben, während sich die Kernfunktionen des Add‑ons weiterentwickeln.
+## 0.5.16-007_reviewfix17_a2
+
+# Konzepte reviewfix17_a2
+
+Diese Teilfassung erweitert die in *reviewfix17_a1* beschriebenen Konzepte um weitere organisatorische und strukturelle Verbesserungen.  Sie dient als Baustein für die vollständige Zusammenfassung in `CONCEPTS.md`.
+
+## Änderungen und Ergänzungen
+
+- **Versionsspezifische Basismaterialien**: README‑, Known‑Issues‑ und Feature‑Dateien werden nun analog zu den Changelogs pro Version gepflegt.  Alle Dateien sind in den Verzeichnissen `docs/readmes`, `docs/known-issues` und `docs/features` abgelegt und tragen ausschließlich den Versionsnamen.  Dadurch können Workflows diese Dateien automatisiert erkennen und verarbeiten.
+- **Zentrale Aggregation per Helper**: Mit dem neuen Skript `gen-base-md.sh` werden aus allen versionsspezifischen Dokumenten konsolidierte Gesamtübersichten erstellt.  Die Integration dieses Skripts in `helper_sync_docs.sh` und `helper_build_package.sh` stellt sicher, dass die aggregierten Dateien (z. B. `readmes.md`, `known-issues.md`, `features.md`) immer aktuell sind.
+- **Spezialisierte Architektur‑ und Konzept‑Dateien**: Für die Teilmodule Installer, Migration, UI und Uninstaller wurden eigenständige Konzept‑ und Architekturdateien erstellt.  Diese fassen die zentralen Ideen und Strukturen der jeweiligen Komponenten zusammen und dienen als Referenz für Entwickelnde.
+
+Diese organisatorischen Konzepte verbessern den Release‑Prozess und die Dokumentation, ohne die Kernfunktionalität des HA‑VRRP‑Add‑ons zu verändern.

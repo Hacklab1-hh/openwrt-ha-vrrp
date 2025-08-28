@@ -59,3 +59,6 @@ append_history "$docs/concepts/$VERSION.md" "$docs/history/concepts_history.md"
 append_history "$docs/architecture/$VERSION.md" "$docs/history/architecture_history.md"
 
 echo "[helper_sync_docs] Synced docs for $VERSION"
+
+# Rebuild aggregated overview files (CHANGELOG, FEATURES, ARCHITECTURE, CONCEPTS, README, KNOWN_ISSUES)
+sh "$root/scripts/gen-base-md.sh"
