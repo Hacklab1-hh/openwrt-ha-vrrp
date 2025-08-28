@@ -129,3 +129,80 @@ Das neue `scripts/help.sh` fasst die wichtigsten Befehle und Skripte zusammen.  
 ## Dokumentationspflege und Versionssprünge
 
 Die Konzepte aus den vorherigen Versionen bleiben gültig: Das Preset‑System definiert Umgebungsprofile, Gerätedaten werden in `presets.json` gepflegt und `upgradepath.unified.json` hält die lineare Kette der Releases fest.  `manage_docs.sh` kann weiterhin dazu genutzt werden, Teilfassungen zu ergänzen und einen Versionssprung durchzuführen.  Die neuen Skripte erleichtern vor allem die Einsicht in bestehende Dokumente und erweitern damit die Werkzeuge des Entwicklungsframeworks.
+## 0.5.16-007_reviewfix17_a4_fix4
+
+# Konzepte – 0.5.16‑007_reviewfix17_a4_fix4
+
+Diese Teilfassung ergänzt die bereits beschriebenen Konzepte um die
+Idee eines zentralen Workspace und die Verteilung von Artefakten
+auf mehrere Zielknoten.  Sie richtet sich vor allem an
+Entwickler:innen, die mehrere OpenWrt‑Router aus einem lokalen
+Arbeitsplatz heraus betreuen möchten.
+
+## Zentrales Workspace
+
+Im Dev‑Modus definieren wir das Verzeichnis `_workspace` unterhalb
+des Benutzer‑Home.  Hier werden alle temporären und persistenten
+Dateien abgelegt, die bei der Arbeit mit dem HA‑VRRP‑Addon anfallen.
+
+* **vrrp-repo** – Sammlung aller Release‑Archive.  Mit jeder neuen
+  Version wächst dieses Verzeichnis an und ermöglicht Offline‑
+  Installationen oder Upgrades, ohne erneut Dateien aus dem Netz
+  laden zu müssen.
+* **vrrp-ipk-repo** – Sammlung der IPK‑Pakete passend zu den Releases.
+
+Die neuen Helferskripte füllen diese Verzeichnisse automatisch.
+
+## Sammlung von Artefakten
+
+Das Skript `copy_downloads` (sowie sein PowerShell‑Pendant) liest
+Dateien aus dem Download‑Ordner und kopiert sie ins Workspace.  Es
+implementiert folgende Logik:
+
+1. Bestimme den Download‑Pfad: Standard ist `~/Downloads` (Linux) bzw.
+   `%USERPROFILE%\Downloads` (Windows), optional kann ein anderer Pfad
+   angegeben werden.
+2. Suche nach Dateien, die mit `openwrt-ha-vrrp-` beginnen und die
+   Endungen `.tar.gz`, `.tar` oder `.zip` besitzen.  Diese Dateien
+   werden als Release‑Archive erkannt.
+3. Suche nach Dateien, die mit `ha-vrrp_` beginnen und die
+   Endung `.ipk` besitzen.  Diese werden als Installationspakete
+   erkannt.
+4. Kopiere die gefundenen Dateien in die entsprechenden
+   Workspace‑Unterordner.  Vorhandene Dateien werden dabei
+   überschrieben, um sicherzustellen, dass stets die aktuellste
+   Version verfügbar ist.
+
+## Verteilung an Nodes
+
+Das Skript `upload_nodes` (bzw. `upload_nodes.ps1`) ermöglicht es,
+die lokal gespeicherten Artefakte auf mehrere Router zu verteilen.
+Die Idee dabei ist, dass alle Zielgeräte stets identische Pakete
+bereitgestellt bekommen.  Das Skript führt folgende Schritte aus:
+
+1. Für jeden angegebenen Knoten wird per SSH eine Verbindung
+   hergestellt und die Verzeichnisse `/root/vrrp-repo` sowie
+   `/root/vrrp-ipk-repo` werden erzeugt.
+2. Anschließend werden alle Dateien aus `_workspace/vrrp-repo` per
+   `scp` in das Zielverzeichnis `/root/vrrp-repo` kopiert.
+3. Danach werden alle Dateien aus `_workspace/vrrp-ipk-repo` per
+   `scp` in das Zielverzeichnis `/root/vrrp-ipk-repo` kopiert.
+
+Diese Vorgehensweise stellt sicher, dass jedes Node die gleichen
+Pakete erhält.  Die eigentliche Installation erfolgt weiterhin durch
+das Ausführen des Installers (`installer.sh`) auf dem Zielgerät.
+
+## Einheitliche CLI
+
+Um die Arbeit zu vereinfachen, wurden die Wrapper `script.sh`,
+`script.ps1` und `script.bat` um die neuen Subkommandos
+`copy_downloads` und `upload_nodes` erweitert.  Dadurch können
+Entwickler:innen mit einer konsistenten Syntax auf allen Plattformen
+arbeiten, ohne die internen Helferskripte direkt aufrufen zu müssen.
+
+Diese Konzepte ergänzen den bestehenden Dokumentationsbaukasten, in
+dem jede Version eigene Teilfassungen von Architektur und Konzept
+enthält.  Sie verdeutlichen die Trennung zwischen Code‑ und
+Datenebene: Das HA‑VRRP‑Addon selbst wird nach wie vor in `/usr/lib`
+installiert, während Pakete und Versionsarchive im Workspace
+gesammelt und verteilt werden.

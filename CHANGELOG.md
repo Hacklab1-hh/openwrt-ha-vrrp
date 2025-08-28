@@ -1,5 +1,64 @@
 # CHANGELOG
 
+## 0.5.16-007_reviewfix17_a4_fix4.md
+
+# Changelog – 0.5.16‑007_reviewfix17_a4_fix4
+
+**Datum:** 2025‑08‑28
+
+Diese Version erweitert das CLI‑Framework um zusätzliche
+Funktionen zur Verwaltung von heruntergeladenen Artefakten und deren
+Übertragung auf Zielknoten.  Die Neuerungen erleichtern es, im
+Entwicklungsmodus (Dev) heruntergeladene Pakete zu sammeln und
+anschließend auf mehrere Router (Nodes) zu verteilen.
+
+## Neue Funktionen
+
+* **dev-harvest.sh / dev-harvest.ps1** – Dieses neue Helferskript
+  (Alias `copy_downloads`) kopiert alle gefundenen Release‑Archive
+  (`openwrt‑ha‑vrrp-*`) sowie IPK‑Pakete (`ha‑vrrp_*.ipk`) aus dem
+  Download‑Verzeichnis in das lokale Workspace (`_workspace/vrrp-repo`
+  bzw. `_workspace/vrrp-ipk-repo`).  Das Download‑Verzeichnis kann als
+  Argument übergeben werden; ohne Argument wird standardmäßig
+  `~/Downloads` bzw. `%USERPROFILE%\Downloads` verwendet.
+
+* **dev-sync-nodes.sh / dev-sync-nodes.ps1** – Dieses Skript
+  (Alias `upload_nodes`) überträgt die lokal gespeicherten Archive
+  und IPK‑Pakete via `scp` auf eine oder mehrere entfernte Nodes.
+  Für jeden angegebenen Host werden die Zielverzeichnisse
+  `/root/vrrp-repo` und `/root/vrrp-ipk-repo` erzeugt und anschließend
+  alle Dateien hochgeladen.  Über den Parameter `--nodes` kann
+  ausgewählt werden, ob Node 1, Node 2 oder beide (`all`) synchronisiert
+  werden sollen.
+
+* **script.{sh,ps1,bat}** – Die Wrapper auf oberster Ebene wurden um die
+  neuen Typen `dev-harvest` und `dev-sync-nodes` erweitert.  Als Aliase
+  stehen weiterhin die Subkommandos `copy_downloads` und `upload_nodes`
+  zur Verfügung.  Auf diese Weise können die neuen Helferskripte auf
+  jedem unterstützten Betriebssystem mit identischer Syntax aufgerufen
+  werden, z. B.:
+
+  ```sh
+  ./script.sh --type dev-harvest --action run            # lädt Artefakte aus dem Standard‑Download‑Ordner
+  ./script.sh --type dev-harvest --action run            # identisch zu oben (Alias: copy_downloads)
+  ./script.sh --type dev-sync-nodes --action run --nodes all   # verteilt Pakete auf alle Nodes
+  ```
+
+## Weitere Anpassungen
+
+* `help.sh` dokumentiert nun die beiden neuen Werkzeuge.
+* Einträge für diese Version wurden der Upgrade‑Pfad‑Konfiguration
+  (`config/upgradepath.unified.json`) hinzugefügt.
+* Stub‑Migrationsskript `migrate-to-0.5.16-007_reviewfix17_a4_fix4.sh` zur
+  Wahrung der Migrationskette.
+
+## Hinweise
+
+Die neuen Skripte sind vor allem für Entwickler:innen gedacht, die
+mehrere Geräte gleichzeitig mit einer neuen Version versorgen möchten.
+Im Produktivbetrieb (Node-Modus) ändert sich dadurch nichts; die
+Installationsroutinen erkennen wie gehabt das aktuell installierte
+Paket.
 ## 0.5.16-007_reviewfix17_a4_fix3.md
 
 # Changelog – 0.5.16‑007_reviewfix17_a4_fix3

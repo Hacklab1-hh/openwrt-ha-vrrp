@@ -21,6 +21,17 @@ Projekts zu erleichtern:
                    Beispiel – README für ein Tar‑Archiv anzeigen:
                      scripts/readme.sh openwrt-ha-vrrp-0.5.16-007_reviewfix17_a4_fix2.tar.gz
 
+  copy_downloads (Alias) – Dieses Kommando ist weiterhin verfügbar und
+                    ruft intern `dev-harvest` auf.  Es kopiert heruntergeladene
+                    Archive (Tar, Zip) und IPK‑Pakete aus dem Download‑Verzeichnis in
+                    den lokalen _workspace.  Beispiel:
+                      ./script.sh copy_downloads
+
+  upload_nodes (Alias) – Alias für `dev-sync-nodes`.  Überträgt alle
+                    Archiv‑ und IPK‑Dateien aus dem lokalen _workspace auf
+                    entfernte Knoten via scp.  Beispiel:
+                      ./script.sh upload_nodes LamoboR1-1 LamoboR1-2
+
   helper_update_version_tags.sh
                    Aktualisiert die Versionsheader in zentralen Dateien und
                    entfernt Fix‑Suffixe.  Wird von helper_build_package.sh und
@@ -30,6 +41,16 @@ Projekts zu erleichtern:
                    Synchronisiert die aktuellen CONCEPTS und ARCHITECTURE mit
                    den History‑Dateien und ruft gen-base-md.sh zur Erstellung
                    der zentralen Übersichtsdateien auf.
+
+  dev-harvest      Sammelt heruntergeladene Release‑Archive und IPK‑Pakete
+                   aus dem Download‑Ordner in die lokalen Workspace‑
+                   Verzeichnisse. Aufruf:
+                     ./script.sh --type dev-harvest --action run
+
+  dev-sync-nodes   Lädt die gesammelten Dateien per scp auf definierte
+                   OpenWrt‑Nodes hoch. Optional kann mit --nodes 1|2|all
+                   angegeben werden, welcher Node adressiert wird. Aufruf:
+                     ./script.sh --type dev-sync-nodes --action run [--nodes all|1|2]
 
   gen-base-md.sh   Baut die aggregierten Dateien (CHANGELOG.md, FEATURES.md,
                    ARCHITECTURE.md, CONCEPTS.md, README.md, KNOWN_ISSUES.md)

@@ -133,3 +133,71 @@ Die neuen Skripte bauen auf dem bestehenden Dokumentationsworkflow auf:
 ## Upgradepfad
 
 Wie alle Releases fügt auch **a4_fix3** einen neuen Eintrag in `config/upgradepath.unified.json` hinzu.  Der Eintrag verweist auf den Vorgänger `a4_fix2` als `parent` und benennt das zugehörige Archiv.  Das Migrationsskript (`migrate-to-0.5.16-007_reviewfix17_a4_fix3.sh`) bleibt eine leere Hülle, da dieses Release keine funktionalen Änderungen am Runtime‑Verhalten vornimmt.
+## 0.5.16-007_reviewfix17_a4_fix4
+
+# Architektur – 0.5.16‑007_reviewfix17_a4_fix4
+
+Diese Teilfassung beschreibt die neuen Komponenten zur
+Download‑Synchronisation und Verteilung der Artefakte in der
+Version **0.5.16‑007_reviewfix17_a4_fix4**.  Sie ergänzt die bestehende
+Architektur (siehe Vorversionen) um eine datenzentrierte Sicht auf
+den Entwicklermodus.
+
+## Workspace‑Verzeichnisstruktur
+
+Im Dev‑Modus werden alle relevanten Dateien unter dem
+Benutzer‑Verzeichnis `_workspace` abgelegt.  Dieses Release
+definiert folgende Struktur:
+
+* **`_workspace/vrrp-repo`** – enthält alle heruntergeladenen
+  Release‑Archive (`openwrt-ha-vrrp-*.tar.gz`, `.tar`, `.zip`).
+* **`_workspace/vrrp-ipk-repo`** – enthält die zugehörigen
+  IPK‑Pakete (`ha-vrrp_*-all.ipk`).
+
+Diese Ordner werden von den neuen Skripten `copy_downloads`
+automatisch angelegt und gefüllt.
+
+## Kopier- und Verteilskripte
+
+### copy_downloads.sh / copy_downloads.ps1
+
+Diese Komponente durchsucht das Download‑Verzeichnis des Users
+(`~/Downloads` bzw. `%USERPROFILE%\Downloads`) sowie einen optional
+übergebenen Pfad nach Artefakten.  Gefundene Dateien werden in die
+oben genannten Workspace‑Ordner kopiert.  Hierdurch entsteht eine
+lokale Sammlung aller Versionen, die anschließend für Deployments
+verwendet werden kann.
+
+### upload_nodes.sh / upload_nodes.ps1
+
+Dieses Skript erwartet eine Liste von Zielknoten (z. B.
+`LamoboR1-1 LamoboR1-2`).  Für jeden Knoten werden via SSH die
+Zielverzeichnisse `/root/vrrp-repo` und `/root/vrrp-ipk-repo` angelegt.
+Anschließend überträgt das Skript alle Dateien aus dem lokalen
+Workspace in die jeweiligen Verzeichnisse.  Dadurch können mehrere
+Router synchron mit denselben Paketen versorgt werden.
+
+## Wrapper auf oberster Ebene
+
+Die Dateien `script.sh`, `script.ps1` und `script.bat` fungieren als
+einheitliche CLI‑Wrapper.  Sie leiten Unterkommandos an die jeweiligen
+Hilfsskripte weiter.  Mit diesem Release unterstützen die Wrapper die
+neuen Kommandos `copy_downloads` und `upload_nodes` neben den
+bestehenden (`manage_docs`, `readme`, `help`).
+
+## Integration in den Versionsworkflow
+
+Beim Erstellen eines neuen Releases kann ein Entwickler nun wie folgt
+vorgehen:
+
+1. **Pakete sammeln:** Mit `script.sh copy_downloads` die
+   zuletzt heruntergeladenen Release‑Artefakte und IPKs in das lokale
+   Workspace kopieren.
+2. **Nodes synchronisieren:** Die lokal gespeicherten Pakete mit
+   `script.sh upload_nodes <node1> <node2>` an die Router verteilen.
+3. **Installation:** Auf dem Router kann anschließend der Installer
+   ausgeführt werden, um das gewünschte Release einzuspielen.
+
+Diese Ergänzungen unterstützen den Workflow für Multi‑Node‑Setups,
+ohne die bestehende Architektur der Installation, Migration und
+Konfiguration zu verändern.

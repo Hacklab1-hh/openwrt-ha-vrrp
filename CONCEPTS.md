@@ -13,6 +13,94 @@ Diese Version konzentriert sich auf die Verbesserung der Bedienoberfläche und d
 - **Helper‑Workflows**: Skripte zur Versions‑Normalisierung, zur Pflege der Konzept‑/Architektur‑Dokumente und zur Paketgenerierung sorgen dafür, dass die Dateien `CONCEPTS.md` und `ARCHITECTURE.md` stets den aktuellen Gesamtstand widerspiegeln, während versionsspezifische Teilfassungen im Ordner `docs/concepts` erhalten bleiben.
 
 Diese Konzepte bilden die Grundlage für die fortlaufende Entwicklung des Add‑ons und bereiten den Weg für zukünftige Integrationen.
+## 0.5.16-007_reviewfix17_a4_fix4.md
+
+# Konzepte – 0.5.16‑007_reviewfix17_a4_fix4
+
+Diese Teilfassung ergänzt die bereits beschriebenen Konzepte um die
+Idee eines zentralen Workspace und die Verteilung von Artefakten
+auf mehrere Zielknoten.  Sie richtet sich vor allem an
+Entwickler:innen, die mehrere OpenWrt‑Router aus einem lokalen
+Arbeitsplatz heraus betreuen möchten.
+
+## Zentrales Workspace
+
+Im Dev‑Modus definieren wir das Verzeichnis `_workspace` unterhalb
+des Benutzer‑Home.  Hier werden alle temporären und persistenten
+Dateien abgelegt, die bei der Arbeit mit dem HA‑VRRP‑Addon anfallen.
+
+* **vrrp-repo** – Sammlung aller Release‑Archive.  Mit jeder neuen
+  Version wächst dieses Verzeichnis an und ermöglicht Offline‑
+  Installationen oder Upgrades, ohne erneut Dateien aus dem Netz
+  laden zu müssen.
+* **vrrp-ipk-repo** – Sammlung der IPK‑Pakete passend zu den Releases.
+
+Die neuen Helferskripte füllen diese Verzeichnisse automatisch.
+
+## Sammlung von Artefakten
+
+Das Skript `dev-harvest` (sowie sein PowerShell‑Pendant) liest
+Dateien aus dem Download‑Ordner und kopiert sie ins Workspace.  Es
+implementiert folgende Logik:
+
+1. Bestimme den Download‑Pfad: Standard ist `~/Downloads` (Linux) bzw.
+   `%USERPROFILE%\Downloads` (Windows), optional kann ein anderer Pfad
+   angegeben werden.
+2. Suche nach Dateien, die mit `openwrt-ha-vrrp-` beginnen und die
+   Endungen `.tar.gz`, `.tar` oder `.zip` besitzen.  Diese Dateien
+   werden als Release‑Archive erkannt.
+3. Suche nach Dateien, die mit `ha-vrrp_` beginnen und die
+   Endung `.ipk` besitzen.  Diese werden als Installationspakete
+   erkannt.
+4. Kopiere die gefundenen Dateien in die entsprechenden
+   Workspace‑Unterordner.  Vorhandene Dateien werden dabei
+   überschrieben, um sicherzustellen, dass stets die aktuellste
+   Version verfügbar ist.
+
+Die früheren Kommandos `copy_downloads` und `copy_downloads.ps1` sind
+als Aliase weiterhin vorhanden und leiten auf `dev-harvest` um.
+
+## Verteilung an Nodes
+
+Das Skript `dev-sync-nodes` (bzw. `dev-sync-nodes.ps1`) ermöglicht es,
+die lokal gespeicherten Artefakte auf mehrere Router zu verteilen.
+Die Idee dabei ist, dass alle Zielgeräte stets identische Pakete
+bereitgestellt bekommen.  Das Skript führt folgende Schritte aus:
+
+1. Für jeden angegebenen Knoten wird per SSH eine Verbindung
+   hergestellt und die Verzeichnisse `/root/vrrp-repo` sowie
+   `/root/vrrp-ipk-repo` werden erzeugt.  Als Parameter kann
+   angegeben werden, ob Node 1, Node 2 oder beide (`all`) synchronisiert
+   werden sollen.
+2. Anschließend werden alle Dateien aus `_workspace/vrrp-repo` per
+   `scp` in das Zielverzeichnis `/root/vrrp-repo` kopiert.
+3. Danach werden alle Dateien aus `_workspace/vrrp-ipk-repo` per
+   `scp` in das Zielverzeichnis `/root/vrrp-ipk-repo` kopiert.
+
+Auch hier bleiben die früheren Kommandos `upload_nodes` und
+`upload_nodes.ps1` als Aliase bestehen und verweisen auf das neue
+`dev-sync-nodes`.
+
+Diese Vorgehensweise stellt sicher, dass jedes Node die gleichen
+Pakete erhält.  Die eigentliche Installation erfolgt weiterhin durch
+das Ausführen des Installers (`installer.sh`) auf dem Zielgerät.
+
+## Einheitliche CLI
+
+Um die Arbeit zu vereinfachen, wurden die Wrapper `script.sh`,
+`script.ps1` und `script.bat` um die neuen Typen `dev-harvest` und
+`dev-sync-nodes` erweitert.  Als Aliase stehen weiterhin die
+Kommandos `copy_downloads` und `upload_nodes` zur Verfügung.
+Dadurch können Entwickler:innen mit einer konsistenten Syntax auf
+allen Plattformen arbeiten, ohne die internen Helferskripte direkt
+aufrufen zu müssen.
+
+Diese Konzepte ergänzen den bestehenden Dokumentationsbaukasten, in
+dem jede Version eigene Teilfassungen von Architektur und Konzept
+enthält.  Sie verdeutlichen die Trennung zwischen Code‑ und
+Datenebene: Das HA‑VRRP‑Addon selbst wird nach wie vor in `/usr/lib`
+installiert, während Pakete und Versionsarchive im Workspace
+gesammelt und verteilt werden.
 ## 0.5.16-007_reviewfix17_a4_fix3.md
 
 # Konzepte reviewfix17_a4_fix3

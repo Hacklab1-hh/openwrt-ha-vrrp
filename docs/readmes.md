@@ -549,3 +549,44 @@ Die vollständige Liste der Änderungen finden Sie in `docs/changelogs/0.5.16-00
 Es gibt keine Änderungen an den Installations- oder Uninstallationsscripten gegenüber der Vorversion.  Entwickler:innen können `manage_docs.sh` nutzen, um weitere Einträge hinzuzufügen und neue Versionen zu erstellen.  Für den Build‑Prozess wird weiterhin `helper_build_package.sh` verwendet.
 
 
+## 0.5.16-007_reviewfix17_a4_fix4.md
+
+# openwrt-ha-vrrp – Release Notes – v0.5.16‑007_reviewfix17_a4_fix4
+
+**Datum:** 2025‑08‑28
+
+## Features
+
+Diese Version fügt zwei neue Helferskripte hinzu, die den Umgang mit
+heruntergeladenen Release‑Archiven und IPK‑Paketen vereinfachen:
+
+* **copy_downloads.sh / copy_downloads.ps1** – Durchsucht das
+  Download‑Verzeichnis nach OpenWRT‑HA‑VRRP‑Archiven und den zugehörigen
+  IPK‑Paketen.  Gefundene Dateien werden in das lokale
+  `_workspace` kopiert und dort in `vrrp-repo` bzw. `vrrp-ipk-repo`
+  abgelegt.
+
+* **upload_nodes.sh / upload_nodes.ps1** – Überträgt die im
+  Workspace gespeicherten Pakete via `scp` an eine oder mehrere
+  OpenWrt‑Nodes.  Die Zielverzeichnisse `/root/vrrp-repo` und
+  `/root/vrrp-ipk-repo` werden automatisch erstellt.
+
+Diese Helfer werden über die zentralen Wrapper `script.sh`,
+`script.ps1` und `script.bat` mit den neuen Subkommandos
+`copy_downloads` und `upload_nodes` angesprochen.  Dadurch wird der
+Installations‑ und Update‑Prozess insbesondere in Multi‑Node‑Setups
+deutlich effizienter.
+
+## Changelog
+
+Die vollständige Liste der Änderungen ist in
+`docs/changelogs/0.5.16-007_reviewfix17_a4_fix4.md` dokumentiert.
+
+## Installation / Uninstallation / Build
+
+Die bestehenden Installations‑ und Uninstallationsskripte bleiben
+unverändert.  Zur Vorbereitung eines neuen Releases im Dev‑Modus
+können Entwickler:innen nun mit `copy_downloads` die zuletzt
+heruntergeladenen Artefakte einsammeln und anschließend mit
+`upload_nodes` auf die gewünschten Router verteilen.  Der eigentliche
+Installer wird danach wie gewohnt auf dem Zielsystem ausgeführt.

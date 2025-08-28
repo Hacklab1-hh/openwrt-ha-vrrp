@@ -13,6 +13,81 @@ In der Version **0.5.16‑007_reviwefix17** wurde die Architektur des HA‑VRRP�
 - **Migrationsframework**: Die unified Upgrade‑Path‑Definition wurde um diese Version ergänzt.  Das zugehörige Migration‑Skript dokumentiert das Update, erstellt ein Backup und setzt die neue Version.
 
 Diese Änderungen festigen die modulare Architektur des Projekts, erleichtern die Wartung und ermöglichen eine nahtlose Integration in andere Systeme.
+## 0.5.16-007_reviewfix17_a4_fix4.md
+
+# Architektur – 0.5.16‑007_reviewfix17_a4_fix4
+
+Diese Teilfassung beschreibt die neuen Komponenten zur
+Download‑Synchronisation und Verteilung der Artefakte in der
+Version **0.5.16‑007_reviewfix17_a4_fix4**.  Sie ergänzt die bestehende
+Architektur (siehe Vorversionen) um eine datenzentrierte Sicht auf
+den Entwicklermodus.
+
+## Workspace‑Verzeichnisstruktur
+
+Im Dev‑Modus werden alle relevanten Dateien unter dem
+Benutzer‑Verzeichnis `_workspace` abgelegt.  Dieses Release
+definiert folgende Struktur:
+
+* **`_workspace/vrrp-repo`** – enthält alle heruntergeladenen
+  Release‑Archive (`openwrt-ha-vrrp-*.tar.gz`, `.tar`, `.zip`).
+* **`_workspace/vrrp-ipk-repo`** – enthält die zugehörigen
+  IPK‑Pakete (`ha-vrrp_*-all.ipk`).
+
+Diese Ordner werden von den neuen Skripten `dev-harvest`
+automatisch angelegt und gefüllt (alias: `copy_downloads`).
+
+## Kopier- und Verteilskripte
+
+### dev-harvest.sh / dev-harvest.ps1
+
+Diese Komponente durchsucht das Download‑Verzeichnis des Users
+(`~/Downloads` bzw. `%USERPROFILE%\Downloads`) sowie ein optionales
+Unterverzeichnis nach Artefakten.  Gefundene Dateien werden in die
+oben genannten Workspace‑Ordner kopiert.  Hierdurch entsteht eine
+lokale Sammlung aller Versionen, die anschließend für Deployments
+verwendet werden kann.  Die früheren Kommandos `copy_downloads`
+und `copy_downloads.ps1` fungieren weiterhin als Aliase und leiten
+auf dieses Skript um.
+
+### dev-sync-nodes.sh / dev-sync-nodes.ps1
+
+Dieses Skript erwartet optional eine Angabe, welche Zielknoten
+adressiert werden sollen (`1`, `2` oder `all`).  Für jeden Knoten
+werden via SSH die Zielverzeichnisse `/root/vrrp-repo` und
+`/root/vrrp-ipk-repo` angelegt.  Anschließend überträgt das Skript
+alle Dateien aus dem lokalen Workspace in die jeweiligen Verzeichnisse.
+Dadurch können mehrere Router synchron mit denselben Paketen
+versorgt werden.  Die früheren Kommandos `upload_nodes` und
+`upload_nodes.ps1` dienen als Aliase für diese Funktion.
+
+## Wrapper auf oberster Ebene
+
+Die Dateien `script.sh`, `script.ps1` und `script.bat` fungieren als
+einheitliche CLI‑Wrapper.  Sie leiten Unterkommandos an die jeweiligen
+Hilfsskripte weiter.  Mit diesem Release unterstützen die Wrapper
+die neuen Typen `dev-harvest` und `dev-sync-nodes` (bzw. deren Aliase
+`copy_downloads` und `upload_nodes`) neben den bestehenden
+Subkommandos (`manage_docs`, `readme`, `help`).
+
+## Integration in den Versionsworkflow
+
+Beim Erstellen eines neuen Releases kann ein Entwickler nun wie folgt
+vorgehen:
+
+1. **Pakete sammeln:** Mit `script.sh --type dev-harvest --action run`
+   (oder dem Alias `script.sh copy_downloads`) die zuletzt
+   heruntergeladenen Release‑Artefakte und IPKs in das lokale
+   Workspace kopieren.
+2. **Nodes synchronisieren:** Die lokal gespeicherten Pakete mit
+   `script.sh --type dev-sync-nodes --action run [--nodes all|1|2]`
+   (oder dem Alias `script.sh upload_nodes`) an die Router verteilen.
+3. **Installation:** Auf dem Router kann anschließend der Installer
+   ausgeführt werden, um das gewünschte Release einzuspielen.
+
+Diese Ergänzungen unterstützen den Workflow für Multi‑Node‑Setups,
+ohne die bestehende Architektur der Installation, Migration und
+Konfiguration zu verändern.
 ## 0.5.16-007_reviewfix17_a4_fix3.md
 
 # Architektur‑Notizen reviewfix17_a4_fix3
