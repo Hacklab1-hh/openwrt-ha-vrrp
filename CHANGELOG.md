@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## 0.5.16-007_reviewfix17_a3.md
+
+## 0.5.16‑007_reviewfix17_a3
+
+Die Version **0.5.16‑007_reviewfix17_a3** führt eine konfigurierbare Steuerung der Dokumentenaggregation ein und hebt die Dokumentationslogik auf eine neue Stufe.  Die wichtigsten Änderungen sind:
+
+- **Neue Version**: Erhöhung der Versionsnummer auf `0.5.16-007_reviewfix17_a3`.
+- **Konfigurationsdatei `doc_aggregation.json`**: Unter `config/` befindet sich jetzt eine JSON‑Datei, die steuert, ob zentrale Dokumente wie `architecture.md` und `concepts.md` alle Teilfassungen anhängen (*append*) oder nur die jeweils neueste verwenden (*extend*).
+- **Überarbeiteter Aggregator**: `scripts/gen-base-md.sh` wurde erweitert und liest nun die oben genannte Konfiguration.  Je nach Einstellung werden die generierten Dateien im Projekt‑Root entweder aus allen Versionsdateien zusammengesetzt oder nur aus der neuesten Teilfassung.
+- **Dokumentationsanpassungen**: Die neuen Funktionen und das Konzept der konfigurierbaren Aggregation werden in den Architektur‑ und Konzept‑Teilfassungen von *reviewfix17_a3* dokumentiert.  Historien‑Dateien wurden entsprechend ergänzt.
+
+Diese Änderungen erweitern die Flexibilität bei der Erstellung der zentralen Dokumente und erlauben es, das Sichtbarkeitsniveau der Historie projektspezifisch anzupassen.
 ## 0.5.16-007_reviewfix17_a2.md
 
 ## 0.5.16‑007_reviewfix17_a2

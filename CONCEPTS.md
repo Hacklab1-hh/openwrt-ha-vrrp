@@ -13,6 +13,19 @@ Diese Version konzentriert sich auf die Verbesserung der Bedienoberfläche und d
 - **Helper‑Workflows**: Skripte zur Versions‑Normalisierung, zur Pflege der Konzept‑/Architektur‑Dokumente und zur Paketgenerierung sorgen dafür, dass die Dateien `CONCEPTS.md` und `ARCHITECTURE.md` stets den aktuellen Gesamtstand widerspiegeln, während versionsspezifische Teilfassungen im Ordner `docs/concepts` erhalten bleiben.
 
 Diese Konzepte bilden die Grundlage für die fortlaufende Entwicklung des Add‑ons und bereiten den Weg für zukünftige Integrationen.
+## 0.5.16-007_reviewfix17_a3.md
+
+# Konzepte reviewfix17_a3
+
+Diese Teilfassung erweitert die in *reviewfix17_a2* dokumentierten organisatorischen Verbesserungen um ein neues Konzept der konfigurierbaren Dokumentenaggregation.
+
+## Neue Konzepte
+
+- **Konfigurierbare Aggregation via JSON**: Die Datei `config/doc_aggregation.json` erlaubt es, das Verhalten der automatischen Dokumentenaggregation zu steuern.  Für jede zentrale Datei (etwa `architecture.md` oder `concepts.md`) kann dort festgelegt werden, ob neue Teilfassungen angehängt werden (*append*) oder ob lediglich die neueste Teilfassung als Basis für das zentrale Dokument verwendet wird (*extend*).  Diese Einstellung beeinflusst sowohl die generierten zentralen Dateien im Projekt‑Root als auch die Übersichten unter `docs/`.
+- **Flexible Darstellung der Historie**: Durch die Wahl des Aggregationsmodus kann entschieden werden, ob die komplette Versionshistorie in der zentralen Dokumentation sichtbar sein soll oder ob nur die jeweils aktuelle Fassung angezeigt wird.  Dies erleichtert die Anpassung der Dokumentation an unterschiedliche Zielgruppen (z. B. Anwender vs. Entwickler).
+- **Automatische Berücksichtigung im Build‑Prozess**: Das aktualisierte Helper‑Skript `gen-base-md.sh` liest die Konfiguration und erzeugt die zentralen Dokumente entsprechend.  Die Konfigurationsdatei liegt im Repository und wird beim Checkout mitkopiert, sodass der Build‑Prozess reproduzierbar bleibt.
+
+Diese Konzepte stärken die Wartbarkeit der Dokumentation und ermöglichen eine projektspezifische Steuerung der Sichtbarkeit von Versionshistorie und Basisinformationen.
 ## 0.5.16-007_reviewfix17_a2.md
 
 # Konzepte reviewfix17_a2

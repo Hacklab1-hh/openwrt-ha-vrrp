@@ -1,0 +1,8 @@
+{
+  "changelogs": "append",
+  "features": "append",
+  "architecture": "append",
+  "concepts": "append",
+  "readmes": "extend",
+  "known-issues": "extend"
+}

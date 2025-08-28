@@ -13,6 +13,19 @@ In der Version **0.5.16‑007_reviwefix17** wurde die Architektur des HA‑VRRP�
 - **Migrationsframework**: Die unified Upgrade‑Path‑Definition wurde um diese Version ergänzt.  Das zugehörige Migration‑Skript dokumentiert das Update, erstellt ein Backup und setzt die neue Version.
 
 Diese Änderungen festigen die modulare Architektur des Projekts, erleichtern die Wartung und ermöglichen eine nahtlose Integration in andere Systeme.
+## 0.5.16-007_reviewfix17_a3.md
+
+# Architektur‑Notizen reviewfix17_a3
+
+Die Version **0.5.16‑007_reviewfix17_a3** bringt eine neue Ebene der Konfigurierbarkeit für die automatische Dokumentenaggregation.  Während in *reviewfix17_a2* die Grundlage für die Konsolidierung von Dateien gelegt wurde, ermöglicht diese Version über eine JSON‑Konfiguration feinere Einstellungen.
+
+Wichtige Änderungen:
+
+- **Konfigurierbare Aggregation**: Im Ordner `config/` liegt nun die Datei `doc_aggregation.json`.  Sie definiert für jede zentrale Markdown‑Datei (z. B. `architecture.md`, `concepts.md`, `features.md`, `readmes.md`, `known-issues.md`), ob neue Teilfassungen *angehängt* werden (`"append"`) oder ob die zentrale Datei ausschließlich aus der jeweils neuesten Teilfassung *erweitert* wird (`"extend"`).  Dadurch lässt sich das Verhalten des Helpers `gen-base-md.sh` ohne Codeänderungen anpassen.
+- **Erweiterter Aggregator**: Das Skript `scripts/gen-base-md.sh` liest diese Konfiguration und generiert die zentralen Dateien entsprechend.  Im *Append*-Modus werden alle Versionen (neueste zuerst) in die zentrale Datei aufgenommen; im *Extend*-Modus besteht die zentrale Datei nur aus der aktuellsten Teilfassung.  Die überarbeiteten zentralen Dateien werden weiterhin bei jedem Aufruf von `helper_sync_docs.sh` und `helper_build_package.sh` erzeugt.
+- **Dokumentation der Konfiguration**: Die Verfügbarkeit und Nutzung dieser Konfiguration ist sowohl in den Architektur‑ als auch in den Konzept‑Dokumentationen vermerkt.  Entwicklerinnen und Entwickler können durch Anpassen der JSON‑Datei steuern, welche Teile der Historie in den zentralen Dokumenten sichtbar sein sollen.
+
+Diese Anpassungen erhöhen die Flexibilität beim Dokumenten‑Build‑Prozess und verbessern die Anpassbarkeit an projektinterne Präferenzen, ohne die Funktionsweise des Add‑ons zu beeinträchtigen.
 ## 0.5.16-007_reviewfix17_a2.md
 
 # Architektur‑Notizen reviewfix17_a2
