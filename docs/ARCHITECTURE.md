@@ -77,6 +77,29 @@ Die Version **0.5.16‑007_reviewfix17_a4_fix1** übernimmt die in *reviewfix17_
 - **Auswahl des Presets**: Der Installer liest `presets.json` und entscheidet anhand der Umgebung (OpenWrt vs. Desktop) und der Nutzereingaben, welches Preset zur Anwendung kommt.  Dadurch sind weitere Anpassungen – etwa andere Basispfade oder zusätzliche Pakete – zentral konfigurierbar und müssen nicht in den Shell‑Skripten selbst geändert werden.
 
 Diese Teilfassung enthält keine neuen architektonischen Konzepte, sondern stellt sicher, dass die Architektur aus der Vorgängerversion *a4* in der neuen Version konsistent weitergeführt wird.
+## 0.5.16-007_reviewfix17_a4_fix2.md
+
+# Architektur‑Notizen reviewfix17_a4_fix2
+
+Die Version **0.5.16‑007_reviewfix17_a4_fix2** setzt die in *a4_fix1* eingeführte Architektur unverändert fort und erweitert sie um ein zentrales Manager‑Skript zur Pflege der Dokumentation.  Alle zuvor definierten Presets, Geräteprofile und der Versionssprung‑Workflow bleiben bestehen.
+
+## Zentrales Manager‑Skript
+
+- **manage_docs.sh / manage_docs.ps1**: Diese neuen Helper‑Skripte ermöglichen es, während der Entwicklung schnell Notizen und Einträge in die Versionsspezifischen Teilfassungen zu schreiben.  Sie akzeptieren Parameter für den Dateityp (z. B. `concepts`, `architecture`, `changelogs`, `readmes`, `features` oder `known-issues`) und fügen den übergebenen Text am Ende der entsprechenden Datei für die aktuelle Version an.  Optional kann mittels `--new-version` ein neuer Versions‑Tag gesetzt werden; das Skript kopiert dann die bestehenden Teilfassungen für Konzepte, Architektur usw. in eine neue Datei, schreibt das `VERSION`‑File fort und ruft die bestehenden Helper (`helper_update_version_tags.sh` und `helper_sync_docs.sh`) auf, um die zentralen Dokumente und Historien zu aktualisieren.  Es ist in einer POSIX‑Shell‑Version und in einer PowerShell‑Version für Windows verfügbar, sodass sowohl unter BusyBox/OpenWrt als auch unter Linux und Windows dieselbe Funktionalität genutzt werden kann.
+
+## Integration der Readme‑Dateien
+
+- **Migration der `Readme`‑Ordners:** Die bisher im Verzeichnis `docs/Readme` abgelegten versionsspezifischen Readme‑Dateien werden nun in der Ordnerstruktur `docs/readmes` geführt.  Jede Datei trägt dabei nur noch den Versionsstring als Namen (z. B. `0.5.4.md` anstelle von `README_0.5.4.md`).  Diese Vereinheitlichung erleichtert die Aggregation der README‑Inhalte in `docs/readmes.md` und vermeidet Namenskonflikte zwischen alten und neuen Dateiformaten.  Ein zusätzliches Verzeichnis `docs/readmeas` dient dazu, ältere oder manuell gepflegte Readme‑Entwürfe abzulegen; es wird nicht von der Aggregation berücksichtigt, sondern lediglich als Archiv geführt.
+
+## Workflow bei Versionssprüngen
+
+Die bereits in *a4* und *a4_fix1* beschriebenen Abläufe gelten weiterhin:
+
+- **Versionstag setzen:** Vor dem Verpacken oder Bereitstellen eines neuen Releases wird mit dem Manager‑Skript die neue Version in der `VERSION`‑Datei hinterlegt.  Anschließend aktualisieren `helper_update_version_tags.sh` und `helper_sync_docs.sh` alle zentralen Dokumente und hängen die Teilfassungen an die History‑Dateien an.
+- **Upgradepfad ergänzen:** Für jede neue Version wird ein weiterer Eintrag in `config/upgradepath.unified.json` angelegt.  Dort wird die Vorgängerversion als `parent` eingetragen und der Archivname vermerkt.  Somit können `run_migrations.sh` oder die Installer‑Skripte die korrekte Reihenfolge der Migrationsskripte bestimmen.
+- **Konfigurationsprofile nutzen:** Der Installer liest weiterhin `config/presets.json` aus, um abhängig vom Zielsystem (Dev oder Node) die korrekten Pfade und Arbeitsverzeichnisse zu wählen.  Darüber hinaus enthalten die Geräteprofile die aktuell unterstützten OpenWrt‑Versionen für Mango/GL‑MT300N‑V2, Lamobo R1 und x86【92603978916730†L320-L322】【633554760445073†L148-L156】【878966515062870†L23-L27】.
+
+Diese Teilfassung fügt somit vor allem das Manager‑Skript und die Konsolidierung der Readme‑Dateien hinzu.  Sie stellt sicher, dass die bestehende Architektur mit ihren Presets, Pfaden und Upgrade‑Workflows auch nach dem Versionssprung konsistent bleibt.
 ## 0.5.16-007_reviwefix17.md
 
 # Architektur‑Notizen reviwefix17

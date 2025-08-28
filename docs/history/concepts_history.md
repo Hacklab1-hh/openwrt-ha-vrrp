@@ -91,3 +91,24 @@ Diese Teilfassung übernimmt die konzeptionellen Neuerungen aus *reviewfix17_a4*
 - **Dev‑Workflow für Archivierung**: Im Dev‑Preset verschiebt ein Helper‑Skript alle geladenen Artefakte (z. B. IPK‑ und Tar‑Dateien) aus dem Download‑Ordner in das Arbeitsverzeichnis `_workspace/vrrp-repo`.  Anschließend können diese Dateien via `scp` auf die Nodes kopiert werden.
 
 Diese neue Version fügt kein weiteres Konzept hinzu, sondern dokumentiert die Weiterführung des in *a4* eingeführten Preset‑ und Upgrade‑Workflows.
+## 0.5.16-007_reviewfix17_a4_fix2
+
+# Konzepte reviewfix17_a4_fix2
+
+Mit der Version **0.5.16‑007_reviewfix17_a4_fix2** wird das bestehende Konzept rund um Preset‑Profile, versionsspezifische Dokumentation und Upgradepfade um ein zentrales Manager‑Skript erweitert.  Gleichzeitig werden die Readme‑Dateien vereinheitlicht und in einer neuen Ordnerstruktur abgelegt.  Dadurch wird die Pflege der Dokumentation für Entwickler:innen und Administrator:innen erleichtert.
+
+## Manager‑Skript zum Dokumentationsmanagement
+
+- **Einträge hinzufügen:** Über das Skript `manage_docs.sh` (und das Windows‑Gegenstück `manage_docs.ps1`) lassen sich Einträge in die Teilfassungen der aktuellen Version einfügen.  Das Skript nimmt den Dateityp (`concepts`, `architecture`, `changelogs`, `readmes`, `features` oder `known‑issues`) und den Text entgegen und appends ihn an die passende Markdown‑Datei innerhalb von `docs/`.  Wird eine Datei dabei zum ersten Mal angelegt, erhält sie einen einfachen Header mit der Versionsnummer.
+- **Version finalisieren:** Optional kann mit dem Parameter `--new-version` ein Versionsbump durchgeführt werden.  In diesem Fall kopiert das Skript die Teilfassungen der aktuellen Version in entsprechende Dateien für die neue Version, aktualisiert die `VERSION`‑Datei und ruft die vorhandenen Helper auf, um zentrale Dokumente (z. B. `ARCHITECTURE.md`, `CONCEPTS.md`, `CHANGELOG.md`) zu regenerieren.  Auf diese Weise lässt sich ein neuer Release‑Tag direkt aus der Entwicklungsumgebung heraus erzeugen.
+- **Cross‑Platform‑Support:** Da sowohl eine POSIX‑Shell‑Variante als auch eine PowerShell‑Variante bereitgestellt werden, kann das Skript sowohl auf OpenWrt‑/BusyBox‑Systemen als auch unter Linux oder Windows ausgeführt werden.
+
+## Vereinheitlichte Readme‑Struktur
+
+Die bisher im Verzeichnis `docs/Readme` liegenden Readme‑Dateien werden nach `docs/readmes` migriert und in `docs/readmeas` archiviert.  Alte Dateinamen mit dem Präfix `README_` werden durch den reinen Versionsstring ersetzt.  Dadurch wird der Überblick über die vorhandenen Teilfassungen erleichtert und der Aggregator (`gen-base-md.sh`) kann die Dateien korrekt einsortieren.  Für jede neue Version sollte – sofern nötig – ein entsprechendes Dummy‑Readme angelegt werden, um zumindest Platzhaltertexte für Features, Änderungen oder Installationsnotizen bereitzustellen.
+
+## Weiterführung des Preset‑ und Upgrade‑Konzepts
+
+Wie bereits in den vorherigen Versionen erläutert, basiert die Installation und Konfiguration auf den Preset‑Definitionen in `config/presets.json`.  Je nach Umgebung (`dev` oder `node`) werden unterschiedliche Arbeitsverzeichnisse und Basispfade gesetzt.  Gleichzeitig enthält die Datei Gerätedefinitionen mit dem jeweils empfohlenen OpenWrt‑Release: Mangos verwenden 22.03.4【92603978916730†L320-L322】, Lamobo R1 benötigt eine Neuinstallation, da kein Upgradepfad von 19.07 auf 22.03 existiert【633554760445073†L148-L156】, und für x86 sind Upgrades über 21.02 → 22.03 → 23.05 möglich【878966515062870†L23-L27】.
+
+In dieser Version werden keine neuen Kernkonzepte eingeführt.  Vielmehr wird das bisherige Modell um ein Skript zur leichteren Pflege von Dokumentationsdateien ergänzt und die Dateistruktur vereinheitlicht.  Die Migrationstools und Upgradepfade bleiben unverändert erhalten.

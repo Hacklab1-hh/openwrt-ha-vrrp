@@ -507,3 +507,23 @@ Sync-Uploads (lokaler privater/öffentlicher Key, Peer-Pub), Versionsanzeige in 
 - Für OpenWrt 19.07 bleibt das UI serverseitiges CBI ohne moderne `L.ui`-Widgets; vermeidet den `L.ui is undefined`-Fehler.
 - Logs zu Sync-Aktionen: `/tmp/ha_vrrp_*`.
 
+## 0.5.16-007_reviewfix17_a4_fix2.md
+
+# openwrt-ha-vrrp – Release Notes – v0.5.16‑007_reviewfix17_a4_fix2
+
+**Datum:** 2025‑08‑28
+
+## Features
+
+Diese Version fügt keine neuen Funktionen hinzu, sondern verbessert die Dokumentationsinfrastruktur und das Workflow‑Management:
+
+* Ein neues Manager‑Skript (`manage_docs.sh`/`manage_docs.ps1`) vereinfacht die Pflege der versionsspezifischen Markdown‑Dateien und ermöglicht es, neue Versionen mit einem Befehl zu finalisieren.
+* Die Readme‑Dateien aus früheren Releases wurden in das strukturierte Verzeichnis `docs/readmes` migriert; alte Dateinamen mit dem Präfix `README_` wurden durch den reinen Versionsstring ersetzt.  Zusätzliche Entwürfe können in `docs/readmeas` abgelegt werden.
+
+## Changelog
+
+Bitte beachten Sie den ausführlichen Changelog in `docs/changelogs/0.5.16-007_reviewfix17_a4_fix2.md` für Details zu allen Änderungen.
+
+## Installation / Uninstallation / Build
+
+Die Installations- und Uninstallationsscripte bleiben unverändert gegenüber der Vorversion.  Entwickler:innen können das neue Manager‑Skript nutzen, um neue Releases zu erstellen und die Dokumentation zu aktualisieren.  Der reguläre Build‑Prozess via `helper_build_package.sh` erzeugt weiterhin das Pakettarball in `dist/`.

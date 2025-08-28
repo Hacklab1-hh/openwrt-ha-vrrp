@@ -355,5 +355,11 @@
       "parent": "0.5.16-007_reviewfix17_a4",
       "archive": "openwrt-ha-vrrp-0.5.16-007_reviewfix17_a4_fix1.tar.gz"
     }
+    ,
+    {
+      "version": "0.5.16-007_reviewfix17_a4_fix2",
+      "parent": "0.5.16-007_reviewfix17_a4_fix1",
+      "archive": "openwrt-ha-vrrp-0.5.16-007_reviewfix17_a4_fix2.tar.gz"
+    }
   ]
 }
